@@ -1,0 +1,23 @@
+{
+  "name": "pagopa-notice-pdf",
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "Template for generating pagoPA PDF notices",
+  "main": "index.js",
+  "scripts": {
+    "generate": "node compileHandlebars && node generatePDF"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "puppeteer": "^22.0.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1",
+    "stylelint-prettier": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18 <=18"
+  }
+}

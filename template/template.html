@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
+
+<head>
+  <title>Il riepilogo del tuo pagamento</title>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        <section class="pagopa-header">
+          <img class="logo" src="assets/logo-pagoPa.svg" />
+          <h1 class="title">Ricevuta di pagamento</h1>
+        </section>
+        <dl class="psp-header">
+          <dt>Per conto di</dt>
+          <dd class="psp-logo">
+            <img alt=Nexi src=assets/nexi-logo.png />
+          </dd>
+        </dl>
+      </header>
+
+      <main>
+        <div class="content-grid">
+
+          <section class="transaction-data">
+
+            <section class="transaction-data-group">
+
+              <dl class="data-key-value">
+                <dt>Eseguito da</dt>
+                <dd class="entityGroup">
+                  <span class="entityName forcedCapitalCase">marzia roccaraso</span>
+                  <span class="entityCode">rccmrz88A52C409A</span>
+                </dd>
+              </dl>
+
+              <dl class="data-key-value">
+                <dt>ID transazione (RRN)</dt>
+                <dd class="entityCode">1234567890</dd>
+              </dl>
+
+              <dl class="data-key-value">
+                <dt>Codice autorizzativo</dt>
+                <dd class="entityCode">1234567890123456800</dd>
+              </dl>
+
+            </section>
+
+            <section class="transaction-data-group">
+
+
+              <dl class="data-key-value">
+                <dt>Metodo di pagamento</dt>
+                <dd class="data-value-big">
+                  <div class="payment-method-group forcedCapitalCase">
+                    <img class="payment-method-logo" src=assets/mastercard.png />
+                    mastercard
+                  </div>
+                </dd>
+              </dl>
+
+              <dl class="data-key-value">
+                <dt>Intestato a</dt>
+                <dd class="data-value-big forcedCapitalCase">marzia roccaraso</dd>
+              </dl>
+
+
+              <dl class="data-key-value">
+                <dt>Gestore della transazione (PSP)</dt>
+                <dd class="data-value-big">Nexi</dd>
+              </dl>
+
+              <dl class="data-key-value">
+                <dt>Data e ora</dt>
+                <dd class="data-value-big">24 ottobre 2022, 18:45:56</dd>
+              </dl>
+
+            </section>
+
+          </section>
+
+          <section class="transaction-detail">
+
+
+            <section class="transaction-detail-group">
+
+              <div class="transaction-detail-paymentSubject">
+                <!-- Oggetto del pagamento (Carrello singolo) -->
+                <h2 class="paymentSubject">Pagamento Retta Scolastica 2024 Istituto Comprensivo &quot;Leonardo Da Vinci&quot; Grosseto</h2>
+              </div>
+
+              <!-- Debitore (+ codice fiscale) -->
+              <dl class="data-key-value small transaction-detail-debtor">
+                <dt>Debitore</dt>
+                <dd class="entityGroup">
+                  <span class="entityName forcedCapitalCase">giuseppe bianchi</span>
+                  <span class="entityCode">bncGSP70A12F205X</span>
+                </dd>
+              </dl>
+
+              <!-- Ente creditore (+ codice fiscale) -->
+              <dl class="data-key-value small transaction-detail-creditor">
+                <dt>Ente Creditore</dt>
+                <dd class="entityGroup">
+                  <span class="entityName">Comune di Controguerra</span>
+                  <span class="entityCode">82001760675</span>
+                </dd>
+              </dl>
+
+              <section class="transaction-detail-paymentData">
+
+                <!-- IUV -->
+
+                <!-- Codice Avviso -->
+
+                <!-- Importo -->
+                <dl class="data-key-value small right-align amount-value">
+                  <dt>Importo</dt>
+                  <dd>150,00&nbsp;&euro;</dd>
+                </dl>
+
+              </section>
+
+            </section>
+
+            <hr class="transaction-detail-divider" />
+
+
+          </section>
+
+          <section class="transaction-summary">
+
+
+            <!-- Partial Amount -->
+
+            <!-- Commissione -->
+            <dl class="transaction-summary-key-value">
+              <dt>Commissione (applicata da Nexi)</dt>
+              <dd>2,00&nbsp;&euro;</dd>
+            </dl>
+
+            <!-- Totale -->
+            <dl class="transaction-summary-key-value total-amount">
+              <dt>Totale</dt>
+              <dd>152,00&nbsp;&euro;</dd>
+            </dl>
+
+            <!-- Bank Charges -->
+
+          </section>
+
+        </div>
+      </main>
+
+      <footer>
+
+        <div class="footer-disclaimer">
+          <p>
+            <strong>
+              Questa ricevuta attesta il pagamento eseguito. Rivolgiti all’Ente Creditore se hai bisogno della quietanza
+              liberatoria.
+            </strong>
+          </p>
+
+
+        </div>
+
+
+        <div class="company-info">
+          <div class="pagopa-company-address">
+            <p><strong>Ricevuta trasmessa da PagoPA S.p.A.</strong></p>
+            <p>
+              Piazza Colonna, 370<br />
+              00187 Roma (RM)
+            </p>
+          </div>
+
+          <!-- Informazioni sul PSP -->
+          <div class="psp-company-address">
+            <p><strong>Pagamento gestito da Nexi Payments S.p.A.</strong></p>
+            <p>
+              Corso Sempione, 55<br />
+              20149 Milano (MI)
+            </p>
+          </div>
+
+        </div>
+
+        <p>Serve aiuto? Visita <strong><u>pagopa.gov.it/assistenza</u></strong> · ID ricevuta:
+          <strong class="transaction-id">F57E2F8E-25FF-4183-AB7B-4A5EC1A96644</strong>
+        </p>
+
+      </footer>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
