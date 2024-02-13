@@ -4,7 +4,7 @@ All PDF templates of the notice designed by pagoPA
 
 - [Requirements](#requirements)
 - [Dependencies](#dependencies)
-- [How to install and run pdf generator](#how-to-install-and-run-pdf-generator)
+- [How to generate the PDF notice](#how-to-generate-the-pdf-notice)
 - [Related PDF templates](#related-PDF-templates)
 
 ## Requirements
