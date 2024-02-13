@@ -1,0 +1,47 @@
+{
+  "debtor": {
+    "fullName": "MARZIA ROCCARASO",
+    "taxCode": "rccmrz88A52C409A",
+    "address": "Corso Sempione",
+    "buildingNumber": "55",
+    "postalCode": "20149",
+    "city": "Milano",
+    "province": "MI"
+  },
+  "payee": {
+    "logo": "",
+    "name": "Comune di Controguerra",
+    "taxCode": 82001760675,
+    "sector": "Istruzione",
+    "additionalInfo": "boh?"
+  },
+  "notice": {
+    "qrCode": "",
+    "subject": "Pagamento Retta Scolastica 2024 Istituto Comprensivo &quot;Leonardo Da Vinci&quot; Grosseto",
+    "amount": "152,00",
+    "expiryDate": "24 ottobe 2022",
+    "additionalInfo": "boh?",
+    "refNumber": "123456789012345678",
+    "cbillCode": "78Q45"
+  },
+  "cart": {
+    "items": [
+      {
+        "refNumber": {
+          "type": "codiceAvviso",
+          "value": "123456789012345678"
+        },
+        "debtor": {
+          "fullName": "Giuseppe Bianchi",
+          "taxCode": "bncGSP70A12F205X"
+        },
+        "payee": {
+          "name": "Comune di Controguerra",
+          "taxCode": 82001760675
+        },
+        "subject": "Pagamento Retta Scolastica 2024 Istituto Comprensivo &quot;Leonardo Da Vinci&quot; Grosseto",
+        "amount": "150,00"
+      }
+    ]
+  }
+}
