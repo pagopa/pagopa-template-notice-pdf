@@ -17,7 +17,7 @@ const templateFile = fs.readFileSync("template.hbs", "utf8");
 const template = Handlebars.compile(templateFile);
 
 // Load the data for the template
-const data = require("./json/authenticated-pdf.json");
+const data = require("./json/notice-single-payment.json");
 
 // Generate the HTML
 const html = template(data);

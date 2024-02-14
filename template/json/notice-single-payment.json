@@ -9,17 +9,22 @@
     "province": "MI"
   },
   "payee": {
-    "logo": "",
-    "name": "Comune di Controguerra",
+    "logo": "https://assets.cdn.io.italia.it/logos/organizations/547330639.png",
+    "name": "Città di Capri",
     "taxCode": 82001760675,
-    "sector": "Istruzione",
-    "additionalInfo": "boh?"
+    "sector": "Servizio Pagamenti",
+    "additionalInfo": "Info: www.cittadicapri.it",
+    "channel": {
+      "online": "sul sito del Comune di Milano",
+      "physical": ""
+    }
   },
   "notice": {
-    "qrCode": "",
     "subject": "Pagamento Retta Scolastica 2024 Istituto Comprensivo &quot;Leonardo Da Vinci&quot; Grosseto",
     "amount": "152,00",
-    "expiryDate": "24 ottobe 2022",
+    "expiryDate": "24/10/2024",
+    "qrCode": "assets/fake-qrcode.svg",
+    "paymentPayeeWebsite": true,
     "additionalInfo": "boh?",
     "refNumber": "123456789012345678",
     "cbillCode": "78Q45"
