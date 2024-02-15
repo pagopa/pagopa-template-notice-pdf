@@ -12,20 +12,16 @@
   <div class="page">
 
     <div class="page-wrapper">
-      <header class="page-header">
-        <section class="pagopa-header">
-          <img class="logo" src="assets/pagoPa-logo.svg" />
-          <h1 class="title">Avviso di pagamento</h1>
-        </section>
-        <img alt="{{payee.name}}" src="{{payee.logo}}" />
-      </header>
+
+      {{!-- Notice HEADER --}}
+      {{> header }}
 
       <main>
         <div class="content-grid">
 
           <section class="transaction-data">
 
-            <section class="transaction-data-group">
+            {{!-- <section class="transaction-data-group">
 
               {{#with user.data}}
               <dl class="data-key-value">
@@ -53,7 +49,7 @@
               </dl>
               {{/if}}
 
-            </section>
+            </section> --}}
 
             <section class="transaction-data-group">
 
@@ -87,10 +83,10 @@
               </dl>
               {{/if}}
 
-              <dl class="data-key-value">
+              {{!-- <dl class="data-key-value">
                 <dt>Data e ora</dt>
                 <dd class="data-value-big">{{transaction.timestamp}}</dd>
-              </dl>
+              </dl> --}}
 
             </section>
 

@@ -9,7 +9,7 @@
     "province": "MI"
   },
   "payee": {
-    "logo": "https://assets.cdn.io.italia.it/logos/organizations/547330639.png",
+    "logo": "https://assets.cdn.io.italia.it/logos/organizations/82001760675.png",
     "name": "Città di Capri",
     "taxCode": 82001760675,
     "sector": "Servizio Pagamenti",
@@ -20,11 +20,10 @@
     }
   },
   "notice": {
-    "subject": "Pagamento Retta Scolastica 2024 Istituto Comprensivo &quot;Leonardo Da Vinci&quot; Grosseto",
+    "subject": "Trasporto Scolastico A.S. 2021/2022",
     "amount": "152,00",
     "expiryDate": "24/10/2024",
     "qrCode": "assets/fake-qrcode.svg",
-    "paymentPayeeWebsite": true,
     "additionalInfo": "boh?",
     "refNumber": "123456789012345678",
     "cbillCode": "78Q45"

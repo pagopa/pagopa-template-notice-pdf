@@ -6,12 +6,17 @@ const eq = require("./helpers/eq.js");
 const not = require("./helpers/not.js");
 const splitAndSpace = require("./helpers/splitAndSpace.js");
 const lowercase = require("./helpers/lowercase.js");
-
-// Register the helpers
+// Register helpers
 Handlebars.registerHelper("eq", eq);
 Handlebars.registerHelper("not", not);
 Handlebars.registerHelper("splitAndSpace", splitAndSpace);
 Handlebars.registerHelper("lowercase", lowercase);
+
+// Import partials
+const partialPath = `./partials`;
+const header = fs.readFileSync(`${partialPath}/header.hbs`, "utf8");
+// Register partials
+Handlebars.registerPartial("header", header);
 
 const templateFile = fs.readFileSync("template.hbs", "utf8");
 const template = Handlebars.compile(templateFile);

@@ -1,5 +1,6 @@
 :root {
-  --page-margin: 50px;
+  --page-margin: 10mm;
+  --section-margin: 6mm;
   /* Fonts */
   --font-monospaced: 'DM Mono', monospace;
   /* Colors */
@@ -69,7 +70,6 @@ body {
   page-break-after: always;
   width: 210mm;
   height: 296mm;
-  padding: 10mm;
 }
 
 .page-wrapper {
@@ -77,25 +77,47 @@ body {
   display: flex;
   height: 100%;
   flex-direction: column;
-  gap: 6mm;
+  gap: var(--section-margin);
   background-color: white;
 }
 
-.page-header {
-  display: flex;
-  justify-content: space-between;
-}
+.notice-header {
+  --entity-logo-margin: 4mm;
 
-.pagopa-header {
   display: flex;
   align-items: flex-start;
-  gap: 5mm;
+  padding: var(--page-margin);
+  padding-bottom: 0;
+
+  & .main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-margin);
+  }
+
+  & .pagopa-header {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-start;
+    gap: 4mm;
+
+    & .logo {
+      width: 15mm;
+      height: auto;
+    }
+  }
+
+  & .notice-header-logo {
+    flex-shrink: 0;
+    justify-self: "end";
+    display: block;
+    width: 30mm;
+    height: 30mm;
+    margin-bottom: var(--entity-logo-margin);
+  }
 }
 
-.logo {
-  width: 18mm;
-  height: auto;
-}
 
 .title {
   margin: 0;
