@@ -5,20 +5,20 @@
   --font-monospaced: 'DM Mono', monospace;
   /* Colors */
   --debug-color: lightpink;
-  --primary-color: #0000000;
-  --secondary-color: #5C6F82;
-  /* Divider */
-  --divider-color: #E3E7EB;
-  --divider-width: 0.5mm;
-  --divider-margin: 7mm;
-  /* Font sizes */
-  --caption-fsize: 9pt;
-  --title-fsize: 10pt;
-  --entity-fsize: 12pt;
-  --huge-fsize: 16pt;
-  /* Transaction amount margin,
-  below payment code */
-  --amount-value-margin: 5mm;
+  --color-black: #0000000;
+  --color-secondary-grey: #7C7C7B;
+  --color-light-grey: #ECECEC;
+  /* Typographic styles */
+  --h1-fsize: 16pt;
+  --h2-fsize: 14pt;
+  --h3-fsize: 12pt;
+  --h4-fsize: 10pt;
+  --data-fsize-large: 12pt;
+  --data-fsize-medium: 10pt;
+  --data-fsize-small: 8pt;
+  --body-fsize: 8pt;
+  --weight-bold: 700;
+  --weight-regular: 400;
 }
 
 /* Fonts */
@@ -52,6 +52,34 @@
 
 * {
   text-rendering: geometricprecision !important;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.body {
+  margin: 0;
+}
+
+.h1 {
+  font-size: var(--h1-fsize);
+  font-weight: var(--weight-bold);
+}
+
+.h2 {
+  font-size: var(--h2-fsize);
+  font-weight: var(--weight-bold);
+}
+
+.h3 {
+  font-size: var(--h3-fsize);
+  font-weight: var(--weight-regular);
+}
+
+.h4 {
+  font-size: var(--h4-fsize);
+  font-weight: var(--weight-bold);
 }
 
 body {
@@ -108,6 +136,11 @@ body {
     }
   }
 
+  & .notice-title {
+    text-transform: uppercase;
+    color: var(--color-black);
+  }
+
   & .notice-header-logo {
     flex-shrink: 0;
     justify-self: "end";
@@ -119,13 +152,7 @@ body {
 }
 
 
-.title {
-  margin: 0;
-  text-transform: uppercase;
-  color: var(--primary-color);
-  font-weight: 700;
-  font-size: var(--title-fsize);
-}
+
 
 /* PSP present in the top area of the page */
 .psp-header {
