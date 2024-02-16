@@ -19,11 +19,16 @@
   --body-fsize: 8pt;
   --weight-bold: 700;
   --weight-regular: 400;
+  /* Element sizes */
+  --size-entity-logo: 30mm;
+  --size-qrcode: 25mm;
   /* Sizes */
   --separator-title-height: 8mm;
   /* Inner margin, before column gap */
   --separator-margin-small: 4mm;
   --separator-gutter: 2mm;
+  /* Spacing after separator */
+  --separator-bottom-margin: 6mm;
 
 }
 
@@ -153,12 +158,17 @@ body {
 
 /* Common */
 .start-separator,
-.end-separator {
+.end-separator,
+.unique-separator {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-light-grey);
   height: var(--separator-title-height);
+}
+
+.unique-separator {
+  padding-inline: var(--page-margin);
 }
 
 .start-separator {
@@ -179,6 +189,10 @@ body {
 .end-grid-cell {
   padding-inline-start: var(--separator-title-height);
   padding-inline-end: var(--page-margin);
+}
+
+.unique-grid-cell {
+  padding-inline: var(--page-margin);
 }
 
 dl {
@@ -223,8 +237,8 @@ dl {
     flex-shrink: 0;
     justify-self: "end";
     display: block;
-    width: 30mm;
-    height: 30mm;
+    width: var(--size-entity-logo);
+    height: var(--size-entity-logo);
     margin-bottom: var(--entity-logo-margin);
   }
 }
@@ -243,7 +257,7 @@ dl {
     "payee-sector debtor-address"
     "payee-info debtor-address";
   column-gap: var(--separator-gutter);
-  row-gap: 20px;
+  row-gap: var(--separator-bottom-margin);
   margin-bottom: var(--section-margin);
 
   & .payee-title-block {
@@ -276,8 +290,8 @@ dl {
 }
 
 /* Notice payment info
--- Payee
--- Debtor
+-- Amount
+-- Where to pay
 */
 
 .notice-payment-info {
@@ -290,7 +304,7 @@ dl {
   grid-template-areas: "payment-amount-title payment-locations-title"
     "payment-amount-block payment-locations-block";
   column-gap: var(--separator-gutter);
-  row-gap: 20px;
+  row-gap: var(--separator-bottom-margin);
   margin-bottom: var(--section-margin);
 
   & .payment-amount-title-block {
@@ -341,6 +355,26 @@ dl {
   row-gap: var(--separator-margin-small);
 }
 
+/* Notice Payment Data
+-- QR Code
+-- Notice main data
+*/
+
+.notice-payment-data {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  row-gap: var(--separator-bottom-margin);
+  margin-bottom: var(--section-margin);
+
+  & .payment-qrcode {
+    width: var(--size-qrcode);
+    height: var(--size-qrcode);
+  }
+
+  & .payment-details {
+    padding-inline: var(--page-margin);
+  }
+}
 
 
 /* PSP present in the top area of the page */
