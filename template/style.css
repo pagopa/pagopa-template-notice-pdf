@@ -19,6 +19,12 @@
   --body-fsize: 8pt;
   --weight-bold: 700;
   --weight-regular: 400;
+  /* Sizes */
+  --separator-title-height: 8mm;
+  /* Inner margin, before column gap */
+  --separator-margin-small: 4mm;
+  --separator-gutter: 2mm;
+
 }
 
 /* Fonts */
@@ -45,6 +51,13 @@
 
 @font-face {
   font-family: "DM Mono";
+  src: url(assets/fonts/DM_Mono/DMMono-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Mono";
   src: url(assets/fonts/DM_Mono/DMMono-Medium.ttf) format('truetype');
   font-weight: 500;
   font-style: normal;
@@ -58,28 +71,51 @@
 .h2,
 .h3,
 .h4,
-.body {
+.body,
+.small-caps-title {
   margin: 0;
 }
 
 .h1 {
   font-size: var(--h1-fsize);
   font-weight: var(--weight-bold);
+  line-height: 1.2;
 }
 
 .h2 {
   font-size: var(--h2-fsize);
   font-weight: var(--weight-bold);
+  line-height: 1.2;
 }
 
 .h3 {
   font-size: var(--h3-fsize);
   font-weight: var(--weight-regular);
+  line-height: 1.4;
 }
 
 .h4 {
   font-size: var(--h4-fsize);
   font-weight: var(--weight-bold);
+  line-height: 1.2;
+}
+
+.small-caps-title {
+  font-size: var(--h4-fsize);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.data-small {
+  font-family: var(--font-monospaced);
+  font-size: var(--data-fsize-small);
+  font-weight: var(--weight-regular);
+}
+
+.body {
+  font-size: var(--body-fsize);
+  font-weight: var(--weight-regular);
 }
 
 body {
@@ -108,6 +144,39 @@ body {
   gap: var(--section-margin);
   background-color: white;
 }
+
+
+/* Common */
+.start-separator,
+.end-separator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-light-grey);
+  height: var(--separator-title-height);
+}
+
+.start-separator {
+  padding-inline-start: var(--page-margin);
+  padding-inline-end: var(--separator-margin-small);
+}
+
+.end-separator {
+  padding-inline-start: var(--separator-title-height);
+  padding-inline-end: var(--page-margin);
+}
+
+.start-grid-cell {
+  padding-inline-start: var(--page-margin);
+  padding-inline-end: var(--separator-margin-small);
+}
+
+.end-grid-cell {
+  padding-inline-start: var(--separator-title-height);
+  padding-inline-end: var(--page-margin);
+}
+
+/* Notice Header */
 
 .notice-header {
   --entity-logo-margin: 4mm;
@@ -150,6 +219,52 @@ body {
     margin-bottom: var(--entity-logo-margin);
   }
 }
+
+/* Notice Info
+-- Payee
+-- Debtor
+*/
+
+.notice-main-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "payee-title debtor-title"
+    "payee-name debtor-name"
+    "payee-sector debtor-address"
+    "payee-info debtor-address";
+  grid-column-gap: var(--separator-gutter);
+  grid-row-gap: 20px;
+
+  & .payee-title-block {
+    grid-area: payee-title;
+  }
+
+  & .payee-name-block {
+    grid-area: payee-name;
+  }
+
+  & .payee-sector-block {
+    grid-area: payee-sector;
+  }
+
+  & .payee-info-block {
+    grid-area: payee-info;
+  }
+
+  & .debtor-title-block {
+    grid-area: debtor-title;
+  }
+
+  & .debtor-name-block {
+    grid-area: debtor-name;
+  }
+
+  & .debtor-address-block {
+    grid-area: debtor-address;
+  }
+}
+
 
 
 
