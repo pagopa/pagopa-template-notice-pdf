@@ -85,13 +85,14 @@
           <div class="payment-locations-block end-grid-cell">
             <div>
               <h4 class="small-caps-title">Paga con l'app IO</h4>
-              <p class="body">oppure sul sito di Ente.Nome, dal tuo Home Banking,  con la tua app di pagamento o con gli
+              <p class="body">oppure sul sito di Ente.Nome, dal tuo Home Banking, con la tua app di pagamento o con gli
                 altri canali
                 abilitati.</p>
             </div>
             <div>
               <h4 class="small-caps-title">Paga sul territorio</h4>
-              <p class="body">presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar, Edicole,
+              <p class="body">presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar,
+                Edicole,
                 Ricevitorie, Supermercati,
                 Tabaccherie e altri Esercenti Convenzionati.</p>
             </div>
@@ -104,8 +105,72 @@
             <p class="h4">Rata unica entro il 31/03/2024</span></p>
           </div>
 
-          <div class="payment-details">
-            <img class="payment-qrcode" src="assets/fake-qrcode.svg" alt="QR PaymentCode" />
+          <div class="payment-details unique-grid-cell">
+            <div class="qrcode-area">
+              <img class="payment-qrcode" src="assets/fake-qrcode.svg" alt="QR PaymentCode" />
+              <p class="body mt-small">Inquadra il <strong>codice QR</strong> con la tua app di pagamento o usa i dati
+                accanto.</p>
+            </div>
+
+            <div class="payment-details-data">
+
+              <div class="payment-details-data-1st-block">
+
+                <div class="grid-cell-span-1">
+                  <dl class="data-key-value">
+                    <dt>Destinatario</dt>
+                    <dd>Maria Rossi</dd>
+                  </dl>
+                </div>
+
+                <p class="amount align-right">
+                  Euro <strong>14,00</strong>
+                </p>
+
+                <div class="grid-cell-span-2">
+                  <dl class="data-key-value">
+                    <dt>Ente creditore</dt>
+                    <dd>Comune di Controguerra</dd>
+                  </dl>
+                </div>
+
+                <div class="grid-cell-span-2">
+                  <dl class="data-key-value">
+                    <dt>Oggetto del pagamento</dt>
+                    <dd>{{notice.subject}}</dd>
+                  </dl>
+                </div>
+
+
+              </div>
+
+              <div class="payment-details-data-2nd-block">
+
+                <div class="grid-cell-span-2">
+                  <dl class="data-key-value-monospaced">
+                    <dt>Cod. CBILL</dt>
+                    <dd>78Q45</dd>
+                  </dl>
+                </div>
+
+                <div class="grid-cell-span-4">
+                  <dl class="data-key-value-monospaced">
+                    <dt>Cod. Avviso</dt>
+                    <dd>0000 0000 0000 0000 00</dd>
+                  </dl>
+                </div>
+
+                <div class="grid-cell-span-2 align-right">
+                  <dl class="data-key-value-monospaced">
+                    <dt>Cod. Fiscale Ente</dt>
+                    <dd>82001760675</dd>
+                  </dl>
+                </div>
+
+
+              </div>
+
+            </div>
 
           </div>
 

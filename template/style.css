@@ -2,7 +2,7 @@
   --page-margin: 10mm;
   --section-margin: 6mm;
   /* Fonts */
-  --font-monospaced: 'DM Mono', monospace;
+  --font-monospaced: 'Roboto Mono', monospace;
   /* Colors */
   --debug-color: lightpink;
   --color-black: #0000000;
@@ -29,42 +29,41 @@
   --separator-gutter: 2mm;
   /* Spacing after separator */
   --separator-bottom-margin: 6mm;
-
 }
 
 /* Fonts */
 @font-face {
   font-family: "Titillium Sans Pro";
-  src: url(assets/fonts/Titillium_SansPro/TitilliumSansPro-Regular.otf) format('opentype');
+  src: url(assets/fonts/TitilliumSansPro/TitilliumSansPro-Regular.otf) format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Titillium Sans Pro";
-  src: url(assets/fonts/Titillium_SansPro/TitilliumSansPro-Semibold.otf) format('opentype');
+  src: url(assets/fonts/TitilliumSansPro/TitilliumSansPro-Semibold.otf) format('opentype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Titillium Sans Pro";
-  src: url(assets/fonts/Titillium_SansPro/TitilliumSansPro-Bold.otf) format('opentype');
+  src: url(assets/fonts/TitilliumSansPro/TitilliumSansPro-Bold.otf) format('opentype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url(assets/fonts/DM_Mono/DMMono-Regular.ttf) format('truetype');
+  font-family: "Roboto Mono";
+  src: url(assets/fonts/RobotoMono/RobotoMono-Regular.ttf) format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url(assets/fonts/DM_Mono/DMMono-Medium.ttf) format('truetype');
-  font-weight: 500;
+  font-family: "Roboto Mono";
+  src: url(assets/fonts/RobotoMono/RobotoMono-Bold.ttf) format('truetype');
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -128,6 +127,10 @@
   }
 }
 
+.align-right {
+  text-align: right;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -182,21 +185,73 @@ body {
 }
 
 .start-grid-cell {
-  padding-inline-start: var(--page-margin);
-  padding-inline-end: var(--separator-margin-small);
+  margin-inline-start: var(--page-margin);
+  margin-inline-end: var(--separator-margin-small);
 }
 
 .end-grid-cell {
-  padding-inline-start: var(--separator-title-height);
-  padding-inline-end: var(--page-margin);
+  margin-inline-start: var(--separator-title-height);
+  margin-inline-end: var(--page-margin);
 }
 
 .unique-grid-cell {
-  padding-inline: var(--page-margin);
+  margin-inline: var(--page-margin);
+}
+
+.grid-cell-span-1 {
+  grid-column: span 1;
+}
+
+.grid-cell-span-2 {
+  grid-column: span 2;
+}
+
+.grid-cell-span-4 {
+  grid-column: span 4;
 }
 
 dl {
   margin: 0
+}
+
+.mt-small {
+  margin-top: var(--separator-margin-small);
+}
+
+.data-key-value {
+  --spacing: 0.5mm;
+
+  font-size: var(--body-fsize);
+  line-height: 1.2;
+
+  & dt {
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    margin-top: var(--spacing);
+    font-weight: var(--weight-bold);
+  }
+}
+
+.data-key-value-monospaced {
+  --spacing: 1mm;
+
+  line-height: 1.4;
+
+  & dt {
+    font-size: var(--body-fsize);
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    margin-top: var(--spacing);
+    font-family: var(--font-monospaced);
+    font-weight: var(--weight-bold);
+    line-height: 1.2;
+  }
 }
 
 /* Notice Header */
@@ -361,6 +416,11 @@ dl {
 */
 
 .notice-payment-data {
+  --data-grid-col-gap: 10mm;
+  --data-grid-col-gap-small: 4mm;
+  --data-grid-row-gap-small: 2mm;
+  --data-grid-row-gap-medium: 6mm;
+
   display: grid;
   grid-template-rows: repeat(2, auto);
   row-gap: var(--separator-bottom-margin);
@@ -371,270 +431,48 @@ dl {
     height: var(--size-qrcode);
   }
 
-  & .payment-details {
-    padding-inline: var(--page-margin);
+  .payment-details {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(9, 1fr);
+    column-gap: var(--data-grid-col-gap);
   }
-}
 
+  .qrcode-area {
+    grid-area: 1 / 1 / 1 / 4;
+  }
 
-/* PSP present in the top area of the page */
-.psp-header {
-  display: flex;
-  flex-direction: column;
-  gap: 2mm;
-  margin: 0;
-}
+  .payment-details-data {
+    grid-area: 1 / 4 / 2 / 10;
+  }
 
-/* Emessa da: */
-.psp-header dt {
-  text-align: right;
-  font-size: var(--caption-fsize);
-  color: var(--secondary-color);
-}
+  .payment-details-data-1st-block {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr auto;
+    row-gap: var(--data-grid-row-gap-small);
+    column-gap: var(--data-grid-col-gap-small);
 
-/* PSP Logo */
-.psp-header dd {
-  margin: 0;
-}
+    & .amount {
+      margin: 0;
+      font-size: var(--h4-fsize);
+      font-weight: var(--weight-regular);
+    }
 
-.psp-logo {
-  display: inline-flex;
-  align-self: flex-end;
-  height: 7.5mm;
-  width: 35mm;
-}
+    & .amount strong {
+      font-family: var(--font-monospaced);
+      font-size: var(--data-fsize-large);
+      font-weight: var(--weight-bold);
+    }
+  }
 
-.psp-logo img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: top right;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
-/* Transaction Detail */
-
-.right-align {
-  text-align: right;
-}
-
-.paymentSubject {
-  margin: 0;
-  font-size: var(--title-fsize);
-  text-transform: uppercase;
-}
-
-footer {
-  flex-shrink: 0;
-  width: 100%;
-  font-size: 10pt;
-  bottom: 0;
-  padding-top: 5mm;
-  font-size: var(--caption-fsize);
-  color: var(--secondary-color);
-  display: grid;
-  row-gap: 5mm;
-}
-
-footer * {
-  margin: 0;
-}
-
-.footer-disclaimer {
-  line-height: 1.35;
-}
-
-.footer-disclaimer *+* {
-  margin-top: 1mm;
-}
-
-.transaction-id {
-  font-family: var(--font-monospaced);
-  font-weight: 500;
-}
-
-.company-info {
-  display: grid;
-  grid-template-columns: 6fr 4fr;
-  align-content: flex-start;
-  line-height: 1.35;
-}
-
-hr {
-  border: none;
-  margin-block-start: 5mm;
-  border-top: 0.4mm solid black;
-  margin-block-end: 5mm;
-}
-
-.transaction-data {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 8mm;
-}
-
-.transaction-data-group {
-  display: grid;
-  align-content: flex-start;
-  row-gap: 2mm;
-}
-
-.transaction-detail-divider {
-  width: 100%;
-  border-top: var(--divider-width) solid var(--divider-color);
-  margin-block-start: var(--divider-margin);
-  margin-block-end: var(--divider-margin);
-}
-
-.transaction-detail-group {
-  display: grid;
-  grid-template-areas: "paymentSubject paymentSubject paymentSubject"
-    "debtor creditor paymentData";
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3mm;
-}
-
-.transaction-detail-group:not(:has(.transaction-detail-paymentSubject)) {
-  grid-template-areas:
-    "debtor creditor paymentData";
-}
-
-.transaction-detail-paymentSubject:not(:empty) {
-  grid-area: paymentSubject;
-}
-
-.transaction-detail-debtor {
-  grid-area: debtor;
-}
-
-.transaction-detail-creditor {
-  grid-area: creditor;
-}
-
-.transaction-detail-paymentData {
-  grid-area: paymentData;
-}
-
-.transaction-detail {
-  margin-block-start: var(--divider-margin);
-  padding-block-start: var(--divider-margin);
-  display: flex;
-  flex-direction: column;
-  border-top: var(--divider-width) solid var(--divider-color);
-}
-
-.transaction-summary {
-  margin: 0;
-  display: grid;
-  gap: 3mm;
-}
-
-.transaction-summary-key-value {
-  margin: 0;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 9fr 3fr;
-  line-height: 1.35;
-}
-
-.transaction-summary-key-value dt {
-  text-align: right;
-  font-size: var(--caption-fsize)
-}
-
-.transaction-summary-key-value dd {
-  text-align: right;
-  margin: 0;
-  font-weight: 700;
-}
-
-.transaction-summary-key-value.total-amount dt {
-  font-weight: 700;
-}
-
-.transaction-summary-key-value.total-amount dd {
-  font-weight: 700;
-  font-size: var(--huge-fsize);
-}
-
-.data-key-value {
-  margin: 0;
-  padding: 0;
-}
-
-.data-key-value dt {
-  font-size: var(--caption-fsize);
-  color: var(--primary-color);
-}
-
-.data-key-value dd {
-  margin: 0;
-  line-height: 1.2;
-}
-
-.data-key-value.small dd {
-  font-size: var(--title-fsize);
-}
-
-.amount-value {
-  margin-block-start: var(--amount-value-margin);
-}
-
-.amount-value dd {
-  font-weight: 700;
-}
-
-.entityGroup {
-  display: flex;
-  flex-direction: column;
-  font-size: var(--entity-fsize);
-}
-
-.entityName {
-  font-weight: 700;
-  color: var(--primary-color);
-}
-
-.entityCode {
-  font-weight: 500;
-  font-size: var(--title-fsize);
-  font-family: var(--font-monospaced);
-  text-transform: uppercase;
-}
-
-.entityName+.entityCode {
-  margin-top: 0.1em;
+  .payment-details-data-2nd-block {
+    display: grid;
+    margin-top: var(--data-grid-row-gap-medium);
+    grid-template-columns: repeat(8, 1fr);
+  }
 }
 
 .forcedCapitalCase {
   text-transform: capitalize;
-}
-
-.payment-method-group {
-  display: flex;
-  align-items: center;
-  gap: 1.5mm;
-  margin-top: 0.1em;
-}
-
-.payment-method-logo {
-  max-width: 5mm;
-  max-height: 5mm;
-}
-
-.data-key-value .data-value-big {
-  font-weight: 700;
-  font-size: var(--entity-fsize);
-  color: var(--primary-color);
-}
-
-.stack>*+* {
-  margin-top: 2mm;
-}
-
-.debug {
-  background-color: var(--debug-color);
 }
