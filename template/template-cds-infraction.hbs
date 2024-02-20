@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
+
+<head>
+  <title>Avviso di pagamento</title>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="page">
+    <div class="page-wrapper">
+
+      {{!-- Notice HEADER --}}
+      {{> header }}
+
+      <main class="main-wrapper">
+        {{!-- Row 1 --}}
+        {{> noticeMainInfo }}
+        {{!-- Row 2 --}}
+        {{> noticePaymentInfoInfraction }}
+
+        {{!-- Arrow separator --}}
+        <div class="arrow-separator">
+          <img src="./assets/icon-arrow-down.svg" class="arrow-icon" aria-hidden="true" />
+          <p class="body">
+            Scegli l'importo corretto per i termini previsti, altrimenti riceverai altre richieste di pagamento per le
+            somme residue ed eventuali somme aggiuntive
+          </p>
+          <img src="./assets/icon-arrow-down.svg" class="arrow-icon" aria-hidden="true" />
+        </div>
+
+        {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
+        {{> noticePaymentData }}
+        {{!-- Row 4 - pagoPA QR Code (general discount) --}}
+        {{> noticePaymentData }}
+      </main>
+    </div>
+  </div>
+
+</body>
+
+</html>

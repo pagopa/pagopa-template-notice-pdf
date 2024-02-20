@@ -9,10 +9,10 @@
     "province": "MI"
   },
   "payee": {
-    "logo": "https://assets.cdn.io.italia.it/logos/organizations/82001760675.png",
-    "name": "Comune di Controguerra",
-    "taxCode": 82001760675,
-    "sector": "Servizio Pagamenti",
+    "logo": "https://assets.cdn.io.italia.it/logos/organizations/1199250158.png",
+    "name": "Comune di Milano",
+    "taxCode": "00516890241",
+    "sector": "Comando Polizia Locale Milano",
     "additionalInfo": "Info: www.cittadicapri.it",
     "channel": {
       "online": "sul sito del Comune di Milano",
@@ -20,7 +20,7 @@
     }
   },
   "notice": {
-    "subject": "Trasporto Scolastico A.S. 2021/2022",
+    "subject": "Verbale C.D.S. Prot. 20039749",
     "amount": "152,00",
     "expiryDate": "24/10/2024",
     "qrCode": "assets/fake-qrcode.svg",

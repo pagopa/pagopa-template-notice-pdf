@@ -5,7 +5,8 @@
   "description": "Template for generating pagoPA PDF notices",
   "main": "index.js",
   "scripts": {
-    "generate": "node compileHandlebars && node generatePDF"
+    "generate": "node compileHandlebars && node generatePDF",
+    "generate-cds-infraction-1": "node compileHandlebars --templateFile template-cds-infraction.hbs --dataFile notice-infraction.json && node generatePDF"
   },
   "dependencies": {
     "handlebars": "^4.7.8",

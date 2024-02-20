@@ -44,6 +44,11 @@ const noticePaymentBollettino = fs.readFileSync(
   `${partialPath}/notice-payment-bollettino.hbs`,
   "utf8"
 );
+// Codice della Strada's infraction
+const noticePaymentInfoInfraction = fs.readFileSync(
+  `${partialPath}/notice-payment-info-infraction.hbs`,
+  "utf8"
+);
 
 // Register partials
 Handlebars.registerPartial("header", header);
@@ -55,12 +60,34 @@ Handlebars.registerPartial("noticePaymentPoste", noticePaymentPoste);
 //-- Commons
 Handlebars.registerPartial("noticePaymentQR", noticePaymentQR);
 Handlebars.registerPartial("noticePaymentBollettino", noticePaymentBollettino);
+//-- Infractions
+Handlebars.registerPartial(
+  "noticePaymentInfoInfraction",
+  noticePaymentInfoInfraction
+);
 
-const templateFile = fs.readFileSync("template.hbs", "utf8");
+// Parsing command-line arguments for dynamic JSON file and template file path
+const args = process.argv.slice(2); // Remove the first two elements
+// Default values with a cleaner approach using an object to map flags to their respective file paths
+let filePaths = {
+  "--dataFile": "notice-single-payment.json",
+  "--templateFile": "template.hbs",
+};
+
+args.forEach((arg, index) => {
+  if (filePaths.hasOwnProperty(arg) && args[index + 1]) {
+    filePaths[arg] = args[index + 1];
+  }
+});
+
+const dataFilePath = filePaths["--dataFile"];
+const templateFilePath = filePaths["--templateFile"];
+
+const templateFile = fs.readFileSync(templateFilePath, "utf8");
 const template = Handlebars.compile(templateFile);
 
-// Load the data for the template
-const data = require("./json/notice-single-payment.json");
+// Load the JSON data for the template
+const data = require(`./json/${dataFilePath}`);
 
 // Generate the HTML
 const html = template(data);
