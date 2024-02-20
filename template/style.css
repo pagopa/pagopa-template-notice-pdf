@@ -421,8 +421,8 @@ dl {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
-  grid-template-areas: "payment-amount-title payment-locations-title"
-    "payment-amount-block payment-locations-block";
+  grid-template-areas: "payment-amount-title payment-methods-title"
+    "payment-amount-block payment-methods-block";
   column-gap: var(--separator-gutter);
   row-gap: var(--separator-bottom-margin);
   margin-bottom: var(--section-margin);
@@ -431,8 +431,8 @@ dl {
     grid-area: payment-amount-title;
   }
 
-  & .payment-locations-title-block {
-    grid-area: payment-locations-title;
+  & .payment-methods-title-block {
+    grid-area: payment-methods-title;
   }
 
   & .pagopa-website-block {
@@ -451,7 +451,7 @@ dl {
 
   & .payment-info-pictogram {
     width: var(--size-info-pictogram);
-    height: var(--size-info-pictogram);
+    height: auto;
   }
 }
 
@@ -484,7 +484,7 @@ dl {
   & .info-icon {
     align-self: flex-start;
     width: var(--size-info-icon);
-    height: var(--size-info-icon);
+    height: auto;
   }
 
   & .info-paragraph {
@@ -494,7 +494,7 @@ dl {
   }
 }
 
-.payment-locations-block {
+.payment-methods-block {
   display: grid;
   grid-template-rows: repeat(2, auto);
   align-items: flex-start;
