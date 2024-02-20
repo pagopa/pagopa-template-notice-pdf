@@ -24,6 +24,8 @@
   --size-entity-logo: 30mm;
   --size-qrcode: 25mm;
   --size-data-matrix: 25mm;
+  --size-info-icon: 4mm;
+  --size-info-pictogram: 12mm;
   /* Sizes */
   --separator-title-height: 8mm;
   /* Inner margin, before column gap */
@@ -36,6 +38,7 @@
   --data-grid-gap-medium: 6mm;
   --data-grid-gap-small: 4mm;
   --data-grid-gap-xsmall: 2mm;
+  --data-grid-gap-3xsmall: 0.75mm;
 }
 
 /* Fonts */
@@ -240,6 +243,10 @@ dl {
   margin-top: var(--separator-margin-small);
 }
 
+.mb-3x-small {
+  margin-bottom: var(--data-grid-gap-3xsmall);
+}
+
 .data-key-value {
   --spacing: 0.5mm;
 
@@ -435,6 +442,17 @@ dl {
     vertical-align: middle;
     /* column-gap: 0.5ch; */
   }
+
+  & .payment-info-outer {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--data-grid-gap-small);
+  }
+
+  & .payment-info-pictogram {
+    width: var(--size-info-pictogram);
+    height: var(--size-info-pictogram);
+  }
 }
 
 .payment-amount-block {
@@ -457,14 +475,29 @@ dl {
     grid-area: date;
   }
 
-  & .info {
+  & .info-block {
     grid-area: info;
+    display: grid;
+    gap: var(--data-grid-gap-xsmall);
+  }
+
+  & .info-icon {
+    align-self: flex-start;
+    width: var(--size-info-icon);
+    height: var(--size-info-icon);
+  }
+
+  & .info-paragraph {
+    display: flex;
+    align-items: center;
+    gap: var(--data-grid-gap-xsmall);
   }
 }
 
 .payment-locations-block {
   display: grid;
   grid-template-rows: repeat(2, auto);
+  align-items: flex-start;
   row-gap: var(--separator-margin-small);
 }
 
