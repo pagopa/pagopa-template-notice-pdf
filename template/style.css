@@ -17,11 +17,13 @@
   --data-fsize-medium: 10pt;
   --data-fsize-small: 8pt;
   --body-fsize: 8pt;
+  --caption-fsize: 8pt;
   --weight-bold: 700;
   --weight-regular: 400;
   /* Element sizes */
   --size-entity-logo: 30mm;
   --size-qrcode: 25mm;
+  --size-data-matrix: 25mm;
   /* Sizes */
   --separator-title-height: 8mm;
   /* Inner margin, before column gap */
@@ -29,6 +31,11 @@
   --separator-gutter: 2mm;
   /* Spacing after separator */
   --separator-bottom-margin: 6mm;
+  /* Used by payment data and Bollettino Postale */
+  --data-grid-gap-large: 10mm;
+  --data-grid-gap-medium: 6mm;
+  --data-grid-gap-small: 4mm;
+  --data-grid-gap-xsmall: 2mm;
 }
 
 /* Fonts */
@@ -76,7 +83,8 @@
 .h3,
 .h4,
 .body,
-.small-caps-title {
+.small-caps-title,
+.caption {
   margin: 0;
 }
 
@@ -120,11 +128,17 @@
 .body {
   font-size: var(--body-fsize);
   font-weight: var(--weight-regular);
-  line-height: 1.25;
+  line-height: 1.35;
 
   &.strong {
     font-weight: var(--weight-bold);
   }
+}
+
+.caption {
+  font-size: var(--caption-fsize);
+  font-weight: var(--weight-regular);
+  color: var(--color-secondary-grey);
 }
 
 .align-right {
@@ -156,6 +170,10 @@ body {
   flex-direction: column;
   gap: var(--section-margin);
   background-color: white;
+}
+
+.main-wrapper {
+  display: grid;
 }
 
 
@@ -206,6 +224,10 @@ body {
   grid-column: span 2;
 }
 
+.grid-cell-span-3 {
+  grid-column: span 3;
+}
+
 .grid-cell-span-4 {
   grid-column: span 4;
 }
@@ -235,6 +257,22 @@ dl {
   }
 }
 
+.data-key-value-inline {
+  display: flex;
+  gap: var(--data-grid-gap-xsmall);
+  font-size: var(--body-fsize);
+  line-height: 1.2;
+
+  & dt {
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    font-weight: var(--weight-bold);
+  }
+}
+
 .data-key-value-monospaced {
   --spacing: 1mm;
 
@@ -248,9 +286,29 @@ dl {
   & dd {
     margin: 0;
     margin-top: var(--spacing);
+    font-size: var(--data-fsize-medium);
     font-family: var(--font-monospaced);
     font-weight: var(--weight-bold);
     line-height: 1.2;
+  }
+}
+
+.data-key-value-inline-monospaced {
+  display: flex;
+  gap: var(--data-grid-gap-xsmall);
+  align-items: baseline;
+  line-height: 1;
+
+  & dt {
+    font-size: var(--h4-fsize);
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    font-family: var(--font-monospaced);
+    font-size: var(--h3-fsize);
+    font-weight: var(--weight-bold);
   }
 }
 
@@ -416,10 +474,8 @@ dl {
 */
 
 .notice-payment-data {
-  --data-grid-col-gap: 10mm;
-  --data-grid-col-gap-small: 4mm;
-  --data-grid-row-gap-small: 2mm;
-  --data-grid-row-gap-medium: 6mm;
+  --columns: 12;
+  --col-gap: var(--data-grid-gap-medium);
 
   display: grid;
   grid-template-rows: repeat(2, auto);
@@ -434,24 +490,24 @@ dl {
   .payment-details {
     display: grid;
     align-items: flex-start;
-    grid-template-columns: repeat(9, 1fr);
-    column-gap: var(--data-grid-col-gap);
+    grid-template-columns: repeat(var(--columns), 1fr);
+    column-gap: var(--col-gap);
   }
 
   .qrcode-area {
-    grid-area: 1 / 1 / 1 / 4;
+    grid-column: span 3;
   }
 
   .payment-details-data {
-    grid-area: 1 / 4 / 2 / 10;
+    grid-column: span 9;
   }
 
   .payment-details-data-1st-block {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: 1fr auto;
-    row-gap: var(--data-grid-row-gap-small);
-    column-gap: var(--data-grid-col-gap-small);
+    row-gap: var(--data-grid-gap-xsmall);
+    column-gap: var(--data-grid-gap-small);
 
     & .amount {
       margin: 0;
@@ -468,8 +524,131 @@ dl {
 
   .payment-details-data-2nd-block {
     display: grid;
-    margin-top: var(--data-grid-row-gap-medium);
+    margin-top: var(--data-grid-gap-medium);
     grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.notice-poste-payment-data {
+  --columns: 12;
+  --col-gap: var(--data-grid-gap-medium);
+
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  row-gap: var(--separator-bottom-margin);
+  margin-bottom: var(--section-margin);
+  margin-top: var(--separator-margin-small);
+
+  .payment-details {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    column-gap: var(--col-gap);
+  }
+
+  .header-bollettino-postale {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    column-gap: var(--col-gap);
+
+    & .title {
+      grid-column: span 3;
+    }
+
+    & .logo-and-date {
+      grid-column: span 9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    & .logo-bancoposta {
+      width: 20mm;
+    }
+  }
+
+  .poste-italiane-area {
+    grid-column: span 3;
+    display: grid;
+    row-gap: var(--data-grid-gap-small);
+  }
+
+  .logo-poste-italiane {
+    width: 90%;
+  }
+
+  .logo-bollettino-postale {
+    width: 75%;
+  }
+
+  .euro-block {
+    width: 8mm;
+    height: auto;
+  }
+
+  .account-number-and-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--data-grid-gap-medium);
+  }
+
+  & .account-number {
+    display: flex;
+    align-items: center;
+    gap: var(--data-grid-gap-xsmall);
+  }
+
+  .poste-scissors {
+    position: absolute;
+    right: var(--page-margin);
+    top: 0;
+    transform: translateY(-100%);
+  }
+
+  .payment-details-data {
+    grid-column: span 9;
+  }
+
+  .payment-details-and-datamatrix {
+    display: grid;
+    grid-template-areas: "first-block data-matrix"
+      "second-block data-matrix";
+    grid-template-columns: 1fr auto;
+    gap: var(--data-grid-gap-medium);
+  }
+
+  .payment-details-data-1st-block {
+    grid-area: first-block;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: var(--data-grid-gap-xsmall);
+
+    & .amount {
+      margin: 0;
+      font-size: var(--h4-fsize);
+      font-weight: var(--weight-regular);
+    }
+
+    & .amount strong {
+      font-family: var(--font-monospaced);
+      font-size: var(--data-fsize-large);
+      font-weight: var(--weight-bold);
+    }
+  }
+
+  .payment-details-data-2nd-block {
+    grid-area: second-block;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: var(--data-grid-gap-small);
+  }
+
+  .payment-data-matrix {
+    grid-area: data-matrix;
+    width: var(--size-data-matrix);
+    height: var(--size-data-matrix);
   }
 }
 
