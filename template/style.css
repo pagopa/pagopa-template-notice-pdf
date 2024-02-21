@@ -331,8 +331,6 @@ dl {
 /* Notice Header */
 
 .notice-header {
-  --entity-logo-margin: 4mm;
-
   display: flex;
   align-items: flex-start;
   padding: var(--page-margin);
@@ -368,7 +366,6 @@ dl {
     display: block;
     width: var(--size-entity-logo);
     height: var(--size-entity-logo);
-    margin-bottom: var(--entity-logo-margin);
   }
 }
 
@@ -728,7 +725,7 @@ dl {
   align-items: flex-start;
   gap: var(--data-grid-gap-xsmall);
   margin-inline: var(--page-margin);
-  margin-block-end: var(--data-grid-gap-xsmall);
+  margin-block-end: var(--data-grid-gap-small);
 
   & .arrow-icon {
     width: var(--size-arrow-icon);
