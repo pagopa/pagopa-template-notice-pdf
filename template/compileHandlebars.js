@@ -44,6 +44,10 @@ const noticePaymentQRCol = fs.readFileSync(
   `${partialPath}/notice-payment-qrcode-col.hbs`,
   "utf8"
 );
+const noticePaymentQRColCompact = fs.readFileSync(
+  `${partialPath}/notice-payment-qrcode-col-compact.hbs`,
+  "utf8"
+);
 const noticePaymentBollettino = fs.readFileSync(
   `${partialPath}/notice-payment-bollettino.hbs`,
   "utf8"
@@ -54,8 +58,12 @@ const noticePaymentInfoInfraction = fs.readFileSync(
   "utf8"
 );
 // Multiple instalments
-const noticePaymentMultipleInstalments = fs.readFileSync(
-  `${partialPath}/notice-payment-multiple-instalments.hbs`,
+const noticePaymentMultipleInstalments2col = fs.readFileSync(
+  `${partialPath}/notice-payment-multiple-instalments-2col.hbs`,
+  "utf8"
+);
+const noticePaymentMultipleInstalments3col = fs.readFileSync(
+  `${partialPath}/notice-payment-multiple-instalments-3col.hbs`,
   "utf8"
 );
 
@@ -70,6 +78,10 @@ Handlebars.registerPartial("noticePaymentPoste", noticePaymentPoste);
 //-- Commons
 Handlebars.registerPartial("noticePaymentQR", noticePaymentQR);
 Handlebars.registerPartial("noticePaymentQRCol", noticePaymentQRCol);
+Handlebars.registerPartial(
+  "noticePaymentQRColCompact",
+  noticePaymentQRColCompact
+);
 Handlebars.registerPartial("noticePaymentBollettino", noticePaymentBollettino);
 //-- Infractions
 Handlebars.registerPartial(
@@ -78,8 +90,12 @@ Handlebars.registerPartial(
 );
 // Multiple instalments
 Handlebars.registerPartial(
-  "noticePaymentMultipleInstalments",
-  noticePaymentMultipleInstalments
+  "noticePaymentMultipleInstalments2col",
+  noticePaymentMultipleInstalments2col
+);
+Handlebars.registerPartial(
+  "noticePaymentMultipleInstalments3col",
+  noticePaymentMultipleInstalments3col
 );
 
 // Parsing command-line arguments for dynamic JSON file and template file path

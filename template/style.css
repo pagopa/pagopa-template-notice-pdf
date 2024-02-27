@@ -26,6 +26,7 @@
   /* Element sizes */
   --size-entity-logo: 30mm;
   --size-qrcode: 25mm;
+  --size-qrcode-small: 20mm;
   --size-data-matrix: 25mm;
   --size-info-icon: 4mm;
   --size-arrow-icon: 4mm;
@@ -749,7 +750,7 @@ dl {
 
 .instalment-payment-data {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(var(--columns), 1fr);
   column-gap: var(--data-grid-gap-medium);
   margin-inline: var(--inner-margin);
 }
@@ -773,6 +774,18 @@ dl {
     & .qrcode-area {
       grid-column-start: 2;
       grid-row: 1 / 4;
+    }
+  }
+
+  & .instalment-details-data-1st-block.compact {
+    & .qrcode-area {
+      grid-column-start: 2;
+      grid-row: 1 / 3;
+    }
+
+    & .payment-qrcode {
+      width: var(--size-qrcode-small);
+      height: var(--size-qrcode-small);
     }
   }
 
