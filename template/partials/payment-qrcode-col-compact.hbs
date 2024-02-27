@@ -1,34 +1,34 @@
 <div class="instalment-details">
   <div class="instalment-details-data-1st-block compact">
     <div class="qrcode-area">
-      <img class="payment-qrcode" src="assets/fake-qrcode.svg" alt="QR PaymentCode" />
+      <img class="payment-qrcode" src={{qrCode}} alt="QR PaymentCode" />
     </div>
 
     <dl class="data-key-value-monospaced tight">
       <dt>Euro</dt>
-      <dd>14,00</dd>
+      <dd>{{amount}}</dd>
     </dl>
 
     <dl class="data-key-value-monospaced tight">
       <dt>Entro il</dt>
-      <dd>31/03/2024</dd>
+      <dd>{{expiryDate}}</dd>
     </dl>
 
     <div class="grid-cell-span-2">
       <dl class="data-key-value-monospaced tight">
         <dt>Cod. Avviso</dt>
-        <dd>0000 0000 0000 0000 00</dd>
+        <dd>{{splitAndSpace refNumber}}</dd>
       </dl>
     </div>
 
     <div class="grid-cell-span-2 instalment-row-data">
       <dl class="data-key-value-monospaced tight">
         <dt>Cod. Fiscale Ente</dt>
-        <dd>82001760675</dd>
+        <dd>{{payeeTaxCode}}</dd>
       </dl>
       <dl class="data-key-value-monospaced tight">
         <dt>Cod. CBILL</dt>
-        <dd>78Q45</dd>
+        <dd>{{cbillCode}}</dd>
       </dl>
     </div>
 

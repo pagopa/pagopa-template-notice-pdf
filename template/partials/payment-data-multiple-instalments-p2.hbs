@@ -7,7 +7,7 @@
     <div class="payment-data-compact-row">
       <dl class="data-key-value">
         <dt>Destinatario</dt>
-        <dd>Marzia Roccaraso</dd>
+        <dd class="forcedCapitalCase">{{lowercase debtor.fullName}}</dd>
       </dl>
       <dl class="data-key-value">
         <dt>Ente creditore</dt>
@@ -25,8 +25,21 @@
     </div>
   </div>
 
-  {{> paymentMultipleInstalments3col }}
-  {{> paymentMultipleInstalments3col }}
-  {{> paymentMultipleInstalments3col }}
+  <section class="instalment-payment-data" style="--columns: 3">
+
+    {{#each (slice notice.instalments.items 3)}}
+
+    <div>
+      <div class="inner-separator">
+        <h3 class="small-caps-title">Rata {{add @index 4}}</h3>
+      </div>
+      {{#with this}}
+      {{> paymentQRColCompact }}
+      {{/with}}
+    </div>
+
+    {{/each}}
+
+  </section>
 
 </section>

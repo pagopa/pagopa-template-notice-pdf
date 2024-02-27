@@ -3,11 +3,15 @@ const Handlebars = require("handlebars");
 
 // Import helpers
 const eq = require("./helpers/eq.js");
+const add = require("./helpers/add.js");
+const slice = require("./helpers/slice.js");
 const not = require("./helpers/not.js");
 const splitAndSpace = require("./helpers/splitAndSpace.js");
 const lowercase = require("./helpers/lowercase.js");
 // Register helpers
 Handlebars.registerHelper("eq", eq);
+Handlebars.registerHelper("add", add);
+Handlebars.registerHelper("slice", slice);
 Handlebars.registerHelper("not", not);
 Handlebars.registerHelper("splitAndSpace", splitAndSpace);
 Handlebars.registerHelper("lowercase", lowercase);
@@ -40,8 +44,11 @@ const paymentMultipleInstalments2col = importPartial(
 const paymentMultipleInstalments3col = importPartial(
   `payment-multiple-instalments-3col`
 );
-const paymentDataMultipleInstalments = importPartial(
-  `payment-data-multiple-instalments`
+const paymentDataMultipleInstalmentsP1 = importPartial(
+  `payment-data-multiple-instalments-p1`
+);
+const paymentDataMultipleInstalmentsP2 = importPartial(
+  `payment-data-multiple-instalments-p2`
 );
 
 // Register partials
@@ -73,8 +80,12 @@ Handlebars.registerPartial(
   paymentMultipleInstalments3col
 );
 Handlebars.registerPartial(
-  "paymentDataMultipleInstalments",
-  paymentDataMultipleInstalments
+  "paymentDataMultipleInstalmentsP1",
+  paymentDataMultipleInstalmentsP1
+);
+Handlebars.registerPartial(
+  "paymentDataMultipleInstalmentsP2",
+  paymentDataMultipleInstalmentsP2
 );
 
 // Parsing command-line arguments for dynamic JSON file and template file path

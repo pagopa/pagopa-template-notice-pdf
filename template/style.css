@@ -358,6 +358,14 @@ dl {
   gap: var(--data-grid-gap-xsmall);
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.forcedCapitalCase {
+  text-transform: capitalize;
+}
+
 /* Notice Header */
 
 .notice-header {
@@ -762,7 +770,7 @@ dl {
 .instalment-payment-data {
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
-  column-gap: var(--data-grid-gap-medium);
+  gap: var(--data-grid-gap-medium);
   margin-inline: var(--inner-margin);
 }
 
@@ -809,8 +817,4 @@ dl {
     display: grid;
     row-gap: var(--data-grid-gap-xsmall);
   }
-}
-
-.forcedCapitalCase {
-  text-transform: capitalize;
 }

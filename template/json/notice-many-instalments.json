@@ -1,0 +1,123 @@
+{
+  "debtor": {
+    "fullName": "MARIA ROSSI",
+    "taxCode": "rssMRA00A41C972V",
+    "address": "Corso Sempione",
+    "buildingNumber": "55",
+    "postalCode": "20149",
+    "city": "Milano",
+    "province": "MI"
+  },
+  "payee": {
+    "logo": "https://assets.cdn.io.italia.it/logos/organizations/82001760675.png",
+    "name": "Comune di Controguerra",
+    "taxCode": 82001760675,
+    "sector": "Servizio Pagamenti",
+    "additionalInfo": "Centralino: 0861 809901",
+    "channel": {
+      "online": "sul sito del Comune di Milano",
+      "physical": ""
+    }
+  },
+  "notice": {
+    "subject": "Trasporto Scolastico A.S. 2021/2022",
+    "amount": "152,00",
+    "expiryDate": "24/10/2024",
+    "qrCode": "assets/fake-qrcode.svg",
+    "additionalInfo": "boh?",
+    "refNumber": "123456789012345678",
+    "cbillCode": "78Q45",
+    "instalments": {
+      "items": [
+        {
+          "refNumber": "123456789012345678",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/12/2024",
+          "cbillCode": "78Q44",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345678",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/01/2025",
+          "cbillCode": "78Q45",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345679",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/02/2025",
+          "cbillCode": "78Q46",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345680",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/03/2025",
+          "cbillCode": "78Q47",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345681",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/04/2025",
+          "cbillCode": "78Q48",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345682",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/05/2025",
+          "cbillCode": "78Q49",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345683",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/06/2025",
+          "cbillCode": "78Q50",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345684",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/07/2025",
+          "cbillCode": "78Q51",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345685",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/08/2025",
+          "cbillCode": "78Q52",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345686",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/09/2025",
+          "cbillCode": "78Q53",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345687",
+          "payeeTaxCode": "82001760675",
+          "amount": "150,00",
+          "expiryDate": "20/10/2025",
+          "cbillCode": "78Q54",
+          "qrCode": "assets/fake-qrcode.svg"
+        }
+      ]
+    }
+  }
+}
