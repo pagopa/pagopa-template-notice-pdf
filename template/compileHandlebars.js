@@ -14,88 +14,60 @@ Handlebars.registerHelper("lowercase", lowercase);
 
 // Import partials
 const partialPath = `./partials`;
-const header = fs.readFileSync(`${partialPath}/header.hbs`, "utf8");
-const noticeMainInfo = fs.readFileSync(
-  `${partialPath}/notice-main-info.hbs`,
-  "utf8"
-);
-const noticePaymentInfo = fs.readFileSync(
-  `${partialPath}/notice-payment-info.hbs`,
-  "utf8"
-);
-const noticePaymentMethods = fs.readFileSync(
-  `${partialPath}/notice-payment-methods.hbs`,
-  "utf8"
-);
-const noticePaymentData = fs.readFileSync(
-  `${partialPath}/notice-payment-data.hbs`,
-  "utf8"
-);
-const noticePaymentPoste = fs.readFileSync(
-  `${partialPath}/notice-payment-poste.hbs`,
-  "utf8"
-);
+const importPartial = (fileName) =>
+  fs.readFileSync(`${partialPath}/${fileName}.hbs`, "utf8");
+
+const header = importPartial(`header`);
+const mainInfo = importPartial(`main-info`);
+const paymentInfo = importPartial(`payment-info`);
+const paymentMethods = importPartial(`payment-methods`);
+const paymentData = importPartial(`payment-data`);
+const paymentPoste = importPartial(`payment-poste`);
 // Common partials
-const noticePaymentQR = fs.readFileSync(
-  `${partialPath}/notice-payment-qrcode.hbs`,
-  "utf8"
-);
-const noticePaymentQRCol = fs.readFileSync(
-  `${partialPath}/notice-payment-qrcode-col.hbs`,
-  "utf8"
-);
-const noticePaymentQRColCompact = fs.readFileSync(
-  `${partialPath}/notice-payment-qrcode-col-compact.hbs`,
-  "utf8"
-);
-const noticePaymentBollettino = fs.readFileSync(
-  `${partialPath}/notice-payment-bollettino.hbs`,
-  "utf8"
-);
+const paymentQR = importPartial(`payment-qrcode`);
+const paymentQRCol = importPartial(`payment-qrcode-col`);
+const paymentQRColCompact = importPartial(`payment-qrcode-col-compact`);
+const paymentBollettino = importPartial(`payment-bollettino`);
 // Codice della Strada's infraction
-const noticePaymentInfoInfraction = fs.readFileSync(
-  `${partialPath}/notice-payment-info-infraction.hbs`,
-  "utf8"
-);
+const paymentInfoInfraction = importPartial(`payment-info-infraction`);
 // Multiple instalments
-const noticePaymentMultipleInstalments2col = fs.readFileSync(
-  `${partialPath}/notice-payment-multiple-instalments-2col.hbs`,
-  "utf8"
+const paymentMultipleInstalments2col = importPartial(
+  `payment-multiple-instalments-2col`
 );
-const noticePaymentMultipleInstalments3col = fs.readFileSync(
-  `${partialPath}/notice-payment-multiple-instalments-3col.hbs`,
-  "utf8"
+const paymentMultipleInstalments3col = importPartial(
+  `payment-multiple-instalments-3col`
+);
+const paymentDataMultipleInstalments = importPartial(
+  `payment-data-multiple-instalments`
 );
 
 // Register partials
 Handlebars.registerPartial("header", header);
-Handlebars.registerPartial("noticeMainInfo", noticeMainInfo);
-Handlebars.registerPartial("noticePaymentInfo", noticePaymentInfo);
-Handlebars.registerPartial("noticePaymentMethods", noticePaymentMethods);
-Handlebars.registerPartial("noticePaymentData", noticePaymentData);
-Handlebars.registerPartial("noticePaymentPoste", noticePaymentPoste);
+Handlebars.registerPartial("mainInfo", mainInfo);
+Handlebars.registerPartial("paymentInfo", paymentInfo);
+Handlebars.registerPartial("paymentMethods", paymentMethods);
+Handlebars.registerPartial("paymentData", paymentData);
+Handlebars.registerPartial("paymentPoste", paymentPoste);
 
 //-- Commons
-Handlebars.registerPartial("noticePaymentQR", noticePaymentQR);
-Handlebars.registerPartial("noticePaymentQRCol", noticePaymentQRCol);
-Handlebars.registerPartial(
-  "noticePaymentQRColCompact",
-  noticePaymentQRColCompact
-);
-Handlebars.registerPartial("noticePaymentBollettino", noticePaymentBollettino);
+Handlebars.registerPartial("paymentQR", paymentQR);
+Handlebars.registerPartial("paymentQRCol", paymentQRCol);
+Handlebars.registerPartial("paymentQRColCompact", paymentQRColCompact);
+Handlebars.registerPartial("paymentBollettino", paymentBollettino);
 //-- Infractions
-Handlebars.registerPartial(
-  "noticePaymentInfoInfraction",
-  noticePaymentInfoInfraction
-);
+Handlebars.registerPartial("paymentInfoInfraction", paymentInfoInfraction);
 // Multiple instalments
 Handlebars.registerPartial(
-  "noticePaymentMultipleInstalments2col",
-  noticePaymentMultipleInstalments2col
+  "paymentMultipleInstalments2col",
+  paymentMultipleInstalments2col
 );
 Handlebars.registerPartial(
-  "noticePaymentMultipleInstalments3col",
-  noticePaymentMultipleInstalments3col
+  "paymentMultipleInstalments3col",
+  paymentMultipleInstalments3col
+);
+Handlebars.registerPartial(
+  "paymentDataMultipleInstalments",
+  paymentDataMultipleInstalments
 );
 
 // Parsing command-line arguments for dynamic JSON file and template file path

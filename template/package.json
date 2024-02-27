@@ -6,8 +6,10 @@
   "main": "index.js",
   "scripts": {
     "generate": "node compileHandlebars && node generatePDF",
-    "generate-multiples-of-3": "node compileHandlebars --templateFile template-multiples-of-3.hbs && node generatePDF",
-    "generate-multiples-of-2": "node compileHandlebars --templateFile template-multiples-of-2.hbs && node generatePDF",
+    "generate-instalments-multiples-of-3": "node compileHandlebars --templateFile template-instalments-multiples-of-3.hbs && node generatePDF",
+    "generate-instalments-multiples-of-2": "node compileHandlebars --templateFile template-instalments-multiples-of-2.hbs && node generatePDF",
+    "generate-many-instalments-p1": "node compileHandlebars --templateFile template-many-instalments-p1.hbs && node generatePDF",
+    "generate-many-instalments-p2": "node compileHandlebars --templateFile template-many-instalments-p2.hbs && node generatePDF",
     "generate-cds-infraction-1": "node compileHandlebars --templateFile template-cds-infraction.hbs --dataFile notice-infraction.json && node generatePDF"
   },
   "dependencies": {
