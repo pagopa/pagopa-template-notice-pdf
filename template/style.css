@@ -346,6 +346,18 @@ dl {
   height: var(--size-qrcode);
 }
 
+.info-icon {
+  align-self: flex-start;
+  width: var(--size-info-icon);
+  height: var(--size-info-icon);
+}
+
+.info-paragraph {
+  display: flex;
+  align-items: center;
+  gap: var(--data-grid-gap-xsmall);
+}
+
 /* Notice Header */
 
 .notice-header {
@@ -482,18 +494,6 @@ dl {
     display: grid;
     gap: var(--data-grid-gap-xsmall);
   }
-
-  & .info-icon {
-    align-self: flex-start;
-    width: var(--size-info-icon);
-    height: auto;
-  }
-
-  & .info-paragraph {
-    display: flex;
-    align-items: center;
-    gap: var(--data-grid-gap-xsmall);
-  }
 }
 
 .payment-amount-block {
@@ -604,6 +604,17 @@ dl {
     margin-top: var(--data-grid-gap-small);
     grid-template-columns: repeat(8, 1fr);
   }
+}
+
+.payment-data-compact {
+  display: grid;
+  row-gap: var(--data-grid-gap-medium);
+}
+
+.payment-data-compact-row {
+  display: flex;
+  gap: var(--data-grid-gap-large);
+  align-items: flex-start;
 }
 
 .notice-poste-payment-data {

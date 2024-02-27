@@ -8,5 +8,7 @@
       <h1 class="h1">{{notice.subject}}</h1>
     </div>
   </section>
+  {{#if payee.logo}}
   <img class="notice-header-logo" alt="{{payee.name}}" src="{{payee.logo}}" />
+  {{/if}}
 </header>

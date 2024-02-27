@@ -3,6 +3,30 @@
     <h3 class="small-caps-title">Dati per il pagamento</h3>
   </div>
 
+  <div class="payment-data-compact unique-grid-cell">
+    <div class="payment-data-compact-row">
+      <dl class="data-key-value">
+        <dt>Destinatario</dt>
+        <dd>Marzia Roccaraso</dd>
+      </dl>
+      <dl class="data-key-value">
+        <dt>Ente creditore</dt>
+        <dd>{{payee.name}}</dd>
+      </dl>
+      <dl class="data-key-value">
+        <dt>Oggetto del pagamento</dt>
+        <dd>{{notice.subject}}</dd>
+      </dl>
+    </div>
+    <div class="info-paragraph">
+      <img src="./assets/icon-info.svg" class="info-icon" aria-hidden="true" />
+      <p class="body">Inquadra il <strong>codice QR</strong> con la tua app di pagamento o usa i dati
+        sotto</p>
+    </div>
+  </div>
+
+  {{> paymentMultipleInstalments3col }}
+  {{> paymentMultipleInstalments3col }}
   {{> paymentMultipleInstalments3col }}
 
 </section>

@@ -31,6 +31,9 @@ const paymentBollettino = importPartial(`payment-bollettino`);
 // Codice della Strada's infraction
 const paymentInfoInfraction = importPartial(`payment-info-infraction`);
 // Multiple instalments
+const paymentInfoMultipleInstalments = importPartial(
+  `payment-info-multiple-instalments`
+);
 const paymentMultipleInstalments2col = importPartial(
   `payment-multiple-instalments-2col`
 );
@@ -57,6 +60,10 @@ Handlebars.registerPartial("paymentBollettino", paymentBollettino);
 //-- Infractions
 Handlebars.registerPartial("paymentInfoInfraction", paymentInfoInfraction);
 // Multiple instalments
+Handlebars.registerPartial(
+  "paymentInfoMultipleInstalments",
+  paymentInfoMultipleInstalments
+);
 Handlebars.registerPartial(
   "paymentMultipleInstalments2col",
   paymentMultipleInstalments2col
