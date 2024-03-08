@@ -1,9 +1,15 @@
 <section class="notice-payment-data">
   <div class="unique-separator">
-    <h3 class="small-caps-title">Dati per il pagamento</h3>
-    <p class="h4">Rata unica entro il 31/03/2024</span></p>
+    <h3 class="small-caps-title">
+      {{#if title}}
+      {{title}}
+      {{else}}
+      Dati per il pagamento
+      {{/if}}
+    </h3>
+    {{{subtitle}}}
   </div>
 
-  {{> paymentQR }}
+  {{> paymentQR}}
 
 </section>

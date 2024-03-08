@@ -4,27 +4,17 @@
   </div>
 
   <div class="payment-amount-block-infraction start-grid-cell">
-    <div class="amount-1">
-      <dl>
-        <dt class="body strong">Importo scontato del 30%</dt>
-        <dd class="h1">{{notice.instalments.discounted.amount}} Euro</dd>
-      </dl>
-      <p class="body amount-details">
-        <strong>entro 5 giorni</strong><br />
-        dalla notifica del verbale
-      </p>
-    </div>
-    <div class="amount-2">
-      <dl>
-        <dt class="body strong">Importo ridotto</dt>
-        <dd class="h1">{{notice.instalments.reduced.amount}} Euro</dd>
-      </dl>
-      <p class="body amount-details">
-        <strong>dal 6º al 60º giorno</strong><br />
-        dalla notifica del verbale
-      </p>
+    <div class="amount-one-line grid-cell-span-2">
+      <p class="h1 not-shrinking">{{notice.instalments.reduced.amount}} Euro</p>
+      <p class="body"><strong>Importo ridotto dal 6° al 60° giorno</strong> dalla notifica del verbale</p>
     </div>
     <div class="info-block">
+      <div class="info-paragraph">
+        <img src="./assets/icon-info.svg" class="info-icon" aria-hidden="true" />
+        <p class="body">Scegli l'importo corretto per i termini previsti, altrimenti riceverai altre richieste di
+          pagamento per le somme residue
+          ed eventuali somme aggiuntive.</p>
+      </div>
       <div class="info-paragraph">
         <img src="./assets/icon-calendar.svg" class="info-icon" aria-hidden="true" />
         <div>

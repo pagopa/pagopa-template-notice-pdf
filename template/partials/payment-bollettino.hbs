@@ -6,7 +6,7 @@
     <p class="body">Bollettino Postale pagabile in tutti gli Uffici Postali e sui canali fisici o
       digitali abilitati di Poste Italiane e dell’Ente Creditore</p>
     <p class="caption">
-      &lt;autorizzazione&gt;
+      {{notice.posteAuth}}
     </p>
   </div>
 
@@ -17,13 +17,13 @@
         <img class="euro-block" src="assets/poste/euro-block.svg" alt="Euro" />
         <dl class="data-key-value-inline-monospaced">
           <dt>sul C/C n.</dt>
-          <dd>01023103</dd>
+          <dd>{{notice.posteAccountNumber}}</dd>
         </dl>
       </div>
 
       <dl class="data-key-value-inline-monospaced align-right">
         <dt>Euro</dt>
-        <dd>14,00</dd>
+        <dd>{{this.amount}}</dd>
       </dl>
     </div>
 
@@ -33,13 +33,13 @@
 
         <dl class="data-key-value-inline">
           <dt>Intestato a</dt>
-          <dd>Maria Rossi</dd>
+          <dd>{{payee.name}}</dd>
         </dl>
 
 
         <dl class="data-key-value-inline">
           <dt>Destinatario</dt>
-          <dd>Comune di Controguerra</dd>
+          <dd class="forcedCapitalCase">{{lowercase debtor.fullName}}</dd>
         </dl>
 
 
@@ -56,7 +56,7 @@
         <div class="grid-cell-span-4">
           <dl class="data-key-value-monospaced">
             <dt>Cod. Avviso</dt>
-            <dd>0000 0000 0000 0000 00</dd>
+            <dd>{{splitAndSpace this.refNumber}}</dd>
           </dl>
         </div>
 
@@ -70,7 +70,7 @@
         <div class="grid-cell-span-3 align-right">
           <dl class="data-key-value-monospaced">
             <dt>Cod. Fiscale Ente Creditore</dt>
-            <dd>82001760675</dd>
+            <dd>{{payee.taxCode}}</dd>
           </dl>
         </div>
 
@@ -78,7 +78,7 @@
       </div>
 
       <div class="payment-data-matrix">
-        <img src="assets/poste/fake-data-matrix.svg" alt="Poste DataMatrix" />
+        <img src={{this.posteDataMatrix}} alt="Poste DataMatrix" />
       </div>
     </div>
 

@@ -20,7 +20,7 @@
   --data-fsize-medium: 10pt;
   --data-fsize-small: 8pt;
   --body-fsize: 8pt;
-  --caption-fsize: 8pt;
+  --caption-fsize: 7pt;
   --weight-bold: 700;
   --weight-regular: 400;
   /* Element sizes */
@@ -120,6 +120,10 @@
   font-size: var(--h4-fsize);
   font-weight: var(--weight-bold);
   line-height: 1.2;
+
+  &.light {
+    font-weight: var(--weight-regular);
+  }
 }
 
 .h5 {
@@ -159,6 +163,10 @@
 
 .align-right {
   text-align: right;
+}
+
+.not-shrinking {
+  flex-shrink: 0;
 }
 
 body {
@@ -547,6 +555,11 @@ dl {
 
   & .amount-2 {
     grid-area: amount-2;
+  }
+
+  & .amount-one-line {
+    display: flex;
+    gap: var(--data-grid-gap-medium);
   }
 }
 

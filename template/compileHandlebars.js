@@ -18,8 +18,7 @@ Handlebars.registerHelper("lowercase", lowercase);
 
 // Import partials
 const partialPath = `./partials`;
-const importPartial = (fileName) =>
-  fs.readFileSync(`${partialPath}/${fileName}.hbs`, "utf8");
+const importPartial = (fileName) => fs.readFileSync(`${partialPath}/${fileName}.hbs`, "utf8");
 
 const header = importPartial(`header`);
 const mainInfo = importPartial(`main-info`);
@@ -34,22 +33,15 @@ const paymentQRColCompact = importPartial(`payment-qrcode-col-compact`);
 const paymentBollettino = importPartial(`payment-bollettino`);
 // Codice della Strada's infraction
 const paymentInfoInfraction = importPartial(`payment-info-infraction`);
+const paymentInfoInfractionP1 = importPartial(`payment-info-infraction-p1`);
+const paymentInfoInfractionP2 = importPartial(`payment-info-infraction-p2`);
+const paymentSeparatorInfraction = importPartial(`payment-separator-infraction`);
 // Multiple instalments
-const paymentInfoMultipleInstalments = importPartial(
-  `payment-info-multiple-instalments`
-);
-const paymentMultipleInstalments2col = importPartial(
-  `payment-multiple-instalments-2col`
-);
-const paymentMultipleInstalments3col = importPartial(
-  `payment-multiple-instalments-3col`
-);
-const paymentDataMultipleInstalmentsP1 = importPartial(
-  `payment-data-multiple-instalments-p1`
-);
-const paymentDataMultipleInstalmentsP2 = importPartial(
-  `payment-data-multiple-instalments-p2`
-);
+const paymentInfoMultipleInstalments = importPartial(`payment-info-multiple-instalments`);
+const paymentMultipleInstalments2col = importPartial(`payment-multiple-instalments-2col`);
+const paymentMultipleInstalments3col = importPartial(`payment-multiple-instalments-3col`);
+const paymentDataMultipleInstalmentsP1 = importPartial(`payment-data-multiple-instalments-p1`);
+const paymentDataMultipleInstalmentsP2 = importPartial(`payment-data-multiple-instalments-p2`);
 
 // Register partials
 Handlebars.registerPartial("header", header);
@@ -66,27 +58,15 @@ Handlebars.registerPartial("paymentQRColCompact", paymentQRColCompact);
 Handlebars.registerPartial("paymentBollettino", paymentBollettino);
 //-- Infractions
 Handlebars.registerPartial("paymentInfoInfraction", paymentInfoInfraction);
+Handlebars.registerPartial("paymentInfoInfractionP1", paymentInfoInfractionP1);
+Handlebars.registerPartial("paymentInfoInfractionP2", paymentInfoInfractionP2);
+Handlebars.registerPartial("paymentSeparatorInfraction", paymentSeparatorInfraction);
 // Multiple instalments
-Handlebars.registerPartial(
-  "paymentInfoMultipleInstalments",
-  paymentInfoMultipleInstalments
-);
-Handlebars.registerPartial(
-  "paymentMultipleInstalments2col",
-  paymentMultipleInstalments2col
-);
-Handlebars.registerPartial(
-  "paymentMultipleInstalments3col",
-  paymentMultipleInstalments3col
-);
-Handlebars.registerPartial(
-  "paymentDataMultipleInstalmentsP1",
-  paymentDataMultipleInstalmentsP1
-);
-Handlebars.registerPartial(
-  "paymentDataMultipleInstalmentsP2",
-  paymentDataMultipleInstalmentsP2
-);
+Handlebars.registerPartial("paymentInfoMultipleInstalments", paymentInfoMultipleInstalments);
+Handlebars.registerPartial("paymentMultipleInstalments2col", paymentMultipleInstalments2col);
+Handlebars.registerPartial("paymentMultipleInstalments3col", paymentMultipleInstalments3col);
+Handlebars.registerPartial("paymentDataMultipleInstalmentsP1", paymentDataMultipleInstalmentsP1);
+Handlebars.registerPartial("paymentDataMultipleInstalmentsP2", paymentDataMultipleInstalmentsP2);
 
 // Parsing command-line arguments for dynamic JSON file and template file path
 const args = process.argv.slice(2); // Remove the first two elements
