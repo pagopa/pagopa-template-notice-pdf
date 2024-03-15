@@ -20,10 +20,23 @@
         {{> mainInfo }}
         {{!-- Row 2 --}}
         {{> paymentInfo }}
+
+        {{#with notice}}
+
         {{!-- Row 3 - pagoPA QR Code --}}
-        {{> paymentData }}
+        {{> paymentData
+        debtor=../debtor
+        notice=../notice
+        payee=../payee
+        }}
         {{!-- Row 4 - Multiple instalments --}}
-        {{> paymentMultipleInstalments3col }}
+        {{> paymentMultipleInstalments3col
+        debtor=../debtor
+        notice=../notice
+        payee=../payee
+        }}
+
+        {{/with}}
       </main>
     </div>
   </div>

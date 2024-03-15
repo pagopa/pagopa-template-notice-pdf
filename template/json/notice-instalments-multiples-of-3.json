@@ -1,0 +1,59 @@
+{
+  "debtor": {
+    "fullName": "MARZIA ROCCARASO",
+    "taxCode": "rccmrz88A52C409A",
+    "address": "Corso Sempione",
+    "buildingNumber": "55",
+    "postalCode": "20149",
+    "city": "Milano",
+    "province": "MI"
+  },
+  "payee": {
+    "logo": "https://assets.cdn.io.italia.it/logos/organizations/82001760675.png",
+    "name": "Comune di Controguerra",
+    "taxCode": 82001760676,
+    "sector": "Servizio Pagamenti",
+    "additionalInfo": "Info: www.cittadicapri.it",
+    "channel": {
+      "online": "sul sito del Comune di Milano",
+      "physical": ""
+    }
+  },
+  "notice": {
+    "subject": "Trasporto Scolastico A.S. 2021/2022",
+    "amount": "176,60",
+    "expiryDate": "24/10/2024",
+    "qrCode": "assets/fake-qrcode.svg",
+    "additionalInfo": "boh?",
+    "refNumber": "123456789012345688",
+    "cbillCode": "78Q45",
+    "instalments": {
+      "items": [
+        {
+          "refNumber": "123456789012345678",
+          "payeeTaxCode": "82001760676",
+          "amount": "68,40",
+          "expiryDate": "20/12/2024",
+          "cbillCode": "78Q44",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345679",
+          "payeeTaxCode": "82001760676",
+          "amount": "83,60",
+          "expiryDate": "20/01/2025",
+          "cbillCode": "78Q45",
+          "qrCode": "assets/fake-qrcode.svg"
+        },
+        {
+          "refNumber": "123456789012345680",
+          "payeeTaxCode": "82001760677",
+          "amount": "24,60",
+          "expiryDate": "20/03/2025",
+          "cbillCode": "78Q46",
+          "qrCode": "assets/fake-qrcode.svg"
+        }
+      ]
+    }
+  }
+}
