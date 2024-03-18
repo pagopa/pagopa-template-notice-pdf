@@ -2,7 +2,7 @@ var QRCode = require("qrcode-svg");
 
 function genQrCode(data) {
   var qrcode = new QRCode({
-    content: "http://github.com/",
+    content: data,
     padding: 0,
     width: 256,
     height: 256,
