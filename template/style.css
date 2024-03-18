@@ -508,6 +508,7 @@ dl {
   & .info-block {
     grid-area: info;
     display: grid;
+    align-items: flex-start;
     gap: var(--data-grid-gap-xsmall);
   }
 }
@@ -516,6 +517,7 @@ dl {
   --payment-value-margin: 1.5mm;
 
   display: grid;
+  align-content: flex-start;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "amount amount date"
     "info info info";
