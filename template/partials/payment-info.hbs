@@ -6,12 +6,16 @@
   <div class="payment-amount-block start-grid-cell">
     <dl class="amount">
       <dt class="body strong">Importo</dt>
-      <dd class="h1">{{notice.amount}}</dd>
+      <dd class="h1">{{notice.amount}} Euro</dd>
     </dl>
+
+    {{#if notice.expiryDate}}
     <dl class="expiry-date">
       <dt class="body strong">entro il</dt>
       <dd class="h1">{{notice.expiryDate}}</dd>
     </dl>
+    {{/if}}
+
     <div class="info-block">
       <div class="info-paragraph">
         <img src="./assets/icon-info.svg" class="info-icon" aria-hidden="true" />

@@ -7,7 +7,15 @@
       Dati per il pagamento
       {{/if}}
     </h3>
+    {{#if subtitle}}
     {{{subtitle}}}
+    {{else}}
+    {{#if notice.expiryDate}}
+    <p class='h4'>Rata unica entro il {{notice.expiryDate}}</p>
+    {{else}}
+    <p class='h4'>Rata unica</p>
+    {{/if}}
+    {{/if}}
   </div>
 
   {{> paymentQR}}
