@@ -32,7 +32,6 @@
     "instalments": {
       "discounted": {
         "refNumber": "123456789012345678",
-        "payeeTaxCode": "82001760675",
         "amount": "1238,70",
         "cbillCode": "78Q45",
         "qrCode": "assets/fake-qrcode.svg",
@@ -40,7 +39,6 @@
       },
       "reduced": {
         "refNumber": "123456789012345678",
-        "payeeTaxCode": "82001760675",
         "amount": "1540,80",
         "cbillCode": "78Q44",
         "qrCode": "assets/fake-qrcode.svg",

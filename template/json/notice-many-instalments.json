@@ -31,7 +31,6 @@
       "items": [
         {
           "refNumber": "123456789012345678",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/12/2024",
           "cbillCode": "78Q44",
@@ -39,7 +38,6 @@
         },
         {
           "refNumber": "123456789012345678",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/01/2025",
           "cbillCode": "78Q45",
@@ -47,7 +45,6 @@
         },
         {
           "refNumber": "123456789012345679",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/02/2025",
           "cbillCode": "78Q46",
@@ -55,7 +52,6 @@
         },
         {
           "refNumber": "123456789012345680",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/03/2025",
           "cbillCode": "78Q47",
@@ -63,7 +59,6 @@
         },
         {
           "refNumber": "123456789012345681",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/04/2025",
           "cbillCode": "78Q48",
@@ -71,7 +66,6 @@
         },
         {
           "refNumber": "123456789012345682",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/05/2025",
           "cbillCode": "78Q49",
@@ -79,7 +73,6 @@
         },
         {
           "refNumber": "123456789012345683",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/06/2025",
           "cbillCode": "78Q50",
@@ -87,7 +80,6 @@
         },
         {
           "refNumber": "123456789012345684",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/07/2025",
           "cbillCode": "78Q51",
@@ -95,7 +87,6 @@
         },
         {
           "refNumber": "123456789012345685",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/08/2025",
           "cbillCode": "78Q52",
@@ -103,7 +94,6 @@
         },
         {
           "refNumber": "123456789012345686",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/09/2025",
           "cbillCode": "78Q53",
@@ -111,7 +101,6 @@
         },
         {
           "refNumber": "123456789012345687",
-          "payeeTaxCode": "82001760675",
           "amount": "150,00",
           "expiryDate": "20/10/2025",
           "cbillCode": "78Q54",

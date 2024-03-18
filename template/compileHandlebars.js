@@ -30,6 +30,7 @@ const paymentPoste = importPartial(`payment-poste`);
 const paymentQR = importPartial(`payment-qrcode`);
 const paymentQRCol = importPartial(`payment-qrcode-col`);
 const paymentQRColCompact = importPartial(`payment-qrcode-col-compact`);
+const paymentQRColDense = importPartial(`payment-qrcode-col-dense`);
 const paymentBollettino = importPartial(`payment-bollettino`);
 // Codice della Strada's infraction
 const paymentInfoInfraction = importPartial(`payment-info-infraction`);
@@ -55,6 +56,7 @@ Handlebars.registerPartial("paymentPoste", paymentPoste);
 Handlebars.registerPartial("paymentQR", paymentQR);
 Handlebars.registerPartial("paymentQRCol", paymentQRCol);
 Handlebars.registerPartial("paymentQRColCompact", paymentQRColCompact);
+Handlebars.registerPartial("paymentQRColDense", paymentQRColDense);
 Handlebars.registerPartial("paymentBollettino", paymentBollettino);
 //-- Infractions
 Handlebars.registerPartial("paymentInfoInfraction", paymentInfoInfraction);

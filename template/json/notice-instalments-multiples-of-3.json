@@ -31,7 +31,6 @@
       "items": [
         {
           "refNumber": "123456789012345678",
-          "payeeTaxCode": "82001760676",
           "amount": "68,40",
           "expiryDate": "20/12/2024",
           "cbillCode": "78Q44",
@@ -39,7 +38,6 @@
         },
         {
           "refNumber": "123456789012345679",
-          "payeeTaxCode": "82001760676",
           "amount": "83,60",
           "expiryDate": "20/01/2025",
           "cbillCode": "78Q45",
@@ -47,7 +45,6 @@
         },
         {
           "refNumber": "123456789012345680",
-          "payeeTaxCode": "82001760677",
           "amount": "24,60",
           "expiryDate": "20/03/2025",
           "cbillCode": "78Q46",
