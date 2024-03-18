@@ -8,6 +8,7 @@ const slice = require("./helpers/slice.js");
 const not = require("./helpers/not.js");
 const splitAndSpace = require("./helpers/splitAndSpace.js");
 const lowercase = require("./helpers/lowercase.js");
+const genQrCode = require("./helpers/genQrCode.js");
 const getPaymentMethodCopy = require("./helpers/getPaymentMethodCopy.js");
 // Register helpers
 Handlebars.registerHelper("eq", eq);
@@ -16,6 +17,7 @@ Handlebars.registerHelper("slice", slice);
 Handlebars.registerHelper("not", not);
 Handlebars.registerHelper("splitAndSpace", splitAndSpace);
 Handlebars.registerHelper("lowercase", lowercase);
+Handlebars.registerHelper("genQrCode", genQrCode);
 Handlebars.registerHelper("getPaymentMethodCopy", getPaymentMethodCopy);
 
 // Import partials
