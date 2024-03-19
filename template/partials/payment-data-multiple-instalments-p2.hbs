@@ -34,7 +34,9 @@
         <h3 class="small-caps-title">Rata {{add @index 4}}</h3>
       </div>
       {{#with this}}
-      {{> paymentQRColDense }}
+      {{> paymentQRColDense
+      payee=../payee
+      }}
       {{/with}}
     </div>
 
