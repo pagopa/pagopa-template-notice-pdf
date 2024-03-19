@@ -27,23 +27,28 @@
     "additionalInfo": "boh?",
     "refNumber": "123456789012345688",
     "cbillCode": "78Q45",
+    "posteAccountNumber": "30372502",
+    "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
+    "posteDataMatrix": "assets/poste/fake-data-matrix.svg",
     "instalments": {
       "items": [
         {
           "refNumber": "123456789012345678",
-          "payeeTaxCode": "82001760676",
           "amount": "68,40",
           "expiryDate": "20/12/2024",
           "cbillCode": "78Q44",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "assets/fake-qrcode.svg",
+          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
+          "posteDataMatrix": "assets/poste/fake-data-matrix.svg"
         },
         {
           "refNumber": "123456789012345679",
-          "payeeTaxCode": "82001760676",
           "amount": "83,60",
           "expiryDate": "20/01/2025",
           "cbillCode": "78Q45",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "assets/fake-qrcode.svg",
+          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
+          "posteDataMatrix": "assets/poste/fake-data-matrix.svg"
         }
       ]
     }

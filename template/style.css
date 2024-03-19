@@ -787,6 +787,7 @@ dl {
   grid-template-columns: repeat(var(--columns), 1fr);
   gap: var(--data-grid-gap-medium);
   margin-inline: var(--inner-margin);
+  margin-bottom: var(--section-margin);
 }
 
 .instalment-details {

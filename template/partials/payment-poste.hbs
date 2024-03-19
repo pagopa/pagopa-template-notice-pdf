@@ -5,7 +5,11 @@
     </div>
     <div class="logo-and-date">
       <img class="logo-bancoposta" src="assets/poste/banco-posta.svg" alt="BancoPosta" />
+      {{#if showCurrentInstalment}}
+      <p class="h4">Rata {{add @index 1}} entro {{expiryDate}}</p>
+      {{else}}
       {{{subtitle}}}
+      {{/if}}
       <img class="poste-scissors" src="assets/poste/scissors.svg" aria-hidden="true" />
     </div>
   </div>
