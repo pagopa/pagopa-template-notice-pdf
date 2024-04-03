@@ -11,6 +11,8 @@
     "generate-instalments-multiples-of-2-poste-p1": "node compileHandlebars --templateFile template-single-instalment-poste.hbs --dataFile notice-instalments-multiples-of-2.json && node generatePDF",
     "generate-instalments-multiples-of-2-poste-p2": "node compileHandlebars --templateFile template-instalments-multiples-of-2-poste-p2.hbs --dataFile notice-instalments-multiples-of-2.json && node generatePDF",
     "generate-instalments-multiples-of-3": "node compileHandlebars --templateFile template-instalments-multiples-of-3.hbs --dataFile notice-instalments-multiples-of-3.json && node generatePDF",
+    "generate-instalments-multiples-of-3-poste-p1": "node compileHandlebars --templateFile template-single-instalment-poste.hbs --dataFile notice-instalments-multiples-of-3.json && node generatePDF",
+    "generate-instalments-multiples-of-3-poste-p2": "node compileHandlebars --templateFile template-instalments-multiples-of-3-poste-p2.hbs --dataFile notice-instalments-multiples-of-3.json && node generatePDF",
     "generate-many-instalments-p1": "node compileHandlebars --templateFile template-many-instalments-p1.hbs --dataFile notice-many-instalments.json && node generatePDF",
     "generate-many-instalments-p2": "node compileHandlebars --templateFile template-many-instalments-p2.hbs --dataFile notice-many-instalments.json && node generatePDF",
     "generate-cds-infraction": "node compileHandlebars --templateFile template-cds-infraction.hbs --dataFile notice-infraction.json && node generatePDF",

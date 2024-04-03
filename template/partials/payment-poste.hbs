@@ -1,4 +1,4 @@
-<section class="notice-poste-payment-data">
+<section class="notice-poste-payment-data {{#if compact}}compact{{/if}}">
   <div class="header-bollettino-postale unique-separator">
     <div class="title">
       <h3 class="small-caps-title">Bollettino postale PA</h3>
@@ -8,7 +8,11 @@
       {{#if showCurrentInstalment}}
       <p class="h4">Rata {{add @index 1}} entro {{expiryDate}}</p>
       {{else}}
+      {{#if subtitle}}
       {{{subtitle}}}
+      {{else}}
+      <p class="h4">Rata unica entro {{expiryDate}}</p>
+      {{/if}}
       {{/if}}
       <img class="poste-scissors" src="assets/poste/scissors.svg" aria-hidden="true" />
     </div>

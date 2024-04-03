@@ -651,6 +651,20 @@ dl {
   margin-bottom: var(--section-margin);
   margin-top: var(--separator-margin-small);
 
+  &.compact {
+    row-gap: var(--data-grid-gap-small);
+    margin-bottom: var(--data-grid-gap-small);
+    margin-top: 0;
+
+    & .poste-italiane-area {
+      row-gap: var(--data-grid-gap-xsmall);
+    }
+
+    & .account-number-and-amount {
+      margin-bottom: var(--data-grid-gap-small);
+    }
+  }
+
   .payment-details {
     display: grid;
     align-items: flex-start;
@@ -797,7 +811,7 @@ dl {
   display: grid;
   align-items: flex-start;
   margin-inline: var(--separator-inner-margin);
-  row-gap: var(--data-grid-gap-medium);
+  row-gap: var(--data-grid-gap-small);
   margin-top: var(--data-grid-gap-small);
 
   & .instalment-details-data-1st-block {
