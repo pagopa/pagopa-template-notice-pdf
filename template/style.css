@@ -159,6 +159,10 @@
   font-size: var(--caption-fsize);
   font-weight: var(--weight-regular);
   color: var(--color-secondary-grey);
+
+  &.black {
+    color: var(--color-black);
+  }
 }
 
 .align-right {
@@ -654,7 +658,7 @@ dl {
   &.compact {
     row-gap: var(--data-grid-gap-small);
     margin-bottom: var(--data-grid-gap-small);
-    margin-top: 0;
+    margin-top: var(--data-grid-gap-xsmall);
 
     & .poste-italiane-area {
       row-gap: var(--data-grid-gap-xsmall);
