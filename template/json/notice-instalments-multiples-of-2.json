@@ -15,8 +15,10 @@
     "sector": "Servizio Pagamenti",
     "additionalInfo": "Info: www.cittadicapri.it",
     "channel": {
-      "online": "sul sito del Comune di Milano",
-      "physical": ""
+      "online": {
+        "website": true,
+        "app": true
+      }
     }
   },
   "notice": {

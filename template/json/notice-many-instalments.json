@@ -15,8 +15,10 @@
     "sector": "Servizio Pagamenti",
     "additionalInfo": "Centralino: 0861 809901",
     "channel": {
-      "online": "sul sito del Comune di Milano",
-      "physical": ""
+      "online": {
+        "website": true,
+        "app": true
+      }
     }
   },
   "notice": {

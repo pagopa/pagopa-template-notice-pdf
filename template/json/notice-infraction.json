@@ -15,8 +15,10 @@
     "sector": "Comando Polizia Locale Milano",
     "additionalInfo": "Informazioni su Polizia Locale di Milano",
     "channel": {
-      "online": "sul sito del Comune di Milano",
-      "physical": ""
+      "online": {
+        "website": true,
+        "app": false
+      }
     }
   },
   "notice": {
