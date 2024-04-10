@@ -16,31 +16,31 @@
       {{> header }}
 
       <main class="main-wrapper">
-        {{!-- Row 1 --}}
-        {{> mainInfo }}
-        {{!-- Row 2 --}}
-        {{> paymentInfoInfractionP1 }}
 
+        {{#with notice}}
 
-        {{#with notice.instalments.discounted}}
-
-        {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
-        {{> paymentData
-        subtitle="<p class='h4 light'><strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale</p>"
+        {{!-- Payment Instalments · Default components --}}
+        {{> paymentMultipleInstalments2col
         debtor=../debtor
         notice=../notice
         payee=../payee
         }}
+
+        {{/with}}
+
+        {{#each notice.instalments.items}}
+        {{#with this}}
 
         {{!-- Row 4 - Bollettino Poste --}}
         {{> paymentPoste
-        compact=this
-        subtitle="<p class='h4 light'><strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale</p>"
+        showCurrentInstalment=this
         debtor=../debtor
         notice=../notice
         payee=../payee
         }}
+
         {{/with}}
+        {{/each}}
 
       </main>
     </div>

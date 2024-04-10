@@ -18,11 +18,6 @@
         <dd>{{notice.subject}}</dd>
       </dl>
     </div>
-    <div class="info-paragraph">
-      <img src="./assets/icon-info.svg" class="info-icon" aria-hidden="true" />
-      <p class="body">Inquadra il <strong>codice QR</strong> con la tua app di pagamento o usa i dati
-        sotto</p>
-    </div>
   </div>
 
   <section class="instalment-payment-data" style="--columns: 3">
@@ -34,7 +29,9 @@
         <h3 class="small-caps-title">Rata {{add @index 4}}</h3>
       </div>
       {{#with this}}
-      {{> paymentQRColCompact }}
+      {{> paymentQRColDense
+      payee=../payee
+      }}
       {{/with}}
     </div>
 

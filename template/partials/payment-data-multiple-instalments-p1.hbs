@@ -12,7 +12,10 @@
         <h3 class="small-caps-title">Rata {{add @index 1}}</h3>
       </div>
       {{#with this}}
-      {{> paymentQRColCompact }}
+      {{> paymentQRColCompact
+      debtor=../debtor
+      notice=../notice
+      payee=../payee}}
       {{/with}}
     </div>
 

@@ -10,6 +10,7 @@ const splitAndSpace = require("./helpers/splitAndSpace.js");
 const lowercase = require("./helpers/lowercase.js");
 const genQrCode = require("./helpers/genQrCode.js");
 const genDataMatrix = require("./helpers/genDataMatrix.js");
+const getPaymentMethodCopy = require("./helpers/getPaymentMethodCopy.js");
 // Register helpers
 Handlebars.registerHelper("eq", eq);
 Handlebars.registerHelper("add", add);
@@ -19,6 +20,7 @@ Handlebars.registerHelper("splitAndSpace", splitAndSpace);
 Handlebars.registerHelper("lowercase", lowercase);
 Handlebars.registerHelper("genQrCode", genQrCode);
 Handlebars.registerHelper("genDataMatrix", genDataMatrix);
+Handlebars.registerHelper("getPaymentMethodCopy", getPaymentMethodCopy);
 
 // Import partials
 const partialPath = `./partials`;
@@ -34,6 +36,7 @@ const paymentPoste = importPartial(`payment-poste`);
 const paymentQR = importPartial(`payment-qrcode`);
 const paymentQRCol = importPartial(`payment-qrcode-col`);
 const paymentQRColCompact = importPartial(`payment-qrcode-col-compact`);
+const paymentQRColDense = importPartial(`payment-qrcode-col-dense`);
 const paymentBollettino = importPartial(`payment-bollettino`);
 // Codice della Strada's infraction
 const paymentInfoInfraction = importPartial(`payment-info-infraction`);
@@ -44,6 +47,7 @@ const paymentSeparatorInfraction = importPartial(`payment-separator-infraction`)
 const paymentInfoMultipleInstalments = importPartial(`payment-info-multiple-instalments`);
 const paymentMultipleInstalments2col = importPartial(`payment-multiple-instalments-2col`);
 const paymentMultipleInstalments3col = importPartial(`payment-multiple-instalments-3col`);
+const paymentMultipleInstalments3colDense = importPartial(`payment-multiple-instalments-3col-dense`);
 const paymentDataMultipleInstalmentsP1 = importPartial(`payment-data-multiple-instalments-p1`);
 const paymentDataMultipleInstalmentsP2 = importPartial(`payment-data-multiple-instalments-p2`);
 
@@ -59,6 +63,7 @@ Handlebars.registerPartial("paymentPoste", paymentPoste);
 Handlebars.registerPartial("paymentQR", paymentQR);
 Handlebars.registerPartial("paymentQRCol", paymentQRCol);
 Handlebars.registerPartial("paymentQRColCompact", paymentQRColCompact);
+Handlebars.registerPartial("paymentQRColDense", paymentQRColDense);
 Handlebars.registerPartial("paymentBollettino", paymentBollettino);
 //-- Infractions
 Handlebars.registerPartial("paymentInfoInfraction", paymentInfoInfraction);
@@ -69,6 +74,7 @@ Handlebars.registerPartial("paymentSeparatorInfraction", paymentSeparatorInfract
 Handlebars.registerPartial("paymentInfoMultipleInstalments", paymentInfoMultipleInstalments);
 Handlebars.registerPartial("paymentMultipleInstalments2col", paymentMultipleInstalments2col);
 Handlebars.registerPartial("paymentMultipleInstalments3col", paymentMultipleInstalments3col);
+Handlebars.registerPartial("paymentMultipleInstalments3colDense", paymentMultipleInstalments3colDense);
 Handlebars.registerPartial("paymentDataMultipleInstalmentsP1", paymentDataMultipleInstalmentsP1);
 Handlebars.registerPartial("paymentDataMultipleInstalmentsP2", paymentDataMultipleInstalmentsP2);
 

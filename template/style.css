@@ -159,6 +159,10 @@
   font-size: var(--caption-fsize);
   font-weight: var(--weight-regular);
   color: var(--color-secondary-grey);
+
+  &.black {
+    color: var(--color-black);
+  }
 }
 
 .align-right {
@@ -651,6 +655,20 @@ dl {
   margin-bottom: var(--section-margin);
   margin-top: var(--separator-margin-small);
 
+  &.compact {
+    row-gap: var(--data-grid-gap-small);
+    margin-bottom: var(--data-grid-gap-small);
+    margin-top: var(--data-grid-gap-xsmall);
+
+    & .poste-italiane-area {
+      row-gap: var(--data-grid-gap-xsmall);
+    }
+
+    & .account-number-and-amount {
+      margin-bottom: var(--data-grid-gap-small);
+    }
+  }
+
   .payment-details {
     display: grid;
     align-items: flex-start;
@@ -792,6 +810,7 @@ dl {
   grid-template-columns: repeat(var(--columns), 1fr);
   gap: var(--data-grid-gap-medium);
   margin-inline: var(--inner-margin);
+  margin-bottom: var(--section-margin);
 }
 
 .instalment-details {
@@ -801,7 +820,7 @@ dl {
   display: grid;
   align-items: flex-start;
   margin-inline: var(--separator-inner-margin);
-  row-gap: var(--data-grid-gap-medium);
+  row-gap: var(--data-grid-gap-small);
   margin-top: var(--data-grid-gap-small);
 
   & .instalment-details-data-1st-block {
