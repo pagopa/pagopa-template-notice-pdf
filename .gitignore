@@ -141,3 +141,4 @@ receipt/success/pdf/template.html
 py-scripts/venv
 py-scripts/py-scripts.iml
 .idea
+template.html
