@@ -15,8 +15,7 @@
     "generate-instalments-multiples-of-3-poste-p2": "node compileHandlebars --templateFile template-instalments-multiples-of-3-poste-p2.hbs --dataFile notice-instalments-multiples-of-3.json && node generatePDF",
     "generate-many-instalments": "node compileHandlebars --templateFile template-many-instalments.hbs --dataFile notice-many-instalments.json && node generatePDF",
     "generate-cds-infraction": "node compileHandlebars --templateFile template-cds-infraction.hbs --dataFile notice-infraction.json && node generatePDF",
-    "generate-cds-infraction-p1": "node compileHandlebars --templateFile template-cds-infraction-p1.hbs --dataFile notice-infraction.json && node generatePDF",
-    "generate-cds-infraction-p2": "node compileHandlebars --templateFile template-cds-infraction-p2.hbs --dataFile notice-infraction.json && node generatePDF"
+    "generate-cds-infraction-extended": "node compileHandlebars --templateFile template-cds-infraction-extended.hbs --dataFile notice-infraction.json && node generatePDF"
   },
   "dependencies": {
     "handlebars": "^4.7.8",
