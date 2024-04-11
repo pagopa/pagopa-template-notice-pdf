@@ -100,7 +100,8 @@ const template = Handlebars.compile(templateFile);
 
 // Load the JSON data for the template
 const data = require(`./json/${dataFilePath}`);
-
+data.tempPath = ".temp";
+fs.mkdirSync('.temp', { recursive: true })
 // Generate the HTML
 const html = template(data);
 

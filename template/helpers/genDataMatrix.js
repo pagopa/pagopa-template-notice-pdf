@@ -1,10 +1,12 @@
 const bitgener = require('bitgener');
 
-function genDataMatrix(data) {
+function genDataMatrix(data, path) {
+    const trimmedData = data.replaceAll(' ', '');
+    console.log(trimmedData);
     bitgener({
       data: data,
       type: 'datamatrix',
-      output: 'bitgener.svg',
+      output: path + "/" + trimmedData+'.svg',
       encoding: 'utf8',
       rectangular: false,
       padding: 0,
@@ -22,7 +24,7 @@ function genDataMatrix(data) {
         console.log(ret);
     });
 
-    return "bitgener.svg"
+    return path + "/" + trimmedData+".svg"
 }
 
 module.exports = genDataMatrix;
