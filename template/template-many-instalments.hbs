@@ -9,6 +9,25 @@
 </head>
 
 <body>
+  {{!-- First page --}}
+  <div class="page">
+    <div class="page-wrapper">
+
+      {{!-- Notice HEADER --}}
+      {{> header }}
+
+      <main class="main-wrapper">
+        {{!-- Row 1 --}}
+        {{> mainInfo }}
+        {{!-- Row 2 --}}
+        {{> paymentInfoMultipleInstalments }}
+        {{!-- Row 3 - Many instalments --}}
+        {{> paymentDataMultipleInstalmentsP1 }}
+      </main>
+    </div>
+  </div>
+
+  {{!-- Second page --}}
   <div class="page">
     <div class="page-wrapper">
 
