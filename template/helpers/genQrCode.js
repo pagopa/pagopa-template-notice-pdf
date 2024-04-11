@@ -9,11 +9,10 @@ function genQrCode(data) {
     color: "#000000",
     background: "#ffffff",
     ecl: "M",
-    join: true
+    join: true,
   });
-  qrcode.save("sample.svg", function(error) {
+  qrcode.save("sample.svg", function (error) {
     if (error) throw error;
-    console.log("Done!");
   });
   return "sample.svg";
 }
