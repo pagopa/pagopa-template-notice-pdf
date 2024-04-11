@@ -2,7 +2,6 @@ const bitgener = require('bitgener');
 
 function genDataMatrix(data, path) {
     const trimmedData = data.replaceAll(' ', '');
-    console.log(trimmedData);
     bitgener({
       data: data,
       type: 'datamatrix',
