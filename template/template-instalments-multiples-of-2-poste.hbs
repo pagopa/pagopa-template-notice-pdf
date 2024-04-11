@@ -9,6 +9,41 @@
 </head>
 
 <body>
+  {{!-- First page --}}
+  <div class="page">
+    <div class="page-wrapper">
+
+      {{!-- Notice HEADER --}}
+      {{> header }}
+
+      <main class="main-wrapper">
+        {{!-- Row 1 --}}
+        {{> mainInfo }}
+        {{!-- Row 2 --}}
+        {{> paymentInfo }}
+
+        {{#with notice}}
+
+        {{!-- Row 3 - pagoPA QR Code --}}
+        {{> paymentData
+        debtor=../debtor
+        notice=../notice
+        payee=../payee
+        }}
+
+        {{!-- Row 4 - Bollettino Poste --}}
+        {{> paymentPoste
+        debtor=../debtor
+        notice=../notice
+        payee=../payee
+        }}
+
+        {{/with}}
+      </main>
+    </div>
+  </div>
+
+  {{!-- Second page --}}
   <div class="page">
     <div class="page-wrapper">
 
@@ -20,7 +55,8 @@
         {{#with notice}}
 
         {{!-- Payment Instalments · Default components --}}
-        {{> paymentMultipleInstalments3colDense
+        {{> paymentMultipleInstalments2col
+        debtor=../debtor
         notice=../notice
         payee=../payee
         }}
@@ -32,7 +68,6 @@
 
         {{!-- Row 4 - Bollettino Poste --}}
         {{> paymentPoste
-        compact=this
         showCurrentInstalment=this
         debtor=../debtor
         notice=../notice
