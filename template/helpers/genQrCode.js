@@ -1,6 +1,6 @@
 var QRCode = require("qrcode-svg");
 
-function genQrCode(data) {
+function genQrCode(data, path) {
   var qrcode = new QRCode({
     content: data,
     padding: 0,
@@ -11,10 +11,10 @@ function genQrCode(data) {
     ecl: "M",
     join: true,
   });
-  qrcode.save(data+".svg", function (error) {
+  qrcode.save(path + "/" + data+".svg", function (error) {
     if (error) throw error;
   });
-  return data+".svg";
+  return path + "/" + data+".svg";
 }
 
 module.exports = genQrCode;
