@@ -25,8 +25,7 @@
     "subject": "Trasporto Scolastico A.S. 2021/2022",
     "amount": "152,00",
     "expiryDate": "24/10/2024",
-    "qrCode": "assets/fake-qrcode.svg",
-    "additionalInfo": "boh?",
+    "qrCode": "PAGOPA|002|000000000000000000|00000000000|9999",
     "refNumber": "123456789012345678",
     "cbillCode": "78Q45",
     "instalments": {
