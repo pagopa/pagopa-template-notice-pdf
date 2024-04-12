@@ -25,8 +25,7 @@
     "subject": "Trasporto Scolastico A.S. 2021/2022",
     "amount": "152,00",
     "expiryDate": "24/10/2024",
-    "qrCode": "assets/fake-qrcode.svg",
-    "additionalInfo": "boh?",
+    "qrCode": "PAGOPA|002|000000000000000000|00000000000|1111",
     "refNumber": "123456789012345678",
     "cbillCode": "78Q45",
     "instalments": {
@@ -36,77 +35,77 @@
           "amount": "150,00",
           "expiryDate": "20/12/2024",
           "cbillCode": "78Q44",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|2222"
         },
         {
           "refNumber": "123456789012345678",
           "amount": "150,00",
           "expiryDate": "20/01/2025",
           "cbillCode": "78Q45",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|3333"
         },
         {
           "refNumber": "123456789012345679",
           "amount": "150,00",
           "expiryDate": "20/02/2025",
           "cbillCode": "78Q46",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|4444"
         },
         {
           "refNumber": "123456789012345680",
           "amount": "150,00",
           "expiryDate": "20/03/2025",
           "cbillCode": "78Q47",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|5555"
         },
         {
           "refNumber": "123456789012345681",
           "amount": "150,00",
           "expiryDate": "20/04/2025",
           "cbillCode": "78Q48",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|6666"
         },
         {
           "refNumber": "123456789012345682",
           "amount": "150,00",
           "expiryDate": "20/05/2025",
           "cbillCode": "78Q49",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|7777"
         },
         {
           "refNumber": "123456789012345683",
           "amount": "150,00",
           "expiryDate": "20/06/2025",
           "cbillCode": "78Q50",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|8888"
         },
         {
           "refNumber": "123456789012345684",
           "amount": "150,00",
           "expiryDate": "20/07/2025",
           "cbillCode": "78Q51",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|9999"
         },
         {
           "refNumber": "123456789012345685",
           "amount": "150,00",
           "expiryDate": "20/08/2025",
           "cbillCode": "78Q52",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|1010"
         },
         {
           "refNumber": "123456789012345686",
           "amount": "150,00",
           "expiryDate": "20/09/2025",
           "cbillCode": "78Q53",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|2020"
         },
         {
           "refNumber": "123456789012345687",
           "amount": "150,00",
           "expiryDate": "20/10/2025",
           "cbillCode": "78Q54",
-          "qrCode": "assets/fake-qrcode.svg"
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|3030"
         }
       ]
     }

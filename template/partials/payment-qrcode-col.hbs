@@ -1,7 +1,7 @@
 <div class="instalment-details">
   <div class="instalment-details-data-1st-block">
     <div class="qrcode-area">
-      <img class="payment-qrcode" src={{this.qrCode}} alt="QR PaymentCode" />
+      <img class="payment-qrcode" src={{genQrCode this.qrCode this.tempPath}} alt="QR PaymentCode" />
     </div>
 
     <dl class="data-key-value-monospaced tight">

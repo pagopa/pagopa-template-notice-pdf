@@ -25,7 +25,7 @@
     "subject": "Verbale C.D.S. Prot. 20039749",
     "amount": "152,00",
     "expiryDate": "24/10/2024",
-    "qrCode": "assets/fake-qrcode.svg",
+    "qrCode": "PAGOPA|002|000000000000000000|00000000000|9999",
     "additionalInfo": "boh?",
     "refNumber": "123456789012345678",
     "cbillCode": "78Q45",
@@ -36,15 +36,15 @@
         "refNumber": "123456789012345678",
         "amount": "1238,70",
         "cbillCode": "78Q45",
-        "qrCode": "assets/fake-qrcode.svg",
-        "posteDataMatrix": "assets/poste/fake-data-matrix.svg"
+        "qrCode": "PAGOPA|002|000000000000000000|00000000000|9999",
+        "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
       },
       "reduced": {
         "refNumber": "123456789012345678",
         "amount": "1540,80",
         "cbillCode": "78Q44",
-        "qrCode": "assets/fake-qrcode.svg",
-        "posteDataMatrix": "assets/poste/fake-data-matrix.svg"
+        "qrCode": "PAGOPA|002|000000000000000000|00000000000|9999",
+        "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
       }
     }
   }

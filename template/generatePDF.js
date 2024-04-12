@@ -3,6 +3,8 @@
 const { v4: uuidv4 } = require("uuid");
 const puppeteer = require("puppeteer");
 const path = require("path");
+const fs = require("fs");
+
 
 const transactionID = uuidv4(); // ex 'F57E2F8E-25FF-4183-AB7B-4A5EC1A96644'
 
@@ -23,4 +25,6 @@ const transactionID = uuidv4(); // ex 'F57E2F8E-25FF-4183-AB7B-4A5EC1A96644'
   });
 
   await browser.close();
+
+  fs.rmSync('.temp', { recursive: true });
 })();

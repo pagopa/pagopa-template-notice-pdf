@@ -778,6 +778,11 @@ dl {
     grid-area: data-matrix;
     width: var(--size-data-matrix);
     height: var(--size-data-matrix);
+    & img {
+        object-fit: cover;
+        width: var(--size-data-matrix);
+        height: var(--size-data-matrix);
+    }
   }
 }
 

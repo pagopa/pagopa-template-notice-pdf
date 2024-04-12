@@ -25,13 +25,13 @@
     "subject": "Trasporto Scolastico A.S. 2021/2022",
     "amount": "176,60",
     "expiryDate": "24/11/2024",
-    "qrCode": "assets/fake-qrcode.svg",
+    "qrCode": "PAGOPA|002|000000000000000000|00000000000|9999",
     "additionalInfo": "boh?",
     "refNumber": "123456789012345688",
     "cbillCode": "78Q45",
     "posteAccountNumber": "30372502",
     "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
-    "posteDataMatrix": "assets/poste/fake-data-matrix.svg",
+    "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA",
     "instalments": {
       "items": [
         {
@@ -39,27 +39,27 @@
           "amount": "68,40",
           "expiryDate": "20/12/2024",
           "cbillCode": "78Q44",
-          "qrCode": "assets/fake-qrcode.svg",
+          "qrCode": "PAGOPA|002|123456789012345678|82001760676|9999",
           "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
-          "posteDataMatrix": "assets/poste/fake-data-matrix.svg"
+          "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
         },
         {
           "refNumber": "123456789012345679",
           "amount": "83,60",
           "expiryDate": "20/01/2025",
           "cbillCode": "78Q45",
-          "qrCode": "assets/fake-qrcode.svg",
+          "qrCode": "PAGOPA|003|123456789012345685|82001760676|1111",
           "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
-          "posteDataMatrix": "assets/poste/fake-data-matrix.svg"
+          "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
         },
         {
           "refNumber": "123456789012345680",
           "amount": "24,60",
           "expiryDate": "20/03/2025",
           "cbillCode": "78Q46",
-          "qrCode": "assets/fake-qrcode.svg",
+          "qrCode": "PAGOPA|002|000000000000000000|00000000000|9999",
           "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
-          "posteDataMatrix": "assets/poste/fake-data-matrix.svg"
+          "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
         }
       ]
     }
