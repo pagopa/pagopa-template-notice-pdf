@@ -10,7 +10,8 @@ const splitAndSpace = require("./helpers/splitAndSpace.js");
 const lowercase = require("./helpers/lowercase.js");
 const genQrCode = require("./helpers/genQrCode.js");
 const genDataMatrix = require("./helpers/genDataMatrix.js");
-const getPaymentMethodCopy = require("./helpers/getPaymentMethodCopy.js");
+const getOnlinePaymentMethodContent = require("./helpers/getOnlinePaymentMethodContent.js");
+const getPhysicalPaymentMethodContent = require("./helpers/getPhysicalPaymentMethodContent.js");
 // Register helpers
 Handlebars.registerHelper("eq", eq);
 Handlebars.registerHelper("add", add);
@@ -20,8 +21,8 @@ Handlebars.registerHelper("splitAndSpace", splitAndSpace);
 Handlebars.registerHelper("lowercase", lowercase);
 Handlebars.registerHelper("genQrCode", genQrCode);
 Handlebars.registerHelper("genDataMatrix", genDataMatrix);
-Handlebars.registerHelper("getPaymentMethodCopy", getPaymentMethodCopy);
-
+Handlebars.registerHelper("getOnlinePaymentMethodContent", getOnlinePaymentMethodContent);
+Handlebars.registerHelper("getPhysicalPaymentMethodContent", getPhysicalPaymentMethodContent);
 // Import partials
 const partialPath = `./partials`;
 const importPartial = (fileName) => fs.readFileSync(`${partialPath}/${fileName}.hbs`, "utf8");
@@ -101,7 +102,7 @@ const template = Handlebars.compile(templateFile);
 // Load the JSON data for the template
 const data = require(`./json/${dataFilePath}`);
 data.tempPath = ".temp";
-fs.mkdirSync('.temp', { recursive: true })
+fs.mkdirSync(".temp", { recursive: true });
 // Generate the HTML
 const html = template(data);
 
