@@ -1,5 +1,6 @@
 :root {
   --page-margin: 10mm;
+  --thermal-page-margin: 5mm;
   --section-margin: 4mm;
   /* Used for inner sections, as multiple instalments */
   --inner-margin: 7mm;
@@ -24,6 +25,7 @@
   --weight-bold: 700;
   --weight-regular: 400;
   /* Element sizes */
+  --size-thermal-pagopa-logo: 15mm;
   --size-entity-logo: 30mm;
   --size-qrcode: 25mm;
   --size-qrcode-small: 20mm;
@@ -206,6 +208,11 @@ body {
 
 
 /* Common */
+.notice-title {
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
 .start-separator,
 .end-separator,
 .unique-separator,
@@ -403,11 +410,6 @@ dl {
       width: 15mm;
       height: auto;
     }
-  }
-
-  & .notice-title {
-    text-transform: uppercase;
-    color: var(--color-black);
   }
 
   & .notice-header-logo {
@@ -778,10 +780,11 @@ dl {
     grid-area: data-matrix;
     width: var(--size-data-matrix);
     height: var(--size-data-matrix);
+
     & img {
-        object-fit: cover;
-        width: var(--size-data-matrix);
-        height: var(--size-data-matrix);
+      object-fit: cover;
+      width: var(--size-data-matrix);
+      height: var(--size-data-matrix);
     }
   }
 }
@@ -855,5 +858,49 @@ dl {
   & .instalment-details-data-2nd-block {
     display: grid;
     row-gap: var(--data-grid-gap-xsmall);
+  }
+}
+
+/* THERMAL STYLES */
+.thermal-page {
+  margin: 0;
+  box-sizing: border-box;
+  page-break-after: avoid;
+  width: 80mm;
+  overflow: hidden;
+}
+
+.thermal-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-margin);
+  background-color: white;
+}
+
+/* Notice Header */
+
+.thermal-notice-header {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--thermal-page-margin);
+  padding-bottom: 0;
+
+  & .main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-margin);
+  }
+
+  & .pagopa-header {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-start;
+    gap: 4mm;
+
+    & .logo {
+      width: var(--size-thermal-pagopa-logo);
+      height: auto;
+    }
   }
 }

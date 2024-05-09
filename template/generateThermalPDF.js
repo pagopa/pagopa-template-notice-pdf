@@ -16,10 +16,10 @@ const transactionID = uuidv4(); // ex 'F57E2F8E-25FF-4183-AB7B-4A5EC1A96644'
   await page.goto(`file://${htmlFile}`, {
     waitUntil: ["load", "networkidle0"],
   });
+
   await page.pdf({
-    path: `pagopa-notice-${transactionID}.pdf`,
-    format: "A4",
-    landscape: false,
+    path: `pagopa-thermal-notice-${transactionID}.pdf`,
+    width: `80mm` /* 2×40mm thermal receipts */,
     printBackground: true,
   });
 
