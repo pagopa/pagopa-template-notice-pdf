@@ -15,9 +15,12 @@
       {{!-- Notice HEADER --}}
       {{> thermalHeader }}
 
-      <main class="main-wrapper">
-        {{!-- Payment Info - When & Where to pay --}}
-        {{> paymentInfoInfraction }}
+      <main class="thermal-main-wrapper">
+        {{!-- Payment Info - When to pay --}}
+        {{> thermalPaymentInfoInfraction }}
+
+        {{!-- Payment Info - Where to pay --}}
+        {{> thermalPaymentMethods }}
 
         {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
         {{#with notice.instalments.discounted}}

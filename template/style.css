@@ -2,6 +2,8 @@
   --page-margin: 10mm;
   --thermal-page-margin: 5mm;
   --section-margin: 4mm;
+  --thermal-section-margin: 3mm;
+  --thermal-content-margin: 2mm;
   /* Used for inner sections, as multiple instalments */
   --inner-margin: 7mm;
   /* Fonts */
@@ -216,7 +218,8 @@ body {
 .start-separator,
 .end-separator,
 .unique-separator,
-.inner-separator {
+.inner-separator,
+.thermal-separator {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -877,7 +880,27 @@ dl {
   background-color: white;
 }
 
-/* Notice Header */
+.thermal-block {
+  margin-block-end: var(--thermal-section-margin);
+}
+
+.thermal-separator {
+  padding-inline: var(--thermal-page-margin);
+}
+
+.thermal-small-caps-title {
+  font-size: var(--h5-fsize);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.thermal-grid-cell {
+  margin-inline: var(--thermal-page-margin);
+  margin-block-start: var(--thermal-section-margin);
+}
+
+/* Thermal Notice Header */
 
 .thermal-notice-header {
   display: flex;
@@ -903,4 +926,17 @@ dl {
       height: auto;
     }
   }
+}
+
+/* Thermal Payment Info */
+.thermal-payment-methods-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--thermal-content-margin);
+}
+
+.thermal-payment-amount-block-infraction {
+  display: flex;
+  flex-direction: column;
+  gap: var(--thermal-content-margin);
 }
