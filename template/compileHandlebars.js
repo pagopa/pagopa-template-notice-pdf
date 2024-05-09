@@ -33,6 +33,10 @@ const paymentInfo = importPartial(`payment-info`);
 const paymentMethods = importPartial(`payment-methods`);
 const paymentData = importPartial(`payment-data`);
 const paymentPoste = importPartial(`payment-poste`);
+// Thermal version
+const thermalHeader = importPartial(`thermal-header`);
+const thermalPaymentMethods = importPartial(`thermal-payment-methods`);
+const thermalPaymentData = importPartial(`thermal-payment-data`);
 // Common partials
 const paymentQR = importPartial(`payment-qrcode`);
 const paymentQRCol = importPartial(`payment-qrcode-col`);
@@ -44,6 +48,9 @@ const paymentInfoInfraction = importPartial(`payment-info-infraction`);
 const paymentInfoInfractionP1 = importPartial(`payment-info-infraction-p1`);
 const paymentInfoInfractionP2 = importPartial(`payment-info-infraction-p2`);
 const paymentSeparatorInfraction = importPartial(`payment-separator-infraction`);
+// --Thermal version
+const thermalPaymentInfoInfraction = importPartial(`thermal-payment-info-infraction`);
+const thermalPaymentInfoInfractionImmediate = importPartial(`thermal-payment-info-infraction-immediate`);
 // Multiple instalments
 const paymentInfoMultipleInstalments = importPartial(`payment-info-multiple-instalments`);
 const paymentMultipleInstalments2col = importPartial(`payment-multiple-instalments-2col`);
@@ -59,7 +66,10 @@ Handlebars.registerPartial("paymentInfo", paymentInfo);
 Handlebars.registerPartial("paymentMethods", paymentMethods);
 Handlebars.registerPartial("paymentData", paymentData);
 Handlebars.registerPartial("paymentPoste", paymentPoste);
-
+// Thermal version
+Handlebars.registerPartial("thermalHeader", thermalHeader);
+Handlebars.registerPartial("thermalPaymentMethods", thermalPaymentMethods);
+Handlebars.registerPartial("thermalPaymentData", thermalPaymentData);
 //-- Commons
 Handlebars.registerPartial("paymentQR", paymentQR);
 Handlebars.registerPartial("paymentQRCol", paymentQRCol);
@@ -71,6 +81,9 @@ Handlebars.registerPartial("paymentInfoInfraction", paymentInfoInfraction);
 Handlebars.registerPartial("paymentInfoInfractionP1", paymentInfoInfractionP1);
 Handlebars.registerPartial("paymentInfoInfractionP2", paymentInfoInfractionP2);
 Handlebars.registerPartial("paymentSeparatorInfraction", paymentSeparatorInfraction);
+Handlebars.registerPartial("thermalPaymentInfoInfraction", thermalPaymentInfoInfraction);
+Handlebars.registerPartial("thermalPaymentInfoInfractionImmediate", thermalPaymentInfoInfractionImmediate);
+
 // Multiple instalments
 Handlebars.registerPartial("paymentInfoMultipleInstalments", paymentInfoMultipleInstalments);
 Handlebars.registerPartial("paymentMultipleInstalments2col", paymentMultipleInstalments2col);
