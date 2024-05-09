@@ -4,6 +4,7 @@
   --section-margin: 4mm;
   --thermal-section-margin: 3mm;
   --thermal-content-margin: 2mm;
+  --thermal-qrcode-margin: 3mm;
   /* Used for inner sections, as multiple instalments */
   --inner-margin: 7mm;
   /* Fonts */
@@ -48,6 +49,7 @@
   --data-grid-gap-medium: 6mm;
   --data-grid-gap-small: 4mm;
   --data-grid-gap-xsmall: 2mm;
+  --data-grid-gap-2xsmall: 1mm;
   --data-grid-gap-3xsmall: 0.75mm;
 }
 
@@ -929,6 +931,7 @@ dl {
 }
 
 /* Thermal Payment Info */
+
 .thermal-payment-methods-block {
   display: flex;
   flex-direction: column;
@@ -939,4 +942,59 @@ dl {
   display: flex;
   flex-direction: column;
   gap: var(--thermal-content-margin);
+}
+
+/* Thermal Payment QRCode */
+
+.thermal-payment-qrcode-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--thermal-qrcode-margin);
+}
+
+.thermal-payment-details-data {
+  display: flex;
+  flex-direction: column;
+  gap: var(--data-grid-gap-2xsmall);
+}
+
+.thermal-payment-qrcode {
+  align-self: center;
+}
+
+.thermal-data-key-value {
+  display: flex;
+  gap: var(--data-grid-gap-xsmall);
+  align-items: center;
+  justify-content: space-between;
+
+  & dt {
+    font-size: var(--body-fsize);
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    font-size: var(--body-fsize);
+    font-weight: var(--weight-regular);
+  }
+}
+
+.thermal-data-key-value-monospaced {
+  display: flex;
+  gap: var(--data-grid-gap-xsmall);
+  align-items: center;
+  justify-content: space-between;
+
+  & dt {
+    font-size: var(--body-fsize);
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    font-family: var(--font-monospaced);
+    font-size: var(--h4-fsize);
+    font-weight: var(--weight-bold);
+  }
 }

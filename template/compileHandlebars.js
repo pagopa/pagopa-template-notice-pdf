@@ -36,6 +36,7 @@ const paymentPoste = importPartial(`payment-poste`);
 // Thermal version
 const thermalHeader = importPartial(`thermal-header`);
 const thermalPaymentMethods = importPartial(`thermal-payment-methods`);
+const thermalPaymentData = importPartial(`thermal-payment-data`);
 // Common partials
 const paymentQR = importPartial(`payment-qrcode`);
 const paymentQRCol = importPartial(`payment-qrcode-col`);
@@ -67,6 +68,7 @@ Handlebars.registerPartial("paymentPoste", paymentPoste);
 // Thermal version
 Handlebars.registerPartial("thermalHeader", thermalHeader);
 Handlebars.registerPartial("thermalPaymentMethods", thermalPaymentMethods);
+Handlebars.registerPartial("thermalPaymentData", thermalPaymentData);
 //-- Commons
 Handlebars.registerPartial("paymentQR", paymentQR);
 Handlebars.registerPartial("paymentQRCol", paymentQRCol);
