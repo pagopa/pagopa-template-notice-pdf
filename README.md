@@ -15,7 +15,8 @@ All PDF templates of the notice designed by pagoPA
 ## Dependencies
 
 - [Handlebars](https://handlebarsjs.com/)
-- [Puppeteer](https://www.npmjs.com/package/puppeteer) to [generate a PDF of the page](https://pptr.dev/api/puppeteer.page.pdf)
+- [Puppeteer](https://www.npmjs.com/package/puppeteer)
+  to [generate a PDF of the page](https://pptr.dev/api/puppeteer.page.pdf)
 
 ## How to generate the PDF notice
 
@@ -26,3 +27,23 @@ All PDF templates of the notice designed by pagoPA
 ## Related PDF templates
 
 - Template for the PDF receipt: [`pagopa-template-receipt-pdf`](https://github.com/pagopa/pagopa-template-receipt-pdf)
+
+---
+
+## Python Script
+
+> ℹ️ The python script is used for Stampa Avvisi
+
+The `zip.py` file is a python script to create for each template a zip that contains the template, the css file and the
+asssets files.
+All the zip files are created in the `./output` folder.
+
+_Note: in the zip file the hbs template are renamed into template.html_
+
+### How to run
+
+Use this command from the root:
+
+```bash
+python3 ./zip.py
+```
