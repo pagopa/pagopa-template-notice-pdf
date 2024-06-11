@@ -2,88 +2,88 @@
 <html lang="it" xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
 
 <head>
-  <title>Avviso di pagamento</title>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css">
+    <title>Avviso di pagamento</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  {{!-- First page --}}
-  <div class="page">
+{{!-- First page --}}
+<div class="page">
     <div class="page-wrapper">
 
-      {{!-- Notice HEADER --}}
-      {{> header }}
+        {{!-- Notice HEADER --}}
+        {{> header }}
 
-      <main class="main-wrapper">
-        {{!-- Row 1 --}}
-        {{> mainInfo }}
-        {{!-- Row 2 --}}
-        {{> paymentInfo }}
+        <main class="main-wrapper">
+            {{!-- Row 1 --}}
+            {{> mainInfo }}
+            {{!-- Row 2 --}}
+            {{> paymentInfo }}
 
-        {{#with notice}}
+            {{#with notice}}
 
-        {{!-- Row 3 - pagoPA QR Code --}}
-        {{> paymentData
-        debtor=../debtor
-        notice=../notice
-        payee=../payee
-        tempPath=../tempPath
-        }}
+            {{!-- Row 3 - pagoPA QR Code --}}
+                {{> paymentData
+                        debtor=../debtor
+                        notice=../notice
+                        payee=../payee
+                        tempPath=../tempPath
+                }}
 
-        {{!-- Row 4 - Bollettino Poste --}}
-        {{> paymentPoste
-        debtor=../debtor
-        notice=../notice
-        payee=../payee
-        tempPath=../tempPath
-        }}
+                {{!-- Row 4 - Bollettino Poste --}}
+                {{> paymentPoste
+                        debtor=../debtor
+                        notice=../notice
+                        payee=../payee
+                        tempPath=../tempPath
+                }}
 
-        {{/with}}
-      </main>
+            {{/with}}
+        </main>
     </div>
-  </div>
+</div>
 
-  {{!-- Second page --}}
-  <div class="page">
+{{!-- Second page --}}
+<div class="page">
     <div class="page-wrapper">
 
-      {{!-- Notice HEADER --}}
-      {{> header }}
+        {{!-- Notice HEADER --}}
+        {{> header }}
 
-      <main class="main-wrapper">
+        <main class="main-wrapper">
 
-        {{#with notice}}
+            {{#with notice}}
 
-        {{!-- Payment Instalments · Default components --}}
-        {{> paymentMultipleInstalments2col
-        debtor=../debtor
-        notice=../notice
-        payee=../payee
-        tempPath=../tempPath
-        }}
+            {{!-- Payment Instalments · Default components --}}
+                {{> paymentMultipleInstalments2col
+                        debtor=../debtor
+                        notice=../notice
+                        payee=../payee
+                        tempPath=../tempPath
+                }}
 
-        {{/with}}
+            {{/with}}
 
-        {{#each notice.instalments.items}}
-        {{#with this}}
+            {{#each notice.instalments.items}}
+                {{#with this}}
 
-        {{!-- Row 4 - Bollettino Poste --}}
-        {{> paymentPoste
-        showCurrentInstalment=this
-        debtor=../debtor
-        notice=../notice
-        payee=../payee
-        tempPath=../tempPath
-        }}
+                {{!-- Row 4 - Bollettino Poste --}}
+                    {{> paymentPoste
+                            showCurrentInstalment=this
+                            debtor=../debtor
+                            notice=../notice
+                            payee=../payee
+                            tempPath=../tempPath
+                    }}
 
-        {{/with}}
-        {{/each}}
+                {{/with}}
+            {{/each}}
 
-      </main>
+        </main>
     </div>
-  </div>
+</div>
 
 </body>
 

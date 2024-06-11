@@ -1,7 +1,6 @@
-function paginator(options) {
+function paginator(notice) {
 
-    let instalments = [];
-    instalments = options.instalments.items;
+    let instalments = notice.instalments.items;
     const instalmentsLength = instalments.length;
 
     const firstPageRows = 1;
