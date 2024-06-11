@@ -17,25 +17,19 @@ const helpersPath = './helpers';
 const partialPath = `./partials`;
 
 // Register helpers
-const helperDirectories = getDirectories(helpersPath);
-for (let directoryHelper of helperDirectories) {
-    const directoryHelperFiles = getFiles(`${helpersPath}/${directoryHelper}`);
-    for (let directoryHelperFile of directoryHelperFiles) {
-        const helper = requireFile(`../helpers/${directoryHelper}`, path.parse(`${helpersPath}/${directoryHelper}/${directoryHelperFile}`).name);
-        Handlebars.registerHelper(
-            path.parse(`${helpersPath}/${directoryHelper}/${directoryHelperFile}`).name, helper);
-    }
+const helperFiles = getFiles(`${helpersPath}`);
+for (let helperFile of helperFiles) {
+    const helper = requireFile(`${helpersPath}/`, path.parse(`${helpersPath}/${helperFile}`).name);
+    Handlebars.registerHelper(
+        path.parse(`${helpersPath}/${helperFile}`).name, helper);
 }
 
 // Register partials
-const partialDirectories = getDirectories(partialPath);
-for (let directoryPartial of partialDirectories) {
-    const directoryPartialFiles = getFiles(`${partialPath}/${directoryPartial}`);
-    for (let directoryPartialFile of directoryPartialFiles) {
-        const partial = importFile(`${partialPath}/${directoryPartial}`, directoryPartialFile);
-        Handlebars.registerPartial(
-            path.parse(`${partialPath}/${directoryPartial}/${directoryPartialFile}`).name, partial);
-    }
+const partialFiles = getFiles(`${partialPath}`);
+for (let partialFile of partialFiles) {
+    const partial = importFile(`${partialPath}/`, partialFile);
+    Handlebars.registerPartial(
+        path.parse(`${partialPath}/${partialFile}`).name, partial);
 }
 
 
