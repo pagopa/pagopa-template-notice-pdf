@@ -10,9 +10,7 @@ function paginator(notice, withBollettinoPoste) {
         data = getPaginationData(instalmentsLength);
     }
 
-    let ret = paginateAndGroupArray(instalments, data.firstPageRows, data.firstPageColumns, data.secondPageRows, data.secondPageColumns);
-    console.log(ret);
-    return ret;
+    return paginateAndGroupArray(instalments, data.firstPageRows, data.firstPageColumns, data.secondPageRows, data.secondPageColumns);
 }
 
 function paginateAndGroupArray(array, firstPageRows, firstPageCols, pageRows, pageCols) {
