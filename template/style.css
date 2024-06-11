@@ -12,8 +12,9 @@
   /* Colors */
   --debug-color: lightpink;
   --color-black: #0000000;
-  --color-secondary-grey: #7C7C7B;
-  --color-light-grey: #ECECEC;
+  --color-grey-dark: #7C7C7B;
+  --color-grey: #D9D9D9;
+  --color-grey-light: #ECECEC;
   /* Typographic styles */
   --h1-fsize: 16pt;
   --h2-fsize: 14pt;
@@ -32,7 +33,7 @@
   --size-entity-logo: 30mm;
   --size-qrcode: 25mm;
   --size-qrcode-small: 20mm;
-  --size-data-matrix: 25mm;
+  --size-data-matrix: 23mm;
   --size-info-icon: 4mm;
   --size-arrow-icon: 4mm;
   --size-info-pictogram: 12mm;
@@ -164,7 +165,7 @@
 .caption {
   font-size: var(--caption-fsize);
   font-weight: var(--weight-regular);
-  color: var(--color-secondary-grey);
+  color: var(--color-grey-dark);
 
   &.black {
     color: var(--color-black);
@@ -225,7 +226,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-light-grey);
+  background-color: var(--color-grey-light);
   height: var(--separator-title-height);
 }
 
@@ -782,9 +783,50 @@ dl {
   }
 
   .payment-data-matrix {
+    --internal-space: 2.5mm;
+
+    position: relative;
     grid-area: data-matrix;
     width: var(--size-data-matrix);
     height: var(--size-data-matrix);
+    padding: var(--internal-space);
+    margin-right: calc(var(--internal-space) * -1);
+
+    & .frame-border-square {
+      --size: 4mm;
+      position: absolute;
+      border: 0.75mm solid var(--color-grey);
+      width: var(--size);
+      height: var(--size);
+
+      &.top-left {
+        top: 0;
+        left: 0;
+        border-right-width: 0;
+        border-bottom-width: 0;
+      }
+
+      &.top-right {
+        top: 0;
+        right: 0;
+        border-left-width: 0;
+        border-bottom-width: 0;
+      }
+
+      &.bottom-left {
+        bottom: 0;
+        left: 0;
+        border-right-width: 0;
+        border-top-width: 0;
+      }
+
+      &.bottom-right {
+        bottom: 0;
+        right: 0;
+        border-left-width: 0;
+        border-top-width: 0;
+      }
+    }
 
     & img {
       object-fit: cover;
