@@ -33,5 +33,9 @@
     "posteAccountNumber": "30372502",
     "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
     "posteDataMatrix": "codfase=NBPA;183002327500014241551200000088900610000001010038961P105445891004ZCCDND32C02H745MEDMONDO ZACCARIA                        PAGAMENTO TARI NUMERO DOC. 112302367135                                                                                   A"
+  },
+  "metadata": {
+    "language": "it",
+    "secondaryLanguage": "en"
   }
 }

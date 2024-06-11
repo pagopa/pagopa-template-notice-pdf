@@ -4,9 +4,29 @@ let {readFileSync, readdirSync} = require('fs');
 const path = require('node:path');
 
 
-const getDirectories = source => readdirSync(source, {withFileTypes: true})
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name)
+const HandlebarsI18n = require("handlebars-i18n");
+
+const i18next = require("i18next");
+i18next.init({
+    resources: {
+        "it": {
+            translation: {
+                "title": "Avviso di pagamento",
+                "alert": "<strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale"
+            }
+        },
+        "en": {
+            translation: {
+                "title": "Payment Notice",
+                "alert": "<strong>Within 5 days</strong> from the notification"
+            }
+        }
+    },
+    lng: "it"
+});
+
+HandlebarsI18n.init();
+
 const getFiles = source => readdirSync(source, {withFileTypes: true})
     .filter(dirent => !dirent.isDirectory())
     .map(dirent => dirent.name)
