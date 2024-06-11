@@ -79,6 +79,13 @@
 
       <div class="payment-data-matrix">
         <img src={{genDataMatrix this.posteDataMatrix this.tempPath}} alt="Poste DataMatrix" />
+
+        {{!-- We can't use a more elegant solution because we have
+        to deal with printing issues by using a mask. --}}
+        <div class="frame-border-square top-left"></div>
+        <div class="frame-border-square top-right"></div>
+        <div class="frame-border-square bottom-left"></div>
+        <div class="frame-border-square bottom-right"></div>
       </div>
     </div>
 
