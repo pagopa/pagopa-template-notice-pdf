@@ -50,8 +50,7 @@ args.forEach((arg, index) => {
 const dataFilePath = filePaths["--dataFile"];
 const templateFilePath = filePaths["--templateFile"];
 
-const templateFile = fs.readFileSync(templateFilePath, "utf8");
-// const templateFile = fs.readFileSync(`./templates/${templateFilePath}`, "utf8");
+const templateFile = fs.readFileSync(`./templates/${templateFilePath}`, "utf8");
 const template = Handlebars.compile(templateFile);
 
 // Load the JSON data for the template

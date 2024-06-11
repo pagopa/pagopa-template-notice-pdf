@@ -143,3 +143,5 @@ py-scripts/py-scripts.iml
 .idea
 src/template.html
 **/node_modules/
+**/template.html
+*.pdf

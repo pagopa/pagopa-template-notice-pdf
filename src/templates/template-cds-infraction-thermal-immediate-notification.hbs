@@ -9,36 +9,31 @@
 </head>
 
 <body>
-<div class="page">
-    <div class="page-wrapper">
+<div class="thermal-page">
+    <div class="thermal-page-wrapper">
 
         {{!-- Notice HEADER --}}
-        {{> header }}
+        {{> thermalHeader }}
 
-        <main class="main-wrapper">
-            {{!-- Row 1 --}}
-            {{> mainInfo }}
-            {{!-- Row 2 --}}
-            {{> paymentInfo }}
+        <main class="thermal-main-wrapper">
+            {{!-- Row 1 - Payment Info (When to pay) --}}
+            {{> thermalPaymentInfoInfractionImmediate }}
 
-            {{#with notice}}
+            {{!-- Row 2 - Payment Info (Where to pay) --}}
+            {{> thermalPaymentMethods }}
 
-            {{!-- Row 3 - pagoPA QR Code --}}
-                {{> paymentData
+            {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
+            {{#with notice.instalments.discounted}}
+                {{> thermalPaymentData
+                        title="Importo scontato del 30%"
+                        subtitle="entro 5 giorni"
                         debtor=../debtor
                         notice=../notice
                         payee=../payee
                         tempPath=../tempPath
                 }}
-                {{!-- Row 4 - Multiple instalments --}}
-                {{> paymentMultipleInstalments3col
-                        debtor=../debtor
-                        notice=../notice
-                        payee=../payee
-                        tempPath=../tempPath
-                }}
-
             {{/with}}
+
         </main>
     </div>
 </div>

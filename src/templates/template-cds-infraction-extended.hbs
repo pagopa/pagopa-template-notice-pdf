@@ -20,12 +20,14 @@
             {{!-- Row 1 --}}
             {{> mainInfo }}
             {{!-- Row 2 --}}
-            {{> paymentInfo }}
+            {{> paymentInfoInfractionP1 }}
 
-            {{#with notice}}
 
-            {{!-- Row 3 - pagoPA QR Code --}}
+            {{#with notice.instalments.discounted}}
+
+            {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
                 {{> paymentData
+                        subtitle="<p class='h4 light'><strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale</p>"
                         debtor=../debtor
                         notice=../notice
                         payee=../payee
@@ -34,13 +36,14 @@
 
                 {{!-- Row 4 - Bollettino Poste --}}
                 {{> paymentPoste
+                        compact=this
+                        subtitle="<p class='h4 light'><strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale</p>"
                         debtor=../debtor
                         notice=../notice
                         payee=../payee
-                        tempPath=../tempPath
                 }}
-
             {{/with}}
+
         </main>
     </div>
 </div>
@@ -53,33 +56,34 @@
         {{> header }}
 
         <main class="main-wrapper">
+            {{!-- Row 1 --}}
+            {{> mainInfo }}
+            {{!-- Row 2 --}}
+            {{> paymentInfoInfractionP2 }}
 
-            {{#with notice}}
 
-            {{!-- Payment Instalments · Default components --}}
-                {{> paymentMultipleInstalments3colDense
+            {{#with notice.instalments.reduced}}
+
+            {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
+                {{> paymentData
+                        subtitle="<p class='h4 light'><strong>Se paghi dal 6º al 60º giorno</strong> dalla notifica del verbale</p>"
+                        debtor=../debtor
+                        notice=../notice
+                        payee=../payee
+                        tempPath=../tempPath
+                }}
+
+                {{!-- Row 4 - Bollettino Poste --}}
+                {{> paymentPoste
+                        compact=this
+                        subtitle="<p class='h4 light'><strong>Se paghi dal 6º al 60º giorno</strong> dalla notifica del verbale</p>"
+                        debtor=../debtor
                         notice=../notice
                         payee=../payee
                         tempPath=../tempPath
                 }}
 
             {{/with}}
-
-            {{#each notice.instalments.items}}
-                {{#with this}}
-
-                {{!-- Row 4 - Bollettino Poste --}}
-                    {{> paymentPoste
-                            compact=this
-                            showCurrentInstalment=this
-                            debtor=../debtor
-                            notice=../notice
-                            payee=../payee
-                            tempPath=../tempPath
-                    }}
-
-                {{/with}}
-            {{/each}}
 
         </main>
     </div>
