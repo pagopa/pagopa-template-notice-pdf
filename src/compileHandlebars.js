@@ -8,20 +8,7 @@ const HandlebarsI18n = require("handlebars-i18n");
 
 const i18next = require("i18next");
 i18next.init({
-    resources: {
-        "it": {
-            translation: {
-                "title": "Avviso di pagamento",
-                "alert": "<strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale"
-            }
-        },
-        "en": {
-            translation: {
-                "title": "Payment Notice",
-                "alert": "<strong>Within 5 days</strong> from the notification"
-            }
-        }
-    },
+    resources: JSON.parse(readFileSync('./assets/i18next.json', 'utf8')),
     lng: "it"
 });
 
