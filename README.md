@@ -20,7 +20,7 @@ All PDF templates of the notice designed by pagoPA
 
 ## How to generate the PDF notice
 
-1. Go to the `template` folder and run `yarn` to install all the packages
+1. Go to the `src` folder and run `yarn` to install all the packages
 2. To generate the PDF notice, run `yarn generate`
 3. If everything is okay, you will see a PDF file named `pagopa-notice-<UUID>.pdf` in the same folder
 
