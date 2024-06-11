@@ -8,6 +8,11 @@ const slice = require("./helpers/slice.js");
 const not = require("./helpers/not.js");
 const splitAndSpace = require("./helpers/splitAndSpace.js");
 const lowercase = require("./helpers/lowercase.js");
+const times = require("./helpers/times.js");
+const arrayLength = require("./helpers/arrayLength.js");
+const navigateMatrix = require("./helpers/navigateMatrix.js");
+const paginator = require("./helpers/paginator.js");
+const getRowIndex = require("./helpers/getRowIndex.js");
 const genQrCode = require("./helpers/genQrCode.js");
 const genDataMatrix = require("./helpers/genDataMatrix.js");
 const getOnlinePaymentMethodContent = require("./helpers/getOnlinePaymentMethodContent.js");
@@ -19,6 +24,11 @@ Handlebars.registerHelper("slice", slice);
 Handlebars.registerHelper("not", not);
 Handlebars.registerHelper("splitAndSpace", splitAndSpace);
 Handlebars.registerHelper("lowercase", lowercase);
+Handlebars.registerHelper("arrayLength", arrayLength);
+Handlebars.registerHelper("times", times);
+Handlebars.registerHelper("navigateMatrix", navigateMatrix);
+Handlebars.registerHelper("paginator", paginator);
+Handlebars.registerHelper("getRowIndex", getRowIndex);
 Handlebars.registerHelper("genQrCode", genQrCode);
 Handlebars.registerHelper("genDataMatrix", genDataMatrix);
 Handlebars.registerHelper("getOnlinePaymentMethodContent", getOnlinePaymentMethodContent);
@@ -58,6 +68,7 @@ const paymentMultipleInstalments3col = importPartial(`payment-multiple-instalmen
 const paymentMultipleInstalments3colDense = importPartial(`payment-multiple-instalments-3col-dense`);
 const paymentDataMultipleInstalmentsP1 = importPartial(`payment-data-multiple-instalments-p1`);
 const paymentDataMultipleInstalmentsP2 = importPartial(`payment-data-multiple-instalments-p2`);
+const paymentInstalments = importPartial(`payment-instalments`);
 
 // Register partials
 Handlebars.registerPartial("header", header);
@@ -91,19 +102,20 @@ Handlebars.registerPartial("paymentMultipleInstalments3col", paymentMultipleInst
 Handlebars.registerPartial("paymentMultipleInstalments3colDense", paymentMultipleInstalments3colDense);
 Handlebars.registerPartial("paymentDataMultipleInstalmentsP1", paymentDataMultipleInstalmentsP1);
 Handlebars.registerPartial("paymentDataMultipleInstalmentsP2", paymentDataMultipleInstalmentsP2);
+Handlebars.registerPartial("paymentInstalments", paymentInstalments);
 
 // Parsing command-line arguments for dynamic JSON file and template file path
 const args = process.argv.slice(2); // Remove the first two elements
 // Default values with a cleaner approach using an object to map flags to their respective file paths
 let filePaths = {
-  "--dataFile": "notice-single-payment.json",
-  "--templateFile": "template.hbs",
+    "--dataFile": "notice-single-payment.json",
+    "--templateFile": "template.hbs",
 };
 
 args.forEach((arg, index) => {
-  if (filePaths.hasOwnProperty(arg) && args[index + 1]) {
-    filePaths[arg] = args[index + 1];
-  }
+    if (filePaths.hasOwnProperty(arg) && args[index + 1]) {
+        filePaths[arg] = args[index + 1];
+    }
 });
 
 const dataFilePath = filePaths["--dataFile"];
@@ -115,7 +127,7 @@ const template = Handlebars.compile(templateFile);
 // Load the JSON data for the template
 const data = require(`./json/${dataFilePath}`);
 data.tempPath = ".temp";
-fs.mkdirSync(".temp", { recursive: true });
+fs.mkdirSync(".temp", {recursive: true});
 // Generate the HTML
 const html = template(data);
 

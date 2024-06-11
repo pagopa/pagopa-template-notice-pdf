@@ -7,6 +7,7 @@
   "scripts": {
     "generate-single-instalment": "node compileHandlebars --templateFile template-single-instalment.hbs && node generatePDF",
     "generate-single-instalment-poste": "node compileHandlebars --templateFile template-single-instalment-poste.hbs && node generatePDF",
+    "generate-instalments": "node compileHandlebars --templateFile template-instalments.hbs --dataFile notice-many-instalments.json && node generatePDF",
     "generate-instalments-multiples-of-2": "node compileHandlebars --templateFile template-instalments-multiples-of-2.hbs --dataFile notice-instalments-multiples-of-2.json && node generatePDF",
     "generate-instalments-multiples-of-2-poste": "node compileHandlebars --templateFile template-instalments-multiples-of-2-poste.hbs --dataFile notice-instalments-multiples-of-2.json && node generatePDF",
     "generate-instalments-multiples-of-3": "node compileHandlebars --templateFile template-instalments-multiples-of-3.hbs --dataFile notice-instalments-multiples-of-3.json && node generatePDF",
