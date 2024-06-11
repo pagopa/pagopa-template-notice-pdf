@@ -1,0 +1,27 @@
+<section class="instalment-payment-data" style="--columns: {{columns}}">
+    {{#each instalments}}
+        <div>
+            <div class="inner-separator">
+                <h4 class="h4">Rata {{add (add @index 1) ../start}}</h4>
+            </div>
+            {{#with this}}
+                {{#if (eq ../columns 2)}}
+                    {{> paymentQRCol
+                            debtor=../debtor
+                            notice=../notice
+                            payee=../payee
+                            tempPath=../tempPath
+                    }}
+                {{/if}}
+                {{#if (eq ../columns 3)}}
+                    {{> paymentQRColCompact
+                            debtor=../debtor
+                            notice=../notice
+                            payee=../payee
+                            tempPath=../tempPath
+                    }}
+                {{/if}}
+            {{/with}}
+        </div>
+    {{/each}}
+</section>

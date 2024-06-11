@@ -1,0 +1,1042 @@
+:root {
+  --page-margin: 10mm;
+  --thermal-page-margin: 5mm;
+  --section-margin: 4mm;
+  --thermal-section-margin: 3mm;
+  --thermal-content-margin: 2mm;
+  --thermal-qrcode-margin: 3mm;
+  /* Used for inner sections, as multiple instalments */
+  --inner-margin: 7mm;
+  /* Fonts */
+  --font-monospaced: 'Roboto Mono', monospace;
+  /* Colors */
+  --debug-color: lightpink;
+  --color-black: #0000000;
+  --color-grey-dark: #7C7C7B;
+  --color-grey: #D9D9D9;
+  --color-grey-light: #ECECEC;
+  /* Typographic styles */
+  --h1-fsize: 16pt;
+  --h2-fsize: 14pt;
+  --h3-fsize: 12pt;
+  --h4-fsize: 10pt;
+  --h5-fsize: 8pt;
+  --data-fsize-large: 12pt;
+  --data-fsize-medium: 10pt;
+  --data-fsize-small: 8pt;
+  --body-fsize: 8pt;
+  --caption-fsize: 7pt;
+  --weight-bold: 700;
+  --weight-regular: 400;
+  /* Element sizes */
+  --size-thermal-pagopa-logo: 15mm;
+  --size-entity-logo: 30mm;
+  --size-qrcode: 25mm;
+  --size-qrcode-small: 20mm;
+  --size-data-matrix: 23mm;
+  --size-info-icon: 4mm;
+  --size-arrow-icon: 4mm;
+  --size-info-pictogram: 12mm;
+  /* Sizes */
+  --separator-title-height: 8mm;
+  --separator-inner-margin: calc(var(--page-margin) - var(--inner-margin));
+  /* Inner margin, before column gap */
+  --separator-margin-small: 4mm;
+  --separator-gutter: 2mm;
+  /* Spacing after separator */
+  --separator-bottom-margin: 6mm;
+  /* Used by payment data and Bollettino Postale */
+  --data-grid-gap-large: 10mm;
+  --data-grid-gap-medium: 6mm;
+  --data-grid-gap-small: 4mm;
+  --data-grid-gap-xsmall: 2mm;
+  --data-grid-gap-2xsmall: 1mm;
+  --data-grid-gap-3xsmall: 0.75mm;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Titillium Sans Pro";
+  src: url(assets/fonts/TitilliumSansPro/TitilliumSansPro-Regular.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Titillium Sans Pro";
+  src: url(assets/fonts/TitilliumSansPro/TitilliumSansPro-Semibold.otf) format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Titillium Sans Pro";
+  src: url(assets/fonts/TitilliumSansPro/TitilliumSansPro-Bold.otf) format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url(assets/fonts/RobotoMono/RobotoMono-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url(assets/fonts/RobotoMono/RobotoMono-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  text-rendering: geometricprecision !important;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.body,
+.small-caps-title,
+.caption {
+  margin: 0;
+}
+
+.h1 {
+  font-size: var(--h1-fsize);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+}
+
+.h2 {
+  font-size: var(--h2-fsize);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+}
+
+.h3 {
+  font-size: var(--h3-fsize);
+  font-weight: var(--weight-regular);
+  line-height: 1.4;
+}
+
+.h4 {
+  font-size: var(--h4-fsize);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+
+  &.light {
+    font-weight: var(--weight-regular);
+  }
+}
+
+.h5 {
+  font-size: var(--h5-fsize);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+}
+
+.small-caps-title {
+  font-size: var(--h4-fsize);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.data-small {
+  font-family: var(--font-monospaced);
+  font-size: var(--data-fsize-small);
+  font-weight: var(--weight-regular);
+}
+
+.body {
+  font-size: var(--body-fsize);
+  font-weight: var(--weight-regular);
+  line-height: 1.35;
+
+  &.strong {
+    font-weight: var(--weight-bold);
+  }
+}
+
+.caption {
+  font-size: var(--caption-fsize);
+  font-weight: var(--weight-regular);
+  color: var(--color-grey-dark);
+
+  &.black {
+    color: var(--color-black);
+  }
+}
+
+.align-right {
+  text-align: right;
+}
+
+.not-shrinking {
+  flex-shrink: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Titillium Sans Pro', sans-serif;
+  -webkit-print-color-adjust: exact;
+}
+
+.page {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  page-break-after: always;
+  width: 210mm;
+  height: 296mm;
+}
+
+.page-wrapper {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: var(--section-margin);
+  background-color: white;
+}
+
+.main-wrapper {
+  display: grid;
+}
+
+
+/* Common */
+.notice-title {
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.start-separator,
+.end-separator,
+.unique-separator,
+.inner-separator,
+.thermal-separator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-grey-light);
+  height: var(--separator-title-height);
+}
+
+.unique-separator {
+  padding-inline: var(--page-margin);
+}
+
+.inner-separator {
+  padding-inline: var(--separator-inner-margin);
+}
+
+.start-separator {
+  padding-inline-start: var(--page-margin);
+  padding-inline-end: var(--separator-margin-small);
+}
+
+.end-separator {
+  padding-inline-start: var(--separator-title-height);
+  padding-inline-end: var(--page-margin);
+}
+
+.start-grid-cell {
+  margin-inline-start: var(--page-margin);
+  margin-inline-end: var(--separator-margin-small);
+}
+
+.end-grid-cell {
+  margin-inline-start: var(--separator-title-height);
+  margin-inline-end: var(--page-margin);
+}
+
+.unique-grid-cell {
+  margin-inline: var(--page-margin);
+}
+
+.grid-cell-span-1 {
+  grid-column: span 1;
+}
+
+.grid-cell-span-2 {
+  grid-column: span 2;
+}
+
+.grid-cell-span-3 {
+  grid-column: span 3;
+}
+
+.grid-cell-span-4 {
+  grid-column: span 4;
+}
+
+dl {
+  margin: 0
+}
+
+.mt-small {
+  margin-top: var(--separator-margin-small);
+}
+
+.mb-3x-small {
+  margin-bottom: var(--data-grid-gap-3xsmall);
+}
+
+.data-key-value {
+  --spacing: 0.5mm;
+
+  font-size: var(--body-fsize);
+  line-height: 1.2;
+
+  & dt {
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    margin-top: var(--spacing);
+    font-weight: var(--weight-bold);
+  }
+}
+
+.data-key-value-inline {
+  display: flex;
+  gap: var(--data-grid-gap-xsmall);
+  font-size: var(--body-fsize);
+  line-height: 1.2;
+
+  & dt {
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    font-weight: var(--weight-bold);
+  }
+}
+
+.data-key-value-monospaced {
+  --spacing: 1mm;
+
+  line-height: 1.4;
+
+  & dt {
+    font-size: var(--body-fsize);
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    margin-top: var(--spacing);
+    font-size: var(--data-fsize-medium);
+    font-family: var(--font-monospaced);
+    font-weight: var(--weight-bold);
+    line-height: 1.2;
+  }
+
+  &.tight dd {
+    margin-top: 0;
+  }
+}
+
+.data-key-value-inline-monospaced {
+  display: flex;
+  gap: var(--data-grid-gap-xsmall);
+  align-items: baseline;
+  line-height: 1;
+
+  & dt {
+    font-size: var(--h4-fsize);
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    font-family: var(--font-monospaced);
+    font-size: var(--h3-fsize);
+    font-weight: var(--weight-bold);
+  }
+}
+
+.payment-qrcode {
+  width: var(--size-qrcode);
+  height: var(--size-qrcode);
+}
+
+.info-icon {
+  align-self: flex-start;
+  width: var(--size-info-icon);
+  height: var(--size-info-icon);
+}
+
+.info-paragraph {
+  display: flex;
+  align-items: center;
+  gap: var(--data-grid-gap-xsmall);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.forcedCapitalCase {
+  text-transform: capitalize;
+}
+
+/* Notice Header */
+
+.notice-header {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--page-margin);
+  padding-bottom: 0;
+
+  & .main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-margin);
+  }
+
+  & .pagopa-header {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-start;
+    gap: 4mm;
+
+    & .logo {
+      width: 15mm;
+      height: auto;
+    }
+  }
+
+  & .notice-header-logo {
+    flex-shrink: 0;
+    justify-self: end;
+    display: block;
+    width: var(--size-entity-logo);
+    height: var(--size-entity-logo);
+  }
+}
+
+/* Notice Info
+-- Payee
+-- Debtor
+*/
+
+.notice-main-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "payee-title debtor-title"
+    "payee-name debtor-name"
+    "payee-sector debtor-address"
+    "payee-info debtor-address";
+  column-gap: var(--separator-gutter);
+  row-gap: var(--separator-bottom-margin);
+  margin-bottom: var(--section-margin);
+
+  & .payee-title-block {
+    grid-area: payee-title;
+  }
+
+  & .payee-name-block {
+    grid-area: payee-name;
+  }
+
+  & .payee-sector-block {
+    grid-area: payee-sector;
+  }
+
+  & .payee-info-block {
+    grid-area: payee-info;
+  }
+
+  & .debtor-title-block {
+    grid-area: debtor-title;
+  }
+
+  & .debtor-name-block {
+    grid-area: debtor-name;
+  }
+
+  & .debtor-address-block {
+    grid-area: debtor-address;
+  }
+}
+
+/* Notice payment info
+-- Amount
+-- Where to pay
+*/
+
+.notice-payment-info {
+  --payment-grid-col-gap: 4mm;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "payment-amount-title payment-methods-title"
+    "payment-amount-block payment-methods-block";
+  column-gap: var(--separator-gutter);
+  row-gap: var(--separator-bottom-margin);
+  margin-bottom: var(--section-margin);
+
+  & .payment-amount-title-block {
+    grid-area: payment-amount-title;
+  }
+
+  & .payment-methods-title-block {
+    grid-area: payment-methods-title;
+  }
+
+  & .pagopa-website-block {
+    /* display: flex;
+    height: 100%; */
+    /* align-items: center; */
+    vertical-align: middle;
+    /* column-gap: 0.5ch; */
+  }
+
+  & .payment-info-outer {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--data-grid-gap-small);
+  }
+
+  & .payment-info-pictogram {
+    width: var(--size-info-pictogram);
+    height: auto;
+  }
+
+  & .info-block {
+    grid-area: info;
+    display: grid;
+    align-items: flex-start;
+    gap: var(--data-grid-gap-xsmall);
+  }
+}
+
+.payment-amount-block {
+  --payment-value-margin: 1.5mm;
+
+  display: grid;
+  align-content: flex-start;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "amount amount date"
+    "info info info";
+  row-gap: var(--separator-margin-small);
+  column-gap: var(--payment-grid-col-gap);
+
+  & .amount {
+    grid-area: amount;
+  }
+
+  & .expiry-date {
+    grid-area: date;
+  }
+}
+
+.payment-amount-block-infraction {
+  --payment-value-margin: 1mm;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "amount-1 amount-2"
+    "info info";
+  row-gap: var(--separator-margin-small);
+  column-gap: var(--payment-grid-col-gap);
+
+  & dd {
+    margin-top: var(--payment-value-margin);
+  }
+
+  & .amount-details {
+    margin-top: var(--payment-value-margin);
+  }
+
+  & .amount-1 {
+    grid-area: amount-1;
+  }
+
+  & .amount-2 {
+    grid-area: amount-2;
+  }
+
+  & .amount-one-line {
+    display: flex;
+    gap: var(--data-grid-gap-medium);
+  }
+}
+
+.payment-methods-block {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  align-items: flex-start;
+  align-self: flex-start;
+  row-gap: var(--separator-margin-small);
+}
+
+/* Notice Payment Data
+-- QR Code
+-- Notice main data
+*/
+
+.notice-payment-data {
+  --columns: 12;
+  --col-gap: var(--data-grid-gap-medium);
+
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  row-gap: var(--separator-bottom-margin);
+  margin-bottom: var(--section-margin);
+
+  .payment-details {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    column-gap: var(--col-gap);
+  }
+
+  .qrcode-area {
+    grid-column: span 3;
+  }
+
+  .payment-details-data {
+    grid-column: span 9;
+  }
+
+  .payment-details-data-1st-block {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr auto;
+    row-gap: var(--data-grid-gap-xsmall);
+    column-gap: var(--data-grid-gap-small);
+
+    & .amount {
+      margin: 0;
+      font-size: var(--h4-fsize);
+      font-weight: var(--weight-regular);
+    }
+
+    & .amount strong {
+      font-family: var(--font-monospaced);
+      font-size: var(--data-fsize-large);
+      font-weight: var(--weight-bold);
+    }
+  }
+
+  .payment-details-data-2nd-block {
+    display: grid;
+    margin-top: var(--data-grid-gap-small);
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.payment-data-compact {
+  display: grid;
+  row-gap: var(--data-grid-gap-medium);
+}
+
+.payment-data-compact-row {
+  display: flex;
+  gap: var(--data-grid-gap-large);
+  align-items: flex-start;
+}
+
+.notice-poste-payment-data {
+  --columns: 12;
+  --col-gap: var(--data-grid-gap-medium);
+
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  row-gap: var(--separator-bottom-margin);
+  margin-bottom: var(--section-margin);
+  margin-top: var(--separator-margin-small);
+
+  &.compact {
+    row-gap: var(--data-grid-gap-small);
+    margin-bottom: var(--data-grid-gap-small);
+    margin-top: var(--data-grid-gap-xsmall);
+
+    & .poste-italiane-area {
+      row-gap: var(--data-grid-gap-xsmall);
+    }
+
+    & .account-number-and-amount {
+      margin-bottom: var(--data-grid-gap-small);
+    }
+  }
+
+  .payment-details {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    column-gap: var(--col-gap);
+  }
+
+  .header-bollettino-postale {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    column-gap: var(--col-gap);
+
+    & .title {
+      grid-column: span 3;
+    }
+
+    & .logo-and-date {
+      grid-column: span 9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    & .logo-bancoposta {
+      width: 20mm;
+    }
+  }
+
+  .poste-italiane-area {
+    grid-column: span 3;
+    display: grid;
+    row-gap: var(--data-grid-gap-small);
+  }
+
+  .logo-poste-italiane {
+    width: 90%;
+  }
+
+  .logo-bollettino-postale {
+    width: 75%;
+  }
+
+  .euro-block {
+    width: 8mm;
+    height: auto;
+  }
+
+  .account-number-and-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--data-grid-gap-medium);
+  }
+
+  & .account-number {
+    display: flex;
+    align-items: center;
+    gap: var(--data-grid-gap-xsmall);
+  }
+
+  .poste-scissors {
+    position: absolute;
+    right: var(--page-margin);
+    top: 0;
+    transform: translateY(-100%);
+  }
+
+  .payment-details-data {
+    grid-column: span 9;
+  }
+
+  .payment-details-and-datamatrix {
+    display: grid;
+    grid-template-areas: "first-block data-matrix"
+      "second-block data-matrix";
+    grid-template-columns: 1fr auto;
+    gap: var(--data-grid-gap-medium);
+  }
+
+  .payment-details-data-1st-block {
+    grid-area: first-block;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: var(--data-grid-gap-xsmall);
+
+    & .amount {
+      margin: 0;
+      font-size: var(--h4-fsize);
+      font-weight: var(--weight-regular);
+    }
+
+    & .amount strong {
+      font-family: var(--font-monospaced);
+      font-size: var(--data-fsize-large);
+      font-weight: var(--weight-bold);
+    }
+  }
+
+  .payment-details-data-2nd-block {
+    grid-area: second-block;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: var(--data-grid-gap-small);
+  }
+
+  .payment-data-matrix {
+    --internal-space: 2.5mm;
+
+    position: relative;
+    grid-area: data-matrix;
+    width: var(--size-data-matrix);
+    height: var(--size-data-matrix);
+    padding: var(--internal-space);
+    margin-right: calc(var(--internal-space) * -1);
+
+    & .frame-border-square {
+      --size: 4mm;
+      position: absolute;
+      border: 0.75mm solid var(--color-grey);
+      width: var(--size);
+      height: var(--size);
+
+      &.top-left {
+        top: 0;
+        left: 0;
+        border-right-width: 0;
+        border-bottom-width: 0;
+      }
+
+      &.top-right {
+        top: 0;
+        right: 0;
+        border-left-width: 0;
+        border-bottom-width: 0;
+      }
+
+      &.bottom-left {
+        bottom: 0;
+        left: 0;
+        border-right-width: 0;
+        border-top-width: 0;
+      }
+
+      &.bottom-right {
+        bottom: 0;
+        right: 0;
+        border-left-width: 0;
+        border-top-width: 0;
+      }
+    }
+
+    & img {
+      object-fit: cover;
+      width: var(--size-data-matrix);
+      height: var(--size-data-matrix);
+    }
+  }
+}
+
+.arrow-separator {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--data-grid-gap-xsmall);
+  margin-inline: var(--page-margin);
+  margin-block-end: var(--data-grid-gap-small);
+
+  & .arrow-icon {
+    width: var(--size-arrow-icon);
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  & p {
+    text-align: center;
+    flex-grow: 1;
+  }
+}
+
+.instalment-payment-data {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--data-grid-gap-medium);
+  margin-inline: var(--inner-margin);
+  margin-bottom: var(--section-margin);
+}
+
+.instalment-details {
+  --columns: 9;
+  --data-col-gap: var(--data-grid-gap-large);
+
+  display: grid;
+  align-items: flex-start;
+  margin-inline: var(--separator-inner-margin);
+  row-gap: var(--data-grid-gap-small);
+  margin-top: var(--data-grid-gap-small);
+
+  & .instalment-details-data-1st-block {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: var(--data-grid-gap-xsmall);
+    column-gap: var(--data-grid-gap-small);
+
+    & .qrcode-area {
+      grid-column-start: 2;
+      grid-row: 1 / 4;
+    }
+  }
+
+  & .instalment-details-data-1st-block.compact {
+    & .qrcode-area {
+      grid-column-start: 2;
+      grid-row: 1 / 3;
+    }
+
+    & .payment-qrcode {
+      width: var(--size-qrcode-small);
+      height: var(--size-qrcode-small);
+    }
+  }
+
+  & .instalment-row-data {
+    display: flex;
+    gap: var(--data-col-gap);
+  }
+
+  & .instalment-details-data-2nd-block {
+    display: grid;
+    row-gap: var(--data-grid-gap-xsmall);
+  }
+}
+
+/* THERMAL STYLES */
+.thermal-page {
+  margin: 0;
+  box-sizing: border-box;
+  page-break-after: avoid;
+  width: 80mm;
+  overflow: hidden;
+}
+
+.thermal-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-margin);
+  background-color: white;
+}
+
+.thermal-block {
+  margin-block-end: var(--thermal-section-margin);
+}
+
+.thermal-separator {
+  padding-inline: var(--thermal-page-margin);
+}
+
+.thermal-small-caps-title {
+  font-size: var(--h5-fsize);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.thermal-grid-cell {
+  margin-inline: var(--thermal-page-margin);
+  margin-block-start: var(--thermal-section-margin);
+}
+
+/* Thermal Notice Header */
+
+.thermal-notice-header {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--thermal-page-margin);
+  padding-bottom: 0;
+
+  & .main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-margin);
+  }
+
+  & .pagopa-header {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-start;
+    gap: 4mm;
+
+    & .logo {
+      width: var(--size-thermal-pagopa-logo);
+      height: auto;
+    }
+  }
+}
+
+/* Thermal Payment Info */
+
+.thermal-payment-methods-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--thermal-content-margin);
+}
+
+.thermal-payment-amount-block-infraction {
+  display: flex;
+  flex-direction: column;
+  gap: var(--thermal-content-margin);
+}
+
+/* Thermal Payment QRCode */
+
+.thermal-payment-qrcode-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--thermal-qrcode-margin);
+}
+
+.thermal-payment-details-data {
+  display: flex;
+  flex-direction: column;
+  gap: var(--data-grid-gap-2xsmall);
+}
+
+.thermal-payment-qrcode {
+  align-self: center;
+}
+
+.thermal-data-key-value {
+  display: flex;
+  gap: var(--data-grid-gap-xsmall);
+  align-items: center;
+  justify-content: space-between;
+
+  & dt {
+    font-size: var(--body-fsize);
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    font-size: var(--body-fsize);
+    font-weight: var(--weight-regular);
+  }
+}
+
+.thermal-data-key-value-monospaced {
+  display: flex;
+  gap: var(--data-grid-gap-xsmall);
+  align-items: center;
+  justify-content: space-between;
+
+  & dt {
+    font-size: var(--body-fsize);
+    font-weight: var(--weight-regular);
+  }
+
+  & dd {
+    margin: 0;
+    font-family: var(--font-monospaced);
+    font-size: var(--h4-fsize);
+    font-weight: var(--weight-bold);
+  }
+}

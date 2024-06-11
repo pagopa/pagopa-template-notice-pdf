@@ -1,0 +1,76 @@
+{
+  "debtor": {
+    "fullName": "MARZIA ROCCARASO",
+    "taxCode": "rccmrz88A52C409A",
+    "address": "Corso Sempione",
+    "buildingNumber": "55",
+    "postalCode": "20149",
+    "city": "Milano",
+    "province": "MI"
+  },
+  "payee": {
+    "logo": "https://assets.cdn.io.italia.it/logos/organizations/82001760675.png",
+    "name": "Comune di Controguerra",
+    "taxCode": 82001760676,
+    "sector": "Servizio Pagamenti",
+    "additionalInfo": "Info: www.cittadicapri.it",
+    "channel": {
+      "online": {
+        "website": true,
+        "app": true
+      }
+    }
+  },
+  "notice": {
+    "subject": "Trasporto Scolastico A.S. 2021/2022",
+    "amount": "152,00",
+    "expiryDate": "24/10/2024",
+    "qrCode": "PAGOPA|002|000000000000000000|00000000000|9999",
+    "additionalInfo": "boh?",
+    "refNumber": "123456789012345688",
+    "cbillCode": "78Q45",
+    "posteAccountNumber": "30372502",
+    "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
+    "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA",
+    "instalments": {
+      "items": [
+        {
+          "refNumber": "123456789012345678",
+          "amount": "68,40",
+          "expiryDate": "20/12/2024",
+          "cbillCode": "78Q44",
+          "qrCode": "PAGOPA|002|000000000000000000|82001760676|9999",
+          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
+          "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
+        },
+        {
+          "refNumber": "123456789012345679",
+          "amount": "83,60",
+          "expiryDate": "20/01/2025",
+          "cbillCode": "78Q45",
+          "qrCode": "PAGOPA|002|000000000000000000|82001760676|1111",
+          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
+          "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
+        },
+        {
+          "refNumber": "123456789012345678",
+          "amount": "68,40",
+          "expiryDate": "20/12/2024",
+          "cbillCode": "78Q44",
+          "qrCode": "PAGOPA|002|000000000000000000|82001760676|9999",
+          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
+          "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
+        },
+        {
+          "refNumber": "123456789012345679",
+          "amount": "83,60",
+          "expiryDate": "20/01/2025",
+          "cbillCode": "78Q45",
+          "qrCode": "PAGOPA|002|000000000000000000|82001760676|1111",
+          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
+          "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{{#each instalments as | instalment |}}
+
+    <section class="notice-poste-payment-data {{#if compact}}compact{{/if}}">
+        <div class="header-bollettino-postale unique-separator">
+            <div class="title">
+                <h3 class="small-caps-title">Bollettino postale PA</h3>
+            </div>
+            <div class="logo-and-date">
+                <img class="logo-bancoposta" src="assets/poste/banco-posta.svg" alt="BancoPosta"/>
+                <p class="h4">Rata {{add (add @index 1) ../start}} entro {{instalment.expiryDate}}</p>
+                <img class="poste-scissors" src="assets/poste/scissors.svg" aria-hidden="true"/>
+            </div>
+        </div>
+
+        {{> paymentBollettino
+                debtor=../debtor
+                notice=../notice
+                payee=../payee
+                tempPath=../tempPath
+        }}
+
+    </section>
+
+{{/each}}
