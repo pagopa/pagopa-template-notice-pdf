@@ -37,7 +37,7 @@
                         payee=../payee
                         tempPath=../tempPath
                         instalments=(navigateMatrix (paginator ../notice) 0 0)
-                        columns = (arrayLength (navigateMatrix (paginator ../notice) 0 0))
+                        columns=(arrayLength (navigateMatrix (paginator ../notice) 0 0))
                         start=0
                 }}
             {{/with }}
@@ -68,7 +68,7 @@
                                 payee=../../../payee
                                 tempPath=../../../tempPath
                                 instalments=(row)
-                                columns = (arrayLength (navigateMatrix (paginator @../..) 1 0))
+                                columns=(arrayLength (navigateMatrix (paginator @../..) 1 0))
                                 start=(getRowIndex @index pageNumber (paginator @../..))
                         }}
 
