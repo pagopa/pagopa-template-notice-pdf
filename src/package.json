@@ -20,8 +20,7 @@
     "handlebars": "^4.7.8",
     "puppeteer": "^22.0.0",
     "qrcode-svg": "^1.1.0",
-    "uuid": "^9.0.1",
-    "handlebars-i18n": "1.6.4"
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
