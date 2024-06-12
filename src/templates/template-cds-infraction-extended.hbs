@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
+
+<head>
+    <title>Avviso di pagamento</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+{{!-- First page --}}
+<div class="page">
+    <div class="page-wrapper">
+
+        {{!-- Notice HEADER --}}
+        {{> header }}
+
+        <main class="main-wrapper">
+            {{!-- Row 1 --}}
+            {{> mainInfo }}
+            {{!-- Row 2 --}}
+            {{> paymentInfoInfractionP1 }}
+
+
+            {{#with notice.instalments.discounted}}
+
+            {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
+                {{> paymentData
+                        subtitle="<p class='h4 light'><strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale</p>"
+                        debtor=../debtor
+                        notice=../notice
+                        payee=../payee
+                        tempPath=../tempPath
+                }}
+
+                {{!-- Row 4 - Bollettino Poste --}}
+                {{> paymentPoste
+                        compact=this
+                        subtitle="<p class='h4 light'><strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale</p>"
+                        debtor=../debtor
+                        notice=../notice
+                        payee=../payee
+                        tempPath=../tempPath
+                }}
+            {{/with}}
+
+        </main>
+    </div>
+</div>
+
+{{!-- Second page --}}
+<div class="page">
+    <div class="page-wrapper">
+
+        {{!-- Notice HEADER --}}
+        {{> header }}
+
+        <main class="main-wrapper">
+            {{!-- Row 1 --}}
+            {{> mainInfo }}
+            {{!-- Row 2 --}}
+            {{> paymentInfoInfractionP2 }}
+
+
+            {{#with notice.instalments.reduced}}
+
+            {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
+                {{> paymentData
+                        subtitle="<p class='h4 light'><strong>Se paghi dal 6º al 60º giorno</strong> dalla notifica del verbale</p>"
+                        debtor=../debtor
+                        notice=../notice
+                        payee=../payee
+                        tempPath=../tempPath
+                }}
+
+                {{!-- Row 4 - Bollettino Poste --}}
+                {{> paymentPoste
+                        compact=this
+                        subtitle="<p class='h4 light'><strong>Se paghi dal 6º al 60º giorno</strong> dalla notifica del verbale</p>"
+                        debtor=../debtor
+                        notice=../notice
+                        payee=../payee
+                        tempPath=../tempPath
+                }}
+
+            {{/with}}
+
+        </main>
+    </div>
+</div>
+
+</body>
+
+</html>
