@@ -1,3 +1,11 @@
+{{!-- Inputs:
+
+instalments: the list of instalments to display (2 or 3 elements)
+start: the number of the first instalment of the row
+compact: true if you have 3 bollettini postale in the same page
+
+ --}}
+
 {{#each instalments as | instalment |}}
 
     <section class="notice-poste-payment-data {{#if ../compact}}compact{{/if}}">

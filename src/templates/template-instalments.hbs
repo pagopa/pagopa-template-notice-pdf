@@ -30,7 +30,7 @@
                         payee=../payee
                         tempPath=../tempPath
                 }}
-                {{!-- Row 4 - Multiple instalments --}}
+                {{!-- First Row of Instalments in the First Page --}}
                 {{> paymentInstalments
                         debtor=../debtor
                         notice=../notice
@@ -46,9 +46,10 @@
 </div>
 
 
+
 {{#with notice}}
+{{!-- for each Extra Page with other instalments --}}
     {{#each (times (add (arrayLength (paginator ../notice false)) -1)) as | pageNumber | }}
-    {{!-- Second page --}}
         <div class="page">
             <div class="page-wrapper">
                 {{!-- Notice HEADER --}}
@@ -58,6 +59,7 @@
                 }}
                 <main class="main-wrapper">
                     {{#each (navigateMatrix (paginator @.. false) (add pageNumber 1) ) as | row | }}
+                    {{!-- for each Row in the page create the pagopa QR --}}
                         {{> paymentInstalments
                                 debtor=../../../debtor
                                 notice=../../../notice

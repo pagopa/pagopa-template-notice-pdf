@@ -47,8 +47,7 @@
 
 {{#with notice}}
     {{#each (times (arrayLength (paginator ../notice true))) as | pageNumber | }}
-
-    {{!-- Second page --}}
+    {{!-- for each Extra Page with instalments --}}
         <div class="page">
             <div class="page-wrapper">
 
@@ -60,6 +59,8 @@
 
                 <main class="main-wrapper">
                     {{#each (navigateMatrix (paginator @.. true) pageNumber ) as | row | }}
+                    {{!-- for each Row in the page create the pagopa QR and the bollettinoPostale --}}
+                    {{!-- pagopa QR --}}
                         {{> paymentInstalments
                                 debtor=../../../debtor
                                 notice=../../../notice
@@ -70,7 +71,7 @@
                                 start=(getRowIndex @index pageNumber (paginator @../.. true))
                                 compact=(eq (arrayLength row) 3)
                         }}
-                        {{!-- Row 4 - Bollettino Poste --}}
+                        {{!-- bollettinoPostale --}}
                         {{> paymentInstalmentsPoste
                                 compact=(eq (arrayLength row) 3)
                                 debtor=../../../debtor

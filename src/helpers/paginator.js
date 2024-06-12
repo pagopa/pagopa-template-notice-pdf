@@ -1,3 +1,28 @@
+/* Inputs:
+
+notice: the notice with instalments: from 2 to 9 items
+withBollettinoPoste: boolean to indicate if in the same page there is also the bollettino postale
+
+Outputs:
+create an n-dimensional array to divide the instalments in pages and rows.
+
+Example:
+
+instalments [1,2,3,4,5,6,7]
+withBollettinoPoste: false
+
+-----
+
+[
+         page1        page2
+row1  [ [1,2,3] ] , [ [4,5] ]
+row2                  [6,7]
+
+]
+
+Tips: use navigateMatrix helper to navigate in this data structure: navigateMatrix <pageNumber> <rowNumber>
+
+* */
 function paginator(notice, withBollettinoPoste) {
 
     let instalments = notice.instalments.items;
