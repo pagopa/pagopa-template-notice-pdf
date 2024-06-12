@@ -1040,22 +1040,3 @@ dl {
         font-weight: var(--weight-bold);
     }
 }
-
-.notice-subtitle {
-    text-transform: uppercase;
-    color: var(--color-black);
-    font-size: 8px;
-    font-weight: 400;
-}
-
-.container_flex_horizontal {
-    display: flex;
-    align-items: center;
-}
-
-.container_flex_vertical {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}

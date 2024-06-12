@@ -11,9 +11,9 @@
     "generate-instalments-poste": "node compileHandlebars --templateFile template-instalments-poste.hbs --dataFile notice-instalments-poste.json && node generatePDF",
     "generate-many-instalments": "node compileHandlebars --templateFile template-many-instalments.hbs --dataFile notice-many-instalments.json && node generatePDF",
     "generate-cds-infraction": "node compileHandlebars --templateFile template-cds-infraction.hbs --dataFile notice-infraction.json && node generatePDF",
+    "generate-cds-infraction-extended": "node compileHandlebars --templateFile template-cds-infraction-extended.hbs --dataFile notice-infraction.json && node generatePDF",
     "generate-cds-infraction-thermal": "node compileHandlebars --templateFile template-cds-infraction-thermal.hbs --dataFile notice-infraction.json && node generateThermalPDF",
-    "generate-cds-infraction-thermal-immediate-notification": "node compileHandlebars --templateFile template-cds-infraction-thermal-immediate-notification.hbs --dataFile notice-infraction.json && node generateThermalPDF",
-    "generate-cds-infraction-extended": "node compileHandlebars --templateFile template-cds-infraction-extended.hbs --dataFile notice-infraction.json && node generatePDF"
+    "generate-cds-infraction-thermal-immediate-notification": "node compileHandlebars --templateFile template-cds-infraction-thermal-immediate-notification.hbs --dataFile notice-infraction.json && node generateThermalPDF"
   },
   "dependencies": {
     "bwip-js": "^4.3.2",

@@ -145,3 +145,4 @@ src/template.html
 **/node_modules/
 **/template.html
 *.pdf
+/output

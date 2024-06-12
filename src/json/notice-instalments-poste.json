@@ -36,65 +36,65 @@
       "items": [
         {
           "refNumber": "123456789012345678",
-          "amount": "68,40",
-          "expiryDate": "20/12/2024",
-          "cbillCode": "78Q44",
+          "amount": "1,40",
+          "expiryDate": "1/12/2024",
           "qrCode": "PAGOPA|002|123456789012345678|82001760676|9999",
-          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
           "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
         },
         {
-          "refNumber": "123456789012345678",
-          "amount": "68,40",
-          "expiryDate": "20/12/2024",
-          "cbillCode": "78Q44",
+          "refNumber": "223456789012345678",
+          "amount": "2,40",
+          "expiryDate": "2/12/2024",
           "qrCode": "PAGOPA|002|123456789012345678|82001760676|9999",
-          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
           "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
         },
         {
-          "refNumber": "123456789012345678",
-          "amount": "68,40",
-          "expiryDate": "20/12/2024",
-          "cbillCode": "78Q44",
+          "refNumber": "323456789012345678",
+          "amount": "3,40",
+          "expiryDate": "3/12/2024",
           "qrCode": "PAGOPA|002|123456789012345678|82001760676|9999",
-          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
           "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
         },
         {
-          "refNumber": "123456789012345678",
-          "amount": "68,40",
-          "expiryDate": "20/12/2024",
-          "cbillCode": "78Q44",
+          "refNumber": "423456789012345678",
+          "amount": "4,40",
+          "expiryDate": "4/12/2024",
           "qrCode": "PAGOPA|002|123456789012345678|82001760676|9999",
-          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
           "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
         },
         {
-          "refNumber": "123456789012345678",
-          "amount": "68,40",
-          "expiryDate": "20/12/2024",
-          "cbillCode": "78Q44",
+          "refNumber": "523456789012345678",
+          "amount": "5,40",
+          "expiryDate": "5/12/2024",
           "qrCode": "PAGOPA|002|123456789012345678|82001760676|9999",
-          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
           "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
         },
         {
-          "refNumber": "123456789012345678",
-          "amount": "68,40",
-          "expiryDate": "20/12/2024",
-          "cbillCode": "78Q44",
+          "refNumber": "623456789012345678",
+          "amount": "6,40",
+          "expiryDate": "6/12/2024",
           "qrCode": "PAGOPA|002|123456789012345678|82001760676|9999",
-          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
           "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
         },
         {
-          "refNumber": "123456789012345678",
-          "amount": "68,40",
-          "expiryDate": "20/12/2024",
-          "cbillCode": "78Q44",
+          "refNumber": "723456789012345678",
+          "amount": "7,40",
+          "expiryDate": "7/12/2024",
           "qrCode": "PAGOPA|002|123456789012345678|82001760676|9999",
-          "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
+          "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
+        },
+        {
+          "refNumber": "823456789012345678",
+          "amount": "8,40",
+          "expiryDate": "8/12/2024",
+          "qrCode": "PAGOPA|002|123456789012345678|82001760676|9999",
+          "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
+        },
+        {
+          "refNumber": "923456789012345678",
+          "amount": "9,40",
+          "expiryDate": "9/12/2024",
+          "qrCode": "PAGOPA|002|123456789012345678|82001760676|9999",
           "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
         }
       ]

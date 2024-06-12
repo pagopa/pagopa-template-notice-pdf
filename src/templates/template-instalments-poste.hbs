@@ -68,7 +68,7 @@
                                 instalments=(row)
                                 columns=(arrayLength row)
                                 start=(getRowIndex @index pageNumber (paginator @../.. true))
-                                compact=true
+                                compact=(eq (arrayLength row) 3)
                         }}
                         {{!-- Row 4 - Bollettino Poste --}}
                         {{> paymentInstalmentsPoste
