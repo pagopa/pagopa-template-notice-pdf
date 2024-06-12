@@ -8,7 +8,7 @@ Example:
 
 * */
 function times(n, options) {
-    return Array.from({length: n}, (_, i) => i);
+  return Array.from({ length: n }, (_, i) => i);
 }
 
 module.exports = times;

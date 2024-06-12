@@ -11,10 +11,10 @@ function genQrCode(data, path) {
     ecl: "M",
     join: true,
   });
-  qrcode.save(path + "/" + data+".svg", function (error) {
+  qrcode.save(path + "/" + data + ".svg", function (error) {
     if (error) throw error;
   });
-  return path + "/" + data+".svg";
+  return path + "/" + data + ".svg";
 }
 
 module.exports = genQrCode;

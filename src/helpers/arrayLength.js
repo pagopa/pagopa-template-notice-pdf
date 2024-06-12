@@ -1,8 +1,8 @@
 /*
-* Return the length of an array
-* */
+ * Return the length of an array
+ * */
 function arrayLength(array) {
-    return array.length;
+  return array.length;
 }
 
 module.exports = arrayLength;
