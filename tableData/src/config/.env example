@@ -1,0 +1,3 @@
+TABLE_CONN_STRING=<table_conn_string>
+TABLE_NAME=noticetemplatedatatable
+PARTITION_KEY=templates
