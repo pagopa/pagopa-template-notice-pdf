@@ -2,8 +2,8 @@ const fs = require('fs');
 const { odata, TableClient } = require("@azure/data-tables");
 
 //ENVIRONMENTAL VARIABLES
-const tableConnString = process.env.TABLE_CONN_STRING || "";
-const tableName = process.env.TABLE_NAME || "";
+const tableConnString = process.env.BLOB_CONN_STRING || "";
+const tableName = process.env.TABLE_NAME || "noticetemplatedatatable";
 const partitionKey = process.env.PARTITION_KEY || "templates";
 
 //CLIENTS

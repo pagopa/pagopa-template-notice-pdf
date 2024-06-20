@@ -5,7 +5,6 @@ on:
     branches:
       - main
     paths:
-      - "tableData/tableData.json"
       - "src/assets"
       - "src/partials"
       - "src/templates"
@@ -49,7 +48,7 @@ jobs:
           pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
           # self_hosted_runner_image_tag: "v1.4.1"
 
-  load_template_data:
+  load_templates:
     needs: [ create_runner ]
     name: Load Template Data ${{(github.event.inputs == null && 'dev') || inputs.environment }}
     runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
@@ -69,52 +68,25 @@ jobs:
           tenant-id: ${{ secrets.TENANT_ID }}
           subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
 
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' # install the python version needed
+
+      - name: execute py script # run main.py
+        run: python zip.py
+
       - name: Run Load Template Data Script
         shell: bash
         run: |
           export BLOB_CONN_STRING='${{ secrets.BLOB_CONN_STRING }}'
           cd ./tableData
-          chmod +x ./loadTableData.sh
-          ./loadTableData.sh ${{( github.event.inputs == null && 'dev') || inputs.environment }}
-
-  update_template_examples:
-    name: Update PSP info file
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Run Generate Template Examples Script
-        shell: bash
-        run: |
-          chmod +x ./generateExamples.sh
-          ./generateExamples.sh       
-
-      - name: Prepare files to transfer
-        shell: bash
-        id: transfer_files
-        run: |
-          cd output_template
-          mkdir -p tmp
-          cp *.pdf tmp
-      # open a PR on generator repo
-      - name: Create pull request
-        uses: jacopocarlini/action-pull-request-another-repo@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.BOT_TOKEN_GITHUB }}
-        with:
-          source_folder: "output_template/tmp"
-          destination_repo: "pagopa/pagopa-print-payment-notice-service"
-          destination_folder: "templateExamples"
-          destination_base_branch: "main"
-          destination_head_branch: "pagopa-template-data-update"
-          user_email: "github-bot@pagopa.it"
-          user_name: "pagopa-github-bot"
-          allow_force_push: "true"
+          chmod +x ./loadTemplates.sh
+          ./loadTemplates.sh ${{( github.event.inputs == null && 'dev') || inputs.environment }}
 
   cleanup_runner:
     name: Cleanup Runner
-    needs: [ create_runner, load_template_data, update_template_examples ]
+    needs: [ create_runner, load_templates ]
     if: ${{ always() }}
     runs-on: ubuntu-22.04
     environment: ${{(github.event.inputs == null && 'uat') || inputs.environment }}
