@@ -1,5 +1,5 @@
 const fs = require('fs');
-import { BlobServiceClient } from "@azure/storage-blob";
+const { BlobServiceClient }= require("@azure/storage-blob");
 
 //ENVIRONMENTAL VARIABLES
 const blobStorageConnString = process.env.BLOB_CONN_STRING || "";
@@ -7,7 +7,7 @@ const blobContainerId = process.env.BLOB_CONTAINER_ID || "noticetemplateblob";
 
 //CLIENTS
 const blobServiceClient = BlobServiceClient.fromConnectionString(blobStorageConnString);
-export const blobContainerClient = blobServiceClient.getContainerClient(blobContainerId);
+const blobContainerClient = blobServiceClient.getContainerClient(blobContainerId);
 
 const uploadDocumentToAzure = async () => {
 
