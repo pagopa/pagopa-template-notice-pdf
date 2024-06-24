@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Poste with installments notice validation schema",
+  "description": "Poste with installments notice validation schema",
+  "required": ["debtor", "payee", "notice" ],
+  "properties": {
+    "debtor": {
+      "type": "object"
+    },
+    "payee": {
+      "type": "object"
+    },
+    "notice": {
+      "type": "object",
+      "required": ["posteAuth","posteAccountNumber","qrCode","expiryDate","installments","posteDocumentType","posteDataMatrix"],
+      "properties": {
+        "posteAuth": {
+          "type": "string"
+        },
+        "posteAccountNumber": {
+          "type": "string"
+        },
+        "posteDocumentType": {
+          "type": "string"
+        },
+        "posteDataMatrix": {
+          "type": "string"
+        },
+        "qrCode": {
+          "type": "string"
+        },
+        "expiryDate": {
+          "type": "string"
+        },
+        "installments": {
+          "type": "object",
+          "required": ["items"],
+          "properties": {
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["qrCode","expiryDate","posteDocumentType","posteDataMatrix"],
+                "properties": {
+                  "posteDocumentType": {
+                    "type": "string"
+                  },
+                  "posteDataMatrix": {
+                    "type": "string"
+                  },
+                    "qrCode": {
+                      "type": "string"
+                    },
+                    "expiryDate": {
+                      "type": "string"
+                    }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
