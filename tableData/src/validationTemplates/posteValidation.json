@@ -12,8 +12,11 @@
     },
     "notice": {
       "type": "object",
-      "required": ["posteAuth","posteAccountNumber"],
+      "required": ["code","posteAuth","posteAccountNumber"],
       "properties": {
+        "code": {
+          "type": "string"
+        },
         "posteAuth": {
           "type": "string"
         },

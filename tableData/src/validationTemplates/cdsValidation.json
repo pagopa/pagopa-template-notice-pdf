@@ -12,11 +12,15 @@
     },
     "notice": {
       "type": "object",
-      "required": ["dueDate","installments","reducedAmount","discountedAmount"],
+      "required": ["code","dueDate","installments","reducedAmount","discountedAmount"],
       "properties": {
+        "code": {
+          "type": "string"
+        },
         "reducedAmount": {
           "type": "string"
-        },        "dueDate": {
+        },
+        "dueDate": {
           "type": "string"
         },
         "discountedAmount": {
@@ -26,9 +30,12 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["dueDate"],
+            "required": ["code","dueDate"],
             "properties": {
-              "expiryDate": {
+              "code": {
+                "type": "string"
+              },
+              "dueDate": {
                 "type": "string"
               }
             }

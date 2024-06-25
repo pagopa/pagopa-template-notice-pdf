@@ -11,7 +11,13 @@
       "type": "object"
     },
     "notice": {
-      "type": "object"
+      "type": "object",
+      "required": ["code"],
+      "properties": {
+        "code": {
+          "type": "object"
+        }
+      }
     }
   }
 }

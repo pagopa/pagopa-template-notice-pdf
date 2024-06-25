@@ -12,11 +12,8 @@
     },
     "notice": {
       "type": "object",
-      "required": ["code","dueDate","installments"],
+      "required": ["dueDate","installments"],
       "properties": {
-        "code": {
-          "type": "string"
-        },
         "dueDate": {
           "type": "string"
         },
