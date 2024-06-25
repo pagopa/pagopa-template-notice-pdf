@@ -2,31 +2,22 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Poste notice validation schema",
   "description": "Poste notice validation schema",
-  "required": ["debtor", "payee", "notice" ],
+  "required": ["debtor", "creditorInstitution", "notice" ],
   "properties": {
     "debtor": {
       "type": "object"
     },
-    "payee": {
+    "creditorInstitution": {
       "type": "object"
     },
     "notice": {
       "type": "object",
-      "required": ["posteAuth","posteAccountNumber","qrCode","posteDocumentType","posteDataMatrix"],
+      "required": ["posteAuth","posteAccountNumber"],
       "properties": {
         "posteAuth": {
           "type": "string"
         },
         "posteAccountNumber": {
-          "type": "string"
-        },
-        "posteDocumentType": {
-          "type": "string"
-        },
-        "posteDataMatrix": {
-          "type": "string"
-        },
-        "qrCode": {
           "type": "string"
         }
       }

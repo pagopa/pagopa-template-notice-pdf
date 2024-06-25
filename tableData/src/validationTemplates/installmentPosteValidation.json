@@ -2,17 +2,17 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Poste with installments notice validation schema",
   "description": "Poste with installments notice validation schema",
-  "required": ["debtor", "payee", "notice" ],
+  "required": ["debtor", "creditorInstitution", "notice" ],
   "properties": {
     "debtor": {
       "type": "object"
     },
-    "payee": {
+    "creditorInstitution": {
       "type": "object"
     },
     "notice": {
       "type": "object",
-      "required": ["posteAuth","posteAccountNumber","qrCode","expiryDate","installments","posteDocumentType","posteDataMatrix"],
+      "required": ["posteAuth","posteAccountNumber","dueDate","installments"],
       "properties": {
         "posteAuth": {
           "type": "string"
@@ -20,42 +20,18 @@
         "posteAccountNumber": {
           "type": "string"
         },
-        "posteDocumentType": {
-          "type": "string"
-        },
-        "posteDataMatrix": {
-          "type": "string"
-        },
-        "qrCode": {
-          "type": "string"
-        },
-        "expiryDate": {
+        "dueDate": {
           "type": "string"
         },
         "installments": {
-          "type": "object",
-          "required": ["items"],
-          "properties": {
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["qrCode","expiryDate","posteDocumentType","posteDataMatrix"],
-                "properties": {
-                  "posteDocumentType": {
-                    "type": "string"
-                  },
-                  "posteDataMatrix": {
-                    "type": "string"
-                  },
-                    "qrCode": {
-                      "type": "string"
-                    },
-                    "expiryDate": {
-                      "type": "string"
-                    }
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["dueDate"],
+            "properties": {
+                "dueDate": {
+                  "type": "string"
                 }
-              }
             }
           }
         }

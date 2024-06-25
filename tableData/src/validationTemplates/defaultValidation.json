@@ -2,22 +2,16 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Default notice validation schema",
   "description": "Default validation schema",
-  "required": ["debtor", "payee", "notice" ],
+  "required": ["debtor", "creditorInstitution", "notice" ],
   "properties": {
     "debtor": {
       "type": "object"
     },
-    "payee": {
+    "creditorInstitution": {
       "type": "object"
     },
     "notice": {
-      "type": "object",
-      "required": ["qrCode"],
-      "properties": {
-        "qrCode": {
-          "type": "string"
-        }
-      }
+      "type": "object"
     }
   }
 }
