@@ -8,19 +8,20 @@
       "type": "object"
     },
     "creditorInstitution": {
-      "type": "object"
+      "type": "object",
+      "required": ["posteAuth","posteAccountNumber"],
+      "posteAuth": {
+        "type": "string"
+      },
+      "posteAccountNumber": {
+        "type": "string"
+      }
     },
     "notice": {
       "type": "object",
-      "required": ["code","posteAuth","posteAccountNumber","dueDate","installments"],
+      "required": ["code","dueDate","installments"],
       "properties": {
         "code": {
-          "type": "string"
-        },
-        "posteAuth": {
-          "type": "string"
-        },
-        "posteAccountNumber": {
           "type": "string"
         },
         "dueDate": {

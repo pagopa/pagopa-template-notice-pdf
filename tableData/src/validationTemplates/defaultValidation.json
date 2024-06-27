@@ -12,9 +12,12 @@
     },
     "notice": {
       "type": "object",
-      "required": ["code"],
+      "required": ["code","dueDate"],
       "properties": {
         "code": {
+          "type": "object"
+        },
+        "dueDate": {
           "type": "object"
         }
       }
