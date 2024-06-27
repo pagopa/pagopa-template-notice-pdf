@@ -15,10 +15,10 @@
       "required": ["code","dueDate"],
       "properties": {
         "code": {
-          "type": "object"
+          "type": "string"
         },
         "dueDate": {
-          "type": "object"
+          "type": "string"
         }
       }
     }
