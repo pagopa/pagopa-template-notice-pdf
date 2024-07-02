@@ -1,0 +1,133 @@
+name: Update templates data
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "tableData/tableData.json"
+      - "src/assets"
+      - "src/partials"
+      - "src/templates"
+
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        type: choice
+        description: Select the Environment
+        options:
+          - dev
+          - uat
+          - prod
+
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  create_runner:
+    name: Create Runner
+    runs-on: ubuntu-22.04
+    environment:
+      name: ${{(github.event.inputs == null && 'dev') || inputs.environment }}
+    if: ${{ inputs.target == inputs.environment || inputs.target == 'all' }}
+    outputs:
+      runner_name: ${{ steps.create_github_runner.outputs.runner_name }}
+    steps:
+      - name: Create GitHub Runner
+        id: create_github_runner
+        # from https://github.com/pagopa/eng-github-actions-iac-template/tree/main/azure/github-self-hosted-runner-azure-create-action
+        uses: pagopa/eng-github-actions-iac-template/azure/github-self-hosted-runner-azure-create-action@main
+        with:
+          client_id: ${{ secrets.CLIENT_ID }}
+          tenant_id: ${{ secrets.TENANT_ID }}
+          subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
+          container_app_environment_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_NAME }}
+          resource_group_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_RESOURCE_GROUP_NAME }} # RG of the runner
+          pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
+          # self_hosted_runner_image_tag: "v1.4.1"
+
+  load_template_data:
+    needs: [ create_runner ]
+    name: Load Template Data ${{(github.event.inputs == null && 'dev') || inputs.environment }}
+    runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
+    environment: ${{(github.event.inputs == null && 'dev') || inputs.environment }}
+    steps:
+
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@1f9a0c22da41e6ebfa534300ef656657ea2c6707
+
+      - name: Login
+        id: login
+        # from https://github.com/Azure/login/commits/master
+        uses: azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2
+        with:
+          client-id: ${{ secrets.CLIENT_ID }}
+          tenant-id: ${{ secrets.TENANT_ID }}
+          subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
+
+      - name: Run Load Template Data Script
+        shell: bash
+        run: |
+          export BLOB_CONN_STRING='${{ secrets.BLOB_CONN_STRING }}'
+          cd ./tableData
+          chmod +x ./loadTableData.sh
+          ./loadTableData.sh ${{( github.event.inputs == null && 'dev') || inputs.environment }}
+
+  update_template_examples:
+    name: Update PSP info file
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run Generate Template Examples Script
+        shell: bash
+        run: |
+          chmod +x ./generateExamples.sh
+          ./generateExamples.sh       
+
+      - name: Prepare files to transfer
+        shell: bash
+        id: transfer_files
+        run: |
+          cd output_template
+          mkdir -p tmp
+          cp *.pdf tmp
+      # open a PR on generator repo
+      - name: Create pull request
+        uses: jacopocarlini/action-pull-request-another-repo@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.BOT_TOKEN_GITHUB }}
+        with:
+          source_folder: "output_template/tmp"
+          destination_repo: "pagopa/pagopa-print-payment-notice-service"
+          destination_folder: "templateExamples"
+          destination_base_branch: "main"
+          destination_head_branch: "pagopa-template-data-update"
+          user_email: "github-bot@pagopa.it"
+          user_name: "pagopa-github-bot"
+          allow_force_push: "true"
+
+  cleanup_runner:
+    name: Cleanup Runner
+    needs: [ create_runner, load_template_data, update_template_examples ]
+    if: ${{ always() }}
+    runs-on: ubuntu-22.04
+    environment: ${{(github.event.inputs == null && 'uat') || inputs.environment }}
+    steps:
+      - name: Cleanup GitHub Runner
+        id: cleanup_github_runner
+        # from https://github.com/pagopa/eng-github-actions-iac-template/tree/main/azure/github-self-hosted-runner-azure-cleanup-action
+        uses: pagopa/eng-github-actions-iac-template/azure/github-self-hosted-runner-azure-cleanup-action@0ee2f58fd46d10ac7f00bce4304b98db3dbdbe9a
+        with:
+          client_id: ${{ secrets.CLIENT_ID }}
+          tenant_id: ${{ secrets.TENANT_ID }}
+          subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
+          resource_group_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_RESOURCE_GROUP_NAME }}
+          runner_name: ${{ needs.create_runner.outputs.runner_name }}
+          pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
+

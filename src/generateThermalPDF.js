@@ -7,6 +7,21 @@ const fs = require("fs");
 
 const transactionID = uuidv4(); // ex 'F57E2F8E-25FF-4183-AB7B-4A5EC1A96644'
 
+// Parsing command-line arguments for dynamic JSON file and template file path
+const args = process.argv.slice(2); // Remove the first two elements
+// Default values with a cleaner approach using an object to map flags to their respective file paths
+let filePaths = {
+    "--outputName": "pagopa-notice.pdf",
+};
+
+args.forEach((arg, index) => {
+    if (filePaths.hasOwnProperty(arg) && args[index + 1]) {
+        filePaths[arg] = args[index + 1];
+    }
+});
+
+const outputName = filePaths["--outputName"];
+
 (async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -20,7 +35,7 @@ const transactionID = uuidv4(); // ex 'F57E2F8E-25FF-4183-AB7B-4A5EC1A96644'
     const pageHeight = await page.evaluate(() => document.body.scrollHeight);
 
     await page.pdf({
-        path: `pagopa-notice.pdf`,
+        path: `../output_template/${outputName}`,
         width: `80mm` /* 2×40mm thermal receipts */,
         height: `${pageHeight}px`,
         printBackground: true,

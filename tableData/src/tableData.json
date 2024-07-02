@@ -1,0 +1,65 @@
+[
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateSingleInstalment",
+    "templateId": "TemplateSingleInstalment",
+    "description": "Template per un avviso di pagamento contenente un pagamento unico, senza bollettino postale",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateSingleInstalment.pdf"
+  },
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateSingleInstalmentPoste",
+    "templateId": "TemplateSingleInstalmentPoste",
+    "description": "Template per un avviso di pagamento contenente un pagamento unico, contenente la sezione relativa al bollettino postale. In questo caso devono essere disponibili per l'ente di riferimento gli estremi per il bollettino postale (numero di c/c, autorizzazione alla stampa)",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateSingleInstalmentPoste.pdf"
+  },
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateInstalments",
+    "templateId": "TemplateInstalments",
+    "description": "Template per un avviso di pagamento contenente un pagamento con rate, in numero inferiore o uguale a 9, senza bollettino postale",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateInstalments.pdf"
+  },
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateInstalmentsPoste",
+    "templateId": "TemplateInstalmentsPoste",
+    "description": "Template per un avviso di pagamento contenente un pagamento con rate, in numero inferiore o uguale a 9, contenente la sezione relativa al bollettino postale. In questo caso devono essere disponibili per l'ente di riferimento gli estremi per il bollettino postale (numero di c/c, autorizzazione alla stampa)",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateInstalmentsPoste.pdf"
+  },
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateManyInstalments",
+    "templateId": "TemplateManyInstalments",
+    "description": "Template per un avviso di pagamento contenente un pagamento con rate, in numero superiore o uguale a 9",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateManyInstalments.pdf"
+  },
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateCdsInfraction",
+    "templateId": "TemplateCdsInfraction",
+    "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello standard",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfraction.pdf"
+  },
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateCdsInfractionExtended",
+    "templateId": "TemplateCdsInfractionExtended",
+    "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello esteso",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfractionExtended.pdf"
+  },
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateCdsInfractionThermal",
+    "templateId": "TemplateCdsInfractionThermal",
+    "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello per stampa termica",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfractionThermal.pdf"
+  },
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateCdsInfractionThermalImmediateNotification",
+    "templateId": "TemplateCdsInfractionThermalImmediateNotification",
+    "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello per stampa termica con notifica immediata",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfractionThermalImmediateNotification.pdf"
+  }
+]

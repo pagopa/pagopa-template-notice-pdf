@@ -5,19 +5,21 @@
   "description": "Template for generating pagoPA PDF notices",
   "main": "index.js",
   "scripts": {
-    "generate-single-instalment": "node compileHandlebars --templateFile template-single-instalment.hbs && node generatePDF",
-    "generate-single-instalment-poste": "node compileHandlebars --templateFile template-single-instalment-poste.hbs && node generatePDF",
-    "generate-instalments": "node compileHandlebars --templateFile template-instalments.hbs --dataFile notice-instalments.json && node generatePDF",
-    "generate-instalments-poste": "node compileHandlebars --templateFile template-instalments-poste.hbs --dataFile notice-instalments-poste.json && node generatePDF",
-    "generate-many-instalments": "node compileHandlebars --templateFile template-many-instalments.hbs --dataFile notice-many-instalments.json && node generatePDF",
-    "generate-cds-infraction": "node compileHandlebars --templateFile template-cds-infraction.hbs --dataFile notice-infraction.json && node generatePDF",
-    "generate-cds-infraction-extended": "node compileHandlebars --templateFile template-cds-infraction-extended.hbs --dataFile notice-infraction.json && node generatePDF",
-    "generate-cds-infraction-thermal": "node compileHandlebars --templateFile template-cds-infraction-thermal.hbs --dataFile notice-infraction.json && node generateThermalPDF",
-    "generate-cds-infraction-thermal-immediate-notification": "node compileHandlebars --templateFile template-cds-infraction-thermal-immediate-notification.hbs --dataFile notice-infraction.json && node generateThermalPDF"
+    "run-all-generate": "npm-run-all generate-*",
+    "generate-single-instalment": "node compileHandlebars --templateFile template-single-instalment.hbs && node generatePDF --outputName TemplateSingleInstalment.pdf",
+    "generate-single-instalment-poste": "node compileHandlebars --templateFile template-single-instalment-poste.hbs && node generatePDF --outputName TemplateSingleInstalmentPoste.pdf",
+    "generate-instalments": "node compileHandlebars --templateFile template-instalments.hbs --dataFile notice-instalments.json && node generatePDF --outputName TemplateInstalments.pdf",
+    "generate-instalments-poste": "node compileHandlebars --templateFile template-instalments-poste.hbs --dataFile notice-instalments-poste.json && node generatePDF --outputName TemplateInstalmentsPoste.pdf",
+    "generate-many-instalments": "node compileHandlebars --templateFile template-many-instalments.hbs --dataFile notice-many-instalments.json && node generatePDF --outputName TemplateManyInstalments.pdf",
+    "generate-cds-infraction": "node compileHandlebars --templateFile template-cds-infraction.hbs --dataFile notice-infraction.json && node generatePDF --outputName TemplateCdsInfraction.pdf",
+    "generate-cds-infraction-extended": "node compileHandlebars --templateFile template-cds-infraction-extended.hbs --dataFile notice-infraction.json && node generatePDF --outputName TemplateCdsInfractionExtended.pdf",
+    "generate-cds-infraction-thermal": "node compileHandlebars --templateFile template-cds-infraction-thermal.hbs --dataFile notice-infraction.json && node generateThermalPDF --outputName TemplateCdsInfractionThermal.pdf",
+    "generate-cds-infraction-thermal-immediate-notification": "node compileHandlebars --templateFile template-cds-infraction-thermal-immediate-notification.hbs --dataFile notice-infraction.json && node generateThermalPDF --outputName TemplateCdsInfractionThermalImmediateNotification.pdf"
   },
   "dependencies": {
     "bwip-js": "^4.3.2",
     "handlebars": "^4.7.8",
+    "npm-run-all": "^4.1.5",
     "puppeteer": "^22.0.0",
     "qrcode-svg": "^1.1.0",
     "uuid": "^9.0.1"
