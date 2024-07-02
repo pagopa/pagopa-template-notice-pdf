@@ -22,7 +22,7 @@ const uploadDocumentToAzure = async () => {
     const tableDataList = JSON.parse(fs.readFileSync('tableData.json'));
     for (const tableData of tableDataList) {
         const fileValidationName = tableData['templateValidationRules'];
-        tableData['templateValidationRules'] = JSON.stringify(fs.readFileSync(`./validationTemplates/${fileValidationName}`));
+        tableData['templateValidationRules'] = JSON.stringify(JSON.parse(fs.readFileSync(`./validationTemplates/${fileValidationName}`)));
 
         const result = await tableClient.createEntity(tableData);
         console.info(result);
