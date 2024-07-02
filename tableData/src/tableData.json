@@ -5,7 +5,7 @@
     "templateId": "TemplateSingleInstalment",
     "description": "Template per un avviso di pagamento contenente un pagamento unico, senza bollettino postale",
     "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateSingleInstalment.pdf",
-    "templateValidationRules": "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Default notice validation schema\",\"description\":\"Default validation schema\",\"required\":[\"debtor\",\"creditorInstitution\",\"notice\"],\"properties\":{\"debtor\":{\"type\":\"object\"},\"creditorInstitution\":{\"type\":\"object\"},\"notice\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}}}}"
+    "templateValidationRules": "singleValidation.json"
   },
   {
     "partitionKey": "templates",
@@ -13,7 +13,7 @@
     "templateId": "TemplateSingleInstalmentPoste",
     "description": "Template per un avviso di pagamento contenente un pagamento unico, contenente la sezione relativa al bollettino postale. In questo caso devono essere disponibili per l'ente di riferimento gli estremi per il bollettino postale (numero di c/c, autorizzazione alla stampa)",
     "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateSingleInstalmentPoste.pdf",
-    "templateValidationRules": "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Poste notice validation schema\",\"description\":\"Poste notice validation schema\",\"required\":[\"debtor\",\"creditorInstitution\",\"notice\"],\"properties\":{\"debtor\":{\"type\":\"object\"},\"creditorInstitution\":{\"type\":\"object\",\"required\":[\"posteAuth\",\"posteAccountNumber\"],\"posteAuth\":{\"type\":\"string\"},\"posteAccountNumber\":{\"type\":\"string\"}},\"notice\":{\"type\":\"object\",\"required\":[\"code\"],\"properties\":{\"code\":{\"type\":\"string\"}}}}}"
+    "templateValidationRules": "singlePosteValidation.json"
   },
   {
     "partitionKey": "templates",
@@ -21,7 +21,7 @@
     "templateId": "TemplateInstalments",
     "description": "Template per un avviso di pagamento contenente un pagamento con rate, in numero inferiore o uguale a 9, senza bollettino postale",
     "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateInstalments.pdf",
-    "templateValidationRules": "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Installments notice validation schema\",\"description\":\"Installments notice validation schema\",\"required\":[\"debtor\",\"creditorInstitution\",\"notice\"],\"properties\":{\"debtor\":{\"type\":\"object\"},\"creditorInstitution\":{\"type\":\"object\"},\"notice\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\",\"installments\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"},\"installments\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}}}}}}}"
+    "templateValidationRules": "installmentsValidation.json"
   },
   {
     "partitionKey": "templates",
@@ -29,7 +29,7 @@
     "templateId": "TemplateInstalmentsPoste",
     "description": "Template per un avviso di pagamento contenente un pagamento con rate, in numero inferiore o uguale a 9, contenente la sezione relativa al bollettino postale. In questo caso devono essere disponibili per l'ente di riferimento gli estremi per il bollettino postale (numero di c/c, autorizzazione alla stampa)",
     "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateInstalmentsPoste.pdf",
-    "templateValidationRules": "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Poste with installments notice validation schema\",\"description\":\"Poste with installments notice validation schema\",\"required\":[\"debtor\",\"creditorInstitution\",\"notice\"],\"properties\":{\"debtor\":{\"type\":\"object\"},\"creditorInstitution\":{\"type\":\"object\",\"required\":[\"posteAuth\",\"posteAccountNumber\"],\"posteAuth\":{\"type\":\"string\"},\"posteAccountNumber\":{\"type\":\"string\"}},\"notice\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\",\"installments\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"},\"installments\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}}}}}}}"
+    "templateValidationRules": "installmentsPosteValidation.json"
   },
   {
     "partitionKey": "templates",
@@ -37,7 +37,7 @@
     "templateId": "TemplateManyInstalments",
     "description": "Template per un avviso di pagamento contenente un pagamento con rate, in numero superiore o uguale a 9",
     "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateManyInstalments.pdf",
-    "templateValidationRules": "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Installments notice validation schema\",\"description\":\"Installments notice validation schema\",\"required\":[\"debtor\",\"creditorInstitution\",\"notice\"],\"properties\":{\"debtor\":{\"type\":\"object\"},\"creditorInstitution\":{\"type\":\"object\"},\"notice\":{\"type\":\"object\",\"required\":[\"installments\"],\"properties\":{\"installments\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}}}}}}}"
+    "templateValidationRules": "manyInstallmentsValidation.json"
   },
   {
     "partitionKey": "templates",
@@ -45,7 +45,7 @@
     "templateId": "TemplateCdsInfraction",
     "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello standard",
     "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfraction.pdf",
-    "templateValidationRules": "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"CDS notice validation schema\",\"description\":\"CDS notice validation schema\",\"required\":[\"debtor\",\"creditorInstitution\",\"notice\"],\"properties\":{\"debtor\":{\"type\":\"object\"},\"creditorInstitution\":{\"type\":\"object\"},\"notice\":{\"type\":\"object\",\"required\":[\"reduced\",\"discounted\"],\"properties\":{\"reduced\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}},\"discounted\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}}}}}}"
+    "templateValidationRules": "cdsValidation.json"
   },
   {
     "partitionKey": "templates",
@@ -53,7 +53,7 @@
     "templateId": "TemplateCdsInfractionPoste",
     "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello con bollettino postale",
     "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfractionExtended.pdf",
-    "templateValidationRules": "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"CDS notice validation schema\",\"description\":\"CDS notice validation schema\",\"required\":[\"debtor\",\"creditorInstitution\",\"notice\"],\"properties\":{\"debtor\":{\"type\":\"object\"},\"creditorInstitution\":{\"type\":\"object\",\"required\":[\"posteAuth\",\"posteAccountNumber\"],\"posteAuth\":{\"type\":\"string\"},\"posteAccountNumber\":{\"type\":\"string\"}},\"notice\":{\"type\":\"object\",\"required\":[\"reduced\",\"discounted\"],\"properties\":{\"reduced\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}},\"discounted\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}}}}}}"
+    "templateValidationRules": "cdsPosteValidation.json"
   },
   {
     "partitionKey": "templates",
@@ -61,7 +61,7 @@
     "templateId": "TemplateCdsInfractionThermal",
     "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello per stampa termica",
     "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfractionThermal.pdf",
-    "templateValidationRules": "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"CDS notice validation schema\",\"description\":\"CDS notice validation schema\",\"required\":[\"debtor\",\"creditorInstitution\",\"notice\"],\"properties\":{\"debtor\":{\"type\":\"object\"},\"creditorInstitution\":{\"type\":\"object\"},\"notice\":{\"type\":\"object\",\"required\":[\"reduced\",\"discounted\"],\"properties\":{\"reduced\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}},\"discounted\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}}}}}}"
+    "templateValidationRules": "cdsValidation.json"
   },
   {
     "partitionKey": "templates",
@@ -69,6 +69,6 @@
     "templateId": "TemplateCdsInfractionThermalImmediateNotification",
     "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello per stampa termica con notifica immediata",
     "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfractionThermalImmediateNotification.pdf",
-    "templateValidationRules": "{\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"CDS notice validation schema\",\"description\":\"CDS notice validation schema\",\"required\":[\"debtor\",\"creditorInstitution\",\"notice\"],\"properties\":{\"debtor\":{\"type\":\"object\"},\"creditorInstitution\":{\"type\":\"object\"},\"notice\":{\"type\":\"object\",\"required\":[\"reduced\",\"discounted\"],\"properties\":{\"reduced\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}},\"discounted\":{\"type\":\"object\",\"required\":[\"code\",\"dueDate\"],\"properties\":{\"code\":{\"type\":\"string\"},\"dueDate\":{\"type\":\"string\"}}}}}}}"
+    "templateValidationRules": "cdsValidation.json"
   }
 ]

@@ -1,4 +1,4 @@
-name: Update templates
+name: Upload Templates on Storage
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
     name: Create Runner
     runs-on: ubuntu-22.04
     environment:
-      name: ${{(github.event.inputs == null && 'dev') || inputs.environment }}
+      name: ${{(inputs == null && 'dev') || inputs.environment }}
     if: ${{ inputs.target == inputs.environment || inputs.target == 'all' }}
     outputs:
       runner_name: ${{ steps.create_github_runner.outputs.runner_name }}
@@ -50,9 +50,9 @@ jobs:
 
   load_templates:
     needs: [ create_runner ]
-    name: Load Template Data ${{(github.event.inputs == null && 'dev') || inputs.environment }}
+    name: Load Template Data ${{(inputs == null && 'dev') || inputs.environment }}
     runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
-    environment: ${{(github.event.inputs == null && 'dev') || inputs.environment }}
+    environment: ${{(inputs == null && 'dev') || inputs.environment }}
     steps:
 
       - name: Checkout
@@ -82,14 +82,14 @@ jobs:
           export BLOB_CONN_STRING='${{ secrets.BLOB_CONN_STRING }}'
           cd ./tableData
           chmod +x ./loadTemplates.sh
-          ./loadTemplates.sh ${{( github.event.inputs == null && 'dev') || inputs.environment }}
+          ./loadTemplates.sh ${{( inputs == null && 'dev') || inputs.environment }}
 
   cleanup_runner:
     name: Cleanup Runner
     needs: [ create_runner, load_templates ]
     if: ${{ always() }}
     runs-on: ubuntu-22.04
-    environment: ${{(github.event.inputs == null && 'uat') || inputs.environment }}
+    environment: ${{(inputs == null && 'uat') || inputs.environment }}
     steps:
       - name: Cleanup GitHub Runner
         id: cleanup_github_runner

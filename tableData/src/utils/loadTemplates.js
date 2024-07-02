@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { BlobServiceClient }= require("@azure/storage-blob");
+const {BlobServiceClient} = require("@azure/storage-blob");
 
 //ENVIRONMENTAL VARIABLES
 const blobStorageConnString = process.env.BLOB_CONN_STRING || "";
@@ -11,27 +11,27 @@ const blobContainerClient = blobServiceClient.getContainerClient(blobContainerId
 
 const uploadDocumentToAzure = async () => {
 
-  const directories = getDirectories("../../output");
+    const directories = getDirectories("../../output");
 
-  for (directory of directories) {
-    const blockClient = blobContainerClient.getBlockBlobClient(directory+"/template.zip");
-    const response = await blockClient.uploadFile(`../../output/${directory}/template.zip`);
-    if (response._response.status !== 201) {
-      throw new Error(
-        `Error uploading logo ${blockClient.name} to container ${blockClient.containerName}`
-      );
+    for (var directory of directories) {
+        const blockClient = blobContainerClient.getBlockBlobClient(directory + "/template.zip");
+        const response = await blockClient.uploadFile(`../../output/${directory}/template.zip`);
+        if (response._response.status !== 201) {
+            throw new Error(
+                `Error uploading logo ${blockClient.name} to container ${blockClient.containerName}`
+            );
+        }
     }
-  }
 
 };
 
 const getDirectories = source =>
-  fs.readdirSync(source, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name)
+    fs.readdirSync(source, {withFileTypes: true})
+        .filter(dirent => dirent.isDirectory())
+        .map(dirent => dirent.name)
 
 uploadDocumentToAzure().then(() => {
-  console.info("Templates Uploaded");
+    console.info("Templates Uploaded");
 });
 
 
