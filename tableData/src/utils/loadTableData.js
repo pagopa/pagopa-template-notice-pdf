@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { odata, TableClient } = require("@azure/data-tables");
+const {odata, TableClient} = require("@azure/data-tables");
 
 //ENVIRONMENTAL VARIABLES
 const tableConnString = process.env.BLOB_CONN_STRING || "";
@@ -12,7 +12,7 @@ const tableClient = TableClient.fromConnectionString(tableConnString, tableName)
 const uploadDocumentToAzure = async () => {
 
     const entities = tableClient.listEntities({
-      queryOptions: { filter: odata`PartitionKey eq ${partitionKey}` }
+        queryOptions: {filter: odata`PartitionKey eq ${partitionKey}`}
     });
 
     for await (const entity of entities) {
@@ -21,6 +21,9 @@ const uploadDocumentToAzure = async () => {
 
     const tableDataList = JSON.parse(fs.readFileSync('tableData.json'));
     for (const tableData of tableDataList) {
+        const fileValidationName = tableData['templateValidationRules'];
+        tableData['templateValidationRules'] = JSON.stringify(JSON.parse(fs.readFileSync(`./validationTemplates/${fileValidationName}`)));
+
         const result = await tableClient.createEntity(tableData);
         console.info(result);
     }
@@ -28,7 +31,7 @@ const uploadDocumentToAzure = async () => {
 };
 
 uploadDocumentToAzure().then(() => {
-  console.info("Table Data Uploaded");
+    console.info("Table Data Uploaded");
 });
 
 
