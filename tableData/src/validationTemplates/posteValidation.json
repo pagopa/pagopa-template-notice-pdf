@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Poste notice validation schema",
+  "description": "Poste notice validation schema",
+  "required": ["debtor", "creditorInstitution", "notice" ],
+  "properties": {
+    "debtor": {
+      "type": "object"
+    },
+    "creditorInstitution": {
+      "type": "object",
+      "required": ["posteAuth","posteAccountNumber"],
+      "posteAuth": {
+        "type": "string"
+      },
+      "posteAccountNumber": {
+        "type": "string"
+      }
+    },
+    "notice": {
+      "type": "object",
+      "required": ["code"],
+      "properties": {
+        "code": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Installments notice validation schema",
+  "description": "Installments notice validation schema",
+  "required": ["debtor", "creditorInstitution", "notice" ],
+  "properties": {
+    "debtor": {
+      "type": "object"
+    },
+    "creditorInstitution": {
+      "type": "object"
+    },
+    "notice": {
+      "type": "object",
+      "required": ["installments"],
+      "properties": {
+        "installments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "code",
+              "dueDate"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "dueDate": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

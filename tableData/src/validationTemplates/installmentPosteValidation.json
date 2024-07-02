@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Poste with installments notice validation schema",
+  "description": "Poste with installments notice validation schema",
+  "required": ["debtor", "creditorInstitution", "notice" ],
+  "properties": {
+    "debtor": {
+      "type": "object"
+    },
+    "creditorInstitution": {
+      "type": "object",
+      "required": ["posteAuth","posteAccountNumber"],
+      "posteAuth": {
+        "type": "string"
+      },
+      "posteAccountNumber": {
+        "type": "string"
+      }
+    },
+    "notice": {
+      "type": "object",
+      "required": ["code","dueDate","installments"],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "dueDate": {
+          "type": "string"
+        },
+        "installments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["code","dueDate"],
+            "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "dueDate": {
+                  "type": "string"
+                }
+            }
+          }
+        }
+      }
+    }
+  }
+}
