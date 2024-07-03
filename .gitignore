@@ -144,5 +144,4 @@ py-scripts/py-scripts.iml
 src/template.html
 **/node_modules/
 **/template.html
-*.pdf
 /*output*/
