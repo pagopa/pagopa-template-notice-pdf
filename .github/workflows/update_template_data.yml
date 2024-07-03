@@ -49,7 +49,45 @@ jobs:
           pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
           # self_hosted_runner_image_tag: "v1.4.1"
 
-  load_template_data:
+  load_templates_files:
+    needs: [ create_runner ]
+    name: Load Template Data ${{(inputs == null && 'dev') || inputs.environment }}
+    runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
+    environment: ${{(inputs == null && 'dev') || inputs.environment }}
+    steps:
+
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@1f9a0c22da41e6ebfa534300ef656657ea2c6707
+
+      - name: Login
+        id: login
+        # from https://github.com/Azure/login/commits/master
+        uses: azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2
+        with:
+          client-id: ${{ secrets.CLIENT_ID }}
+          tenant-id: ${{ secrets.TENANT_ID }}
+          subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' # install the python version needed
+
+      - name: execute py script # run main.py
+        run: python zip.py
+
+      - name: Run Load Template Data Script
+        shell: bash
+        run: |
+          export BLOB_CONN_STRING='${{ secrets.BLOB_CONN_STRING }}'
+          cd ./tableData
+          chmod +x ./loadTemplates.sh
+          ./loadTemplates.sh ${{( inputs == null && 'dev') || inputs.environment }}
+  
+  
+
+  load_template_metadata:
     needs: [ create_runner ]
     name: Load Template Data ${{(inputs == null && 'dev') || inputs.environment }}
     runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
@@ -76,6 +114,7 @@ jobs:
           cd ./tableData
           chmod +x ./loadTableData.sh
           ./loadTableData.sh ${{( inputs == null && 'dev') || inputs.environment }}
+
 
   update_template_examples:
     name: Update PSP info file
@@ -114,7 +153,7 @@ jobs:
 
   cleanup_runner:
     name: Cleanup Runner
-    needs: [ create_runner, load_template_data, update_template_examples ]
+    needs: [ create_runner, load_templates_files, load_template_metadata ]
     if: ${{ always() }}
     runs-on: ubuntu-22.04
     environment: ${{(inputs == null && 'uat') || inputs.environment }}
