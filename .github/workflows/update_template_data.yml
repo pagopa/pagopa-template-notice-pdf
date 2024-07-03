@@ -1,4 +1,4 @@
-name: Update templates data
+name: Update Templates metadata on Table
 
 on:
   push:
