@@ -1,4 +1,4 @@
-name: Update Templates metadata on Table
+name: Update Templates
 
 on:
   push:
@@ -159,8 +159,10 @@ jobs:
       - name: Run Generate Template Examples Script
         shell: bash
         run: |
+          cd ./scripts
           chmod +x ./generateExamples.sh
-          ./generateExamples.sh       
+          ./generateExamples.sh  
+          cd ..
 
       - name: Commit files
         run: |
