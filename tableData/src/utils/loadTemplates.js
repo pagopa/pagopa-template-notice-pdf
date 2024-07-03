@@ -11,11 +11,11 @@ const blobContainerClient = blobServiceClient.getContainerClient(blobContainerId
 
 const uploadDocumentToAzure = async () => {
 
-    const directories = getDirectories("../../output");
+    const directories = getDirectories("../../output_zip");
 
     for (var directory of directories) {
         const blockClient = blobContainerClient.getBlockBlobClient(directory + "/template.zip");
-        const response = await blockClient.uploadFile(`../../output/${directory}/template.zip`);
+        const response = await blockClient.uploadFile(`../../output_zip/${directory}/template.zip`);
         if (response._response.status !== 201) {
             throw new Error(
                 `Error uploading logo ${blockClient.name} to container ${blockClient.containerName}`

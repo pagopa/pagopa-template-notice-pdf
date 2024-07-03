@@ -31,8 +31,12 @@ const outputName = filePaths["--outputName"];
     await page.goto(`file://${htmlFile}`, {
         waitUntil: ["load", "networkidle0"],
     });
+
+    const output_path = '../output_template';
+    fs.mkdirSync(output_path, {recursive: true})
+
     await page.pdf({
-        path: `../output_template/${outputName}`,
+        path: `${output_path}/${outputName}`,
         format: "A4",
         landscape: false,
         printBackground: true,

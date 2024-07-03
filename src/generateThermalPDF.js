@@ -34,8 +34,11 @@ const outputName = filePaths["--outputName"];
 
     const pageHeight = await page.evaluate(() => document.body.scrollHeight);
 
+    const output_path = '../output_template';
+    fs.mkdirSync(output_path, {recursive: true})
+
     await page.pdf({
-        path: `../output_template/${outputName}`,
+        path: `${output_path}/${outputName}`,
         width: `80mm` /* 2×40mm thermal receipts */,
         height: `${pageHeight}px`,
         printBackground: true,

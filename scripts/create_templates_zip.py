@@ -22,7 +22,7 @@ def create_zip(file_path, output_dir):
     shutil.copy(file_path, os.path.join(temp_dir, "template.html"))
 
     # Copy assets folder and its contents to temporary directory
-    shutil.copytree("src/assets", os.path.join(temp_dir, "assets"))
+    shutil.copytree("../src/assets", os.path.join(temp_dir, "assets"))
 
     # Create the zip file
     with zipfile.ZipFile(os.path.join(output_dir, "template.zip"), "w") as zipf:
@@ -38,10 +38,10 @@ def create_zip(file_path, output_dir):
 
 def main():
     # Path to the template directory
-    template_dir = "src/templates"
+    template_dir = "../src/templates"
 
     # Output directory where zip files will be created
-    output_dir = "output"
+    output_dir = "../output_zip"
 
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)

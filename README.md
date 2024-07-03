@@ -34,9 +34,10 @@ All PDF templates of the notice designed by pagoPA
 
 > ℹ️ The python script is used for Stampa Avvisi
 
-The `zip.py` file is a python script to create for each template a zip that contains the template, the css file and the
+The `create_templates_zip.py` file is a python script to create for each template a zip that contains the template, the
+css file and the
 asssets files.
-All the zip files are created in the `./output` folder.
+All the zip files are created in the `./output_zip` folder.
 
 _Note: in the zip file the hbs template are renamed into template.html_
 
@@ -45,5 +46,5 @@ _Note: in the zip file the hbs template are renamed into template.html_
 Use this command from the root:
 
 ```bash
-python3 ./zip.py
+python3 ./create_templates_zip.py
 ```

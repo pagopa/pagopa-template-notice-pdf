@@ -4,7 +4,7 @@
     "rowKey": "TemplateSingleInstalment",
     "templateId": "TemplateSingleInstalment",
     "description": "Template per un avviso di pagamento contenente un pagamento unico, senza bollettino postale",
-    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateSingleInstalment.pdf",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateSingleInstalment.pdf",
     "templateValidationRules": "singleValidation.json"
   },
   {
@@ -12,7 +12,7 @@
     "rowKey": "TemplateSingleInstalmentPoste",
     "templateId": "TemplateSingleInstalmentPoste",
     "description": "Template per un avviso di pagamento contenente un pagamento unico, contenente la sezione relativa al bollettino postale. In questo caso devono essere disponibili per l'ente di riferimento gli estremi per il bollettino postale (numero di c/c, autorizzazione alla stampa)",
-    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateSingleInstalmentPoste.pdf",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateSingleInstalmentPoste.pdf",
     "templateValidationRules": "singlePosteValidation.json"
   },
   {
@@ -20,7 +20,7 @@
     "rowKey": "TemplateInstalments",
     "templateId": "TemplateInstalments",
     "description": "Template per un avviso di pagamento contenente un pagamento con rate, in numero inferiore o uguale a 9, senza bollettino postale",
-    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateInstalments.pdf",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateInstalments.pdf",
     "templateValidationRules": "installmentsValidation.json"
   },
   {
@@ -28,7 +28,7 @@
     "rowKey": "TemplateInstalmentsPoste",
     "templateId": "TemplateInstalmentsPoste",
     "description": "Template per un avviso di pagamento contenente un pagamento con rate, in numero inferiore o uguale a 9, contenente la sezione relativa al bollettino postale. In questo caso devono essere disponibili per l'ente di riferimento gli estremi per il bollettino postale (numero di c/c, autorizzazione alla stampa)",
-    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateInstalmentsPoste.pdf",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateInstalmentsPoste.pdf",
     "templateValidationRules": "installmentsPosteValidation.json"
   },
   {
@@ -36,7 +36,7 @@
     "rowKey": "TemplateManyInstalments",
     "templateId": "TemplateManyInstalments",
     "description": "Template per un avviso di pagamento contenente un pagamento con rate, in numero superiore o uguale a 9",
-    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateManyInstalments.pdf",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateManyInstalments.pdf",
     "templateValidationRules": "manyInstallmentsValidation.json"
   },
   {
@@ -44,7 +44,7 @@
     "rowKey": "TemplateCdsInfraction",
     "templateId": "TemplateCdsInfraction",
     "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello standard",
-    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfraction.pdf",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateCdsInfraction.pdf",
     "templateValidationRules": "cdsValidation.json"
   },
   {
@@ -52,7 +52,7 @@
     "rowKey": "TemplateCdsInfractionPoste",
     "templateId": "TemplateCdsInfractionPoste",
     "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello con bollettino postale",
-    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfractionExtended.pdf",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateCdsInfractionPoste.pdf",
     "templateValidationRules": "cdsPosteValidation.json"
   },
   {
@@ -60,7 +60,7 @@
     "rowKey": "TemplateCdsInfractionThermal",
     "templateId": "TemplateCdsInfractionThermal",
     "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello per stampa termica",
-    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfractionThermal.pdf",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateCdsInfractionThermal.pdf",
     "templateValidationRules": "cdsValidation.json"
   },
   {
@@ -68,7 +68,7 @@
     "rowKey": "TemplateCdsInfractionThermalImmediateNotification",
     "templateId": "TemplateCdsInfractionThermalImmediateNotification",
     "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello per stampa termica con notifica immediata",
-    "templateExampleUrl": "https://github.com/pagopa/pagopa-print-payment-notice-service/tree/main/templateExamples/TemplateCdsInfractionThermalImmediateNotification.pdf",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateCdsInfractionThermalImmediateNotification.pdf",
     "templateValidationRules": "cdsValidation.json"
   }
 ]
