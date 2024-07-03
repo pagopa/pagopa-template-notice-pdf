@@ -168,7 +168,7 @@ jobs:
         run: |
           git config --local user.email "pagopa-github-bot@pagopa.it"
           git config --local user.name "pagopa-github-bot"
-          git commit -a -m "Examples Updated [skip-ci]"
+          git commit -a -m "Examples Updated [skip-ci]" || exit
           git push
   
 
