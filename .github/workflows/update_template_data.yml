@@ -27,12 +27,45 @@ permissions:
   contents: read
 
 jobs:
+  print_debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump Inputs
+        env:
+          JSON_INPUTS: ${{ toJson(inputs) }}
+        run: echo "$JSON_INPUTS"
+
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Dump job context
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo "$JOB_CONTEXT"
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
+      - name: Dump runner context
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo "$RUNNER_CONTEXT"
+      - name: Dump strategy context
+        env:
+          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+        run: echo "$STRATEGY_CONTEXT"
+      - name: Dump matrix context
+        env:
+          MATRIX_CONTEXT: ${{ toJson(matrix) }}
+        run: echo "$MATRIX_CONTEXT"
+
+
   create_runner:
     name: Create Runner
     runs-on: ubuntu-22.04
     environment:
-      name: ${{(inputs == null && 'dev') || inputs.environment }}
-    if: ${{ inputs.target == inputs.environment || inputs.target == 'all' }}
+      name: ${{(inputs.environment == null && 'dev') || inputs.environment }}
     outputs:
       runner_name: ${{ steps.create_github_runner.outputs.runner_name }}
     steps:
@@ -47,7 +80,7 @@ jobs:
           container_app_environment_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_NAME }}
           resource_group_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_RESOURCE_GROUP_NAME }} # RG of the runner
           pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
-          # self_hosted_runner_image_tag: "v1.4.1"
+          self_hosted_runner_image_tag: "latest"
 
   load_templates_files:
     needs: [ create_runner ]
