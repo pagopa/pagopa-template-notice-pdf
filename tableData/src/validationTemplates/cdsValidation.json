@@ -24,14 +24,10 @@
         "reduced": {
           "type": "object",
           "required": [
-            "code",
-            "dueDate"
+            "code"
           ],
           "properties": {
             "code": {
-              "type": "string"
-            },
-            "dueDate": {
               "type": "string"
             }
           }
@@ -39,14 +35,10 @@
         "discounted": {
           "type": "object",
           "required": [
-            "code",
-            "dueDate"
+            "code"
           ],
           "properties": {
             "code": {
-              "type": "string"
-            },
-            "dueDate": {
               "type": "string"
             }
           }
