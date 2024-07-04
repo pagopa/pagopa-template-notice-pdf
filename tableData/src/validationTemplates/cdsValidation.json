@@ -2,7 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "CDS notice validation schema",
   "description": "CDS notice validation schema",
-  "required": ["debtor", "creditorInstitution", "notice" ],
+  "required": [
+    "debtor",
+    "creditorInstitution",
+    "notice"
+  ],
   "properties": {
     "debtor": {
       "type": "object"
@@ -12,11 +16,17 @@
     },
     "notice": {
       "type": "object",
-      "required": ["reduced","discounted"],
+      "required": [
+        "reduced",
+        "discounted"
+      ],
       "properties": {
         "reduced": {
           "type": "object",
-          "required": ["code","dueDate"],
+          "required": [
+            "code",
+            "dueDate"
+          ],
           "properties": {
             "code": {
               "type": "string"
@@ -28,7 +38,10 @@
         },
         "discounted": {
           "type": "object",
-          "required": ["code","dueDate"],
+          "required": [
+            "code",
+            "dueDate"
+          ],
           "properties": {
             "code": {
               "type": "string"
