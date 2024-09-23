@@ -35,11 +35,12 @@ All PDF templates of the notice designed by pagoPA
      - w/o Poste notice: `$ yarn generate-cds-infraction`
      - w/ Poste notice: `$ yarn generate-cds-infraction-poste`
      - for thermal printing: `$ yarn generate-cds-infraction-thermal` and `$ yarn generate-cds-infraction-thermal-immediate-notification`
+   - **All of the above**: `$ yarn run-all-generate`
 3. If everything is okay, you will see a PDF file with the relative PDF template name in the `output_template` folder (starting from the root folder). For example, if you generate the most basic PDF template, you will see a PDF file named `TemplateSingleInstalment.pdf` in the same folder.
 
 ## Breakdown of pages by number of instalments
 
-### without Poste notice¹
+### without Poste paying-in slip (_bollettino postale_)¹
 
 <table>
   <tr>
@@ -105,6 +106,14 @@ All PDF templates of the notice designed by pagoPA
 ¹ `getPaginationData` function in the `paginator.js` helper file translates this breakdown into code <br />
 ² For more than nine instalments please use the **many instalments** template <br />
 ³ The first page always has a maximum of one row, as it contains all the main information
+
+### with pre-filled Poste paying-in slip (_bollettino postale_)¹ ²
+
+To define
+
+¹ `getPaginationDataPoste` function in the `paginator.js` helper file translates this breakdown into code <br />
+² The first page is omitted because it always shows only the single instalment <br />
+³ There's no current template that supports the case with more than nine instalments <br />
 
 ---
 
