@@ -5,8 +5,9 @@ All PDF templates of the notice designed by pagoPA
 - [Requirements](#requirements)
 - [Dependencies](#dependencies)
 - [How to generate the PDF notice](#how-to-generate-the-pdf-notice)
+- [Breakdown of pages by number of instalments](#breakdown-of-pages-by-number-of-instalments)
 - [Python Script](#python-script)
-- [Related PDF templates](#related-PDF-templates)
+- [Related PDF templates](#related-pdf-templates)
 
 ## Requirements
 
@@ -36,20 +37,74 @@ All PDF templates of the notice designed by pagoPA
      - for thermal printing: `$ yarn generate-cds-infraction-thermal` and `$ yarn generate-cds-infraction-thermal-immediate-notification`
 3. If everything is okay, you will see a PDF file with the relative PDF template name in the `output_template` folder (starting from the root folder). For example, if you generate the most basic PDF template, you will see a PDF file named `TemplateSingleInstalment.pdf` in the same folder.
 
-### Breakdown of pages by number of instalments
+## Breakdown of pages by number of instalments
 
-#### without Poste notice
+### without Poste notice¹
 
-| № instalments (total) | № columns (1st page) | № columns (2nd page) | № instalments (2nd page) |
-| --------------------- | -------------------- | -------------------- | ------------------------ |
-| 2                     | 2                    | -                    | -                        |
-| 3                     | 3                    | -                    | -                        |
-| 4                     | 2                    | 2                    | 2                        |
-| 5                     | 2                    | 3                    | 3                        |
-| 6                     | 2                    | 2                    | 4                        |
-| 7                     | 3                    | 2                    | 4                        |
-| 8                     | 2                    | 3                    | 6                        |
-| 9                     | 3                    | 3                    | 6                        |
+<table>
+  <tr>
+    <th rowspan="2">Total instalments²</th>
+    <th colspan="1">First page³</th>
+    <th colspan="2">Second page</th>
+  </tr>
+  <tr>
+    <th>№ cols</th>
+    <th>№ cols</th>
+    <th>№ rows</th>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>2</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>3</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>2</td>
+    <td>3</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>3</td>
+    <td>2</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>2</td>
+    <td>3</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>3</td>
+    <td>3</td>
+    <td>2</td>
+  </tr>
+</table>
+
+¹ `getPaginationData` function in the `paginator.js` helper file translates this breakdown into code <br />
+² For more than nine instalments please use the **many instalments** template <br />
+³ The first page always has a maximum of one row, as it contains all the main information
 
 ---
 
