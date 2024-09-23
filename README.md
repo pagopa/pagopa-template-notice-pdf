@@ -36,6 +36,21 @@ All PDF templates of the notice designed by pagoPA
      - for thermal printing: `$ yarn generate-cds-infraction-thermal` and `$ yarn generate-cds-infraction-thermal-immediate-notification`
 3. If everything is okay, you will see a PDF file with the relative PDF template name in the `output_template` folder (starting from the root folder). For example, if you generate the most basic PDF template, you will see a PDF file named `TemplateSingleInstalment.pdf` in the same folder.
 
+### Breakdown of pages by number of instalments
+
+#### without Poste notice
+
+| № instalments (total) | № columns (1st page) | № columns (2nd page) | № instalments (2nd page) |
+| --------------------- | -------------------- | -------------------- | ------------------------ |
+| 2                     | 2                    | -                    | -                        |
+| 3                     | 3                    | -                    | -                        |
+| 4                     | 2                    | 2                    | 2                        |
+| 5                     | 2                    | 3                    | 3                        |
+| 6                     | 2                    | 2                    | 4                        |
+| 7                     | 3                    | 2                    | 4                        |
+| 8                     | 2                    | 3                    | 6                        |
+| 9                     | 3                    | 3                    | 6                        |
+
 ---
 
 ## Python Script
