@@ -109,10 +109,19 @@ All PDF templates of the notice designed by pagoPA
 
 ### with pre-filled Poste paying-in slip (_bollettino postale_)¹ ²
 
-To define
+| Total instalments³ | № instalments (2nd page) | № instalments (3rd page) | № instalments (4th page) |
+| ------------------ | ------------------------ | ------------------------ | ------------------------ |
+| 2                  | 2                        | -                        | -                        |
+| 3                  | 3                        | -                        | -                        |
+| 4                  | 2                        | 2                        | -                        |
+| 5                  | 2                        | 3                        | -                        |
+| 6                  | 3                        | 3                        | -                        |
+| 7                  | 3                        | 2                        | 2                        |
+| 8                  | 2                        | 3                        | 3                        |
+| 9                  | 3                        | 3                        | 3                        |
 
 ¹ `getPaginationDataPoste` function in the `paginator.js` helper file translates this breakdown into code <br />
-² The first page is omitted because it always shows only the single instalment <br />
+² The first page is omitted because it always shows only the single instalment. Other pages can show **a maximum of three instalments per page**, as payment slips take up space<br />
 ³ There's no current template that supports the case with more than nine instalments <br />
 
 ---
