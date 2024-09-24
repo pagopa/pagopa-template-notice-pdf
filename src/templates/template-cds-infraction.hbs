@@ -27,7 +27,7 @@
             {{#with notice.instalments.discounted}}
                 {{> paymentData
                         title="Importo scontato del 30%"
-                        subtitle="<p class='h4 light'><strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale</p>"
+                        subtitle=(languageHandler 'alert')
                         debtor=../debtor
                         notice=../notice
                         payee=../payee
