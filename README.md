@@ -109,16 +109,65 @@ All PDF templates of the notice designed by pagoPA
 
 ### with pre-filled Poste paying-in slip (_bollettino postale_)¹ ²
 
-| Total instalments³ | № instalments (2nd page) | № instalments (3rd page) | № instalments (4th page) |
-| ------------------ | ------------------------ | ------------------------ | ------------------------ |
-| 2                  | 2                        | -                        | -                        |
-| 3                  | 3                        | -                        | -                        |
-| 4                  | 2                        | 2                        | -                        |
-| 5                  | 2                        | 3                        | -                        |
-| 6                  | 3                        | 3                        | -                        |
-| 7                  | 3                        | 2                        | 2                        |
-| 8                  | 2                        | 3                        | 3                        |
-| 9                  | 3                        | 3                        | 3                        |
+<table>
+  <tr>
+    <th rowspan="2">Total instalments³</th>
+    <th colspan="3">№ instalments</th>
+  </tr>
+  <tr>
+    <th>2ⁿᵈ page</th>
+    <th>3ʳᵈ page</th>
+    <th>4ᵗʰ page</th>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>2</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>3</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>2</td>
+    <td>2</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>2</td>
+    <td>3</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>3</td>
+    <td>3</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>3</td>
+    <td>2</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>2</td>
+    <td>3</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>3</td>
+    <td>3</td>
+    <td>3</td>
+  </tr>
+</table>
 
 ¹ `getPaginationDataPoste` function in the `paginator.js` helper file translates this breakdown into code <br />
 ² The first page is omitted because it always shows only the single instalment. Other pages can show **a maximum of three instalments per page**, as payment slips take up space<br />
