@@ -1,34 +1,37 @@
 const i18next = require("i18next");
 
 function languageHandler(i18n_key, options) {
-  let languageInfo = options.data.root.metadata;
-  const str1 = i18next.t(i18n_key, { lng: languageInfo ? languageInfo.language : "it" });
+  /* Get language parameters from JSON file */
+  const languageInfo = options.data.root.metadata;
+  const isBilingual = languageInfo?.bilingual;
+  const mainLanguage = languageInfo?.language;
+  const secondaryLanguage = languageInfo?.secondaryLanguage;
 
-  const main_html_elem = '<p class="' + options.hash.classPrimaryLanguage + '">' + str1 + "</p>";
+  /* Get localized text using i18n key */
+  const mainLocalizedText = i18next.t(i18n_key, { lng: mainLanguage ?? "it" });
 
-  if (languageInfo && languageInfo.bilingual !== null && languageInfo.bilingual !== undefined) {
-    const str2 = i18next.t(i18n_key, { lng: languageInfo.bilingual });
-    const bilingual_html_elem = '<p class="' + options.hash.classBilingual + '">' + str2 + "</p>";
-
-    if ("horizontal" === options.hash.align) {
-      return '<div class="container_flex_horizontal">' + main_html_elem + bilingual_html_elem + "</div>";
-    } else {
-      return '<div class="container_flex_vertical">' + main_html_elem + bilingual_html_elem + "</div>";
-    }
+  /* If there are no hash parameters, only the main localised text
+  will be returned. This could be used to render
+  the document title, for example */
+  if (!options.hash) {
+    return mainLocalizedText;
   }
 
-  if (languageInfo && languageInfo.secondaryLanguage !== null && languageInfo.secondaryLanguage !== undefined) {
-    const str2 = i18next.t(i18n_key, { lng: languageInfo.secondaryLanguage });
-    const secondary_html_elem = '<p class="' + options.hash.classSecondaryLanguage + '">' + str2 + "</p>";
+  /* Create the mainHTML element with default language text */
+  const mainHTMLElem = '<p class="' + options.hash.classPrimaryLanguage + '">' + mainLocalizedText + "</p>";
 
-    if ("horizontal" === options.hash.align) {
-      return '<div class="container_flex_horizontal">' + main_html_elem + secondary_html_elem + "</div>";
-    } else {
-      return '<div class="container_flex_vertical">' + main_html_elem + secondary_html_elem + "</div>";
-    }
+  /* Create the secondaryHTML element, using the secondary language */
+  if (mainLanguage && secondaryLanguage) {
+    const secondaryLocalizedText = i18next.t(i18n_key, { lng: languageInfo.secondaryLanguage });
+    const secondaryElementClassname = isBilingual ? options.hash.classBilingual : options.hash.classSecondaryLang;
+    const secondaryHTMLElem = `<p class="${secondaryElementClassname}">${secondaryLocalizedText}</p>`;
+
+    const flexDirection = options.hash.align === "horizontal" ? "horizontal" : "vertical";
+    return `<div class="container_flex_${flexDirection}">${mainHTMLElem}${secondaryHTMLElem}</div>`;
+
+  } else {
+    return mainHTMLElem;
   }
-
-  return main_html_elem;
 }
 
 module.exports = languageHandler;
