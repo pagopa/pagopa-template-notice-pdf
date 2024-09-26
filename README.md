@@ -5,6 +5,7 @@ All PDF templates of the notice designed by pagoPA
 - [Requirements](#requirements)
 - [Dependencies](#dependencies)
 - [How to generate the PDF notice](#how-to-generate-the-pdf-notice)
+- [Internationalization (`I18n`)](#internationalization-i18n)
 - [Breakdown of pages by number of instalments](#breakdown-of-pages-by-number-of-instalments)
 - [Python Script](#python-script)
 - [Related PDF templates](#related-pdf-templates)
@@ -37,6 +38,54 @@ All PDF templates of the notice designed by pagoPA
      - for thermal printing: `$ yarn generate-cds-infraction-thermal` and `$ yarn generate-cds-infraction-thermal-immediate-notification`
    - **All of the above**: `$ yarn run-all-generate`
 3. If everything is okay, you will see a PDF file with the relative PDF template name in the `output_template` folder (starting from the root folder). For example, if you generate the most basic PDF template, you will see a PDF file named `TemplateSingleInstalment.pdf` in the same folder.
+
+## Internationalization (`I18n`)
+
+Payment notices can be generated in multiple languages. You can configure `i18n` by changing the `metadata.language` value at the end of the appropriate JSON file:
+
+```json
+"metadata": {
+    "language": "it",
+    "secondaryLanguage": "en",
+    "trueBilingualism": true
+  }
+```
+By changing this configuration, you can manage the different cases described below. If you need to learn more, you can refer to the [official pagoPA documentation](https://docs.pagopa.it/avviso-pagamento/allegato-1/varianti/traduzioni).
+
+### Default (Italian)
+If no configuration is specified, the notice will be generated in Italian.
+
+### Main language only
+If you change the `language` to a value other than `it`, the notice will be generated in the specified language. For example, the following configuration will generate a notice in English:
+
+```json
+"metadata": {
+    "language": "en",
+  }
+```
+
+### Main language, secondary language
+If you also set the `secondaryLanguage` field, the notice will be generated in both languages, but the secondary language will be rendered with a different visual hierarchy. For example, the following configuration will generate a notice in Italian with English as the secondary language:
+
+```json
+"metadata": {
+    "language": "it",
+    "secondaryLanguage": "en",
+  }
+```
+
+### True bilingualism
+If you enable the `trueBilingualism` field, the notice will be generated in both languages, but both languages will be visually treated equally. For example, the following configuration will generate a notice in both Italian and German:
+
+```json
+"metadata": {
+    "language": "it",
+    "secondaryLanguage": "de",
+    "trueBilingualism": true
+  }
+```
+
+
 
 ## Breakdown of pages by number of instalments
 

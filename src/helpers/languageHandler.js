@@ -3,7 +3,7 @@ const i18next = require("i18next");
 function languageHandler(i18n_key, options) {
   /* Get language parameters from JSON file */
   const languageInfo = options.data.root.metadata;
-  const isBilingual = languageInfo?.bilingual;
+  const isTrueBilingual = languageInfo?.trueBilingualism;
   const mainLanguage = languageInfo?.language;
   const secondaryLanguage = languageInfo?.secondaryLanguage;
 
@@ -23,7 +23,7 @@ function languageHandler(i18n_key, options) {
   /* Create the secondaryHTML element, using the secondary language */
   if (mainLanguage && secondaryLanguage) {
     const secondaryLocalizedText = i18next.t(i18n_key, { lng: languageInfo.secondaryLanguage });
-    const secondaryElementClassname = isBilingual ? options.hash.classBilingual : options.hash.classSecondaryLang;
+    const secondaryElementClassname = isTrueBilingual ? options.hash.classBilingual : options.hash.classSecondaryLang;
     const secondaryHTMLElem = `<p class="${secondaryElementClassname}">${secondaryLocalizedText}</p>`;
 
     const flexDirection = options.hash.align === "horizontal" ? "horizontal" : "vertical";

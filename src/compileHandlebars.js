@@ -64,8 +64,8 @@ const template = Handlebars.compile(templateFile);
 const data = require(`./json/${dataFilePath}`);
 
 /* I18N. Check if the parameters are correctly set. */
-if (data.metadata?.bilingual && !data.metadata?.secondaryLanguage) {
-    console.warn("⚠️ You have enabled `bilingual` PDF generation but haven't specified a secondary language. The document will be generated in the default main language only.");
+if (data.metadata?.trueBilingualism && !data.metadata?.secondaryLanguage) {
+    console.warn("⚠️ You have enabled `trueBilingualism` but haven't specified a secondary language. The PDF document will be generated in the default main language only.");
 }
 
 data.tempPath = ".temp";
