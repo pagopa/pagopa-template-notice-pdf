@@ -1,13 +1,17 @@
 {
   "it": {
     "translation": {
-      "title": "Avviso di pagamento",
+      "heading": {
+        "title": "Avviso di pagamento"
+      },
       "alert": "<strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale"
     }
   },
   "en": {
     "translation": {
-      "title": "Payment Notice",
+      "heading": {
+        "title": "Payment Notice"
+      },
       "alert": "<strong>Within 5 days</strong> from the notification"
     }
   }

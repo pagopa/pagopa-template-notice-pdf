@@ -50,12 +50,15 @@ Payment notices can be generated in multiple languages. You can configure `i18n`
     "trueBilingualism": true
   }
 ```
+
 By changing this configuration, you can manage the different cases described below. If you need to learn more, you can refer to the [official pagoPA documentation](https://docs.pagopa.it/avviso-pagamento/allegato-1/varianti/traduzioni).
 
 ### Default (Italian)
+
 If no configuration is specified, the notice will be generated in Italian.
 
 ### Main language only
+
 If you change the `language` to a value other than `it`, the notice will be generated in the specified language. For example, the following configuration will generate a notice in English:
 
 ```json
@@ -65,6 +68,7 @@ If you change the `language` to a value other than `it`, the notice will be gene
 ```
 
 ### Main language, secondary language
+
 If you also set the `secondaryLanguage` field, the notice will be generated in both languages, but the secondary language will be rendered with a different visual hierarchy. For example, the following configuration will generate a notice in Italian with English as the secondary language:
 
 ```json
@@ -75,6 +79,7 @@ If you also set the `secondaryLanguage` field, the notice will be generated in b
 ```
 
 ### True bilingualism
+
 If you enable the `trueBilingualism` field, the notice will be generated in both languages, but both languages will be visually treated equally. For example, the following configuration will generate a notice in both Italian and German:
 
 ```json
@@ -85,7 +90,7 @@ If you enable the `trueBilingualism` field, the notice will be generated in both
   }
 ```
 
-
+> [!important] > **Trying to understand how to edit the i18n template logic?** You can find it in the [`languageHandler.js` helper file](./src/helpers/languageHandler.js).
 
 ## Breakdown of pages by number of instalments
 

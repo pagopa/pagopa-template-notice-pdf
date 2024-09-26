@@ -101,6 +101,7 @@
 .h5,
 .body,
 .small-caps-title,
+.small-caps-title-bilingual,
 .caption {
     margin: 0;
 }
@@ -143,6 +144,12 @@
     font-size: var(--h4-fsize);
     font-weight: var(--weight-bold);
     text-transform: uppercase;
+    color: var(--color-black);
+}
+
+.small-caps-title-bilingual {
+    font-size: var(--h5-fsize);
+    font-weight: var(--weight-regular);
     color: var(--color-black);
 }
 
@@ -437,9 +444,9 @@ dl {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
     grid-template-areas: "payee-title debtor-title"
-    "payee-name debtor-name"
-    "payee-sector debtor-address"
-    "payee-info debtor-address";
+        "payee-name debtor-name"
+        "payee-sector debtor-address"
+        "payee-info debtor-address";
     column-gap: var(--separator-gutter);
     row-gap: var(--separator-bottom-margin);
     margin-bottom: var(--section-margin);
@@ -485,7 +492,7 @@ dl {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
     grid-template-areas: "payment-amount-title payment-methods-title"
-    "payment-amount-block payment-methods-block";
+        "payment-amount-block payment-methods-block";
     column-gap: var(--separator-gutter);
     row-gap: var(--separator-bottom-margin);
     margin-bottom: var(--section-margin);
@@ -532,7 +539,7 @@ dl {
     align-content: flex-start;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "amount amount date"
-    "info info info";
+        "info info info";
     row-gap: var(--separator-margin-small);
     column-gap: var(--payment-grid-col-gap);
 
@@ -551,7 +558,7 @@ dl {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "amount-1 amount-2"
-    "info info";
+        "info info";
     row-gap: var(--separator-margin-small);
     column-gap: var(--payment-grid-col-gap);
 
@@ -751,7 +758,7 @@ dl {
     .payment-details-and-datamatrix {
         display: grid;
         grid-template-areas: "first-block data-matrix"
-      "second-block data-matrix";
+            "second-block data-matrix";
         grid-template-columns: 1fr auto;
         gap: var(--data-grid-gap-medium);
     }
@@ -1039,4 +1046,18 @@ dl {
         font-size: var(--h4-fsize);
         font-weight: var(--weight-bold);
     }
+}
+
+/* BILINGUAL */
+
+.bilingualTextBoxHorizontal {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5mm;
+    align-items: center;
+}
+
+.bilingualTextBoxVertical {
+    display: flex;
+    flex-direction: column;
 }

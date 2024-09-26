@@ -3,6 +3,7 @@ const i18next = require("i18next");
 function languageHandler(i18n_key, options) {
   /* Get language parameters from JSON file */
   const languageInfo = options.data.root.metadata;
+  const textBoxAlignment = options.hash.align;
   const isTrueBilingual = languageInfo?.trueBilingualism;
   const mainLanguage = languageInfo?.language;
   const secondaryLanguage = languageInfo?.secondaryLanguage;
@@ -18,17 +19,19 @@ function languageHandler(i18n_key, options) {
   }
 
   /* Create the mainHTML element with default language text */
-  const mainHTMLElem = '<p class="' + options.hash.classPrimaryLanguage + '">' + mainLocalizedText + "</p>";
+  const mainHTMLElem = '<p class="' + options.hash.classPrimaryLang + '">' + mainLocalizedText + "</p>";
 
   /* Create the secondaryHTML element, using the secondary language */
   if (mainLanguage && secondaryLanguage) {
     const secondaryLocalizedText = i18next.t(i18n_key, { lng: languageInfo.secondaryLanguage });
     const secondaryElementClassname = isTrueBilingual ? options.hash.classBilingual : options.hash.classSecondaryLang;
-    const secondaryHTMLElem = `<p class="${secondaryElementClassname}">${secondaryLocalizedText}</p>`;
+    const secondaryHTMLElem =
+      !isTrueBilingual && textBoxAlignment === "horizontal"
+        ? `<p class="${secondaryElementClassname}">· ${secondaryLocalizedText}</p>` // Add a dot separator between the languages
+        : `<p class="${secondaryElementClassname}">${mainLocalizedText}</p>`;
 
-    const flexDirection = options.hash.align === "horizontal" ? "horizontal" : "vertical";
-    return `<div class="container_flex_${flexDirection}">${mainHTMLElem}${secondaryHTMLElem}</div>`;
-
+    const flexDirection = textBoxAlignment === "horizontal" ? "Horizontal" : "Vertical";
+    return `<div class="bilingualTextBox${flexDirection}">${mainHTMLElem}${secondaryHTMLElem}</div>`;
   } else {
     return mainHTMLElem;
   }
