@@ -90,7 +90,8 @@ If you enable the `trueBilingualism` field, the notice will be generated in both
   }
 ```
 
-> [!important] > **Trying to understand how to edit the i18n template logic?** You can find it in the [`languageHandler.js` helper file](./src/helpers/languageHandler.js).
+> [!important]
+> **Trying to understand how to edit the i18n template logic?** You can find it in the [`languageHandler.js`](./src/helpers/languageHandler.js) helper file.
 
 ## Breakdown of pages by number of instalments
 
