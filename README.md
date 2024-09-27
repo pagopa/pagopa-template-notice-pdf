@@ -45,10 +45,10 @@ Payment notices can be generated in multiple languages. You can configure `i18n`
 
 ```json
 "metadata": {
-    "language": "it",
-    "secondaryLanguage": "en",
-    "trueBilingualism": true
-  }
+  "language": "it",
+  "secondaryLanguage": "en",
+  "trueBilingualism": true
+}
 ```
 
 By changing this configuration, you can manage the different cases described below. If you need to learn more, you can refer to the [official pagoPA documentation](https://docs.pagopa.it/avviso-pagamento/allegato-1/varianti/traduzioni).
@@ -63,8 +63,8 @@ If you change the `language` to a value other than `it`, the notice will be gene
 
 ```json
 "metadata": {
-    "language": "en",
-  }
+  "language": "en",
+}
 ```
 
 ### Main language, secondary language
@@ -73,9 +73,9 @@ If you also set the `secondaryLanguage` field, the notice will be generated in b
 
 ```json
 "metadata": {
-    "language": "it",
-    "secondaryLanguage": "en",
-  }
+  "language": "it",
+  "secondaryLanguage": "en",
+}
 ```
 
 ### True bilingualism
@@ -84,14 +84,23 @@ If you enable the `trueBilingualism` field, the notice will be generated in both
 
 ```json
 "metadata": {
-    "language": "it",
-    "secondaryLanguage": "de",
-    "trueBilingualism": true
-  }
+  "language": "it",
+  "secondaryLanguage": "de",
+  "trueBilingualism": true
+}
 ```
 
-> [!important]
-> **Trying to understand how to edit the i18n template logic?** You can find it in the [`languageHandler.js`](./src/helpers/languageHandler.js) helper file.
+### Supported languages
+
+The following languages are supported:
+
+- Italian (`it`)
+- German (`de`)
+- English (`en`)
+- French (`fr`)
+- Slovenian (`sl`)
+
+> [!important] > **Trying to understand how to edit the i18n template logic?** You can find it in the [`languageHandler.js`](./src/helpers/languageHandler.js) helper file. If you're looking for locale strings, you can find them in the [`i18next.json`](./src/assets/i18next.json) file.
 
 ## Breakdown of pages by number of instalments
 
