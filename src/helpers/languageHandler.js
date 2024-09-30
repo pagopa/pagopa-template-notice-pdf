@@ -3,7 +3,7 @@ const i18next = require("i18next");
 function languageHandler(i18n_key, options) {
   /* Get language parameters from JSON file */
   const languageInfo = options.data.root.metadata;
-  const textBoxAlignment = options.hash.align;
+  const textBoxAlignment = options.hash.align ?? "horizontal";
   const isTrueBilingual = languageInfo?.trueBilingualism;
   const mainLanguage = languageInfo?.language;
   const secondaryLanguage = languageInfo?.secondaryLanguage;

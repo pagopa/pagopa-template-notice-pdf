@@ -1,5 +1,6 @@
 <div class="payment-methods-title-block end-separator">
-    <h3 class="small-caps-title">Dove pagare?</h3>
+    {{{languageHandler 'whereToPay.title' classPrimaryLang='small-caps-title'
+    classSecondaryLang='small-caps-title-bilingual'}}}
     <div class="pagopa-website-block">
         <p class="body">vai su <span class="h4">pagopa.gov.it</span></p>
     </div>
@@ -10,14 +11,14 @@
         <div class="payment-info-inner">
             <h4 class="small-caps-title mb-3x-small">Paga con l'app IO</h4>
             <p class="body">oppure {{getOnlinePaymentMethodContent payee.channel.online.website
-                                                                   payee.channel.online.app}}dal
+                payee.channel.online.app}}dal
                 tuo Home
                 Banking, con la tua app di pagamento o con
                 gli
                 altri canali
                 abilitati.</p>
         </div>
-        <img src="./assets/icons/pictogram-devices.svg" class="payment-info-pictogram" aria-hidden="true"/>
+        <img src="./assets/icons/pictogram-devices.svg" class="payment-info-pictogram" aria-hidden="true" />
     </div>
 
     <div>
@@ -31,7 +32,7 @@
                     Tabaccherie e altri Esercenti Convenzionati.</p>
             </div>
             <img src="./assets/icons/pictogram-physical-locations.svg" class="payment-info-pictogram"
-                 aria-hidden="true"/>
+                aria-hidden="true" />
         </div>
     </div>
 </div>

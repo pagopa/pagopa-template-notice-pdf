@@ -4,6 +4,17 @@
       "heading": {
         "title": "Avviso di pagamento"
       },
+      "paymentData": {
+        "payee": "Ente creditore",
+        "recipient": "Destinatario"
+      },
+      "paymentInfo": {
+        "titleWithExpiryDate": "Quanto e quando pagare?",
+        "titleWithoutExpiryDate": "Quanto pagare?"
+      },
+      "whereToPay": {
+        "title": "Dove pagare?"
+      },
       "alert": "<strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale"
     }
   },
@@ -12,7 +23,72 @@
       "heading": {
         "title": "Payment Notice"
       },
+      "paymentData": {
+        "payee": "Payee",
+        "recipient": "Recipient"
+      },
+      "paymentInfo": {
+        "titleWithExpiryDate": "How much and when to pay?",
+        "titleWithoutExpiryDate": "How much to pay?"
+      },
+      "whereToPay": {
+        "title": "Where to pay?"
+      },
       "alert": "<strong>Within 5 days</strong> from the notification"
+    }
+  },
+  "de": {
+    "translation": {
+      "heading": {
+        "title": "Zahlungsmitteilung"
+      },
+      "paymentData": {
+        "payee": "Körperschaft",
+        "recipient": "Empfänger"
+      },
+      "paymentInfo": {
+        "titleWithExpiryDate": "Wieviel und wann bezahlen?",
+        "titleWithoutExpiryDate": "Quanto pagare?"
+      },
+      "whereToPay": {
+        "title": "Wo bezahlen?"
+      }
+    }
+  },
+  "fr": {
+    "translation": {
+      "heading": {
+        "title": "Avis de paiement"
+      },
+      "paymentData": {
+        "payee": "Organisme créancier",
+        "recipient": "Destinataire"
+      },
+      "paymentInfo": {
+        "titleWithExpiryDate": "Combien et quand payer?",
+        "titleWithoutExpiryDate": "Quanto pagare?"
+      },
+      "whereToPay": {
+        "title": "Où payer?"
+      }
+    }
+  },
+  "sl": {
+    "translation": {
+      "heading": {
+        "title": "Obvestilo o plačilu"
+      },
+      "paymentData": {
+        "payee": "Plačnik",
+        "recipient": "Prejemnik"
+      },
+      "paymentInfo": {
+        "titleWithExpiryDate": "Koliko in kdaj plačati?",
+        "titleWithoutExpiryDate": "Quanto pagare?"
+      },
+      "whereToPay": {
+        "title": "Kje plačati?"
+      }
     }
   }
 }
