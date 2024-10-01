@@ -167,6 +167,10 @@
     &.strong {
         font-weight: var(--weight-bold);
     }
+
+    &.muted {
+        color: var(--color-grey-dark);
+    }
 }
 
 .caption {
@@ -1060,4 +1064,5 @@ dl {
 .bilingualTextBoxVertical {
     display: flex;
     flex-direction: column;
+    row-gap: 0.5mm;
 }

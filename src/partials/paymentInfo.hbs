@@ -12,13 +12,21 @@
 
     <div class="payment-amount-block start-grid-cell">
         <dl class="amount">
-            <dt class="body strong">Importo</dt>
+            <dt>
+                {{{languageHandler 'paymentInfo.amount.default'
+                classPrimaryLang='body strong'
+                classSecondaryLang='body muted'}}}
+            </dt>
             <dd class="h1">{{notice.amount}} Euro</dd>
         </dl>
 
         {{#if notice.expiryDate}}
         <dl class="expiry-date">
-            <dt class="body strong">entro il</dt>
+            <dt>
+                {{{languageHandler 'paymentInfo.expiryDate.default'
+                classPrimaryLang='body strong'
+                classSecondaryLang='body muted'}}}
+            </dt>
             <dd class="h1">{{notice.expiryDate}}</dd>
         </dl>
         {{/if}}
@@ -28,17 +36,20 @@
             {{#if notice.instalments.items}}
             <div class="info-paragraph">
                 <img src="./assets/icons/icon-info.svg" class="info-icon" aria-hidden="true" />
-                <p class="body">Puoi pagare per intero oppure in {{notice.instalments.items.length}} rate</p>
+                {{{languageHandler 'paymentInfo.instalments.default'
+                classPrimaryLang='body'
+                classSecondaryLang='body muted'
+                align="vertical"
+                number=notice.instalments.items.length}}}
             </div>
             {{/if}}
 
             <div class="info-paragraph">
                 <img src="./assets/icons/icon-info.svg" class="info-icon" aria-hidden="true" />
-                <p class="body">In fase di pagamento, se previsto dall’ente, l'importo potrebbe essere
-                    aggiornato
-                    automaticamente e subire variazioni in
-                    diminuzione
-                    (per sgravi, note di credito) o in aumento (per sanzioni, interessi, ecc.).</p>
+                {{{languageHandler 'paymentInfo.legal'
+                classPrimaryLang='body'
+                classSecondaryLang='body muted'
+                align="vertical"}}}
             </div>
 
         </div>

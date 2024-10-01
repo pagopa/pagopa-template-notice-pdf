@@ -43,7 +43,7 @@ function languageHandler(i18n_key, options) {
     const secondaryHTMLElem =
       !isTrueBilingual && textBoxAlignment === "horizontal"
         ? `<p class="${secondaryElementClassname}">· ${secondaryLocalizedText}</p>` // Add a dot separator between the languages
-        : `<p class="${secondaryElementClassname}">${mainLocalizedText}</p>`;
+        : `<p class="${secondaryElementClassname}">${secondaryLocalizedText}</p>`;
 
     const flexDirection = textBoxAlignment === "horizontal" ? "Horizontal" : "Vertical";
     return `<div class="bilingualTextBox${flexDirection}">${mainHTMLElem}${secondaryHTMLElem}</div>`;
