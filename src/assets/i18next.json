@@ -13,7 +13,8 @@
         "titleWithoutExpiryDate": "Quanto pagare?"
       },
       "whereToPay": {
-        "title": "Dove pagare?"
+        "title": "Dove pagare?",
+        "cta": "vai su {{website}}"
       },
       "alert": "<strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale"
     }
@@ -32,7 +33,8 @@
         "titleWithoutExpiryDate": "How much to pay?"
       },
       "whereToPay": {
-        "title": "Where to pay?"
+        "title": "Where to pay?",
+        "cta": "go to {{website}}"
       },
       "alert": "<strong>Within 5 days</strong> from the notification"
     }
@@ -51,7 +53,8 @@
         "titleWithoutExpiryDate": "Quanto pagare?"
       },
       "whereToPay": {
-        "title": "Wo bezahlen?"
+        "title": "Wo bezahlen?",
+        "cta": "weiter zu {{website}}"
       }
     }
   },
@@ -69,7 +72,8 @@
         "titleWithoutExpiryDate": "Quanto pagare?"
       },
       "whereToPay": {
-        "title": "Où payer?"
+        "title": "Où payer?",
+        "cta": "aller à {{website}}"
       }
     }
   },
@@ -87,7 +91,8 @@
         "titleWithoutExpiryDate": "Quanto pagare?"
       },
       "whereToPay": {
-        "title": "Kje plačati?"
+        "title": "Kje plačati?",
+        "cta": "pojdite na {{website}}"
       }
     }
   }
