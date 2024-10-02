@@ -1,12 +1,12 @@
 <section class="notice-payment-data">
   <div class="unique-separator">
-    <h3 class="small-caps-title">
-      {{#if title}}
-      {{title}}
-      {{else}}
-      Dati per il pagamento
-      {{/if}}
-    </h3>
+
+    {{#if title}}
+    <h3 class="small-caps-title">{{title}}</h3>
+    {{else}}
+    {{{languageHandler 'paymentData.title' classPrimaryLang='small-caps-title'
+    classSecondaryLang='small-caps-title-bilingual'}}}
+    {{/if}}
     {{#if subtitle}}
     <p class='h4 light'>{{{subtitle}}}</p>
     {{else}}

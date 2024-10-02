@@ -1,6 +1,7 @@
 <section class="notice-payment-info">
     <div class="payment-amount-title-block start-separator">
-        <h3 class="small-caps-title">Quanto e quando pagare?</h3>
+        {{{languageHandler 'paymentInfo.titleWithExpiryDate' classPrimaryLang='small-caps-title'
+        classSecondaryLang='small-caps-title-bilingual'}}}
     </div>
 
     <div class="payment-amount-block-infraction start-grid-cell">
@@ -10,14 +11,14 @@
         </div>
         <div class="info-block">
             <div class="info-paragraph">
-                <img src="./assets/icons/icon-info.svg" class="info-icon" aria-hidden="true"/>
+                <img src="./assets/icons/icon-info.svg" class="info-icon" aria-hidden="true" />
                 <p class="body">Scegli l'importo corretto per i termini previsti, altrimenti riceverai altre richieste
                     di
                     pagamento per le somme residue
                     ed eventuali somme aggiuntive.</p>
             </div>
             <div class="info-paragraph">
-                <img src="./assets/icons/icon-calendar.svg" class="info-icon" aria-hidden="true"/>
+                <img src="./assets/icons/icon-calendar.svg" class="info-icon" aria-hidden="true" />
                 <div>
                     <h5 class="h5 mb-3x-small">Come si calcolano le scadenze?</h5>
                     <p class="body">Il giorno della notifica non si conta. Se la scadenza è di domenica (o festivo),
@@ -27,7 +28,7 @@
                 </div>
             </div>
             <div class="info-paragraph">
-                <img src="./assets/icons/icon-document.svg" class="info-icon" aria-hidden="true"/>
+                <img src="./assets/icons/icon-document.svg" class="info-icon" aria-hidden="true" />
                 <div>
                     <h5 class="h5 mb-3x-small">Cosa succede in caso di giacenza?</h5>
                     <p class="body">La notifica corrisponde al giorno del ritiro, se questo avviene entro 10 giorni

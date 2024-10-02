@@ -167,10 +167,6 @@
     &.strong {
         font-weight: var(--weight-bold);
     }
-
-    &.muted {
-        color: var(--color-grey-dark);
-    }
 }
 
 .caption {
@@ -189,6 +185,10 @@
 
 .not-shrinking {
     flex-shrink: 0;
+}
+
+.muted {
+    color: var(--color-grey-dark);
 }
 
 body {
@@ -374,6 +374,17 @@ dl {
         font-family: var(--font-monospaced);
         font-size: var(--h3-fsize);
         font-weight: var(--weight-bold);
+    }
+}
+
+.data-key-value,
+.data-key-value-inline,
+.data-key-value-monospaced,
+.data-key-value-inline-monospaced {
+
+    /* Avoid extra margin when using languageHandler */
+    & p {
+        margin: 0;
     }
 }
 

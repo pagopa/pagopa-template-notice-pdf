@@ -1,6 +1,7 @@
 <section class="notice-payment-info">
     <div class="payment-amount-title-block start-separator">
-        <h3 class="small-caps-title">Quanto e quando pagare?</h3>
+        {{{languageHandler 'paymentInfo.titleWithExpiryDate' classPrimaryLang='small-caps-title'
+        classSecondaryLang='small-caps-title-bilingual'}}}
     </div>
 
     <div class="payment-amount-block-infraction start-grid-cell">
@@ -10,7 +11,7 @@
                 <dd class="h1">{{notice.instalments.discounted.amount}} Euro</dd>
             </dl>
             <p class="body amount-details">
-                <strong>entro 5 giorni</strong><br/>
+                <strong>entro 5 giorni</strong><br />
                 dalla notifica del verbale
             </p>
         </div>
@@ -20,13 +21,13 @@
                 <dd class="h1">{{notice.instalments.reduced.amount}} Euro</dd>
             </dl>
             <p class="body amount-details">
-                <strong>dal 6º al 60º giorno</strong><br/>
+                <strong>dal 6º al 60º giorno</strong><br />
                 dalla notifica del verbale
             </p>
         </div>
         <div class="info-block">
             <div class="info-paragraph">
-                <img src="./assets/icons/icon-calendar.svg" class="info-icon" aria-hidden="true"/>
+                <img src="./assets/icons/icon-calendar.svg" class="info-icon" aria-hidden="true" />
                 <div>
                     <h5 class="h5 mb-3x-small">Come si calcolano le scadenze?</h5>
                     <p class="body">Il giorno della notifica non si conta. Se la scadenza è di domenica (o festivo),
@@ -36,7 +37,7 @@
                 </div>
             </div>
             <div class="info-paragraph">
-                <img src="./assets/icons/icon-document.svg" class="info-icon" aria-hidden="true"/>
+                <img src="./assets/icons/icon-document.svg" class="info-icon" aria-hidden="true" />
                 <div>
                     <h5 class="h5 mb-3x-small">Cosa succede in caso di giacenza?</h5>
                     <p class="body">La notifica corrisponde al giorno del ritiro, se questo avviene entro 10 giorni

@@ -8,7 +8,14 @@ function languageHandler(i18n_key, options) {
   const isTrueBilingual = languageInfo?.trueBilingualism;
 
   /* Get parameters from the helper */
-  const { align: textBoxAlignment = "horizontal", forceSecondaryLang, ...variables } = options.hash;
+  const {
+    classPrimaryLang,
+    classSecondaryLang,
+    classBilingual,
+    forceSecondaryLang,
+    align: textBoxAlignment = "horizontal",
+    ...variables
+  } = options.hash;
 
   /* Get localized text using i18n key */
   const mainLocalizedText = i18next.t(i18n_key, {
@@ -25,7 +32,9 @@ function languageHandler(i18n_key, options) {
   }
 
   /* Create the mainHTML element with default language text */
-  const mainHTMLElem = `<p class="${options.hash.classPrimaryLang}">${mainLocalizedText}</p>`;
+  const mainHTMLElem = classPrimaryLang
+    ? `<p class="${classPrimaryLang}">${mainLocalizedText}</p>`
+    : `<p>${mainLocalizedText}</p>`;
 
   /* Create the secondaryHTML element, using the secondary language */
   if (mainLanguage && secondaryLanguage) {
@@ -36,10 +45,12 @@ function languageHandler(i18n_key, options) {
     });
 
     if (forceSecondaryLang) {
-      return `<p class="${options.hash.classPrimaryLang}">${secondaryLocalizedText}</p>`;
+      return classPrimaryLang
+        ? `<p class="${classPrimaryLang}">${secondaryLocalizedText}</p>`
+        : `<p>${secondaryLocalizedText}</p>`;
     }
 
-    const secondaryElementClassname = isTrueBilingual ? options.hash.classBilingual : options.hash.classSecondaryLang;
+    const secondaryElementClassname = isTrueBilingual ? classBilingual : classSecondaryLang;
     const secondaryHTMLElem =
       !isTrueBilingual && textBoxAlignment === "horizontal"
         ? `<p class="${secondaryElementClassname}">· ${secondaryLocalizedText}</p>` // Add a dot separator between the languages
