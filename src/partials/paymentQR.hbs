@@ -1,8 +1,13 @@
 <div class="payment-details unique-grid-cell">
     <div class="qrcode-area">
         <img class="payment-qrcode" src={{genQrCode this.qrCode this.tempPath}} alt="QR PaymentCode" />
-        {{{languageHandler 'paymentData.instructions.qrCode.singlePayment' classPrimaryLang='body mt-small'
-        classSecondaryLang='body muted' align='vertical'}}}
+        {{{languageHandler
+        "paymentData.instructions.qrCode.singlePayment"
+        classContainer="mt-small"
+        classPrimaryLang="body"
+        classSecondaryLang="body muted"
+        align="vertical"
+        }}}
     </div>
     <div class="payment-details-data">
         <div class="payment-details-data-1st-block">
@@ -10,22 +15,21 @@
             <div class="grid-cell-span-1">
                 <dl class="data-key-value">
                     <dt>
-                        {{{languageHandler 'paymentData.recipient'
-                        classSecondaryLang='muted' }}}
+                        {{{languageHandler "paymentData.recipient" classSecondaryLang="muted"}}}
                     </dt>
                     <dd class="forcedCapitalCase">{{lowercase debtor.fullName}}</dd>
                 </dl>
             </div>
 
             <p class="amount align-right">
-                Euro <strong>{{this.amount}}</strong>
+                Euro
+                <strong>{{this.amount}}</strong>
             </p>
 
             <div class="grid-cell-span-2">
                 <dl class="data-key-value">
                     <dt>
-                        {{{languageHandler 'paymentData.payee'
-                        classSecondaryLang='muted' }}}
+                        {{{languageHandler "paymentData.payee" classSecondaryLang="muted"}}}
                     </dt>
                     <dd>{{payee.name}}</dd>
                 </dl>
@@ -34,8 +38,7 @@
             <div class="grid-cell-span-2">
                 <dl class="data-key-value">
                     <dt>
-                        {{{languageHandler 'paymentData.paymentDescription'
-                        classSecondaryLang='muted' }}}
+                        {{{languageHandler "paymentData.paymentDescription" classSecondaryLang="muted"}}}
                     </dt>
                     <dd>{{notice.subject}}</dd>
                 </dl>
@@ -47,9 +50,7 @@
             <div class="grid-cell-span-2">
                 <dl class="data-key-value-monospaced">
                     <dt>
-                        {{{languageHandler 'paymentData.cbillCode'
-                        classSecondaryLang='muted'
-                        align='vertical' }}}
+                        {{{languageHandler "paymentData.cbillCode" classSecondaryLang="muted" align="vertical"}}}
                     </dt>
                     <dd>{{notice.cbillCode}}</dd>
                 </dl>
@@ -58,9 +59,7 @@
             <div class="grid-cell-span-4">
                 <dl class="data-key-value-monospaced">
                     <dt>
-                        {{{languageHandler 'paymentData.refNumber'
-                        classSecondaryLang='muted'
-                        align='vertical' }}}
+                        {{{languageHandler "paymentData.refNumber" classSecondaryLang="muted" align="vertical"}}}
                     </dt>
                     <dd>{{splitAndSpace this.refNumber}}</dd>
                 </dl>
@@ -69,9 +68,7 @@
             <div class="grid-cell-span-2 align-right">
                 <dl class="data-key-value-monospaced">
                     <dt>
-                        {{{languageHandler 'paymentData.payeeTaxCode'
-                        classSecondaryLang='muted'
-                        align='vertical' }}}
+                        {{{languageHandler "paymentData.payeeTaxCode" classSecondaryLang="muted" align="vertical"}}}
                     </dt>
                     <dd>{{payee.taxCode}}</dd>
                 </dl>

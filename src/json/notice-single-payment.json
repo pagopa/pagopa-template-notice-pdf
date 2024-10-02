@@ -19,7 +19,7 @@
         "website": false,
         "app": true
       },
-      "offline": "<Ente.Canale.Fisico>"
+      "offline": "Ente.Canale.Fisico"
     }
   },
   "notice": {
@@ -36,6 +36,7 @@
   },
   "metadata": {
     "language": "it",
-    "secondaryLanguage": "de"
+    "secondaryLanguage": "sl",
+    "abroad": true
   }
 }

@@ -12,6 +12,7 @@ function languageHandler(i18n_key, options) {
     classPrimaryLang,
     classSecondaryLang,
     classBilingual,
+    classContainer,
     forceSecondaryLang,
     align: textBoxAlignment = "horizontal",
     ...variables
@@ -57,9 +58,11 @@ function languageHandler(i18n_key, options) {
         : `<p class="${secondaryElementClassname}">${secondaryLocalizedText}</p>`;
 
     const flexDirection = textBoxAlignment === "horizontal" ? "Horizontal" : "Vertical";
-    return `<div class="bilingualTextBox${flexDirection}">${mainHTMLElem}${secondaryHTMLElem}</div>`;
+    return classContainer
+      ? `<div class="${classContainer} bilingualTextBox${flexDirection}">${mainHTMLElem}${secondaryHTMLElem}</div>`
+      : `<div class="bilingualTextBox${flexDirection}">${mainHTMLElem}${secondaryHTMLElem}</div>`;
   } else {
-    return mainHTMLElem;
+    return classContainer ? `<div class="${classContainer}">${mainHTMLElem}</div>` : mainHTMLElem;
   }
 }
 

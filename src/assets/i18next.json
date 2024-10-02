@@ -20,7 +20,19 @@
       },
       "whereToPay": {
         "title": "Dove pagare?",
-        "cta": "vai su {{website}}"
+        "cta": "vai su {{website}}",
+        "italy": {
+          "physical": {
+            "title": "Paga sul territorio",
+            "description": "{{customLocation}}presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar, Edicole, Ricevitorie, Supermercati, Tabaccherie e altri Esercenti Convenzionati."
+          }
+        },
+        "abroad": {
+          "physical": {
+            "title": "Paga sul territorio",
+            "description": "{{customLocation}}presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar, Edicole, Ricevitorie, Supermercati, Tabaccherie e altri Esercenti Convenzionati in Italia."
+          }
+        }
       },
       "paymentData": {
         "title": "Dati per il pagamento",
@@ -61,7 +73,19 @@
       },
       "whereToPay": {
         "title": "Where to pay?",
-        "cta": "go to {{website}}"
+        "cta": "go to {{website}}",
+        "italy": {
+          "physical": {
+            "title": "Pay locally",
+            "description": "{{customLocation}}at banks and ATMs, in post offices, cafés, news stands, betting and tobacco Shops, supermarkets and other affiliated merchants."
+          }
+        },
+        "abroad": {
+          "physical": {
+            "title": "Pay locally",
+            "description": "{{customLocation}}at banks and ATMs, in post offices, cafés, news stands, betting and tobacco Shops, supermarkets and other affiliated merchants in Italy."
+          }
+        }
       },
       "paymentData": {
         "title": "Payment details",
@@ -102,7 +126,19 @@
       },
       "whereToPay": {
         "title": "Wo bezahlen?",
-        "cta": "weiter zu {{website}}"
+        "cta": "weiter zu {{website}}",
+        "italy": {
+          "physical": {
+            "title": "In ihrer umgebung",
+            "description": "{{customLocation}}bei Banken und ATM-Schaltern, in Postämtern und Poststellen, Tabaktrafiken und anderen angebundenen Dienstleistern."
+          }
+        },
+        "abroad": {
+          "physical": {
+            "title": "Paga sul territorio",
+            "description": "{{customLocation}}presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar, Edicole, Ricevitorie, Supermercati, Tabaccherie e altri Esercenti Convenzionati in Italia."
+          }
+        }
       },
       "paymentData": {
         "title": "Zahlungsinformationen",
@@ -143,7 +179,19 @@
       },
       "whereToPay": {
         "title": "Où payer?",
-        "cta": "aller à {{website}}"
+        "cta": "aller à {{website}}",
+        "italy": {
+          "physical": {
+            "title": "Payez sur le territoire",
+            "description": "{{customLocation}}dans les banques, les guichets automatiques, les bureaux de poste, les points postaux, les bars, les kiosques à journaux, les détaillants, les supermarchés, les bureaux de tabac et les autres opérateurs agréés."
+          }
+        },
+        "abroad": {
+          "physical": {
+            "title": "Payez sur le territoire",
+            "description": "{{customLocation}}dans les banques, les guichets automatiques, les bureaux de poste, les points postaux, les bars, les kiosques à journaux, les détaillants, les supermarchés, les bureaux de tabac et les autres opérateurs agréés en Italie."
+          }
+        }
       },
       "paymentData": {
         "title": "Données pour le paiement",
@@ -184,7 +232,19 @@
       },
       "whereToPay": {
         "title": "Kje plačati?",
-        "cta": "pojdite na {{website}}"
+        "cta": "pojdite na {{website}}",
+        "italy": {
+          "physical": {
+            "title": "Plačajte lokalno",
+            "description": "{{customLocation}}na bankah in okencih bankomatov, poštnih uradih in poštnih točkah, v barih, kioskih, sprejemnih pisarnah, supermarketih, trafikah in pri drugih pooblaščenih operaterjih."
+          }
+        },
+        "abroad": {
+          "physical": {
+            "title": "Plačajte lokalno",
+            "description": "{{customLocation}}na bankah in okencih bankomatov, poštnih uradih in poštnih točkah, v barih, kioskih, sprejemnih pisarnah, supermarketih, trafikah in pri drugih pooblaščenih operaterjih v Italiji."
+          }
+        }
       },
       "paymentData": {
         "title": "Podatki za plačilo",
