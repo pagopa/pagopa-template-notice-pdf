@@ -531,6 +531,7 @@ dl {
     & .payment-info-outer {
         display: flex;
         align-items: flex-start;
+        justify-content: space-between;
         gap: var(--data-grid-gap-small);
     }
 

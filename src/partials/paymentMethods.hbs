@@ -1,23 +1,36 @@
 <div class="payment-methods-title-block end-separator">
-    {{{languageHandler 'whereToPay.title' classPrimaryLang='small-caps-title'
-    classSecondaryLang='small-caps-title-bilingual'}}}
+    {{{languageHandler
+    "whereToPay.title"
+    classPrimaryLang="small-caps-title"
+    classSecondaryLang="small-caps-title-bilingual"
+    }}}
     <div class="pagopa-website-block">
-        {{{languageHandler 'whereToPay.cta' classPrimaryLang='body'
-        forceSecondaryLang=true website="<span class='h4'>pagopa.gov.it</span>" }}}
+        {{{languageHandler
+        "whereToPay.cta"
+        classPrimaryLang="body"
+        forceSecondaryLang=true
+        website="<span class='h4'>pagopa.gov.it</span>"
+        }}}
     </div>
 </div>
 
 <div class="payment-methods-block end-grid-cell">
     <div class="payment-info-outer">
         <div class="payment-info-inner">
-            <h4 class="small-caps-title mb-3x-small">Paga con l'app IO</h4>
-            <p class="body">oppure {{getOnlinePaymentMethodContent payee.channel.online.website
-                payee.channel.online.app}}dal
-                tuo Home
-                Banking, con la tua app di pagamento o con
-                gli
-                altri canali
-                abilitati.</p>
+            {{! Paga con l'app IO }}
+            {{{languageHandler
+            "whereToPay.italy.online.title"
+            classPrimaryLang="small-caps-title"
+            classSecondaryLang="body muted"
+            classContainer="mb-3x-small"
+            }}}
+            {{! Testo descrittivo }}
+            {{{languageHandler
+            (getOnlinePaymentMethodLocaleKey payee.channel.online.website payee.channel.online.app)
+            classPrimaryLang="body"
+            classSecondaryLang="body muted"
+            align="vertical"
+            }}}
         </div>
         <img src="./assets/icons/pictogram-devices.svg" class="payment-info-pictogram" aria-hidden="true" />
     </div>
@@ -25,13 +38,21 @@
     <div>
         <div class="payment-info-outer">
             <div class="payment-info-inner">
-                {{!-- Paga sul territorio --}}
-                {{{languageHandler 'whereToPay.italy.physical.title' classPrimaryLang='small-caps-title'
-                classSecondaryLang='body muted' classContainer='mb-3x-small'}}}
-                {{!-- Testo descrittivo --}}
-                {{{languageHandler 'whereToPay.italy.physical.description' classPrimaryLang='body'
-                classSecondaryLang='body muted' align="vertical"
-                customLocation=(getPhysicalPaymentMethodContent payee.channel.offline) }}}
+                {{! Paga sul territorio }}
+                {{{languageHandler
+                "whereToPay.italy.physical.title"
+                classPrimaryLang="small-caps-title"
+                classSecondaryLang="body muted"
+                classContainer="mb-3x-small"
+                }}}
+                {{! Testo descrittivo }}
+                {{{languageHandler
+                "whereToPay.italy.physical.description"
+                classPrimaryLang="body"
+                classSecondaryLang="body muted"
+                align="vertical"
+                customLocation=(getPhysicalPaymentMethodContent payee.channel.offline)
+                }}}
             </div>
             <img src="./assets/icons/pictogram-physical-locations.svg" class="payment-info-pictogram"
                 aria-hidden="true" />

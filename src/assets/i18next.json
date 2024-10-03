@@ -25,12 +25,30 @@
           "physical": {
             "title": "Paga sul territorio",
             "description": "{{customLocation}}presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar, Edicole, Ricevitorie, Supermercati, Tabaccherie e altri Esercenti Convenzionati."
+          },
+          "online": {
+            "title": "Paga con l’app IO",
+            "description": {
+              "default": "oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "appOnly": "sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteAndApp": "sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
+            }
           }
         },
         "abroad": {
           "physical": {
             "title": "Paga sul territorio",
             "description": "{{customLocation}}presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar, Edicole, Ricevitorie, Supermercati, Tabaccherie e altri Esercenti Convenzionati in Italia."
+          },
+          "online": {
+            "title": "Paga online",
+            "description": {
+              "default": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci.",
+              "websiteOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure visita il sito dell'ente.",
+              "appOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app dell'ente.",
+              "websiteAndApp": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app o il sito dell'ente."
+            }
           }
         }
       },
@@ -78,6 +96,15 @@
           "physical": {
             "title": "Pay locally",
             "description": "{{customLocation}}at banks and ATMs, in post offices, cafés, news stands, betting and tobacco Shops, supermarkets and other affiliated merchants."
+          },
+          "online": {
+            "title": "Pay with the IO app",
+            "description": {
+              "default": "or with your Home Banking, payment app or the other affiliated channels.",
+              "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "appOnly": "sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteAndApp": "sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
+            }
           }
         },
         "abroad": {
@@ -131,6 +158,15 @@
           "physical": {
             "title": "In ihrer umgebung",
             "description": "{{customLocation}}bei Banken und ATM-Schaltern, in Postämtern und Poststellen, Tabaktrafiken und anderen angebundenen Dienstleistern."
+          },
+          "online": {
+            "title": "Pay with the IO app",
+            "description": {
+              "default": "or with your Home Banking, payment app or the other affiliated channels.",
+              "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "appOnly": "sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteAndApp": "sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
+            }
           }
         },
         "abroad": {
@@ -184,6 +220,15 @@
           "physical": {
             "title": "Payez sur le territoire",
             "description": "{{customLocation}}dans les banques, les guichets automatiques, les bureaux de poste, les points postaux, les bars, les kiosques à journaux, les détaillants, les supermarchés, les bureaux de tabac et les autres opérateurs agréés."
+          },
+          "online": {
+            "title": "Paiement avec l’application IO",
+            "description": {
+              "default": "ou depuis votre « Banque à domicile », avec votre application de paiement ou avec les autres canaux activés.",
+              "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "appOnly": "sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteAndApp": "sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
+            }
           }
         },
         "abroad": {
@@ -237,6 +282,15 @@
           "physical": {
             "title": "Plačajte lokalno",
             "description": "{{customLocation}}na bankah in okencih bankomatov, poštnih uradih in poštnih točkah, v barih, kioskih, sprejemnih pisarnah, supermarketih, trafikah in pri drugih pooblaščenih operaterjih."
+          },
+          "online": {
+            "title": "Plačajte z aplikacijo IO",
+            "description": {
+              "default": "ali prek svoje spletne banke, z aplikacijo za plačevanje ali prek drugih razpoložljivih kanalov.",
+              "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "appOnly": "sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteAndApp": "sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
+            }
           }
         },
         "abroad": {
