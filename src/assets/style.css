@@ -1078,3 +1078,8 @@ dl {
     flex-direction: column;
     row-gap: 0.5mm;
 }
+
+.composedHorizontalLocalizedText {
+    display: flex;
+    column-gap: 1mm;
+}

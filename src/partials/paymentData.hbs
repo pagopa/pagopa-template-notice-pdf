@@ -11,9 +11,14 @@
     <p class='h4 light'>{{{subtitle}}}</p>
     {{else}}
     {{#if notice.expiryDate}}
-    <p class='h4'>Rata unica entro il {{notice.expiryDate}}</p>
+    <div class="composedHorizontalLocalizedText">
+      {{{languageHandler 'paymentData.type.withExpiryDate' classPrimaryLang='h4'
+      classSecondaryLang='small-caps-title-bilingual'}}}
+      <p class='h4'>{{notice.expiryDate}}</p>
+    </div>
     {{else}}
-    <p class='h4'>Rata unica</p>
+    {{{languageHandler 'paymentData.type.withoutExpiryDate' classPrimaryLang='h4'
+    classSecondaryLang='small-caps-title-bilingual'}}}
     {{/if}}
     {{/if}}
   </div>
