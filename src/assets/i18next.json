@@ -56,9 +56,10 @@
       },
       "paymentData": {
         "title": "Dati per il pagamento",
+        "instalmentNumber": "Rata {{number}}",
         "payee": "Ente creditore",
         "recipient": "Destinatario",
-        "paymentDescription": "Oggetto del pagamento",
+        "description": "Oggetto del pagamento",
         "cbillCode": "Cod. CBILL",
         "payeeTaxCode": "Cod. Fiscale Ente",
         "refNumber": "Cod. Avviso",
@@ -69,7 +70,7 @@
         "instructions": {
           "qrCode": {
             "singlePayment": "Inquadra il <strong>codice QR</strong> con la tua app di pagamento o usa i dati accanto.",
-            "instalments": "Inquadra il codice QR con la tua app di pagamento o usa i dati sopra."
+            "instalments": "Inquadra il <strong>codice QR</strong> con la tua app di pagamento o usa i dati sopra."
           }
         }
       }
@@ -123,9 +124,10 @@
       },
       "paymentData": {
         "title": "Payment details",
+        "instalmentNumber": "Instalment #{{number}}",
         "payee": "Payee",
         "recipient": "Recipient",
-        "paymentDescription": "Payment description",
+        "description": "Payment description",
         "cbillCode": "CBILL code",
         "payeeTaxCode": "Payee tax code",
         "refNumber": "Notice code",
@@ -136,7 +138,7 @@
         "instructions": {
           "qrCode": {
             "singlePayment": "Scan the <strong>QR Code</strong> with your payment app or use the data printed here.",
-            "instalments": "Scan the QR Code with your payment app or use the data printed above."
+            "instalments": "Scan the <strong>QR Code</strong> with your payment app or use the data printed above."
           }
         }
       }
@@ -190,9 +192,10 @@
       },
       "paymentData": {
         "title": "Zahlungsinformationen",
+        "instalmentNumber": "Rate {{number}}",
         "payee": "Körperschaft",
         "recipient": "Empfänger",
-        "paymentDescription": "Zahlungsgrund",
+        "description": "Zahlungsgrund",
         "cbillCode": "CBILL-Kodex",
         "payeeTaxCode": "St.Nr. der Körperschaft",
         "refNumber": "Zahlungsmitteilungskodex",
@@ -203,7 +206,7 @@
         "instructions": {
           "qrCode": {
             "singlePayment": "Den <strong>QR-Code</strong> mit der Zahlungs-App scannen oder folgende Daten verwenden.",
-            "instalments": "Den QR-Code mit der Zahlungs-App scannen oder oben Daten verwenden."
+            "instalments": "Den <strong>QR-Code</strong> mit der Zahlungs-App scannen oder oben Daten verwenden."
           }
         }
       }
@@ -257,9 +260,10 @@
       },
       "paymentData": {
         "title": "Données pour le paiement",
+        "instalmentNumber": "Versement {{number}}",
         "payee": "Organisme créancier",
         "recipient": "Destinataire",
-        "paymentDescription": "Objet du paiement",
+        "description": "Objet du paiement",
         "cbillCode": "Code CBILL",
         "payeeTaxCode": "Code Organisme fiscal",
         "refNumber": "Code Avis",
@@ -270,7 +274,7 @@
         "instructions": {
           "qrCode": {
             "singlePayment": "Encadrez le <strong>code QR</strong> avec votre application de paiement ou utilisez les données ci-contre.",
-            "instalments": "Encadrez le code QR avec votre application de paiement ou utilisez les données ci-dessus."
+            "instalments": "Encadrez le <strong>code QR</strong> avec votre application de paiement ou utilisez les données ci-dessus."
           }
         }
       }
@@ -324,9 +328,10 @@
       },
       "paymentData": {
         "title": "Podatki za plačilo",
+        "instalmentNumber": "Obrok št. {{number}}",
         "payee": "Plačnik",
         "recipient": "Prejemnik",
-        "paymentDescription": "Predmet plačila",
+        "description": "Predmet plačila",
         "cbillCode": "Št. CBILL",
         "payeeTaxCode": "Davčna številka plačnika",
         "refNumber": "Št. obvestila",
@@ -337,7 +342,7 @@
         "instructions": {
           "qrCode": {
             "singlePayment": "Skenirajte <strong>QR-kodo</strong> z aplikacijo za plačila ali uporabite podatke, navedene ob kodi.",
-            "instalments": "Skenirajte QR-kodo z aplikacijo za plačila ali uporabite podatke, navedene nad njo."
+            "instalments": "Skenirajte <strong>QR-kodo</strong> z aplikacijo za plačila ali uporabite podatke, navedene nad njo."
           }
         }
       }
