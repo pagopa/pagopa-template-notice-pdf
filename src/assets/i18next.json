@@ -16,7 +16,8 @@
           "default": "entro il"
         },
         "instalments": {
-          "default": "Puoi pagare per intero o in {{number}} rate"
+          "default": "Puoi pagare per intero o in {{number}} rate",
+          "many": "Importi e scadenze sono riportati nel dettaglio di ogni singola rata."
         },
         "legal": "In fase di pagamento, se previsto dall’ente, l’importo potrebbe essere aggiornato automaticamente e subire variazioni in diminuzione (per sgravi, note di credito) o in aumento (per sanzioni, interessi, ecc.)."
       },
@@ -93,7 +94,8 @@
           "default": "by"
         },
         "instalments": {
-          "default": "You can pay in full or in {{number}} instalments"
+          "default": "You can pay in full or in {{number}} instalments",
+          "many": "Amounts and due dates are shown in each instalment detail."
         },
         "legal": "During the payment, if allowed by the payee, the amount may be updated automatically and be subject to decreases (in case of discounts or credit notes) or increases (in case of penalties, interest, etc.)."
       },
@@ -161,7 +163,8 @@
           "default": "vor dem"
         },
         "instalments": {
-          "default": "Es ist möglich, den Betrag vollständig oder in {{number}} Raten zu zahlen"
+          "default": "Es ist möglich, den Betrag vollständig oder in {{number}} Raten zu zahlen",
+          "many": "Die Beträge und Fälligkeiten sind in den Details der einzelnen Rate angegeben."
         },
         "legal": "Der angeführte Betrag könnte sich auf Grund von allfälligen auch teilweisen Annullierungen oder Gutschriften,Verzugsgebühren, Strafen, Zinsen oder anderen Kosten ändern."
       },
@@ -229,7 +232,8 @@
           "default": "avant le"
         },
         "instalments": {
-          "default": "Vous pouvez payer le montant total ou en {{number}} échéances"
+          "default": "Vous pouvez payer le montant total ou en {{number}} échéances",
+          "many": "Les montants et les échéances sont indiqués en détail pour chaque versement."
         },
         "legal": "En phase de paiement, si l’organisme le prévoit, le montant pourrait être mis à jour automatiquement et subir des variations en diminution (pour les réductions, les notes de crédit) ou en augmentation (pour les sanctions, les intérêts, etc.)."
       },
@@ -297,7 +301,8 @@
           "default": "do"
         },
         "instalments": {
-          "default": "Plačate lahko v celoti ali v {{number}} obrokih"
+          "default": "Plačate lahko v celoti ali v {{number}} obrokih",
+          "many": "Zneski in roki zapadlosti so podrobno prikazani za vsak posamezen obrok."
         },
         "legal": "Če upravičenec to predvidi, se lahko med fazo plačila znesek samodejno posodobi in tudi zmanjša (zaradi popustov, dobropisov) ali poveča (zaradi kazni, obresti itd.)."
       },
