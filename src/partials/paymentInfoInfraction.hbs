@@ -7,7 +7,10 @@
     <div class="payment-amount-block-infraction start-grid-cell">
         <div class="amount-1">
             <dl>
-                <dt class="body strong">Importo scontato del 30%</dt>
+                <dt>
+                    {{{languageHandler 'infraction.amount.discounted' classPrimaryLang='body strong'
+                    classSecondaryLang='body muted' classContainer="dense" align="vertical"}}}
+                </dt>
                 <dd class="h1">{{notice.instalments.discounted.amount}} Euro</dd>
             </dl>
             <p class="body amount-details">
@@ -17,7 +20,10 @@
         </div>
         <div class="amount-2">
             <dl>
-                <dt class="body strong">Importo ridotto</dt>
+                <dt>
+                    {{{languageHandler 'infraction.amount.reduced' classPrimaryLang='body strong'
+                    classSecondaryLang='body muted' classContainer="dense" align="vertical"}}}
+                </dt>
                 <dd class="h1">{{notice.instalments.reduced.amount}} Euro</dd>
             </dl>
             <p class="body amount-details">
@@ -29,24 +35,19 @@
             <div class="info-paragraph">
                 <img src="./assets/icons/icon-calendar.svg" class="info-icon" aria-hidden="true" />
                 <div>
-                    <h5 class="h5 mb-3x-small">Come si calcolano le scadenze?</h5>
-                    <p class="body">Il giorno della notifica non si conta. Se la scadenza è di domenica (o festivo),
-                        puoi pagare
-                        anche il primo giorno
-                        feriale successivo.</p>
+                    {{{languageHandler 'infraction.disclaimer.expiry.question' classPrimaryLang='h5'
+                    classSecondaryLang='h5 muted' classContainer="mb-3x-small" align="vertical"}}}
+                    {{{languageHandler 'infraction.disclaimer.expiry.answer' classPrimaryLang='body'
+                    classSecondaryLang='body muted' align="vertical"}}}
                 </div>
             </div>
             <div class="info-paragraph">
                 <img src="./assets/icons/icon-document.svg" class="info-icon" aria-hidden="true" />
                 <div>
-                    <h5 class="h5 mb-3x-small">Cosa succede in caso di giacenza?</h5>
-                    <p class="body">La notifica corrisponde al giorno del ritiro, se questo avviene entro 10 giorni
-                        dalla data di
-                        deposito (la data più
-                        vecchia sull’avviso di giacenza).
-                        Se non ritiri il verbale entro i 10 giorni, calcola le scadenze iniziando a contare
-                        dall’undicesimo giorno.
-                    </p>
+                    {{{languageHandler 'infraction.disclaimer.unclaimed.question' classPrimaryLang='h5'
+                    classSecondaryLang='h5 muted' classContainer="mb-3x-small" align="vertical"}}}
+                    {{{languageHandler 'infraction.disclaimer.unclaimed.answer' classPrimaryLang='body'
+                    classSecondaryLang='body muted' align="vertical"}}}
                 </div>
             </div>
         </div>

@@ -1066,6 +1066,17 @@ dl {
 
 /* BILINGUAL */
 
+/* Make the entire layout denser to fit the content to the page, especially on
+infraction notices */
+html.bilingual {
+    --h4-fsize: 9pt;
+    --separator-title-height: 6.5mm;
+    --section-margin: 2mm;
+    --separator-bottom-margin: 3mm;
+    --size-entity-logo: 25mm;
+    --size-qrcode: 20mm;
+}
+
 .bilingualTextBoxHorizontal {
     display: flex;
     flex-direction: row;
@@ -1077,6 +1088,10 @@ dl {
     display: flex;
     flex-direction: column;
     row-gap: 0.5mm;
+
+    &.dense {
+        row-gap: 0mm;
+    }
 }
 
 .composedHorizontalLocalizedText {

@@ -2,13 +2,17 @@
   <div class="unique-separator">
 
     {{#if title}}
-    <h3 class="small-caps-title">{{title}}</h3>
+    {{!-- Custom title for infraction notice --}}
+    {{{languageHandler title classPrimaryLang='small-caps-title'
+    classSecondaryLang='small-caps-title-bilingual'}}}
     {{else}}
     {{{languageHandler 'paymentData.title' classPrimaryLang='small-caps-title'
     classSecondaryLang='small-caps-title-bilingual'}}}
     {{/if}}
     {{#if subtitle}}
-    <p class='h4 light'>{{{subtitle}}}</p>
+    {{!-- Custom text for infraction notice --}}
+    {{{languageHandler subtitle classPrimaryLang='h4 light'
+    classSecondaryLang='h4 light muted'}}}
     {{else}}
     {{#if notice.expiryDate}}
     <div class="composedHorizontalLocalizedText">
