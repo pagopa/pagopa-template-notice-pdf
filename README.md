@@ -256,7 +256,9 @@ Use this command, from the root folder:
 $ python3 ./create_templates_zip.py
 ```
 
-### Credits
+---
+
+## Credits
 
 - [@dmnplb](https://github.com/dmnplb) Bootstrap and development of the main blocks of the templates
 - [@jacopocarlini](https://github.com/jacopocarlini) Development of both paginator and translation helpers, optimisation of the PDF generation process
