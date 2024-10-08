@@ -1077,6 +1077,11 @@ html.bilingual {
     --size-qrcode: 20mm;
 }
 
+html.true-bilingualism {
+    --h4-fsize: 9pt;
+    --size-entity-logo: 25mm;
+}
+
 .bilingualTextBoxHorizontal {
     display: flex;
     flex-direction: row;
@@ -1087,7 +1092,7 @@ html.bilingual {
 .bilingualTextBoxVertical {
     display: flex;
     flex-direction: column;
-    row-gap: 0.5mm;
+    row-gap: 0.75mm;
 
     &.dense {
         row-gap: 0mm;

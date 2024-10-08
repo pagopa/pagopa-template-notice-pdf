@@ -334,7 +334,7 @@
             "description": "{{customLocation}}dans les banques, les guichets automatiques, les bureaux de poste, les points postaux, les bars, les kiosques à journaux, les détaillants, les supermarchés, les bureaux de tabac et les autres opérateurs agréés."
           },
           "online": {
-            "title": "Paiement avec l’application IO",
+            "title": "Payer avec l'app IO",
             "description": {
               "default": "ou depuis votre « Banque à domicile », avec votre application de paiement ou avec les autres canaux activés.",
               "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",

@@ -36,7 +36,8 @@
   },
   "metadata": {
     "language": "it",
-    "secondaryLanguage": "de",
+    "secondaryLanguage": "fr",
+    "trueBilingualism": true,
     "abroad": true
   }
 }

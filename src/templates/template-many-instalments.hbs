@@ -1,45 +1,46 @@
 <!DOCTYPE html>
-<html lang="it" xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
+<html lang="{{#if metadata.language}}{{metadata.language}} {{metadata.secondaryLanguage}}{{else}}'it'{{/if}}" {{#if
+    metadata.secondaryLanguage}}class="true-bilingualism" {{/if}} xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
 
 <head>
     <title>Avviso di pagamento</title>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-{{!-- First page --}}
-<div class="page">
-    <div class="page-wrapper">
+    {{!-- First page --}}
+    <div class="page">
+        <div class="page-wrapper">
 
-        {{!-- Notice HEADER --}}
-        {{> header }}
+            {{!-- Notice HEADER --}}
+            {{> header }}
 
-        <main class="main-wrapper">
-            {{!-- Row 1 --}}
-            {{> mainInfo }}
-            {{!-- Row 2 --}}
-            {{> paymentInfoMultipleInstalments }}
-            {{!-- Row 3 - Many instalments --}}
-            {{> paymentDataMultipleInstalmentsP1 }}
-        </main>
+            <main class="main-wrapper">
+                {{!-- Row 1 --}}
+                {{> mainInfo }}
+                {{!-- Row 2 --}}
+                {{> paymentInfoMultipleInstalments }}
+                {{!-- Row 3 - Many instalments --}}
+                {{> paymentDataMultipleInstalmentsP1 }}
+            </main>
+        </div>
     </div>
-</div>
 
-{{!-- Second page --}}
-<div class="page">
-    <div class="page-wrapper">
+    {{!-- Second page --}}
+    <div class="page">
+        <div class="page-wrapper">
 
-        {{!-- Notice HEADER --}}
-        {{> header }}
+            {{!-- Notice HEADER --}}
+            {{> header }}
 
-        <main class="main-wrapper">
-            {{!-- Row 3 - Many instalments --}}
-            {{> paymentDataMultipleInstalmentsP2 }}
-        </main>
+            <main class="main-wrapper">
+                {{!-- Row 3 - Many instalments --}}
+                {{> paymentDataMultipleInstalmentsP2 }}
+            </main>
+        </div>
     </div>
-</div>
 
 </body>
 
