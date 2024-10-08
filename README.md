@@ -258,9 +258,9 @@ $ python3 ./create_templates_zip.py
 
 ### Credits
 
-- @dmnplb Bootstrap and development of the main blocks of the templates
-- @jacopocarlini Development of both paginator and translation helpers, optimisation of the PDF generation process
-- @alessio-cialini Dynamic generation of both QR Code and Poste Datamatrix, optimisation of the PDF generation process
+- [@dmnplb](https://github.com/dmnplb) Bootstrap and development of the main blocks of the templates
+- [@jacopocarlini](https://github.com/jacopocarlini) Development of both paginator and translation helpers, optimisation of the PDF generation process
+- [@alessio-cialini](https://github.com/alessio-cialini) Dynamic generation of both QR Code and Poste Datamatrix, optimisation of the PDF generation process
 
 ---
 
