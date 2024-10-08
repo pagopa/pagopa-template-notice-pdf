@@ -100,7 +100,8 @@ You can find all the locale strings in the [`i18next.json`](./src/assets/i18next
 - French (`fr`)
 - Slovenian (`sl`)
 
-> [!important] > **Trying to understand how to edit the i18n template logic?** You can find it in the [`languageHandler.js`](./src/helpers/languageHandler.js) helper file. <br />
+> [!important]
+> **Trying to understand how to edit the i18n template logic?** You can find it in the [`languageHandler.js`](./src/helpers/languageHandler.js) helper file. <br />
 
 ## Breakdown of pages by number of instalments
 
