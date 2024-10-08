@@ -100,8 +100,7 @@ You can find all the locale strings in the [`i18next.json`](./src/assets/i18next
 - French (`fr`)
 - Slovenian (`sl`)
 
-> [!important]
-> **Trying to understand how to edit the i18n template logic?** You can find it in the [`languageHandler.js`](./src/helpers/languageHandler.js) helper file. <br />
+> [!important] > **Trying to understand how to edit the i18n template logic?** You can find it in the [`languageHandler.js`](./src/helpers/languageHandler.js) helper file. <br />
 
 ## Breakdown of pages by number of instalments
 
@@ -256,6 +255,12 @@ Use this command, from the root folder:
 ```bash
 $ python3 ./create_templates_zip.py
 ```
+
+### Credits
+
+- @dmnplb Bootstrap and development of the main blocks of the templates
+- @jacopocarlini Development of both paginator and translation helpers, optimisation of the PDF generation process
+- @alessio-cialini Dynamic generation of both QR Code and Poste Datamatrix, optimisation of the PDF generation process
 
 ---
 
