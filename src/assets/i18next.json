@@ -45,7 +45,6 @@
       },
       "whereToPay": {
         "title": "Dove pagare?",
-        "cta": "vai su {{website}}",
         "italy": {
           "physical": {
             "title": "Paga sul territorio",
@@ -55,9 +54,9 @@
             "title": "Paga con l’app IO",
             "description": {
               "default": "oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "appOnly": "sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "websiteAndApp": "sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
+              "websiteOnly": "oppure sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "appOnly": "oppure sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteAndApp": "oppure sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
             }
           }
         },
@@ -145,7 +144,6 @@
       },
       "whereToPay": {
         "title": "Where to pay?",
-        "cta": "go to {{website}}",
         "italy": {
           "physical": {
             "title": "Pay locally",
@@ -155,9 +153,9 @@
             "title": "Pay with the IO app",
             "description": {
               "default": "or with your Home Banking, payment app or the other affiliated channels.",
-              "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "appOnly": "sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "websiteAndApp": "sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
+              "websiteOnly": "oppure sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "appOnly": "oppure sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteAndApp": "oppure sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
             }
           }
         },
@@ -236,7 +234,6 @@
       },
       "whereToPay": {
         "title": "Wo bezahlen?",
-        "cta": "weiter zu {{website}}",
         "italy": {
           "physical": {
             "title": "In ihrer umgebung",
@@ -246,9 +243,9 @@
             "title": "Pay with the IO app",
             "description": {
               "default": "or with your Home Banking, payment app or the other affiliated channels.",
-              "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "appOnly": "sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "websiteAndApp": "sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
+              "websiteOnly": "oppure sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "appOnly": "oppure sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteAndApp": "oppure sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
             }
           }
         },
@@ -327,7 +324,6 @@
       },
       "whereToPay": {
         "title": "Où payer?",
-        "cta": "aller à {{website}}",
         "italy": {
           "physical": {
             "title": "Payez sur le territoire",
@@ -337,9 +333,9 @@
             "title": "Payer avec l'app IO",
             "description": {
               "default": "ou depuis votre « Banque à domicile », avec votre application de paiement ou avec les autres canaux activés.",
-              "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "appOnly": "sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "websiteAndApp": "sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
+              "websiteOnly": "oppure sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "appOnly": "oppure sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteAndApp": "oppure sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
             }
           }
         },
@@ -418,7 +414,6 @@
       },
       "whereToPay": {
         "title": "Kje plačati?",
-        "cta": "pojdite na {{website}}",
         "italy": {
           "physical": {
             "title": "Plačajte lokalno",
@@ -428,9 +423,9 @@
             "title": "Plačajte z aplikacijo IO",
             "description": {
               "default": "ali prek svoje spletne banke, z aplikacijo za plačevanje ali prek drugih razpoložljivih kanalov.",
-              "websiteOnly": "sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "appOnly": "sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
-              "websiteAndApp": "sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
+              "websiteOnly": "oppure sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "appOnly": "oppure sull'app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
+              "websiteAndApp": "oppure sul sito o app dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati."
             }
           }
         },
