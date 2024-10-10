@@ -16,7 +16,7 @@
     "additionalInfo": "Info: www.cittadicapri.it",
     "channel": {
       "online": {
-        "website": false,
+        "website": true,
         "app": true
       },
       "offline": "Ente.Canale.Fisico"
@@ -36,7 +36,7 @@
   },
   "metadata": {
     "language": "it",
-    "secondaryLanguage": "fr",
+    "secondaryLanguage": "en",
     "trueBilingualism": false,
     "abroad": true
   }

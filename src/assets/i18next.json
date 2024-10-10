@@ -63,7 +63,7 @@
         "abroad": {
           "physical": {
             "title": "Paga sul territorio",
-            "description": "{{customLocation}}presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar, Edicole, Ricevitorie, Supermercati, Tabaccherie e altri Esercenti Convenzionati in Italia."
+            "description": "presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar, Edicole, Ricevitorie, Supermercati, Tabaccherie e altri Esercenti Convenzionati in Italia."
           },
           "online": {
             "title": "Paga online",
@@ -162,7 +162,16 @@
         "abroad": {
           "physical": {
             "title": "Pay locally",
-            "description": "{{customLocation}}at banks and ATMs, in post offices, cafés, news stands, betting and tobacco Shops, supermarkets and other affiliated merchants in Italy."
+            "description": "at banks and ATMs, in post offices, cafés, news stands, betting and tobacco Shops, supermarkets and other affiliated merchants in Italy."
+          },
+          "online": {
+            "title": "Pay online",
+            "description": {
+              "default": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci.",
+              "websiteOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure visita il sito dell'ente.",
+              "appOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app dell'ente.",
+              "websiteAndApp": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app o il sito dell'ente."
+            }
           }
         }
       },
@@ -253,6 +262,15 @@
           "physical": {
             "title": "Paga sul territorio",
             "description": "{{customLocation}}presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar, Edicole, Ricevitorie, Supermercati, Tabaccherie e altri Esercenti Convenzionati in Italia."
+          },
+          "online": {
+            "title": "Paga online",
+            "description": {
+              "default": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci.",
+              "websiteOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure visita il sito dell'ente.",
+              "appOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app dell'ente.",
+              "websiteAndApp": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app o il sito dell'ente."
+            }
           }
         }
       },
@@ -330,7 +348,7 @@
             "description": "{{customLocation}}dans les banques, les guichets automatiques, les bureaux de poste, les points postaux, les bars, les kiosques à journaux, les détaillants, les supermarchés, les bureaux de tabac et les autres opérateurs agréés."
           },
           "online": {
-            "title": "Payer avec l'app IO",
+            "title": "Payez avec l'app IO",
             "description": {
               "default": "ou depuis votre « Banque à domicile », avec votre application de paiement ou avec les autres canaux activés.",
               "websiteOnly": "oppure sul sito dell'ente, oppure dal tuo Home Banking, con la tua app di pagamento o con gli altri canali abilitati.",
@@ -342,7 +360,16 @@
         "abroad": {
           "physical": {
             "title": "Payez sur le territoire",
-            "description": "{{customLocation}}dans les banques, les guichets automatiques, les bureaux de poste, les points postaux, les bars, les kiosques à journaux, les détaillants, les supermarchés, les bureaux de tabac et les autres opérateurs agréés en Italie."
+            "description": "dans les banques, les guichets automatiques, les bureaux de poste, les points postaux, les bars, les kiosques à journaux, les détaillants, les supermarchés, les bureaux de tabac et les autres opérateurs agréés en Italie."
+          },
+          "online": {
+            "title": "Paga online",
+            "description": {
+              "default": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci.",
+              "websiteOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure visita il sito dell'ente.",
+              "appOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app dell'ente.",
+              "websiteAndApp": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app o il sito dell'ente."
+            }
           }
         }
       },
@@ -433,6 +460,15 @@
           "physical": {
             "title": "Plačajte lokalno",
             "description": "{{customLocation}}na bankah in okencih bankomatov, poštnih uradih in poštnih točkah, v barih, kioskih, sprejemnih pisarnah, supermarketih, trafikah in pri drugih pooblaščenih operaterjih v Italiji."
+          },
+          "online": {
+            "title": "Paga online",
+            "description": {
+              "default": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci.",
+              "websiteOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure visita il sito dell'ente.",
+              "appOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app dell'ente.",
+              "websiteAndApp": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app o il sito dell'ente."
+            }
           }
         }
       },

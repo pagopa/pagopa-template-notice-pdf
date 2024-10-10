@@ -1,5 +1,5 @@
-function getOnlinePaymentMethodLocaleKey(website, app) {
-  const baseKey = 'whereToPay.italy.online.description';
+function getOnlinePaymentMethodLocaleKey(website, app, whereSent) {
+  const baseKey = `whereToPay.${whereSent}.online.description`;
 
   if (website && app) {
     return `${baseKey}.websiteAndApp`;

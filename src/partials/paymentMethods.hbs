@@ -12,7 +12,23 @@
 <div class="payment-methods-block end-grid-cell">
     <div class="payment-info-outer">
         <div class="payment-info-inner">
-            {{! Paga con l'app IO }}
+            {{#if metadata.abroad}}
+            {{! Paga online (Estero) }}
+            {{{languageHandler
+            "whereToPay.abroad.online.title"
+            classPrimaryLang="small-caps-title"
+            classSecondaryLang="body muted"
+            classContainer="mb-3x-small"
+            }}}
+            {{! Testo descrittivo }}
+            {{{languageHandler
+            (getOnlinePaymentMethodLocaleKey payee.channel.online.website payee.channel.online.app "abroad")
+            classPrimaryLang="body"
+            classSecondaryLang="body muted"
+            align="vertical"
+            }}}
+            {{else}}
+            {{! Paga con l'app IO (Italia) }}
             {{{languageHandler
             "whereToPay.italy.online.title"
             classPrimaryLang="small-caps-title"
@@ -21,11 +37,12 @@
             }}}
             {{! Testo descrittivo }}
             {{{languageHandler
-            (getOnlinePaymentMethodLocaleKey payee.channel.online.website payee.channel.online.app)
+            (getOnlinePaymentMethodLocaleKey payee.channel.online.website payee.channel.online.app "italy")
             classPrimaryLang="body"
             classSecondaryLang="body muted"
             align="vertical"
             }}}
+            {{/if}}
         </div>
         <img src="./assets/icons/pictogram-devices.svg" class="payment-info-pictogram" aria-hidden="true" />
     </div>
@@ -33,7 +50,23 @@
     <div>
         <div class="payment-info-outer">
             <div class="payment-info-inner">
-                {{! Paga sul territorio }}
+                {{#if metadata.abroad}}
+                {{! Paga sul territorio (Estero) }}
+                {{{languageHandler
+                "whereToPay.abroad.physical.title"
+                classPrimaryLang="small-caps-title"
+                classSecondaryLang="body muted"
+                classContainer="mb-3x-small"
+                }}}
+                {{! Testo descrittivo }}
+                {{{languageHandler
+                "whereToPay.abroad.physical.description"
+                classPrimaryLang="body"
+                classSecondaryLang="body muted"
+                align="vertical"
+                }}}
+                {{else}}
+                {{! Paga sul territorio (Italia) }}
                 {{{languageHandler
                 "whereToPay.italy.physical.title"
                 classPrimaryLang="small-caps-title"
@@ -48,6 +81,7 @@
                 align="vertical"
                 customLocation=(getPhysicalPaymentMethodContent payee.channel.offline)
                 }}}
+                {{/if}}
             </div>
             <img src="./assets/icons/pictogram-physical-locations.svg" class="payment-info-pictogram"
                 aria-hidden="true" />
