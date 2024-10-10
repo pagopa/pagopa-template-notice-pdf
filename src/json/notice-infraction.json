@@ -47,5 +47,10 @@
         "posteDataMatrix": "codfase=NBPA;184085010000123456841200001121789010000001239038961P111223003888BLLMRC91M04H501CMARCO BALLATOSECONDOVERSAMENTOILLUMINAZIONEPUBBLICAA"
       }
     }
+  },
+  "metadata": {
+    "language": "it",
+    "secondaryLanguage": "de",
+    "abroad": true
   }
 }
