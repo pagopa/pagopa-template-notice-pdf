@@ -205,7 +205,7 @@
       "paymentInfo": {
         "title": {
           "withExpiryDate": "Wieviel und wann bezahlen?",
-          "withoutExpiryDate": "Quanto pagare?"
+          "withoutExpiryDate": "Wieviel bezahlen?"
         },
         "amount": {
           "default": "Betrag"
@@ -304,7 +304,7 @@
       "paymentInfo": {
         "title": {
           "withExpiryDate": "Combien et quand payer?",
-          "withoutExpiryDate": "Quanto pagare?"
+          "withoutExpiryDate": "Combien payer?"
         },
         "amount": {
           "default": "Montant"
@@ -403,7 +403,7 @@
       "paymentInfo": {
         "title": {
           "withExpiryDate": "Koliko in kdaj plačati?",
-          "withoutExpiryDate": "Quanto pagare?"
+          "withoutExpiryDate": "Koliko plačati?"
         },
         "amount": {
           "default": "Znesek"
