@@ -34,6 +34,10 @@
           "extended": {
             "discounted": "<strong>entro 5 giorni</strong><br /> dalla notifica del verbale",
             "reduced": "<strong>dal 6º al 60º giorno</strong><br /> dalla notifica del verbale"
+          },
+          "withAmount": {
+            "discounted": "<strong>Importo scontato del 30% entro 5 giorni</strong> dalla notifica del verbale",
+            "reduced": "<strong>Importo ridotto dal 6° al 60° giorno</strong> dalla notifica del verbale"
           }
         },
         "disclaimer": {
@@ -138,6 +142,10 @@
           "extended": {
             "discounted": "<strong>within 5 days</strong><br /> from the notification",
             "reduced": "<strong>from the 6th to the 60th day</strong><br /> from the notification"
+          },
+          "withAmount": {
+            "discounted": "<strong>30% off within 5 days</strong> from the notification",
+            "reduced": "<strong>Reduced amount from the 6th to the 60th day</strong> from the notification"
           }
         },
         "disclaimer": {
@@ -242,6 +250,10 @@
           "extended": {
             "discounted": "<strong>innerhalb 5 tagen</strong><br /> ab zustellungsdatum",
             "reduced": "<strong>vom 6ten bis 60ten tag</strong><br /> ab zustellungsdatum"
+          },
+          "withAmount": {
+            "discounted": "<strong>Um 30% reduzierter Betrag innerhalb 5 tagen</strong> ab zustellungsdatum",
+            "reduced": "<strong>Reduzierte zahlung vom 6ten bis 60ten tag</strong> ab zustellungsdatum"
           }
         },
         "disclaimer": {
@@ -346,6 +358,10 @@
           "extended": {
             "discounted": "<strong>dans les 5 jours</strong> suivant la notification du procès-verbal",
             "reduced": "<strong>entre le 6e et le 60e jour</strong> à compter de la notification du procès-verbal"
+          },
+          "withAmount": {
+            "discounted": "<strong>Montant réduit de 30% dans les 5 jours</strong> suivant la notification",
+            "reduced": "<strong>Montant réduit entre le 6e et le 60e jour</strong> à compter de la notification"
           }
         },
         "disclaimer": {
@@ -450,6 +466,10 @@
           "extended": {
             "discounted": "<strong>v 5 dneh</strong><br /> od vročitve zapisnika",
             "reduced": "<strong>od 6. do 60. dne</strong><br /> od vročitve zapisnika"
+          },
+          "withAmount": {
+            "discounted": "<strong>Znesek s 30-% popustom v 5 dneh</strong> od vročitve zapisnika",
+            "reduced": "<strong>Zmanjšan znesek od 6. do 60. dne</strong> od vročitve zapisnika"
           }
         },
         "disclaimer": {
