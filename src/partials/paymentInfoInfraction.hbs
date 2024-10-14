@@ -13,10 +13,8 @@
                 </dt>
                 <dd class="h1">{{notice.instalments.discounted.amount}} Euro</dd>
             </dl>
-            <p class="body amount-details">
-                <strong>entro 5 giorni</strong><br />
-                dalla notifica del verbale
-            </p>
+            {{{languageHandler 'infraction.expiryDate.extended.discounted' classPrimaryLang='body'
+            classSecondaryLang='body muted' classContainer="amount-details" align="vertical"}}}
         </div>
         <div class="amount-2">
             <dl>
@@ -26,10 +24,8 @@
                 </dt>
                 <dd class="h1">{{notice.instalments.reduced.amount}} Euro</dd>
             </dl>
-            <p class="body amount-details">
-                <strong>dal 6º al 60º giorno</strong><br />
-                dalla notifica del verbale
-            </p>
+            {{{languageHandler 'infraction.expiryDate.extended.reduced' classPrimaryLang='body'
+            classSecondaryLang='body muted' classContainer="amount-details" align="vertical"}}}
         </div>
         <div class="info-block">
             <div class="info-paragraph">

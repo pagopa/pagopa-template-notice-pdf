@@ -30,6 +30,10 @@
           "default": {
             "discounted": "<strong>entro 5 giorni</strong> dalla notifica",
             "reduced": "<strong>dal 6º al 60º giorno</strong> dalla notifica"
+          },
+          "extended": {
+            "discounted": "<strong>entro 5 giorni</strong><br /> dalla notifica del verbale",
+            "reduced": "<strong>dal 6º al 60º giorno</strong><br /> dalla notifica del verbale"
           }
         },
         "disclaimer": {
@@ -40,7 +44,8 @@
           "unclaimed": {
             "question": "Cosa succede in caso di giacenza?",
             "answer": "La notifica corrisponde al giorno del ritiro, se questo avviene entro 10 giorni dalla data di deposito (la data più vecchia sull’avviso di giacenza). Se non ritiri il verbale entro i 10 giorni, calcola le scadenze iniziando a contare dall’undicesimo giorno."
-          }
+          },
+          "chooseAmount": "Scegli l’importo corretto per i termini previsti, altrimenti riceverai altre richieste di pagamento per le somme residue ed eventuali somme aggiuntive."
         }
       },
       "whereToPay": {
@@ -129,6 +134,10 @@
           "default": {
             "discounted": "<strong>within 5 days</strong> from the notification",
             "reduced": "<strong>from the 6th to the 60th day</strong> from the notification"
+          },
+          "extended": {
+            "discounted": "<strong>within 5 days</strong><br /> from the notification",
+            "reduced": "<strong>from the 6th to the 60th day</strong><br /> from the notification"
           }
         },
         "disclaimer": {
@@ -139,7 +148,8 @@
           "unclaimed": {
             "question": "What happens in case of a failed delivery attempt?",
             "answer": "The notification is the day of the collection, if this occurs within 10 days from the date printed on the non-delivery notice. If you don’t collect the notice within 10 days, count the deadlines starting from the 11th day."
-          }
+          },
+          "chooseAmount": "Choose the correct amount depending on deadlines, otherwise you will receive other payment requests for the remaining and/or additional amounts."
         }
       },
       "whereToPay": {
@@ -228,6 +238,10 @@
           "default": {
             "discounted": "<strong>innerhalb 5 tagen</strong> ab zustellungsdatum",
             "reduced": "<strong>vom 6ten bis 60ten tag</strong> ab zustellungsdatum"
+          },
+          "extended": {
+            "discounted": "<strong>innerhalb 5 tagen</strong><br /> ab zustellungsdatum",
+            "reduced": "<strong>vom 6ten bis 60ten tag</strong><br /> ab zustellungsdatum"
           }
         },
         "disclaimer": {
@@ -238,7 +252,8 @@
           "unclaimed": {
             "question": "Was passiert bei Lagerung?",
             "answer": "Die Zustellung entspricht dem Tag der Abholung, wenn diese innerhalb von 10 Tagen nach dem Lagerdatum erfolgt. Wird der Bericht nicht innerhalb von 10 Tagen abgeholt, sind die Fristen ab dem elften Tag zu berechnen."
-          }
+          },
+          "chooseAmount": "Den zur eigenen Frist passenden Bereich auswählen."
         }
       },
       "whereToPay": {
@@ -327,6 +342,10 @@
           "default": {
             "discounted": "<strong>dans les 5 jours</strong> suivant la notification",
             "reduced": "<strong>entre le 6e et le 60e jour</strong> à compter de la notification"
+          },
+          "extended": {
+            "discounted": "<strong>dans les 5 jours</strong> suivant la notification du procès-verbal",
+            "reduced": "<strong>entre le 6e et le 60e jour</strong> à compter de la notification du procès-verbal"
           }
         },
         "disclaimer": {
@@ -337,7 +356,8 @@
           "unclaimed": {
             "question": "Que se passe-t-il en cas de conservation au bureau de poste?",
             "answer": "La notification correspond au jour du retrait, si celui-ci a lieu dans les 10 jours à compter de la date de dépôt (la date la plus ancienne figurant sur l’avis de passage). Si vous ne retirez pas le procès-verbal dans les 10 jours, calculez les échéances en commençant à compter à partir du onzième jour."
-          }
+          },
+          "chooseAmount": "Choisissez le montant correct pour les délais prévus, sinon vous recevrez d’autres demandes de paiement pour les sommes restantes et les frais supplémentaires éventuels."
         }
       },
       "whereToPay": {
@@ -426,6 +446,10 @@
           "default": {
             "discounted": "<strong>v 5 dneh</strong> od vročitve zapisnika",
             "reduced": "<strong>od 6. do 60. dne</strong> od vročitve zapisnika"
+          },
+          "extended": {
+            "discounted": "<strong>v 5 dneh</strong><br /> od vročitve zapisnika",
+            "reduced": "<strong>od 6. do 60. dne</strong><br /> od vročitve zapisnika"
           }
         },
         "disclaimer": {
@@ -436,7 +460,8 @@
           "unclaimed": {
             "question": "Kaj se zgodi, če pismo ni izročeno?",
             "answer": "Obvestilo ustreza dnevu prevzema, če se to zgodi v 10 dneh od datuma prispetja (najstarejši datum na obvestilu o prispelem pismu). Če zapisnika ne prevzamete v 10 dneh, izračunajte roke zapadlosti, ki začnejo teči z enajstim dnem."
-          }
+          },
+          "chooseAmount": "Izberite pravilen znesek za predvidene roke, sicer boste prejeli druge zahteve za plačilo za preostale zneske in morebitne dodatne zneske."
         }
       },
       "whereToPay": {
