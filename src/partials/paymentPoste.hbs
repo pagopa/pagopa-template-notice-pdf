@@ -1,13 +1,11 @@
 <section class="notice-poste-payment-data {{#if compact}}compact{{/if}}">
-    <div class="header-bollettino-postale unique-separator">
+    <div class="header-bollettino-postale {{#if @root.metadata.secondaryLanguage}}bilingual{{/if}} unique-separator">
         <div class="title">
-            <h3 class="small-caps-title">Bollettino postale PA</h3>
+            {{{languageHandler 'postePayingInSlip.title' classPrimaryLang='small-caps-title'
+            classSecondaryLang='small-caps-title-bilingual'}}}
         </div>
         <div class="logo-and-date">
             <img class="logo-bancoposta" src="assets/poste/banco-posta.svg" alt="BancoPosta" />
-            {{#if showCurrentInstalment}}
-            <p class="h4">Rata {{add @index 1}} entro {{expiryDate}}</p>
-            {{else}}
             {{#if subtitle}}
             {{!-- Custom text for infraction notice --}}
             {{{languageHandler subtitle classPrimaryLang='h4 light'
@@ -22,7 +20,6 @@
             {{else}}
             {{{languageHandler 'paymentData.type.withoutExpiryDate' classPrimaryLang='h4'
             classSecondaryLang='small-caps-title-bilingual'}}}
-            {{/if}}
             {{/if}}
             {{/if}}
             <img class="poste-scissors" src="assets/poste/scissors.svg" aria-hidden="true" />

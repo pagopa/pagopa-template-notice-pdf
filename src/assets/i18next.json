@@ -104,6 +104,17 @@
             "instalments": "Inquadra il <strong>codice QR</strong> con la tua app di pagamento o usa i dati sopra."
           }
         }
+      },
+      "postePayingInSlip": {
+        "title": "Bollettino postale",
+        "description": "Bollettino Postale pagabile in tutti gli Uffici Postali e sui canali fisici o digitali abilitati di Poste Italiane e dell'Ente Creditore.",
+        "accountNumber": "sul C/C n.",
+        "owner": "Intestato a",
+        "recipient": "Destinatario",
+        "paymentDescription": "Oggetto pagamento",
+        "refNumber": "Codice Avviso",
+        "type": "Tipo",
+        "payeeTaxCode": "Cod. Fiscale Ente"
       }
     }
   },
@@ -320,6 +331,17 @@
             "instalments": "Den <strong>QR-Code</strong> mit der Zahlungs-App scannen oder oben Daten verwenden."
           }
         }
+      },
+      "postePayingInSlip": {
+        "title": "Posterlagschein",
+        "description": "Posterlagschein, in allen Postämtern sowie auf den von Poste Italiane autorisierten physischen oder digitalen Kanälen zahlbar.",
+        "accountNumber": "auf das K/K Nr",
+        "owner": "Lautend auf",
+        "recipient": "Empfänger",
+        "paymentDescription": "Zahlungsgrund",
+        "refNumber": "Zahlungsmitteilungskodex",
+        "type": "Typ",
+        "payeeTaxCode": "St.Nr. der Körperschaft"
       }
     }
   },

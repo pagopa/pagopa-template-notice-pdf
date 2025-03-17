@@ -183,6 +183,10 @@
     text-align: right;
 }
 
+.valign-start {
+    align-self: flex-start;
+}
+
 .not-shrinking {
     flex-shrink: 0;
 }
@@ -361,7 +365,7 @@ dl {
 .data-key-value-inline-monospaced {
     display: flex;
     gap: var(--data-grid-gap-xsmall);
-    align-items: baseline;
+    align-items: center;
     line-height: 1;
 
     & dt {
@@ -725,6 +729,15 @@ dl {
 
         & .logo-bancoposta {
             width: 20mm;
+        }
+    }
+
+    .bilingual {
+        display: flex;
+        justify-content: space-between;
+
+        & .logo-bancoposta {
+            display: none;
         }
     }
 

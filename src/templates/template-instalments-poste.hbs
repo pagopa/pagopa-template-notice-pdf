@@ -1,95 +1,96 @@
 <!DOCTYPE html>
-<html lang="it" xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
+<html lang="{{#if metadata.language}}{{metadata.language}} {{metadata.secondaryLanguage}}{{else}}'it'{{/if}}" {{#if
+    metadata.secondaryLanguage}}class="bilingual" {{/if}} xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
 
 <head>
     <title>Avviso di pagamento</title>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-{{!-- First page --}}
-<div class="page">
-    <div class="page-wrapper">
+    {{!-- First page --}}
+    <div class="page">
+        <div class="page-wrapper">
 
-        {{!-- Notice HEADER --}}
-        {{> header }}
+            {{!-- Notice HEADER --}}
+            {{> header }}
 
-        <main class="main-wrapper">
-            {{!-- Row 1 --}}
-            {{> mainInfo }}
-            {{!-- Row 2 --}}
-            {{> paymentInfo }}
+            <main class="main-wrapper">
+                {{!-- Row 1 --}}
+                {{> mainInfo }}
+                {{!-- Row 2 --}}
+                {{> paymentInfo }}
 
-            {{#with notice}}
+                {{#with notice}}
 
-            {{!-- Row 3 - pagoPA QR Code --}}
+                {{!-- Row 3 - pagoPA QR Code --}}
                 {{> paymentData
-                        debtor=../debtor
-                        notice=../notice
-                        payee=../payee
-                        tempPath=../tempPath
+                debtor=../debtor
+                notice=../notice
+                payee=../payee
+                tempPath=../tempPath
                 }}
 
                 {{!-- Row 4 - Bollettino Poste --}}
                 {{> paymentPoste
-                        debtor=../debtor
-                        notice=../notice
-                        payee=../payee
-                        tempPath=../tempPath
+                debtor=../debtor
+                notice=../notice
+                payee=../payee
+                tempPath=../tempPath
                 }}
 
-            {{/with}}
-        </main>
+                {{/with}}
+            </main>
+        </div>
     </div>
-</div>
 
-{{#with notice}}
+    {{#with notice}}
     {{#each (times (arrayLength (paginator ../notice true))) as | pageNumber | }}
     {{!-- for each Extra Page with instalments --}}
-        <div class="page">
-            <div class="page-wrapper">
+    <div class="page">
+        <div class="page-wrapper">
 
-                {{!-- Notice HEADER --}}
-                {{> header
-                        notice=../../notice
-                        payee=../../payee
+            {{!-- Notice HEADER --}}
+            {{> header
+            notice=../../notice
+            payee=../../payee
+            }}
+
+            <main class="main-wrapper">
+                {{#each (navigateMatrix (paginator @.. true) pageNumber ) as | row | }}
+                {{!-- for each Row in the page create the pagopa QR and the bollettinoPostale --}}
+                {{!-- pagopa QR --}}
+                {{> paymentInstalments
+                debtor=../../../debtor
+                notice=../../../notice
+                payee=../../../payee
+                tempPath=../../../tempPath
+                instalments=(row)
+                columns=(arrayLength row)
+                start=(getRowIndex @index pageNumber (paginator @../.. true))
+                compact=(equals (arrayLength row) 3)
+                }}
+                {{!-- bollettinoPostale --}}
+                {{> paymentInstalmentsPoste
+                compact=(equals (arrayLength row) 3)
+                debtor=../../../debtor
+                notice=../../../notice
+                payee=../../../payee
+                tempPath=../../../tempPath
+                instalments=(row)
+                start=(getRowIndex @index pageNumber (paginator @../.. true))
                 }}
 
-                <main class="main-wrapper">
-                    {{#each (navigateMatrix (paginator @.. true) pageNumber ) as | row | }}
-                    {{!-- for each Row in the page create the pagopa QR and the bollettinoPostale --}}
-                    {{!-- pagopa QR --}}
-                        {{> paymentInstalments
-                                debtor=../../../debtor
-                                notice=../../../notice
-                                payee=../../../payee
-                                tempPath=../../../tempPath
-                                instalments=(row)
-                                columns=(arrayLength row)
-                                start=(getRowIndex @index pageNumber (paginator @../.. true))
-                                compact=(equals (arrayLength row) 3)
-                        }}
-                        {{!-- bollettinoPostale --}}
-                        {{> paymentInstalmentsPoste
-                                compact=(equals (arrayLength row) 3)
-                                debtor=../../../debtor
-                                notice=../../../notice
-                                payee=../../../payee
-                                tempPath=../../../tempPath
-                                instalments=(row)
-                                start=(getRowIndex @index pageNumber (paginator @../.. true))
-                        }}
+                {{/each}}
 
-                    {{/each}}
-
-                </main>
-            </div>
+            </main>
         </div>
+    </div>
 
     {{/each}}
-{{/with }}
+    {{/with }}
 
 
 </body>
