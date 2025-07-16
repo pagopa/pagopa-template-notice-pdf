@@ -101,6 +101,7 @@
 .h5,
 .body,
 .small-caps-title,
+.small-caps-title-bilingual,
 .caption {
     margin: 0;
 }
@@ -146,6 +147,12 @@
     color: var(--color-black);
 }
 
+.small-caps-title-bilingual {
+    font-size: var(--h5-fsize);
+    font-weight: var(--weight-regular);
+    color: var(--color-black);
+}
+
 .data-small {
     font-family: var(--font-monospaced);
     font-size: var(--data-fsize-small);
@@ -176,8 +183,16 @@
     text-align: right;
 }
 
+.valign-start {
+    align-self: flex-start;
+}
+
 .not-shrinking {
     flex-shrink: 0;
+}
+
+.muted {
+    color: var(--color-grey-dark);
 }
 
 body {
@@ -350,7 +365,7 @@ dl {
 .data-key-value-inline-monospaced {
     display: flex;
     gap: var(--data-grid-gap-xsmall);
-    align-items: baseline;
+    align-items: center;
     line-height: 1;
 
     & dt {
@@ -363,6 +378,17 @@ dl {
         font-family: var(--font-monospaced);
         font-size: var(--h3-fsize);
         font-weight: var(--weight-bold);
+    }
+}
+
+.data-key-value,
+.data-key-value-inline,
+.data-key-value-monospaced,
+.data-key-value-inline-monospaced {
+
+    /* Avoid extra margin when using languageHandler */
+    & p {
+        margin: 0;
     }
 }
 
@@ -437,9 +463,9 @@ dl {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
     grid-template-areas: "payee-title debtor-title"
-    "payee-name debtor-name"
-    "payee-sector debtor-address"
-    "payee-info debtor-address";
+        "payee-name debtor-name"
+        "payee-sector debtor-address"
+        "payee-info debtor-address";
     column-gap: var(--separator-gutter);
     row-gap: var(--separator-bottom-margin);
     margin-bottom: var(--section-margin);
@@ -502,7 +528,7 @@ dl {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
     grid-template-areas: "payment-amount-title payment-methods-title"
-    "payment-amount-block payment-methods-block";
+        "payment-amount-block payment-methods-block";
     column-gap: var(--separator-gutter);
     row-gap: var(--separator-bottom-margin);
     margin-bottom: var(--section-margin);
@@ -526,6 +552,7 @@ dl {
     & .payment-info-outer {
         display: flex;
         align-items: flex-start;
+        justify-content: space-between;
         gap: var(--data-grid-gap-small);
     }
 
@@ -549,7 +576,7 @@ dl {
     align-content: flex-start;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "amount amount date"
-    "info info info";
+        "info info info";
     row-gap: var(--separator-margin-small);
     column-gap: var(--payment-grid-col-gap);
 
@@ -568,7 +595,7 @@ dl {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "amount-1 amount-2"
-    "info info";
+        "info info";
     row-gap: var(--separator-margin-small);
     column-gap: var(--payment-grid-col-gap);
 
@@ -722,6 +749,15 @@ dl {
         }
     }
 
+    .bilingual {
+        display: flex;
+        justify-content: space-between;
+
+        & .logo-bancoposta {
+            display: none;
+        }
+    }
+
     .poste-italiane-area {
         grid-column: span 3;
         display: grid;
@@ -768,7 +804,7 @@ dl {
     .payment-details-and-datamatrix {
         display: grid;
         grid-template-areas: "first-block data-matrix"
-      "second-block data-matrix";
+            "second-block data-matrix";
         grid-template-columns: 1fr auto;
         gap: var(--data-grid-gap-medium);
     }
@@ -1056,4 +1092,44 @@ dl {
         font-size: var(--h4-fsize);
         font-weight: var(--weight-bold);
     }
+}
+
+/* BILINGUAL */
+
+/* Make the entire layout denser to fit the content to the page, especially on
+infraction notices */
+html.bilingual {
+    --h4-fsize: 9pt;
+    --separator-title-height: 6.5mm;
+    --section-margin: 2mm;
+    --separator-bottom-margin: 3mm;
+    --size-entity-logo: 25mm;
+    --size-qrcode: 20mm;
+}
+
+html.true-bilingualism {
+    --h4-fsize: 9pt;
+    --size-entity-logo: 25mm;
+}
+
+.bilingualTextBoxHorizontal {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5mm;
+    align-items: center;
+}
+
+.bilingualTextBoxVertical {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75mm;
+
+    &.dense {
+        row-gap: 0mm;
+    }
+}
+
+.composedHorizontalLocalizedText {
+    display: flex;
+    column-gap: 1mm;
 }
