@@ -473,6 +473,23 @@ dl {
     }
 }
 
+.dynamic-payee-name {
+    margin: 0;
+    font-weight: var(--weight-bold);
+
+    &.default {
+        font-size: var(--h2-fsize);
+    }
+
+    &.small {
+        font-size: var(--h3-fsize);
+    }
+
+    &.smallest {
+        font-size: var(--h4-fsize);
+    }
+}
+
 /* Notice payment info
 -- Amount
 -- Where to pay
