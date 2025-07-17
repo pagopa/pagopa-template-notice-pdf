@@ -153,6 +153,7 @@ jobs:
 
 
   update_template_examples:
+    needs: [ load_template_metadata ]
     name: Update PDF examples
     runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
     steps:
@@ -191,9 +192,10 @@ jobs:
           git config --local user.name "pagopa-github-bot"
           git commit -a -m "Examples Updated [skip-ci]" || exit 0
           git push
+
   cleanup_runner:
     name: Cleanup Runner
-    needs: [ create_runner, load_templates_files, load_template_metadata ]
+    needs: [ create_runner, load_templates_files, load_template_metadata, update_template_examples ]
     if: ${{ always() }}
     runs-on: ubuntu-22.04
     environment: ${{(inputs == null && 'uat') || inputs.environment }}
