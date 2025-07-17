@@ -48,7 +48,7 @@ data "azurerm_key_vault_secret" "key_vault_sonar" {
 
 data "azurerm_key_vault_secret" "key_vault_bot_token" {
   name         = "bot-token-github"
-  key_vault_id = data.azurerm_key_vault.key_vault.id
+  key_vault_id = data.azurerm_key_vault.domain_key_vault.id
 }
 
 data "azurerm_key_vault_secret" "key_vault_cucumber_token" {
