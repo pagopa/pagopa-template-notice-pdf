@@ -154,6 +154,7 @@ jobs:
     needs: [ create_runner ]
     name: Update PDF examples
     runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
+    environment: ${{(inputs == null && 'dev') || inputs.environment }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4 # Aggiornato a v4 per best practice
