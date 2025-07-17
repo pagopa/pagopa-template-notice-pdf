@@ -154,7 +154,7 @@ jobs:
 
   update_template_examples:
     name: Update PDF examples
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4 # Aggiornato a v4 per best practice
@@ -171,10 +171,7 @@ jobs:
       - name: Install system dependencies for Puppeteer
         run: |
           sudo apt-get update
-          sudo apt-get upgrade -y
-          sudo apt-get install -yq libasound2 libatk-bridge2.0-0 libgtk-3-0 libnss3 libxss1 libgbm-dev \
-            libxcomposite1 libxrandr2 libatk1.0-0 libcups2 libdbus-1-3 libx11-xcb1 fonts-liberation \
-            xdg-utils ca-certificates wget
+          sudo apt-get install -yq libgconf-2-4 libasound2 libatk-bridge2.0-0 libgtk-3-0 libnss3 libxss1 libgbm-dev
           
 
       - name: Install Node.js dependencies
