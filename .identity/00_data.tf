@@ -47,7 +47,7 @@ data "azurerm_key_vault_secret" "key_vault_sonar" {
 }
 
 data "azurerm_key_vault_secret" "key_vault_bot_token" {
-  name         = "bot-token-github"
+  name         = "pagopa-platform-domain-github-bot-cd-pat"
   key_vault_id = data.azurerm_key_vault.domain_key_vault.id
 }
 
