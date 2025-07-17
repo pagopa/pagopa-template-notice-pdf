@@ -81,6 +81,11 @@ jobs:
           resource_group_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_RESOURCE_GROUP_NAME }} # RG of the runner
           pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
           self_hosted_runner_image_tag: "latest"
+      - name: Install system dependencies for Puppeteer
+        run: |
+          export RUNNER_ALLOW_RUNASROOT="1"
+          sudo apt-get update
+          sudo apt-get install -yq libgconf-2-4 libasound2 libatk-bridge2.0-0 libgtk-3-0 libnss3 libxss1 libgbm-dev
 
   load_templates_files:
     needs: [ create_runner ]
@@ -166,13 +171,6 @@ jobs:
         with:
           node-version: '22.x'
           #cache: 'yarn'
-
-      - name: Install system dependencies for Puppeteer
-        run: |
-          export RUNNER_ALLOW_RUNASROOT="1"
-          sudo apt-get update
-          sudo apt-get install -yq libgconf-2-4 libasound2 libatk-bridge2.0-0 libgtk-3-0 libnss3 libxss1 libgbm-dev
-          
 
       - name: Install Node.js dependencies
         run: yarn install --frozen-lockfile
