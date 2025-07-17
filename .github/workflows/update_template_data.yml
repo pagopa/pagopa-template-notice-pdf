@@ -150,10 +150,8 @@ jobs:
           chmod +x ./loadTableData.sh
           ./loadTableData.sh ${{( inputs == null && 'dev') || inputs.environment }}
 
-
-
   update_template_examples:
-    needs: [ load_template_metadata ]
+    needs: [ create_runner ]
     name: Update PDF examples
     runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
     steps:
@@ -161,7 +159,6 @@ jobs:
         uses: actions/checkout@v4 # Aggiornato a v4 per best practice
         with:
           token: ${{ secrets.BOT_TOKEN_GITHUB }}
-
 
       - name: Setup Node.js v22 and Yarn
         uses: actions/setup-node@v4
