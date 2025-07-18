@@ -81,6 +81,11 @@ jobs:
           resource_group_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_RESOURCE_GROUP_NAME }} # RG of the runner
           pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
           self_hosted_runner_image_tag: "latest"
+      - name: Install system dependencies for Puppeteer
+        run: |
+          export RUNNER_ALLOW_RUNASROOT="1"
+          sudo apt-get update
+          sudo apt-get install -yq libgconf-2-4 libasound2 libatk-bridge2.0-0 libgtk-3-0 libnss3 libxss1 libgbm-dev libgbm1
 
   load_templates_files:
     needs: [ create_runner ]
@@ -150,28 +155,22 @@ jobs:
           chmod +x ./loadTableData.sh
           ./loadTableData.sh ${{( inputs == null && 'dev') || inputs.environment }}
 
-
-
   update_template_examples:
+    needs: [ create_runner ]
     name: Update PDF examples
-    runs-on: ubuntu-latest
+    runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
+    environment: ${{(inputs == null && 'dev') || inputs.environment }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4 # Aggiornato a v4 per best practice
         with:
           token: ${{ secrets.BOT_TOKEN_GITHUB }}
 
-
       - name: Setup Node.js v22 and Yarn
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'
-          cache: 'yarn'
-
-      - name: Install system dependencies for Puppeteer
-        run: |
-          sudo apt-get update
-          sudo apt-get install -yq libgconf-2-4 libasound2 libatk-bridge2.0-0 libgtk-3-0 libnss3 libxss1 libgbm-dev
+          #cache: 'yarn'
 
       - name: Install Node.js dependencies
         run: yarn install --frozen-lockfile
@@ -190,9 +189,10 @@ jobs:
           git config --local user.name "pagopa-github-bot"
           git commit -a -m "Examples Updated [skip-ci]" || exit 0
           git push
+
   cleanup_runner:
     name: Cleanup Runner
-    needs: [ create_runner, load_templates_files, load_template_metadata ]
+    needs: [ create_runner, load_templates_files, load_template_metadata, update_template_examples ]
     if: ${{ always() }}
     runs-on: ubuntu-22.04
     environment: ${{(inputs == null && 'uat') || inputs.environment }}
