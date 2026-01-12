@@ -1,6 +1,6 @@
 {
   "debtor": {
-    "fullName": "MARZIA ROCCARASO",
+    "fullName": "MARIO ESPOSITO",
     "taxCode": "rccmrz88A52C409A",
     "address": "Corso Sempione",
     "buildingNumber": "55",
@@ -126,5 +126,11 @@
         }
       ]
     }
+  },
+  "metadata": {
+    "language": "it",
+    "secondaryLanguage": "de",
+    "trueBilingualism": true,
+    "abroad": true
   }
 }

@@ -1,10 +1,20 @@
 const fs = require("fs");
 const Handlebars = require("handlebars");
-let {readFileSync, readdirSync} = require('fs');
+let { readFileSync, readdirSync } = require('fs');
 const path = require('node:path');
 
 
-const getFiles = source => readdirSync(source, {withFileTypes: true})
+const HandlebarsI18n = require("handlebars-i18n");
+
+const i18next = require("i18next");
+i18next.init({
+    resources: JSON.parse(readFileSync('./assets/i18next.json', 'utf8')),
+    lng: "it"
+});
+
+HandlebarsI18n.init();
+
+const getFiles = source => readdirSync(source, { withFileTypes: true })
     .filter(dirent => !dirent.isDirectory())
     .map(dirent => dirent.name)
 const importFile = (filePath, fileName) => readFileSync(`${filePath}/${fileName}`, "utf8");
@@ -52,8 +62,14 @@ const template = Handlebars.compile(templateFile);
 
 // Load the JSON data for the template
 const data = require(`./json/${dataFilePath}`);
+
+/* I18N. Check if the parameters are correctly set. */
+if (data.metadata?.trueBilingualism && !data.metadata?.secondaryLanguage) {
+    console.warn("⚠️ You have enabled `trueBilingualism` but haven't specified a secondary language. The PDF document will be generated in the default main language only.");
+}
+
 data.tempPath = ".temp";
-fs.mkdirSync(".temp", {recursive: true});
+fs.mkdirSync(".temp", { recursive: true });
 // Generate the HTML
 const html = template(data);
 

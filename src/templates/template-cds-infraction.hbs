@@ -1,55 +1,56 @@
 <!DOCTYPE html>
-<html lang="it" xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
+<html lang="{{#if metadata.language}}{{metadata.language}} {{metadata.secondaryLanguage}}{{else}}'it'{{/if}}" {{#if
+    metadata.secondaryLanguage}}class="bilingual" {{/if}} xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
 
 <head>
-    <title>Avviso di pagamento</title>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{{{languageHandler 'title'}}}</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-<div class="page">
-    <div class="page-wrapper">
+    <div class="page">
+        <div class="page-wrapper">
 
-        {{!-- Notice HEADER --}}
-        {{> header }}
+            {{!-- Notice HEADER --}}
+            {{> header }}
 
-        <main class="main-wrapper">
-            {{!-- Row 1 --}}
-            {{> mainInfo }}
-            {{!-- Row 2 --}}
-            {{> paymentInfoInfraction }}
-            {{!-- Arrow separator --}}
-            {{> paymentSeparatorInfraction}}
+            <main class="main-wrapper">
+                {{!-- Row 1 --}}
+                {{> mainInfo }}
+                {{!-- Row 2 --}}
+                {{> paymentInfoInfraction }}
+                {{!-- Arrow separator --}}
+                {{> paymentSeparatorInfraction}}
 
-            {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
-            {{#with notice.instalments.discounted}}
+                {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
+                {{#with notice.instalments.discounted}}
                 {{> paymentData
-                        title="Importo scontato del 30%"
-                        subtitle="<p class='h4 light'><strong>Se paghi entro 5 giorni</strong> dalla notifica del verbale</p>"
-                        debtor=../debtor
-                        notice=../notice
-                        payee=../payee
-                        tempPath=../tempPath
+                title="infraction.amount.discounted"
+                subtitle="infraction.expiryDate.default.discounted"
+                debtor=../debtor
+                notice=../notice
+                payee=../payee
+                tempPath=../tempPath
                 }}
-            {{/with}}
+                {{/with}}
 
-            {{!-- Row 4 - pagoPA QR Code (general discount) --}}
-            {{#with notice.instalments.reduced}}
+                {{!-- Row 4 - pagoPA QR Code (general discount) --}}
+                {{#with notice.instalments.reduced}}
                 {{> paymentData
-                        title="Importo ridotto"
-                        subtitle="<p class='h4 light'><strong>Se paghi dal 6º al 60º giorno</strong> dalla notifica del verbale</p>"
-                        debtor=../debtor
-                        notice=../notice
-                        payee=../payee
-                        tempPath=../tempPath
+                title="infraction.amount.reduced"
+                subtitle="infraction.expiryDate.default.reduced"
+                debtor=../debtor
+                notice=../notice
+                payee=../payee
+                tempPath=../tempPath
                 }}
-            {{/with}}
+                {{/with}}
 
-        </main>
+            </main>
+        </div>
     </div>
-</div>
 
 </body>
 
