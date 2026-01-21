@@ -194,6 +194,56 @@ $ python3 ./create_templates_zip.py
 
 ---
 
+## GitHub Actions Workflows
+
+This repository contains automated workflows that trigger on changes to template files.
+
+### Update Templates (`update_template_data.yml`)
+
+**Triggers:** Push to `main` when changes are made to:
+- `tableData/src/tableData.json`
+- `src/assets/**`
+- `src/partials/**`
+- `src/templates/**`
+
+**Actions:**
+- Uploads template ZIP files to Azure blob storage
+- Updates template metadata in Azure table storage
+- Regenerates PDF examples and commits them
+
+### Sync to PDF Engine (`sync_to_pdf_engine.yml`)
+
+**Triggers:** Push to `main` when changes are made to:
+- `src/helpers/**`
+- `src/partials/**`
+
+**Actions:**
+- Creates a pull request to [pagopa-pdf-engine](https://github.com/pagopa/pagopa-pdf-engine)
+- Syncs notice templates and helpers
+
+#### File Mappings
+
+| Source (this repo)       | Destination (pdf-engine)              |
+|--------------------------|---------------------------------------|
+| `src/partials/*.hbs`     | `node/pdf-generate/partials/notices/` |
+| `src/helpers/{selected}` | `node/pdf-generate/helpers/notices/`  |
+
+#### Excluded Helpers
+
+The following helpers are **NOT** automatically synced because they have server-specific modifications in pdf-engine:
+- `genQrCode.js` - Uses UUID for unique filename generation
+- `genDataMatrix.js` - Uses UUID for unique filename generation
+
+If these files need to be updated, manually apply changes to pdf-engine preserving the UUID logic.
+
+#### After Merging the Auto-Generated PR
+
+1. Review and merge the PR in pagopa-pdf-engine
+2. Create a release for pagopa-pdf-engine
+3. Deploy the service to apply template changes
+
+---
+
 ## Related PDF templates
 
 - Template for the PDF receipt: [`pagopa-template-receipt-pdf`](https://github.com/pagopa/pagopa-template-receipt-pdf)
