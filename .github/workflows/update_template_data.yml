@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "tableData/tableData.json"
+      - "tableData/src/tableData.json"
       - "src/assets"
       - "src/partials"
       - "src/templates"
