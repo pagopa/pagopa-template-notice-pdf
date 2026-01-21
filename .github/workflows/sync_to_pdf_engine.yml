@@ -7,6 +7,11 @@ on:
     paths:
       - "src/helpers/**"
       - "src/partials/**"
+        
+  pull_request:
+    paths:
+      - "src/helpers/**"
+      - "src/partials/**"
 
   workflow_dispatch:
 
