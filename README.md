@@ -203,6 +203,7 @@ This repository contains automated workflows that trigger on changes to template
 **Triggers:** Push to `main` when changes are made to:
 - `tableData/src/tableData.json`
 - `src/assets/**`
+- `src/helpers/**`
 - `src/partials/**`
 - `src/templates/**`
 

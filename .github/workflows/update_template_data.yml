@@ -7,6 +7,7 @@ on:
     paths:
       - "tableData/src/tableData.json"
       - "src/assets"
+      - "src/helpers"
       - "src/partials"
       - "src/templates"
 
