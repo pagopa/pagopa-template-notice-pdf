@@ -224,10 +224,12 @@ This repository contains automated workflows that trigger on changes to template
 
 #### File Mappings
 
-| Source (this repo)       | Destination (pdf-engine)              |
-|--------------------------|---------------------------------------|
-| `src/partials/*.hbs`     | `node/pdf-generate/partials/notices/` |
-| `src/helpers/{selected}` | `node/pdf-generate/helpers/notices/`  |
+| Source (this repo)   | Destination (pdf-engine)              |
+|----------------------|---------------------------------------|
+| `src/partials/*.hbs` | `node/pdf-generate/partials/notices/` |
+| `src/helpers/*.js`   | `node/pdf-generate/helpers/notices/`  |
+
+> **Note:** New helpers are synced automatically. Only excluded helpers (listed below) require manual sync.
 
 #### Excluded Helpers
 

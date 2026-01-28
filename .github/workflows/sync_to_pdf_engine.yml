@@ -35,22 +35,18 @@ jobs:
         run: |
           cp source/src/partials/*.hbs target/node/pdf-generate/partials/notices/
 
-      - name: Sync notice-specific helpers
+      - name: Sync helpers
         run: |
-          # only sync helpers that are identical in both repos
-          # e.g. excludes helpers like genQrCode.js and genDataMatrix.js (modified for server context in pdf-engine)
-          NOTICE_HELPERS=(
-            "getDynamicPayeeSizeClassName.js"
-            "getOnlinePaymentMethodContent.js"
-            "getPhysicalPaymentMethodContent.js"
-            "getRowIndex.js"
-            "paginator.js"
-          )
+          # exclude helpers with server-specific modifications in pdf-engine
+          EXCLUDED_HELPERS=("genQrCode.js" "genDataMatrix.js")
 
-          for helper in "${NOTICE_HELPERS[@]}"; do
-            if [ -f "source/src/helpers/$helper" ]; then
-              cp "source/src/helpers/$helper" "target/node/pdf-generate/helpers/notices/"
-              echo "Synced: $helper"
+          for helper in source/src/helpers/*.js; do
+            filename=$(basename "$helper")
+            if [[ ! " ${EXCLUDED_HELPERS[@]} " =~ " ${filename} " ]]; then
+              cp "$helper" "target/node/pdf-generate/helpers/notices/"
+              echo "Synced: $filename"
+            else
+              echo "Skipped (excluded): $filename"
             fi
           done
 
@@ -86,7 +82,7 @@ jobs:
 
             ### Files synced:
             - `src/partials/*.hbs` → `node/pdf-generate/partials/notices/`
-            - Selected helpers → `node/pdf-generate/helpers/notices/`
+            - `src/helpers/*.js` → `node/pdf-generate/helpers/notices/` (except excluded)
 
             ### Helpers NOT synced (modified for server context):
             - `genQrCode.js` - Uses UUID for filename generation
