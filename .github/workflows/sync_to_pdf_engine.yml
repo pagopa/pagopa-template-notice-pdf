@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - PIDM-1171-add-pdf-engine-sync-action  # temporary for testing
     paths:
       - "src/helpers/**"
       - "src/partials/**"
