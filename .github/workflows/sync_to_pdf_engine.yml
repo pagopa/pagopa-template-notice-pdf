@@ -37,18 +37,7 @@ jobs:
 
       - name: Sync helpers
         run: |
-          # exclude helpers with server-specific modifications in pdf-engine
-          EXCLUDED_HELPERS=("genQrCode.js" "genDataMatrix.js")
-
-          for helper in source/src/helpers/*.js; do
-            filename=$(basename "$helper")
-            if [[ ! " ${EXCLUDED_HELPERS[@]} " =~ " ${filename} " ]]; then
-              cp "$helper" "target/node/pdf-generate/helpers/notices/"
-              echo "Synced: $filename"
-            else
-              echo "Skipped (excluded): $filename"
-            fi
-          done
+          cp source/src/helpers/*.js target/node/pdf-generate/helpers/notices/
 
       - name: Check for changes
         id: check_changes
@@ -82,11 +71,7 @@ jobs:
 
             ### Files synced:
             - `src/partials/*.hbs` → `node/pdf-generate/partials/notices/`
-            - `src/helpers/*.js` → `node/pdf-generate/helpers/notices/` (except excluded)
-
-            ### Helpers NOT synced (modified for server context):
-            - `genQrCode.js` - Uses UUID for filename generation
-            - `genDataMatrix.js` - Uses UUID for filename generation
+            - `src/helpers/*.js` → `node/pdf-generate/helpers/notices/`
 
             ---
 

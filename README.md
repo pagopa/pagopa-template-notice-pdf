@@ -229,16 +229,6 @@ This repository contains automated workflows that trigger on changes to template
 | `src/partials/*.hbs` | `node/pdf-generate/partials/notices/` |
 | `src/helpers/*.js`   | `node/pdf-generate/helpers/notices/`  |
 
-> **Note:** New helpers are synced automatically. Only excluded helpers (listed below) require manual sync.
-
-#### Excluded Helpers
-
-The following helpers are **NOT** automatically synced because they have server-specific modifications in pdf-engine:
-- `genQrCode.js` - Uses UUID for unique filename generation
-- `genDataMatrix.js` - Uses UUID for unique filename generation
-
-If these files need to be updated, manually apply changes to pdf-engine preserving the UUID logic.
-
 #### After Merging the Auto-Generated PR
 
 1. Review and merge the PR in pagopa-pdf-engine
