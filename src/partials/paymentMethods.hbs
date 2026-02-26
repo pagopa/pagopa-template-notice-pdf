@@ -44,7 +44,7 @@
             }}}
             {{/if}}
         </div>
-        <img src="./assets/icons/pictogram-devices.svg" class="payment-info-pictogram" aria-hidden="true" />
+        {{#unless metadata.secondaryLanguage}}<img src="./assets/icons/pictogram-devices.svg" class="payment-info-pictogram" aria-hidden="true" />{{/unless}}
     </div>
 
     <div>
@@ -83,8 +83,8 @@
                 }}}
                 {{/if}}
             </div>
-            <img src="./assets/icons/pictogram-physical-locations.svg" class="payment-info-pictogram"
-                aria-hidden="true" />
+            {{#unless metadata.secondaryLanguage}}<img src="./assets/icons/pictogram-physical-locations.svg" class="payment-info-pictogram"
+                aria-hidden="true" />{{/unless}}
         </div>
     </div>
 </div>

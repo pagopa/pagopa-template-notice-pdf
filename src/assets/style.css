@@ -1092,6 +1092,9 @@ html.bilingual {
 
 html.true-bilingualism {
     --h4-fsize: 9pt;
+    --section-margin: 2.5mm;
+    --separator-bottom-margin: 4mm;
+    --data-grid-gap-medium: 5mm;
     --size-entity-logo: 25mm;
 }
 
