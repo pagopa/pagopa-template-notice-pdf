@@ -5,8 +5,9 @@ on:
     branches:
       - main
     paths:
-      - "tableData/tableData.json"
+      - "tableData/src/tableData.json"
       - "src/assets"
+      - "src/helpers"
       - "src/partials"
       - "src/templates"
 
@@ -81,6 +82,11 @@ jobs:
           resource_group_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_RESOURCE_GROUP_NAME }} # RG of the runner
           pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
           self_hosted_runner_image_tag: "latest"
+      - name: Install system dependencies for Puppeteer
+        run: |
+          export RUNNER_ALLOW_RUNASROOT="1"
+          sudo apt-get update
+          sudo apt-get install -yq libgconf-2-4 libasound2 libatk-bridge2.0-0 libgtk-3-0 libnss3 libxss1 libgbm-dev libgbm1
 
   load_templates_files:
     needs: [ create_runner ]
@@ -150,15 +156,25 @@ jobs:
           chmod +x ./loadTableData.sh
           ./loadTableData.sh ${{( inputs == null && 'dev') || inputs.environment }}
 
-
   update_template_examples:
+    needs: [ create_runner ]
     name: Update PDF examples
-    runs-on: ubuntu-latest
+    runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
+    environment: ${{(inputs == null && 'dev') || inputs.environment }}
     steps:
       - name: Checkout
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4 # Aggiornato a v4 per best practice
         with:
           token: ${{ secrets.BOT_TOKEN_GITHUB }}
+
+      - name: Setup Node.js v22 and Yarn
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.x'
+          #cache: 'yarn'
+
+      - name: Install Node.js dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Run Generate Template Examples Script
         shell: bash
@@ -174,11 +190,10 @@ jobs:
           git config --local user.name "pagopa-github-bot"
           git commit -a -m "Examples Updated [skip-ci]" || exit 0
           git push
-  
 
   cleanup_runner:
     name: Cleanup Runner
-    needs: [ create_runner, load_templates_files, load_template_metadata ]
+    needs: [ create_runner, load_templates_files, load_template_metadata, update_template_examples ]
     if: ${{ always() }}
     runs-on: ubuntu-22.04
     environment: ${{(inputs == null && 'uat') || inputs.environment }}

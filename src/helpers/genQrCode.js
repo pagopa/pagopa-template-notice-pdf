@@ -1,6 +1,9 @@
 var QRCode = require("qrcode-svg");
+const { v4: uuidv4 } = require("uuid");
+const path = require('path');
 
-function genQrCode(data, path) {
+function genQrCode(data, saveDir) {
+  const filename = path.join(saveDir,uuidv4()+".svg");
   var qrcode = new QRCode({
     content: data,
     padding: 0,
@@ -11,10 +14,10 @@ function genQrCode(data, path) {
     ecl: "M",
     join: true,
   });
-  qrcode.save(path + "/" + data + ".svg", function (error) {
+  qrcode.save(filename, function (error) {
     if (error) throw error;
   });
-  return path + "/" + data + ".svg";
+  return filename;
 }
 
 module.exports = genQrCode;
