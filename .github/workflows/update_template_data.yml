@@ -86,7 +86,21 @@ jobs:
         run: |
           export RUNNER_ALLOW_RUNASROOT="1"
           sudo apt-get update
-          sudo apt-get install -yq libgconf-2-4 libasound2 libatk-bridge2.0-0 libgtk-3-0 libnss3 libxss1 libgbm-dev libgbm1
+          sudo apt-get install -y \
+            libxkbcommon0 \
+            libgtk-3-0 \
+            libnss3 \
+            libxss1 \
+            libasound2 \
+            libatk-bridge2.0-0 \
+            libgbm1 \
+            libx11-xcb1 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libatk1.0-0 \
+            libcups2 \
+            libdrm2
 
   load_templates_files:
     needs: [ create_runner ]
