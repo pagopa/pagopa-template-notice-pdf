@@ -28,40 +28,6 @@ permissions:
   contents: write
 
 jobs:
-  print_debug:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dump Inputs
-        env:
-          JSON_INPUTS: ${{ toJson(inputs) }}
-        run: echo "$JSON_INPUTS"
-
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
-        env:
-          RUNNER_CONTEXT: ${{ toJson(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
-        env:
-          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
-
-
   create_runner:
     name: Create Runner
     runs-on: ubuntu-22.04
@@ -82,25 +48,6 @@ jobs:
           resource_group_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_RESOURCE_GROUP_NAME }} # RG of the runner
           pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
           self_hosted_runner_image_tag: "latest"
-      - name: Install system dependencies for Puppeteer
-        run: |
-          export RUNNER_ALLOW_RUNASROOT="1"
-          sudo apt-get update
-          sudo apt-get install -y \
-            libxkbcommon0 \
-            libgtk-3-0 \
-            libnss3 \
-            libxss1 \
-            libasound2 \
-            libatk-bridge2.0-0 \
-            libgbm1 \
-            libx11-xcb1 \
-            libxcomposite1 \
-            libxdamage1 \
-            libxrandr2 \
-            libatk1.0-0 \
-            libcups2 \
-            libdrm2
 
   load_templates_files:
     needs: [ create_runner ]
@@ -186,6 +133,26 @@ jobs:
         with:
           node-version: '22.x'
           #cache: 'yarn'
+
+      - name: Install system dependencies for Puppeteer
+        run: |
+          export RUNNER_ALLOW_RUNASROOT="1"
+          sudo apt-get update
+          sudo apt-get install -y \
+            libxkbcommon0 \
+            libgtk-3-0 \
+            libnss3 \
+            libxss1 \
+            libasound2 \
+            libatk-bridge2.0-0 \
+            libgbm1 \
+            libx11-xcb1 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libatk1.0-0 \
+            libcups2 \
+            libdrm2
 
       - name: Install Node.js dependencies
         run: yarn install --frozen-lockfile
