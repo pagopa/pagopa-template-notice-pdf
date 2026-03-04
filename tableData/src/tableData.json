@@ -54,5 +54,21 @@
     "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello con bollettino postale",
     "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateCdsInfractionPoste.pdf",
     "templateValidationRules": "cdsPosteValidation.json"
+  },
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateCdsInfractionThermal",
+    "templateId": "TemplateCdsInfractionThermal",
+    "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello per stampa termica",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateCdsInfractionThermal.pdf",
+    "templateValidationRules": "cdsValidation.json"
+  },
+  {
+    "partitionKey": "templates",
+    "rowKey": "TemplateCdsInfractionThermalImmediateNotification",
+    "templateId": "TemplateCdsInfractionThermalImmediateNotification",
+    "description": "Template per un avviso di pagamento contenente la notifica di un infrazione al codice della strada, modello per stampa termica con notifica immediata",
+    "templateExampleUrl": "https://github.com/pagopa/pagopa-template-notice-pdf/tree/main/examples_pdf/TemplateCdsInfractionThermalImmediateNotification.pdf",
+    "templateValidationRules": "cdsValidation.json"
   }
 ]

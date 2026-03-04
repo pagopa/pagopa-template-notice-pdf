@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it" xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
+
+<head>
+    <title>Avviso di pagamento</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+<div class="thermal-page">
+    <div class="thermal-page-wrapper">
+
+        {{!-- Notice HEADER --}}
+        {{> thermalHeader }}
+
+        <main class="thermal-main-wrapper">
+            {{!-- Row 1 - Payment Info (When to pay) --}}
+            {{> thermalPaymentInfoInfraction }}
+
+            {{!-- Row 2 - Payment Info (Where to pay) --}}
+            {{> thermalPaymentMethods }}
+
+            {{!-- Row 3 - pagoPA QR Code (30% discount) --}}
+            {{#with notice.instalments.discounted}}
+                {{> thermalPaymentData
+                        title="Importo scontato del 30%"
+                        subtitle="entro 5 giorni"
+                        debtor=../debtor
+                        notice=../notice
+                        payee=../payee
+                        tempPath=../tempPath
+                }}
+            {{/with}}
+
+            {{!-- Row 4 - pagoPA QR Code (general discount) --}}
+            {{#with notice.instalments.reduced}}
+                {{> thermalPaymentData
+                        title="Importo ridotto"
+                        subtitle="dal 6º al 60º giorno"
+                        debtor=../debtor
+                        notice=../notice
+                        payee=../payee
+                        tempPath=../tempPath
+                }}
+            {{/with}}
+
+        </main>
+    </div>
+</div>
+
+</body>
+
+</html>
