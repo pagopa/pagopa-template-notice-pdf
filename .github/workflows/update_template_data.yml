@@ -30,7 +30,7 @@ permissions:
 jobs:
   load_templates_files:
     name: Upload Templates Files in Storage ${{(inputs == null && 'dev') || inputs.environment }}
-    runs-on: [ self-hosted-job, "${{(nputs == null && 'dev') || inputs.environment }}" ]
+    runs-on: [ self-hosted-job, "${{(inputs == null && 'dev') || inputs.environment }}" ]
     environment: ${{(inputs == null && 'dev') || inputs.environment }}
     steps:
 
@@ -67,7 +67,7 @@ jobs:
   
   load_template_metadata:
     name: Upload Templates Metadata in Table ${{(inputs == null && 'dev') || inputs.environment }}
-    runs-on: [ self-hosted-job, "${{(nputs == null && 'dev') || inputs.environment }}" ]
+    runs-on: [ self-hosted-job, "${{(inputs == null && 'dev') || inputs.environment }}" ]
     environment: ${{(inputs == null && 'dev') || inputs.environment }}
     steps:
 
