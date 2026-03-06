@@ -40,9 +40,9 @@ jobs:
         run: |
           cp source/src/helpers/*.js target/node/pdf-generate/helpers/notices/
 
-      - name: Sync i8next file
+      - name: Sync i18next file
         run: |
-          cp source/src/assets/i8next.json target/node/pdf-generate/assets/i8next.json
+          cp source/src/assets/i18next.json target/node/pdf-generate/assets/i18next.json
 
       - name: Check for changes
         id: check_changes
