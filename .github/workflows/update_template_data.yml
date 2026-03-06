@@ -28,70 +28,9 @@ permissions:
   contents: write
 
 jobs:
-  print_debug:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dump Inputs
-        env:
-          JSON_INPUTS: ${{ toJson(inputs) }}
-        run: echo "$JSON_INPUTS"
-
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
-        env:
-          RUNNER_CONTEXT: ${{ toJson(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
-        env:
-          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
-
-
-  create_runner:
-    name: Create Runner
-    runs-on: ubuntu-22.04
-    environment:
-      name: ${{(inputs.environment == null && 'dev') || inputs.environment }}
-    outputs:
-      runner_name: ${{ steps.create_github_runner.outputs.runner_name }}
-    steps:
-      - name: Create GitHub Runner
-        id: create_github_runner
-        # from https://github.com/pagopa/eng-github-actions-iac-template/tree/main/azure/github-self-hosted-runner-azure-create-action
-        uses: pagopa/eng-github-actions-iac-template/azure/github-self-hosted-runner-azure-create-action@main
-        with:
-          client_id: ${{ secrets.CLIENT_ID }}
-          tenant_id: ${{ secrets.TENANT_ID }}
-          subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
-          container_app_environment_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_NAME }}
-          resource_group_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_RESOURCE_GROUP_NAME }} # RG of the runner
-          pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
-          self_hosted_runner_image_tag: "latest"
-      - name: Install system dependencies for Puppeteer
-        run: |
-          export RUNNER_ALLOW_RUNASROOT="1"
-          sudo apt-get update
-          sudo apt-get install -yq libgconf-2-4 libasound2 libatk-bridge2.0-0 libgtk-3-0 libnss3 libxss1 libgbm-dev libgbm1
-
   load_templates_files:
-    needs: [ create_runner ]
     name: Upload Templates Files in Storage ${{(inputs == null && 'dev') || inputs.environment }}
-    runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
+    runs-on: [ self-hosted-job, "${{(inputs == null && 'dev') || inputs.environment }}" ]
     environment: ${{(inputs == null && 'dev') || inputs.environment }}
     steps:
 
@@ -126,12 +65,9 @@ jobs:
           chmod +x ./loadTemplates.sh
           ./loadTemplates.sh ${{( inputs == null && 'dev') || inputs.environment }}
   
-  
-
   load_template_metadata:
-    needs: [ create_runner ]
     name: Upload Templates Metadata in Table ${{(inputs == null && 'dev') || inputs.environment }}
-    runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
+    runs-on: [ self-hosted-job, "${{(inputs == null && 'dev') || inputs.environment }}" ]
     environment: ${{(inputs == null && 'dev') || inputs.environment }}
     steps:
 
@@ -157,10 +93,8 @@ jobs:
           ./loadTableData.sh ${{( inputs == null && 'dev') || inputs.environment }}
 
   update_template_examples:
-    needs: [ create_runner ]
     name: Update PDF examples
-    runs-on: [ self-hosted, "${{ needs.create_runner.outputs.runner_name }}" ]
-    environment: ${{(inputs == null && 'dev') || inputs.environment }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4 # Aggiornato a v4 per best practice
@@ -172,6 +106,26 @@ jobs:
         with:
           node-version: '22.x'
           #cache: 'yarn'
+
+      - name: Install system dependencies for Puppeteer
+        run: |
+          export RUNNER_ALLOW_RUNASROOT="1"
+          sudo apt-get update
+          sudo apt-get install -y \
+            libxkbcommon0 \
+            libgtk-3-0 \
+            libnss3 \
+            libxss1 \
+            libasound2t64 \
+            libatk-bridge2.0-0 \
+            libgbm1 \
+            libx11-xcb1 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libatk1.0-0 \
+            libcups2 \
+            libdrm2
 
       - name: Install Node.js dependencies
         run: yarn install --frozen-lockfile
@@ -190,23 +144,3 @@ jobs:
           git config --local user.name "pagopa-github-bot"
           git commit -a -m "Examples Updated [skip-ci]" || exit 0
           git push
-
-  cleanup_runner:
-    name: Cleanup Runner
-    needs: [ create_runner, load_templates_files, load_template_metadata, update_template_examples ]
-    if: ${{ always() }}
-    runs-on: ubuntu-22.04
-    environment: ${{(inputs == null && 'uat') || inputs.environment }}
-    steps:
-      - name: Cleanup GitHub Runner
-        id: cleanup_github_runner
-        # from https://github.com/pagopa/eng-github-actions-iac-template/tree/main/azure/github-self-hosted-runner-azure-cleanup-action
-        uses: pagopa/eng-github-actions-iac-template/azure/github-self-hosted-runner-azure-cleanup-action@0ee2f58fd46d10ac7f00bce4304b98db3dbdbe9a
-        with:
-          client_id: ${{ secrets.CLIENT_ID }}
-          tenant_id: ${{ secrets.TENANT_ID }}
-          subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
-          resource_group_name: ${{ vars.CONTAINER_APP_ENVIRONMENT_RESOURCE_GROUP_NAME }}
-          runner_name: ${{ needs.create_runner.outputs.runner_name }}
-          pat_token: ${{ secrets.BOT_TOKEN_GITHUB }}
-
