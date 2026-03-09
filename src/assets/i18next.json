@@ -298,8 +298,8 @@
         },
         "abroad": {
           "physical": {
-            "title": "Paga sul territorio",
-            "description": "{{customLocation}}presso Banche e Sportelli ATM, negli Uffici Postali e Punti Postali, nei Bar, Edicole, Ricevitorie, Supermercati, Tabaccherie e altri Esercenti Convenzionati in Italia."
+            "title": "In ihrer umgebung",
+            "description": "bei Banken und ATM-Schaltern, in Postämtern und Poststellen, Tabaktrafiken und anderen angebundenen Dienstleistern in Italien."
           },
           "online": {
             "title": "Paga online",
