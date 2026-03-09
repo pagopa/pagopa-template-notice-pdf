@@ -223,6 +223,17 @@
             "instalments": "Scan the <strong>QR Code</strong> with your payment app or use the data printed above."
           }
         }
+      },
+      "postePayingInSlip": {
+        "title": "Postal payment slip",
+        "description": "Postal payment slip payable at all Post Offices and through the physical or digital channels of Poste Italiane and the Payee.",
+        "accountNumber": "on account no.",
+        "owner": "Account holder",
+        "recipient": "Recipient",
+        "paymentDescription": "Payment description",
+        "refNumber": "Notice code",
+        "type": "Type",
+        "payeeTaxCode": "Payee tax code"
       }
     }
   },
@@ -450,6 +461,17 @@
             "instalments": "Encadrez le <strong>code QR</strong> avec votre application de paiement ou utilisez les données ci-dessus."
           }
         }
+      },
+      "postePayingInSlip": {
+        "title": "Bulletin de versement postal",
+        "description": "Bulletin de versement postal payable dans tous les bureaux de poste et sur les canaux physiques ou numériques de Poste Italiane et de l'organisme créancier.",
+        "accountNumber": "sur le C/C n°",
+        "owner": "Titulaire du compte",
+        "recipient": "Destinataire",
+        "paymentDescription": "Objet du paiement",
+        "refNumber": "Code Avis",
+        "type": "Type",
+        "payeeTaxCode": "Code Organisme fiscal"
       }
     }
   },
@@ -558,6 +580,17 @@
             "instalments": "Skenirajte <strong>QR-kodo</strong> z aplikacijo za plačila ali uporabite podatke, navedene nad njo."
           }
         }
+      },
+      "postePayingInSlip": {
+        "title": "Poštna položnica",
+        "description": "Poštna položnica, plačljiva na vseh poštnih uradih ter prek fizičnih ali digitalnih kanalov Poste Italiane in plačnika.",
+        "accountNumber": "na TRR št.",
+        "owner": "Imetnik računa",
+        "recipient": "Prejemnik",
+        "paymentDescription": "Predmet plačila",
+        "refNumber": "Št. obvestila",
+        "type": "Vrsta",
+        "payeeTaxCode": "Davčna številka plačnika"
       }
     }
   }
