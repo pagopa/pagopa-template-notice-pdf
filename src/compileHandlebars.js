@@ -8,7 +8,7 @@ const HandlebarsI18n = require("handlebars-i18n");
 
 const i18next = require("i18next");
 i18next.init({
-    resources: JSON.parse(readFileSync('./assets/i18next.json', 'utf8')),
+    resources: JSON.parse(readFileSync('./locales/i18next.json', 'utf8')),
     lng: "it"
 });
 
