@@ -7,7 +7,8 @@ on:
     paths:
       - "src/helpers/**"
       - "src/partials/**"
-        
+      - "src/assets/i18next.json"
+
   workflow_dispatch:
 
 permissions:
@@ -38,6 +39,10 @@ jobs:
       - name: Sync helpers
         run: |
           cp source/src/helpers/*.js target/node/pdf-generate/helpers/notices/
+
+      - name: Sync i18next file
+        run: |
+          cp source/src/assets/i18next.json target/node/pdf-generate/assets/i18next.json
 
       - name: Check for changes
         id: check_changes
