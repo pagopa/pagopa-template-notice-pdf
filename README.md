@@ -47,7 +47,8 @@ Payment notices can be generated in multiple languages. You can configure `i18n`
 "metadata": {
   "language": "it",
   "secondaryLanguage": "en",
-  "trueBilingualism": true
+  "trueBilingualism": true,
+  "abroad": false
 }
 ```
 
@@ -90,9 +91,22 @@ If you enable the `trueBilingualism` field, the notice will be generated in both
 }
 ```
 
+### Abroad payments
+
+If you enable the `abroad` field, the "Where to pay" section will be updated to show only the available payment options from abroad. For example, the following configuration will generate a notice with abroad payment:
+
+```json
+"metadata": {
+  "language": "it",
+  "secondaryLanguage": "de",
+  "trueBilingualism": true,
+  "abroad": true
+}
+```
+
 ### Supported languages
 
-You can find all the locale strings in the [`i18next.json`](./src/assets/i18next.json) file. The currently supported languages are:
+You can find all the locale strings in the [`i18next.json`](src/locales/i18next.json) file. The currently supported languages are:
 
 - Italian (`it`)
 - German (`de`)

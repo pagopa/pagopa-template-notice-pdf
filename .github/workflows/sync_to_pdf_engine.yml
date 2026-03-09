@@ -7,7 +7,7 @@ on:
     paths:
       - "src/helpers/**"
       - "src/partials/**"
-      - "src/assets/i18next.json"
+      - "src/locales/i18next.json"
 
   workflow_dispatch:
 
@@ -42,7 +42,7 @@ jobs:
 
       - name: Sync i18next file
         run: |
-          cp source/src/assets/i18next.json target/node/pdf-generate/assets/i18next.json
+          cp source/src/locales/i18next.json target/node/pdf-generate/locales/notices/i18next.json
 
       - name: Check for changes
         id: check_changes
