@@ -1098,7 +1098,7 @@ dl {
 
 /* Make the entire layout denser to fit the content to the page, especially on
 infraction notices */
-html.bilingual {
+html.dense {
     --h4-fsize: 9pt;
     --separator-title-height: 6.5mm;
     --section-margin: 2mm;
@@ -1107,12 +1107,14 @@ html.bilingual {
     --size-qrcode: 20mm;
 }
 
-html.true-bilingualism {
+html.compact {
     --h4-fsize: 9pt;
+    --separator-title-height: 6.5mm;
     --section-margin: 2.5mm;
     --separator-bottom-margin: 4mm;
     --data-grid-gap-medium: 5mm;
     --size-entity-logo: 25mm;
+    --size-qrcode: 20mm;
 }
 
 .bilingualTextBoxHorizontal {
