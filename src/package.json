@@ -21,7 +21,7 @@
     "puppeteer": "^23.4.0",
     "qrcode-svg": "^1.1.0",
     "uuid": "^9.0.1",
-    "handlebars-i18n": "1.6.4"
+    "handlebars-i18n": "^1.10.5"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
@@ -29,6 +29,6 @@
     "stylelint-prettier": "^5.0.0"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }
