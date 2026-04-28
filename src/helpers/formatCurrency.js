@@ -1,4 +1,5 @@
-function formatCurrency(amount, options) {
+function formatCurrency(amountInCents, options) {
+    const amount = amountInCents / 100;
     const metadata = options.data.root.metadata;
     const isTrueBilingual = metadata?.trueBilingualism;
     const language = metadata?.language ?? "it";
