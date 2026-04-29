@@ -191,22 +191,28 @@ You can find all the locale strings in the [`i18next.json`](src/locales/i18next.
 <table>
   <tr>
     <th rowspan="2">Total instalments³</th>
-    <th colspan="3">№ instalments</th>
+    <th colspan="5">№ instalments</th>
   </tr>
   <tr>
     <th>2ⁿᵈ page</th>
     <th>3ʳᵈ page</th>
     <th>4ᵗʰ page</th>
+    <th>5ᵗʰ page</th>
+    <th>6ᵗʰ page</th>
   </tr>
   <tr>
     <td>2</td>
     <td>2</td>
     <td>-</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
     <td>3</td>
-    <td>3</td>
+    <td>2</td>
+    <td>1</td>
+    <td>-</td>
     <td>-</td>
     <td>-</td>
   </tr>
@@ -215,41 +221,53 @@ You can find all the locale strings in the [`i18next.json`](src/locales/i18next.
     <td>2</td>
     <td>2</td>
     <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
   <tr>
     <td>5</td>
     <td>2</td>
-    <td>3</td>
+    <td>2</td>
+    <td>1</td>
+    <td>-</td>
     <td>-</td>
   </tr>
   <tr>
     <td>6</td>
-    <td>3</td>
-    <td>3</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>-</td>
     <td>-</td>
   </tr>
   <tr>
     <td>7</td>
-    <td>3</td>
     <td>2</td>
     <td>2</td>
+    <td>2</td>
+    <td>1</td>
+    <td>-</td>
   </tr>
   <tr>
     <td>8</td>
     <td>2</td>
-    <td>3</td>
-    <td>3</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>-</td>
   </tr>
   <tr>
     <td>9</td>
-    <td>3</td>
-    <td>3</td>
-    <td>3</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1</td>
   </tr>
 </table>
 
 ¹ `getPaginationDataPoste` function in the `paginator.js` helper file translates this breakdown into code <br />
-² The first page is omitted because it always shows only the single instalment. Other pages can show **a maximum of three instalments per page**, as payment slips take up space<br />
+² The first page is omitted because it always shows only the single instalment. Other pages can show **a maximum of two instalments per page**, as payment slips take up space<br />
 ³ There's no current template that supports the case with more than nine instalments <br />
 
 ---
