@@ -68,13 +68,11 @@
                 payee=../../../payee
                 tempPath=../../../tempPath
                 instalments=(row)
-                columns=(arrayLength row)
+                columns=2
                 start=(getRowIndex @index pageNumber (paginator @../.. true))
-                compact=(equals (arrayLength row) 3)
                 }}
                 {{!-- bollettinoPostale --}}
                 {{> paymentInstalmentsPoste
-                compact=(equals (arrayLength row) 3)
                 debtor=../../../debtor
                 notice=../../../notice
                 payee=../../../payee
