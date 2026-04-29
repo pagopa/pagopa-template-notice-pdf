@@ -8,13 +8,13 @@
     /* Used for inner sections, as multiple instalments */
     --inner-margin: 7mm;
     /* Fonts */
-    --font-monospaced: 'Roboto Mono', monospace;
+    --font-monospaced: "Roboto Mono", monospace;
     /* Colors */
     --debug-color: lightpink;
     --color-black: #0000000;
-    --color-grey-dark: #7C7C7B;
-    --color-grey: #D9D9D9;
-    --color-grey-light: #ECECEC;
+    --color-grey-dark: #7c7c7b;
+    --color-grey: #d9d9d9;
+    --color-grey-light: #ececec;
     /* Typographic styles */
     --h1-fsize: 16pt;
     --h2-fsize: 14pt;
@@ -57,35 +57,35 @@
 /* Fonts */
 @font-face {
     font-family: "Titillium Sans Pro";
-    src: url(fonts/TitilliumSansPro/TitilliumSansPro-Regular.otf) format('opentype');
+    src: url(fonts/TitilliumSansPro/TitilliumSansPro-Regular.otf) format("opentype");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Titillium Sans Pro";
-    src: url(fonts/TitilliumSansPro/TitilliumSansPro-Semibold.otf) format('opentype');
+    src: url(fonts/TitilliumSansPro/TitilliumSansPro-Semibold.otf) format("opentype");
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Titillium Sans Pro";
-    src: url(fonts/TitilliumSansPro/TitilliumSansPro-Bold.otf) format('opentype');
+    src: url(fonts/TitilliumSansPro/TitilliumSansPro-Bold.otf) format("opentype");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Roboto Mono";
-    src: url(fonts/RobotoMono/RobotoMono-Regular.ttf) format('truetype');
+    src: url(fonts/RobotoMono/RobotoMono-Regular.ttf) format("truetype");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Roboto Mono";
-    src: url(fonts/RobotoMono/RobotoMono-Bold.ttf) format('truetype');
+    src: url(fonts/RobotoMono/RobotoMono-Bold.ttf) format("truetype");
     font-weight: 700;
     font-style: normal;
 }
@@ -199,7 +199,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Titillium Sans Pro', sans-serif;
+    font-family: "Titillium Sans Pro", sans-serif;
     -webkit-print-color-adjust: exact;
 }
 
@@ -225,7 +225,6 @@ body {
 .main-wrapper {
     display: grid;
 }
-
 
 /* Common */
 .notice-title {
@@ -294,7 +293,7 @@ body {
 }
 
 dl {
-    margin: 0
+    margin: 0;
 }
 
 .mt-small {
@@ -385,7 +384,6 @@ dl {
 .data-key-value-inline,
 .data-key-value-monospaced,
 .data-key-value-inline-monospaced {
-
     /* Avoid extra margin when using languageHandler */
     & p {
         margin: 0;
@@ -462,7 +460,8 @@ dl {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
-    grid-template-areas: "payee-title debtor-title"
+    grid-template-areas:
+        "payee-title debtor-title"
         "payee-name debtor-name"
         "payee-sector debtor-address"
         "payee-info debtor-address";
@@ -527,7 +526,8 @@ dl {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
-    grid-template-areas: "payment-amount-title payment-methods-title"
+    grid-template-areas:
+        "payment-amount-title payment-methods-title"
         "payment-amount-block payment-methods-block";
     column-gap: var(--separator-gutter);
     row-gap: var(--separator-bottom-margin);
@@ -575,7 +575,8 @@ dl {
     display: grid;
     align-content: flex-start;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "amount amount date"
+    grid-template-areas:
+        "amount amount date"
         "info info info";
     row-gap: var(--separator-margin-small);
     column-gap: var(--payment-grid-col-gap);
@@ -594,7 +595,8 @@ dl {
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "amount-1 amount-2"
+    grid-template-areas:
+        "amount-1 amount-2"
         "info info";
     row-gap: var(--separator-margin-small);
     column-gap: var(--payment-grid-col-gap);
@@ -803,7 +805,8 @@ dl {
 
     .payment-details-and-datamatrix {
         display: grid;
-        grid-template-areas: "first-block data-matrix"
+        grid-template-areas:
+            "first-block data-matrix"
             "second-block data-matrix";
         grid-template-columns: 1fr auto;
         gap: var(--data-grid-gap-medium);
@@ -1115,6 +1118,10 @@ html.compact {
     --data-grid-gap-medium: 5mm;
     --size-entity-logo: 25mm;
     --size-qrcode: 20mm;
+}
+
+html.single-instalment-bilingual {
+    --h4-fsize: 9pt;
 }
 
 .bilingualTextBoxHorizontal {
