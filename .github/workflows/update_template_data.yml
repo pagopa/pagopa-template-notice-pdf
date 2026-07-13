@@ -129,6 +129,7 @@ jobs:
             libdrm2
 
       - name: Install Node.js dependencies
+        working-directory: ./src
         run: yarn install --frozen-lockfile
 
       - name: Run Generate Template Examples Script
