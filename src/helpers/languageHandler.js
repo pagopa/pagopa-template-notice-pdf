@@ -28,7 +28,7 @@ function languageHandler(i18n_key, options) {
   /* If there are no hash parameters, only the main localised text
   will be returned. This could be used to render
   the document title, for example */
-  if (!options.hash) {
+  if (Object.keys(options.hash).length === 0) {
     return mainLocalizedText;
   }
 

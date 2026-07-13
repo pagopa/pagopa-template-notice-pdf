@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{#if metadata.language}}{{metadata.language}} {{metadata.secondaryLanguage}}{{else}}'it'{{/if}}" {{#if
-    metadata.secondaryLanguage}}class="compact" {{/if}} xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
+<html lang="{{#if metadata.language}}{{metadata.language}}{{else}}it{{/if}}" {{#if
+    metadata.secondaryLanguage}}class="compact" {{/if}} xmlns="http://www.w3.org/1999/xhtml" data-version="0.0.20">
 
 <head>
-    <title>Avviso di pagamento</title>
+    <title>{{languageHandler 'heading.title'}}</title>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css" />
 </head>
 
 <body>
@@ -58,7 +58,7 @@
             payee=../../payee
             }}
 
-            <main class="main-wrapper">
+            <div class="main-wrapper">
                 {{#each (navigateMatrix (paginator @.. true) pageNumber ) as | row | }}
                 {{!-- for each Row in the page create the pagopa QR and the bollettinoPostale --}}
                 {{!-- pagopa QR --}}
@@ -83,7 +83,7 @@
 
                 {{/each}}
 
-            </main>
+            </div>
         </div>
     </div>
 
