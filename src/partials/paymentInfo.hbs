@@ -10,7 +10,7 @@
     </div>
 
     <div class="payment-amount-block start-grid-cell">
-        <dl class="amount">
+        <dl class="amount" role="group">
             <dt>
                 {{{languageHandler 'paymentInfo.amount.default'
                 classPrimaryLang='body strong'
@@ -20,7 +20,7 @@
         </dl>
 
         {{#if notice.expiryDate}}
-        <dl class="expiry-date">
+        <dl class="expiry-date" role="group">
             <dt>
                 {{{languageHandler 'paymentInfo.expiryDate.default'
                 classPrimaryLang='body strong'

@@ -4,12 +4,12 @@
             <img class="payment-qrcode" src="{{genQrCode qrCode tempPath}}" alt="QR PaymentCode" />
         </div>
 
-        <dl class="data-key-value-monospaced tight">
+        <dl class="data-key-value-monospaced tight" role="group">
             <dt>Euro</dt>
             <dd>{{amount}}</dd>
         </dl>
 
-        <dl class="data-key-value-monospaced tight">
+        <dl class="data-key-value-monospaced tight" role="group">
             <dt>
                 {{{languageHandler "paymentInfo.expiryDate.default" classSecondaryLang="muted"}}}
             </dt>
@@ -17,18 +17,18 @@
         </dl>
 
         <div class="grid-cell-span-2">
-            <dl class="data-key-value-monospaced tight">
+            <dl class="data-key-value-monospaced tight" role="group">
                 <dt>{{{languageHandler "paymentData.refNumber" forceSecondaryLang="true"}}}</dt>
                 <dd>{{splitAndSpace refNumber}}</dd>
             </dl>
         </div>
 
         <div class="grid-cell-span-2 instalment-row-data">
-            <dl class="data-key-value-monospaced tight">
+            <dl class="data-key-value-monospaced tight" role="group">
                 <dt>{{{languageHandler "paymentData.payeeTaxCode" forceSecondaryLang="true"}}}</dt>
                 <dd>{{payee.taxCode}}</dd>
             </dl>
-            <dl class="data-key-value-monospaced tight">
+            <dl class="data-key-value-monospaced tight" role="group">
                 <dt>{{{languageHandler "paymentData.cbillCode" forceSecondaryLang="true"}}}</dt>
                 <dd>{{notice.cbillCode}}</dd>
             </dl>
@@ -37,11 +37,11 @@
     </div>
 
     <div class="instalment-details-data-2nd-block">
-        <dl class="data-key-value">
+        <dl class="data-key-value" role="group">
             <dt>{{{languageHandler "paymentData.description" forceSecondaryLang="true"}}}</dt>
             <dd>{{notice.subject}}</dd>
         </dl>
-        <dl class="data-key-value">
+        <dl class="data-key-value" role="group">
             <dt>{{{languageHandler "paymentData.payee" forceSecondaryLang="true"}}}</dt>
             <dd>{{payee.name}}</dd>
         </dl>
