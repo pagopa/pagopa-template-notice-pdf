@@ -32,6 +32,7 @@
       </div>
       {{#with this}}
       {{> paymentQRColDense
+      instalmentNumber=(add @index 4)
       debtor=../debtor
       notice=../notice
       payee=../payee

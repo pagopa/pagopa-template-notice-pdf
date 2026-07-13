@@ -14,7 +14,7 @@
       <p class="body">Inquadra il <strong>codice QR</strong> con la tua app di pagamento o usa i dati
         sotto.</p>
       <img class="payment-qrcode thermal-payment-qrcode" src="{{genQrCode this.qrCode this.tempPath}}"
-        alt="QR PaymentCode" />
+        alt="{{__ 'paymentData.qrCode' lng=@root.metadata.language}}, {{__ 'paymentData.type.withoutExpiryDate' lng=@root.metadata.language}}" />
       <div class="thermal-payment-details-data">
 
         <dl class="thermal-data-key-value-monospaced" role="group">

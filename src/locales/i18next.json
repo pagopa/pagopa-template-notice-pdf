@@ -98,6 +98,7 @@
           "withExpiryDate": "Rata unica entro il",
           "withoutExpiryDate": "Rata unica"
         },
+        "qrCode": "Codice QR",
         "instructions": {
           "qrCode": {
             "singlePayment": "Inquadra il <strong>codice QR</strong> con la tua app di pagamento o usa i dati accanto.",
@@ -217,6 +218,7 @@
           "withExpiryDate": "Full amount by",
           "withoutExpiryDate": "Full amount"
         },
+        "qrCode": "QR Code",
         "instructions": {
           "qrCode": {
             "singlePayment": "Scan the <strong>QR Code</strong> with your payment app or use the data printed here.",
@@ -336,6 +338,7 @@
           "withExpiryDate": "Einzige rate fällig am",
           "withoutExpiryDate": "Einzige rate"
         },
+        "qrCode": "QR-Code",
         "instructions": {
           "qrCode": {
             "singlePayment": "Den <strong>QR-Code</strong> mit der Zahlungs-App scannen oder folgende Daten verwenden.",
@@ -455,6 +458,7 @@
           "withExpiryDate": "Versement unique avant le",
           "withoutExpiryDate": "Versement unique"
         },
+        "qrCode": "Code QR",
         "instructions": {
           "qrCode": {
             "singlePayment": "Encadrez le <strong>code QR</strong> avec votre application de paiement ou utilisez les données ci-contre.",
@@ -574,6 +578,7 @@
           "withExpiryDate": "Enkratni obrok do",
           "withoutExpiryDate": "Enkratni obrok"
         },
+        "qrCode": "QR-koda",
         "instructions": {
           "qrCode": {
             "singlePayment": "Skenirajte <strong>QR-kodo</strong> z aplikacijo za plačila ali uporabite podatke, navedene ob kodi.",

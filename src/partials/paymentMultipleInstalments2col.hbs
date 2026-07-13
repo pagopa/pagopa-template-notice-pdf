@@ -8,6 +8,7 @@
     </div>
     {{#with this}}
     {{> paymentQRCol
+    instalmentNumber=(add @index 1)
     debtor=../debtor
     notice=../notice
     payee=../payee

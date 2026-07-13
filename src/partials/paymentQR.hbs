@@ -1,6 +1,9 @@
 <div class="payment-details unique-grid-cell">
     <div class="qrcode-area">
-        <img class="payment-qrcode" src="{{genQrCode this.qrCode this.tempPath}}" alt="QR PaymentCode" />
+        {{!-- `title` is set by the infraction notice, which renders two QR codes
+        (discounted / reduced amount) that must not share the same alt text --}}
+        <img class="payment-qrcode" src="{{genQrCode this.qrCode this.tempPath}}"
+            alt="{{__ 'paymentData.qrCode' lng=@root.metadata.language}}, {{#if title}}{{__ title lng=@root.metadata.language}}{{else}}{{__ 'paymentData.type.withoutExpiryDate' lng=@root.metadata.language}}{{/if}}" />
         {{{languageHandler
         "paymentData.instructions.qrCode.singlePayment"
         classContainer="mt-small"
