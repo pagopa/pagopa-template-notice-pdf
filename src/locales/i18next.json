@@ -77,10 +77,10 @@
           "online": {
             "title": "Paga online",
             "description": {
-              "default": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci.",
-              "websiteOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure visita il sito dell'ente.",
-              "appOnly": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app dell'ente.",
-              "websiteAndApp": "Vai su <strong>pagopa.gov.it</strong> e scegli il canale che preferisci, oppure usa l'app o il sito dell'ente."
+              "default": "Vai su <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> e scegli il canale che preferisci.",
+              "websiteOnly": "Vai su <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> e scegli il canale che preferisci, oppure visita il sito dell'ente.",
+              "appOnly": "Vai su <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> e scegli il canale che preferisci, oppure usa l'app dell'ente.",
+              "websiteAndApp": "Vai su <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> e scegli il canale che preferisci, oppure usa l'app o il sito dell'ente."
             }
           }
         }
@@ -196,10 +196,10 @@
           "online": {
             "title": "Pay online",
             "description": {
-              "default": "Go to <strong>pagopa.gov.it</strong> and choose the channel you prefer.",
-              "websiteOnly": "Go to <strong>pagopa.gov.it</strong> and choose the channel you prefer, or visit the payee's website.",
-              "appOnly": "Go to <strong>pagopa.gov.it</strong> and choose the channel you prefer, or use the payee's app.",
-              "websiteAndApp": "Go to <strong>pagopa.gov.it</strong> and choose the channel you prefer, or use the payee's app or website."
+              "default": "Go to <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> and choose the channel you prefer.",
+              "websiteOnly": "Go to <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> and choose the channel you prefer, or visit the payee's website.",
+              "appOnly": "Go to <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> and choose the channel you prefer, or use the payee's app.",
+              "websiteAndApp": "Go to <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> and choose the channel you prefer, or use the payee's app or website."
             }
           }
         }
@@ -315,10 +315,10 @@
           "online": {
             "title": "Online bezahlen",
             "description": {
-              "default": "Besuchen Sie <strong>pagopa.gov.it</strong> und wählen Sie den bevorzugten Kanal.",
-              "websiteOnly": "Besuchen Sie <strong>pagopa.gov.it</strong> und wählen Sie den bevorzugten Kanal, oder besuchen Sie die Webseite der Körperschaft.",
-              "appOnly": "Besuchen Sie <strong>pagopa.gov.it</strong> und wählen Sie den bevorzugten Kanal, oder nutzen Sie die App der Körperschaft.",
-              "websiteAndApp": "Besuchen Sie <strong>pagopa.gov.it</strong> und wählen Sie den bevorzugten Kanal, oder nutzen Sie die App oder die Webseite der Körperschaft."
+              "default": "Besuchen Sie <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> und wählen Sie den bevorzugten Kanal.",
+              "websiteOnly": "Besuchen Sie <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> und wählen Sie den bevorzugten Kanal, oder besuchen Sie die Webseite der Körperschaft.",
+              "appOnly": "Besuchen Sie <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> und wählen Sie den bevorzugten Kanal, oder nutzen Sie die App der Körperschaft.",
+              "websiteAndApp": "Besuchen Sie <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> und wählen Sie den bevorzugten Kanal, oder nutzen Sie die App oder die Webseite der Körperschaft."
             }
           }
         }
@@ -434,10 +434,10 @@
           "online": {
             "title": "Payez en ligne",
             "description": {
-              "default": "Rendez-vous sur <strong>pagopa.gov.it</strong> et choisissez le canal que vous préférez.",
-              "websiteOnly": "Rendez-vous sur <strong>pagopa.gov.it</strong> et choisissez le canal que vous préférez, ou visitez le site de l'organisme.",
-              "appOnly": "Rendez-vous sur <strong>pagopa.gov.it</strong> et choisissez le canal que vous préférez, ou utilisez l'application de l'organisme.",
-              "websiteAndApp": "Rendez-vous sur <strong>pagopa.gov.it</strong> et choisissez le canal que vous préférez, ou utilisez l'application ou le site de l'organisme."
+              "default": "Rendez-vous sur <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> et choisissez le canal que vous préférez.",
+              "websiteOnly": "Rendez-vous sur <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> et choisissez le canal que vous préférez, ou visitez le site de l'organisme.",
+              "appOnly": "Rendez-vous sur <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> et choisissez le canal que vous préférez, ou utilisez l'application de l'organisme.",
+              "websiteAndApp": "Rendez-vous sur <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> et choisissez le canal que vous préférez, ou utilisez l'application ou le site de l'organisme."
             }
           }
         }
@@ -553,10 +553,10 @@
           "online": {
             "title": "Plačajte prek spleta",
             "description": {
-              "default": "Obiščite <strong>pagopa.gov.it</strong> in izberite želeni kanal.",
-              "websiteOnly": "Obiščite <strong>pagopa.gov.it</strong> in izberite želeni kanal ali obiščite spletno stran plačnika.",
-              "appOnly": "Obiščite <strong>pagopa.gov.it</strong> in izberite želeni kanal ali uporabite aplikacijo plačnika.",
-              "websiteAndApp": "Obiščite <strong>pagopa.gov.it</strong> in izberite želeni kanal ali uporabite aplikacijo ali spletno stran plačnika."
+              "default": "Obiščite <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> in izberite želeni kanal.",
+              "websiteOnly": "Obiščite <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> in izberite želeni kanal ali obiščite spletno stran plačnika.",
+              "appOnly": "Obiščite <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> in izberite želeni kanal ali uporabite aplikacijo plačnika.",
+              "websiteAndApp": "Obiščite <a class=\"payment-link\" href=\"https://www.pagopa.gov.it\">pagopa.gov.it</a> in izberite želeni kanal ali uporabite aplikacijo ali spletno stran plačnika."
             }
           }
         }
