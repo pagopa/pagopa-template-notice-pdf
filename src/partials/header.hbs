@@ -7,7 +7,13 @@
             classBilingual='h4 notice-title'}}}
         </div>
         <div class="notice-subject">
+            {{#if isRunningHeader}}
+            {{!-- Continuation pages repeat the subject visually, but the document
+            must expose a single <h1> or the heading outline skips a level --}}
+            <p class="h1">{{notice.subject}}</p>
+            {{else}}
             <h1 class="h1">{{notice.subject}}</h1>
+            {{/if}}
         </div>
     </section>
     {{#if payee.logo}}

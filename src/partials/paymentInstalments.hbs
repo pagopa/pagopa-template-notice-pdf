@@ -11,7 +11,7 @@ compact: true for dense (use it with bollettinoPostale in the same page)
     {{#each instalments}}
     <div>
         <div class="inner-separator">
-            {{{languageHandler "paymentData.instalmentNumber" classPrimaryLang="h4"
+            {{{languageHandler "paymentData.instalmentNumber" tag="h3" classPrimaryLang="h4"
             classSecondaryLang="small-caps-title-bilingual" number=(add (add @index 1) ../start)}}}
         </div>
         {{#with this}}
