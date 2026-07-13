@@ -1,3 +1,10 @@
+{{!-- Inputs:
+
+codeLabel: i18n key naming what this slip pays (single amount, instalment, infraction amount)
+instalmentNumber: interpolated into `codeLabel` when it is the instalment one
+
+ --}}
+
 <div class="payment-details unique-grid-cell">
     <div class="poste-italiane-area">
         <img class="logo-poste-italiane" src="assets/poste/poste-italiane.svg" alt="Poste Italiane" />
@@ -110,7 +117,8 @@
             </div>
 
             <div class="payment-data-matrix">
-                <img src="{{genDataMatrix this.posteDataMatrix this.tempPath}}" alt="Poste DataMatrix" />
+                <img src="{{genDataMatrix this.posteDataMatrix this.tempPath}}"
+                    alt="{{__ 'paymentData.dataMatrix' lng=@root.metadata.language}}, {{__ codeLabel number=instalmentNumber lng=@root.metadata.language}}" />
 
                 {{!-- We can't use a more elegant solution because we have
                 to deal with printing issues by using a mask. --}}

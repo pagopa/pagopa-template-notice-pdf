@@ -99,6 +99,7 @@
           "withoutExpiryDate": "Rata unica"
         },
         "qrCode": "Codice QR",
+        "dataMatrix": "Codice DataMatrix",
         "instructions": {
           "qrCode": {
             "singlePayment": "Inquadra il <strong>codice QR</strong> con la tua app di pagamento o usa i dati accanto.",
@@ -219,6 +220,7 @@
           "withoutExpiryDate": "Full amount"
         },
         "qrCode": "QR Code",
+        "dataMatrix": "DataMatrix Code",
         "instructions": {
           "qrCode": {
             "singlePayment": "Scan the <strong>QR Code</strong> with your payment app or use the data printed here.",
@@ -339,6 +341,7 @@
           "withoutExpiryDate": "Einzige rate"
         },
         "qrCode": "QR-Code",
+        "dataMatrix": "DataMatrix-Code",
         "instructions": {
           "qrCode": {
             "singlePayment": "Den <strong>QR-Code</strong> mit der Zahlungs-App scannen oder folgende Daten verwenden.",
@@ -459,6 +462,7 @@
           "withoutExpiryDate": "Versement unique"
         },
         "qrCode": "Code QR",
+        "dataMatrix": "Code DataMatrix",
         "instructions": {
           "qrCode": {
             "singlePayment": "Encadrez le <strong>code QR</strong> avec votre application de paiement ou utilisez les données ci-contre.",
@@ -579,6 +583,7 @@
           "withoutExpiryDate": "Enkratni obrok"
         },
         "qrCode": "QR-koda",
+        "dataMatrix": "Koda DataMatrix",
         "instructions": {
           "qrCode": {
             "singlePayment": "Skenirajte <strong>QR-kodo</strong> z aplikacijo za plačila ali uporabite podatke, navedene ob kodi.",
