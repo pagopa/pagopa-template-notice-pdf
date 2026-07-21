@@ -6,17 +6,23 @@
 
   <div class="payment-data-compact unique-grid-cell">
     <div class="payment-data-compact-row">
-      <dl class="data-key-value" role="group">
-        <dt>{{{languageHandler "paymentData.recipient" classSecondaryLang="muted" align="vertical"}}}</dt>
-        <dd class="forcedCapitalCase">{{lowercase debtor.fullName}}</dd>
+      <dl class="data-key-value" role="list">
+          <div class="kv-item" role="listitem">
+            <dt>{{{languageHandler "paymentData.recipient" classSecondaryLang="muted" align="vertical"}}}</dt>
+            <dd class="forcedCapitalCase">{{lowercase debtor.fullName}}</dd>
+          </div>
       </dl>
-      <dl class="data-key-value" role="group">
-        <dt>{{{languageHandler "paymentData.payee" classSecondaryLang="muted" align="vertical"}}}</dt>
-        <dd>{{payee.name}}</dd>
+      <dl class="data-key-value" role="list">
+          <div class="kv-item" role="listitem">
+            <dt>{{{languageHandler "paymentData.payee" classSecondaryLang="muted" align="vertical"}}}</dt>
+            <dd>{{payee.name}}</dd>
+          </div>
       </dl>
-      <dl class="data-key-value" role="group">
-        <dt>{{{languageHandler "paymentData.description" classSecondaryLang="muted" align="vertical"}}}</dt>
-        <dd>{{notice.subject}}</dd>
+      <dl class="data-key-value" role="list">
+          <div class="kv-item" role="listitem">
+            <dt>{{{languageHandler "paymentData.description" classSecondaryLang="muted" align="vertical"}}}</dt>
+            <dd>{{notice.subject}}</dd>
+          </div>
       </dl>
     </div>
   </div>

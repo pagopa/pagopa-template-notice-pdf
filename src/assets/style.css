@@ -159,9 +159,16 @@
     font-weight: var(--weight-regular);
 }
 
+.kv-item {
+    /* Groups each <dt>/<dd> pair into one PDF /LI, so a screen reader announces the
+    term and its value as a single item: Chromium maps <dl>/<dt>/<dd> to /NonStruct
+    (no semantics) but honours role="list"/"listitem".
+    display:contents keeps the pair as direct flex children of the <dl>, so the
+    wrapper adds semantics without affecting layout. */
+    display: contents;
+}
+
 .payment-link {
-    /* Clickable in the PDF, but keeps the bold-black look of the <strong> it
-    replaced: a printed notice must not read as a blue underlined web link */
     font-weight: var(--weight-bold);
     color: inherit;
     text-decoration: none;

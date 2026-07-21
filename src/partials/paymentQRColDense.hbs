@@ -4,31 +4,41 @@
             <img class="payment-qrcode" src="{{genQrCode qrCode tempPath}}" alt="{{__ 'paymentData.qrCode' lng=@root.metadata.language}}, {{__ 'paymentData.instalmentNumber' number=instalmentNumber lng=@root.metadata.language}}" />
         </div>
 
-        <dl class="data-key-value-monospaced tight" role="group">
-            <dt>Euro</dt>
-            <dd>{{amount}}</dd>
+        <dl class="data-key-value-monospaced tight" role="list">
+            <div class="kv-item" role="listitem">
+                <dt>Euro</dt>
+                <dd>{{amount}}</dd>
+            </div>
         </dl>
 
-        <dl class="data-key-value-monospaced tight" role="group">
-            <dt>{{{languageHandler "paymentInfo.expiryDate.default" classSecondaryLang="muted"}}}</dt>
-            <dd>{{expiryDate}}</dd>
+        <dl class="data-key-value-monospaced tight" role="list">
+            <div class="kv-item" role="listitem">
+                <dt>{{{languageHandler "paymentInfo.expiryDate.default" classSecondaryLang="muted"}}}</dt>
+                <dd>{{expiryDate}}</dd>
+            </div>
         </dl>
 
         <div class="grid-cell-span-2">
-            <dl class="data-key-value-monospaced tight" role="group">
-                <dt>{{{languageHandler "paymentData.refNumber" forceSecondaryLang="true"}}}</dt>
-                <dd>{{splitAndSpace refNumber}}</dd>
+            <dl class="data-key-value-monospaced tight" role="list">
+                <div class="kv-item" role="listitem">
+                    <dt>{{{languageHandler "paymentData.refNumber" forceSecondaryLang="true"}}}</dt>
+                    <dd>{{splitAndSpace refNumber}}</dd>
+                </div>
             </dl>
         </div>
 
         <div class="grid-cell-span-2 instalment-row-data">
-            <dl class="data-key-value-monospaced tight" role="group">
-                <dt>{{{languageHandler "paymentData.payeeTaxCode" forceSecondaryLang="true"}}}</dt>
-                <dd>{{payee.taxCode}}</dd>
+            <dl class="data-key-value-monospaced tight" role="list">
+                <div class="kv-item" role="listitem">
+                    <dt>{{{languageHandler "paymentData.payeeTaxCode" forceSecondaryLang="true"}}}</dt>
+                    <dd>{{payee.taxCode}}</dd>
+                </div>
             </dl>
-            <dl class="data-key-value-monospaced tight" role="group">
-                <dt>{{{languageHandler "paymentData.cbillCode" forceSecondaryLang="true"}}}</dt>
-                <dd>{{notice.cbillCode}}</dd>
+            <dl class="data-key-value-monospaced tight" role="list">
+                <div class="kv-item" role="listitem">
+                    <dt>{{{languageHandler "paymentData.cbillCode" forceSecondaryLang="true"}}}</dt>
+                    <dd>{{notice.cbillCode}}</dd>
+                </div>
             </dl>
         </div>
     </div>

@@ -6,23 +6,27 @@
 
     <div class="payment-amount-block-infraction start-grid-cell">
         <div class="amount-1">
-            <dl role="group">
-                <dt>
-                    {{{languageHandler 'infraction.amount.discounted' classPrimaryLang='body strong'
-                    classSecondaryLang='body muted' classContainer="dense" align="vertical"}}}
-                </dt>
-                <dd class="h1">{{notice.instalments.discounted.amount}} Euro</dd>
+            <dl role="list">
+                <div class="kv-item" role="listitem">
+                    <dt>
+                        {{{languageHandler 'infraction.amount.discounted' classPrimaryLang='body strong'
+                        classSecondaryLang='body muted' classContainer="dense" align="vertical"}}}
+                    </dt>
+                    <dd class="h1">{{notice.instalments.discounted.amount}} Euro</dd>
+                </div>
             </dl>
             {{{languageHandler 'infraction.expiryDate.extended.discounted' classPrimaryLang='body'
             classSecondaryLang='body muted' classContainer="amount-details" align="vertical"}}}
         </div>
         <div class="amount-2">
-            <dl role="group">
-                <dt>
-                    {{{languageHandler 'infraction.amount.reduced' classPrimaryLang='body strong'
-                    classSecondaryLang='body muted' classContainer="dense" align="vertical"}}}
-                </dt>
-                <dd class="h1">{{notice.instalments.reduced.amount}} Euro</dd>
+            <dl role="list">
+                <div class="kv-item" role="listitem">
+                    <dt>
+                        {{{languageHandler 'infraction.amount.reduced' classPrimaryLang='body strong'
+                        classSecondaryLang='body muted' classContainer="dense" align="vertical"}}}
+                    </dt>
+                    <dd class="h1">{{notice.instalments.reduced.amount}} Euro</dd>
+                </div>
             </dl>
             {{{languageHandler 'infraction.expiryDate.extended.reduced' classPrimaryLang='body'
             classSecondaryLang='body muted' classContainer="amount-details" align="vertical"}}}

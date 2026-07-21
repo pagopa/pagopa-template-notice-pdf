@@ -3,6 +3,7 @@
   "rules": {
     "no-trailing-whitespace": "off",
     "void-style": ["error", { "style": "selfclosing" }],
-    "heading-level": "error"
+    "heading-level": "error",
+    "prefer-native-element": ["error", { "exclude": ["list", "listitem"] }]
   }
 }
