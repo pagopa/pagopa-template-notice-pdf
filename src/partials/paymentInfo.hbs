@@ -10,27 +10,23 @@
     </div>
 
     <div class="payment-amount-block start-grid-cell">
-        <dl class="amount" role="list">
-            <div class="kv-item" role="listitem">
-                <dt>
-                    {{{languageHandler 'paymentInfo.amount.default'
-                    classPrimaryLang='body strong'
-                    classSecondaryLang='body muted'}}}
-                </dt>
-                <dd class="h1">{{notice.amount}} Euro</dd>
-            </div>
+        <dl class="amount" role="paragraph">
+            <dt>
+                {{{languageHandler 'paymentInfo.amount.default'
+                classPrimaryLang='body strong'
+                classSecondaryLang='body muted'}}}
+            </dt>
+            <dd class="h1">{{notice.amount}} Euro</dd>
         </dl>
 
         {{#if notice.expiryDate}}
-        <dl class="expiry-date" role="list">
-            <div class="kv-item" role="listitem">
-                <dt>
-                    {{{languageHandler 'paymentInfo.expiryDate.default'
-                    classPrimaryLang='body strong'
-                    classSecondaryLang='body muted'}}}
-                </dt>
-                <dd class="h1">{{notice.expiryDate}}</dd>
-            </div>
+        <dl class="expiry-date" role="paragraph">
+            <dt>
+                {{{languageHandler 'paymentInfo.expiryDate.default'
+                classPrimaryLang='body strong'
+                classSecondaryLang='body muted'}}}
+            </dt>
+            <dd class="h1">{{notice.expiryDate}}</dd>
         </dl>
         {{/if}}
 

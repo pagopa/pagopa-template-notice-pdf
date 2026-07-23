@@ -17,39 +17,29 @@
         alt="{{__ 'paymentData.qrCode' lng=@root.metadata.language}}, {{__ 'paymentData.type.withoutExpiryDate' lng=@root.metadata.language}}" />
       <div class="thermal-payment-details-data">
 
-        <dl class="thermal-data-key-value-monospaced" role="list">
-            <div class="kv-item" role="listitem">
-              <dt>Importo (Euro)</dt>
-              <dd>{{this.amount}}</dd>
-            </div>
+        <dl class="thermal-data-key-value-monospaced" role="paragraph">
+          <dt>Importo (Euro)</dt>
+          <dd>{{this.amount}}</dd>
         </dl>
 
-        <dl class="thermal-data-key-value-monospaced" role="list">
-            <div class="kv-item" role="listitem">
-              <dt>Cod. CBILL</dt>
-              <dd>{{this.cbillCode}}</dd>
-            </div>
+        <dl class="thermal-data-key-value-monospaced" role="paragraph">
+          <dt>Cod. CBILL</dt>
+          <dd>{{this.cbillCode}}</dd>
         </dl>
 
-        <dl class="thermal-data-key-value-monospaced" role="list">
-            <div class="kv-item" role="listitem">
-              <dt>Cod. Avviso</dt>
-              <dd>{{splitAndSpace this.refNumber}}</dd>
-            </div>
+        <dl class="thermal-data-key-value-monospaced" role="paragraph">
+          <dt>Cod. Avviso</dt>
+          <dd>{{splitAndSpace this.refNumber}}</dd>
         </dl>
 
-        <dl class="thermal-data-key-value-monospaced" role="list">
-            <div class="kv-item" role="listitem">
-              <dt>Cod. Fiscale Ente Creditore</dt>
-              <dd>{{payee.taxCode}}</dd>
-            </div>
+        <dl class="thermal-data-key-value-monospaced" role="paragraph">
+          <dt>Cod. Fiscale Ente Creditore</dt>
+          <dd>{{payee.taxCode}}</dd>
         </dl>
 
-        <dl class="thermal-data-key-value" role="list">
-            <div class="kv-item" role="listitem">
-              <dt>Ente creditore</dt>
-              <dd>{{payee.name}}</dd>
-            </div>
+        <dl class="thermal-data-key-value" role="paragraph">
+          <dt>Ente creditore</dt>
+          <dd>{{payee.name}}</dd>
         </dl>
 
       </div>

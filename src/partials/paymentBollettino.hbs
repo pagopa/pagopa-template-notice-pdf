@@ -22,23 +22,19 @@ instalmentNumber: interpolated into `codeLabel` when it is the instalment one
         <div class="account-number-and-amount">
             <div class="account-number">
                 <img class="euro-block" src="assets/poste/euro-block.svg" alt="Euro" />
-                <dl class="data-key-value-inline-monospaced" role="list">
-                    <div class="kv-item" role="listitem">
-                        <dt>
-                            {{{languageHandler 'postePayingInSlip.accountNumber'
-                            classSecondaryLang='muted'
-                            align="vertical"}}}
-                        </dt>
-                        <dd>{{notice.posteAccountNumber}}</dd>
-                    </div>
+                <dl class="data-key-value-inline-monospaced" role="paragraph">
+                    <dt>
+                        {{{languageHandler 'postePayingInSlip.accountNumber'
+                        classSecondaryLang='muted'
+                        align="vertical"}}}
+                    </dt>
+                    <dd>{{notice.posteAccountNumber}}</dd>
                 </dl>
             </div>
 
-            <dl class="data-key-value-inline-monospaced align-right valign-start" role="list">
-                <div class="kv-item" role="listitem">
-                    <dt>Euro</dt>
-                    <dd>{{this.amount}}</dd>
-                </div>
+            <dl class="data-key-value-inline-monospaced align-right valign-start" role="paragraph">
+                <dt>Euro</dt>
+                <dd>{{this.amount}}</dd>
             </dl>
         </div>
 
@@ -46,42 +42,36 @@ instalmentNumber: interpolated into `codeLabel` when it is the instalment one
 
             <div class="payment-details-data-1st-block">
 
-                <dl class="data-key-value-inline" role="list">
-                    <div class="kv-item" role="listitem">
-                        <dt>
-                            {{{languageHandler 'postePayingInSlip.owner'
-                            classSecondaryLang='muted'
-                            classContainer='dense'
-                            align="vertical"}}}
-                        </dt>
-                        <dd>{{payee.name}}</dd>
-                    </div>
+                <dl class="data-key-value-inline" role="paragraph">
+                    <dt>
+                        {{{languageHandler 'postePayingInSlip.owner'
+                        classSecondaryLang='muted'
+                        classContainer='dense'
+                        align="vertical"}}}
+                    </dt>
+                    <dd>{{payee.name}}</dd>
                 </dl>
 
 
-                <dl class="data-key-value-inline" role="list">
-                    <div class="kv-item" role="listitem">
-                        <dt>
-                            {{{languageHandler 'postePayingInSlip.recipient'
-                            classSecondaryLang='muted'
-                            classContainer='dense'
-                            align="vertical"}}}
-                        </dt>
-                        <dd class="forcedCapitalCase">{{lowercase debtor.fullName}}</dd>
-                    </div>
+                <dl class="data-key-value-inline" role="paragraph">
+                    <dt>
+                        {{{languageHandler 'postePayingInSlip.recipient'
+                        classSecondaryLang='muted'
+                        classContainer='dense'
+                        align="vertical"}}}
+                    </dt>
+                    <dd class="forcedCapitalCase">{{lowercase debtor.fullName}}</dd>
                 </dl>
 
 
-                <dl class="data-key-value-inline" role="list">
-                    <div class="kv-item" role="listitem">
-                        <dt>
-                            {{{languageHandler 'postePayingInSlip.paymentDescription'
-                            classSecondaryLang='muted'
-                            classContainer='dense'
-                            align="vertical"}}}
-                        </dt>
-                        <dd>{{notice.subject}}</dd>
-                    </div>
+                <dl class="data-key-value-inline" role="paragraph">
+                    <dt>
+                        {{{languageHandler 'postePayingInSlip.paymentDescription'
+                        classSecondaryLang='muted'
+                        classContainer='dense'
+                        align="vertical"}}}
+                    </dt>
+                    <dd>{{notice.subject}}</dd>
                 </dl>
 
 
@@ -90,42 +80,36 @@ instalmentNumber: interpolated into `codeLabel` when it is the instalment one
             <div class="payment-details-data-2nd-block">
 
                 <div class="grid-cell-span-4">
-                    <dl class="data-key-value-monospaced" role="list">
-                        <div class="kv-item" role="listitem">
-                            <dt>
-                                {{{languageHandler 'postePayingInSlip.refNumber'
-                                classSecondaryLang='muted'
-                                classContainer='dense'
-                                align="vertical"}}}
-                            </dt>
-                            <dd>{{splitAndSpace this.refNumber}}</dd>
-                        </div>
+                    <dl class="data-key-value-monospaced" role="paragraph">
+                        <dt>
+                            {{{languageHandler 'postePayingInSlip.refNumber'
+                            classSecondaryLang='muted'
+                            classContainer='dense'
+                            align="vertical"}}}
+                        </dt>
+                        <dd>{{splitAndSpace this.refNumber}}</dd>
                     </dl>
                 </div>
 
                 <div class="grid-cell-span-1">
-                    <dl class="data-key-value-monospaced" role="list">
-                        <div class="kv-item" role="listitem">
-                            <dt>
-                                {{{languageHandler 'postePayingInSlip.type'
-                                classSecondaryLang='muted'
-                                classContainer='dense'
-                                align="vertical"}}}
-                            </dt>
-                            <dd>P1</dd>
-                        </div>
+                    <dl class="data-key-value-monospaced" role="paragraph">
+                        <dt>
+                            {{{languageHandler 'postePayingInSlip.type'
+                            classSecondaryLang='muted'
+                            classContainer='dense'
+                            align="vertical"}}}
+                        </dt>
+                        <dd>P1</dd>
                     </dl>
                 </div>
 
                 <div class="grid-cell-span-3 align-right">
-                    <dl class="data-key-value-monospaced" role="list">
-                        <div class="kv-item" role="listitem">
-                            <dt>{{{languageHandler 'postePayingInSlip.payeeTaxCode'
-                                classSecondaryLang='muted'
-                                classContainer='dense'
-                                align="vertical"}}}</dt>
-                            <dd>{{payee.taxCode}}</dd>
-                        </div>
+                    <dl class="data-key-value-monospaced" role="paragraph">
+                        <dt>{{{languageHandler 'postePayingInSlip.payeeTaxCode'
+                            classSecondaryLang='muted'
+                            classContainer='dense'
+                            align="vertical"}}}</dt>
+                        <dd>{{payee.taxCode}}</dd>
                     </dl>
                 </div>
 

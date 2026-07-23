@@ -16,42 +16,34 @@
         <div class="payment-details-data-1st-block">
 
             <div class="grid-cell-span-1">
-                <dl class="data-key-value" role="list">
-                    <div class="kv-item" role="listitem">
-                        <dt>
-                            {{{languageHandler "paymentData.recipient" classSecondaryLang="muted"}}}
-                        </dt>
-                        <dd class="forcedCapitalCase">{{lowercase debtor.fullName}}</dd>
-                    </div>
+                <dl class="data-key-value" role="paragraph">
+                    <dt>
+                        {{{languageHandler "paymentData.recipient" classSecondaryLang="muted"}}}
+                    </dt>
+                    <dd class="forcedCapitalCase">{{lowercase debtor.fullName}}</dd>
                 </dl>
             </div>
 
-            <dl class="data-key-value-inline-monospaced align-right valign-start" role="list">
-                <div class="kv-item" role="listitem">
-                    <dt>Euro</dt>
-                    <dd>{{this.amount}}</dd>
-                </div>
+            <dl class="data-key-value-inline-monospaced align-right valign-start" role="paragraph">
+                <dt>Euro</dt>
+                <dd>{{this.amount}}</dd>
             </dl>
 
             <div class="grid-cell-span-2">
-                <dl class="data-key-value" role="list">
-                    <div class="kv-item" role="listitem">
-                        <dt>
-                            {{{languageHandler "paymentData.payee" classSecondaryLang="muted"}}}
-                        </dt>
-                        <dd>{{payee.name}}</dd>
-                    </div>
+                <dl class="data-key-value" role="paragraph">
+                    <dt>
+                        {{{languageHandler "paymentData.payee" classSecondaryLang="muted"}}}
+                    </dt>
+                    <dd>{{payee.name}}</dd>
                 </dl>
             </div>
 
             <div class="grid-cell-span-2">
-                <dl class="data-key-value" role="list">
-                    <div class="kv-item" role="listitem">
-                        <dt>
-                            {{{languageHandler "paymentData.description" classSecondaryLang="muted"}}}
-                        </dt>
-                        <dd>{{notice.subject}}</dd>
-                    </div>
+                <dl class="data-key-value" role="paragraph">
+                    <dt>
+                        {{{languageHandler "paymentData.description" classSecondaryLang="muted"}}}
+                    </dt>
+                    <dd>{{notice.subject}}</dd>
                 </dl>
             </div>
         </div>
@@ -59,38 +51,32 @@
         <div class="payment-details-data-2nd-block">
 
             <div class="grid-cell-span-2">
-                <dl class="data-key-value-monospaced" role="list">
-                    <div class="kv-item" role="listitem">
-                        <dt>
-                            {{{languageHandler "paymentData.cbillCode" classSecondaryLang="muted" classContainer="dense"
-                            align="vertical"}}}
-                        </dt>
-                        <dd>{{notice.cbillCode}}</dd>
-                    </div>
+                <dl class="data-key-value-monospaced" role="paragraph">
+                    <dt>
+                        {{{languageHandler "paymentData.cbillCode" classSecondaryLang="muted" classContainer="dense"
+                        align="vertical"}}}
+                    </dt>
+                    <dd>{{notice.cbillCode}}</dd>
                 </dl>
             </div>
 
             <div class="grid-cell-span-4">
-                <dl class="data-key-value-monospaced" role="list">
-                    <div class="kv-item" role="listitem">
-                        <dt>
-                            {{{languageHandler "paymentData.refNumber" classSecondaryLang="muted" classContainer="dense"
-                            align="vertical"}}}
-                        </dt>
-                        <dd>{{splitAndSpace this.refNumber}}</dd>
-                    </div>
+                <dl class="data-key-value-monospaced" role="paragraph">
+                    <dt>
+                        {{{languageHandler "paymentData.refNumber" classSecondaryLang="muted" classContainer="dense"
+                        align="vertical"}}}
+                    </dt>
+                    <dd>{{splitAndSpace this.refNumber}}</dd>
                 </dl>
             </div>
 
             <div class="grid-cell-span-2 align-right">
-                <dl class="data-key-value-monospaced" role="list">
-                    <div class="kv-item" role="listitem">
-                        <dt>
-                            {{{languageHandler "paymentData.payeeTaxCode" classSecondaryLang="muted" classContainer="dense"
-                            align="vertical"}}}
-                        </dt>
-                        <dd>{{payee.taxCode}}</dd>
-                    </div>
+                <dl class="data-key-value-monospaced" role="paragraph">
+                    <dt>
+                        {{{languageHandler "paymentData.payeeTaxCode" classSecondaryLang="muted" classContainer="dense"
+                        align="vertical"}}}
+                    </dt>
+                    <dd>{{payee.taxCode}}</dd>
                 </dl>
             </div>
 
