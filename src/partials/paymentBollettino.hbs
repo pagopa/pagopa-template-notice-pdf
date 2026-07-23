@@ -1,3 +1,10 @@
+{{!-- Inputs:
+
+codeLabel: i18n key naming what this slip pays (single amount, instalment, infraction amount)
+instalmentNumber: interpolated into `codeLabel` when it is the instalment one
+
+ --}}
+
 <div class="payment-details unique-grid-cell">
     <div class="poste-italiane-area">
         <img class="logo-poste-italiane" src="assets/poste/poste-italiane.svg" alt="Poste Italiane" />
@@ -15,7 +22,7 @@
         <div class="account-number-and-amount">
             <div class="account-number">
                 <img class="euro-block" src="assets/poste/euro-block.svg" alt="Euro" />
-                <dl class="data-key-value-inline-monospaced">
+                <dl class="data-key-value-inline-monospaced" role="paragraph">
                     <dt>
                         {{{languageHandler 'postePayingInSlip.accountNumber'
                         classSecondaryLang='muted'
@@ -25,7 +32,7 @@
                 </dl>
             </div>
 
-            <dl class="data-key-value-inline-monospaced align-right valign-start">
+            <dl class="data-key-value-inline-monospaced align-right valign-start" role="paragraph">
                 <dt>Euro</dt>
                 <dd>{{this.amount}}</dd>
             </dl>
@@ -35,7 +42,7 @@
 
             <div class="payment-details-data-1st-block">
 
-                <dl class="data-key-value-inline">
+                <dl class="data-key-value-inline" role="paragraph">
                     <dt>
                         {{{languageHandler 'postePayingInSlip.owner'
                         classSecondaryLang='muted'
@@ -46,7 +53,7 @@
                 </dl>
 
 
-                <dl class="data-key-value-inline">
+                <dl class="data-key-value-inline" role="paragraph">
                     <dt>
                         {{{languageHandler 'postePayingInSlip.recipient'
                         classSecondaryLang='muted'
@@ -57,7 +64,7 @@
                 </dl>
 
 
-                <dl class="data-key-value-inline">
+                <dl class="data-key-value-inline" role="paragraph">
                     <dt>
                         {{{languageHandler 'postePayingInSlip.paymentDescription'
                         classSecondaryLang='muted'
@@ -73,7 +80,7 @@
             <div class="payment-details-data-2nd-block">
 
                 <div class="grid-cell-span-4">
-                    <dl class="data-key-value-monospaced">
+                    <dl class="data-key-value-monospaced" role="paragraph">
                         <dt>
                             {{{languageHandler 'postePayingInSlip.refNumber'
                             classSecondaryLang='muted'
@@ -85,7 +92,7 @@
                 </div>
 
                 <div class="grid-cell-span-1">
-                    <dl class="data-key-value-monospaced">
+                    <dl class="data-key-value-monospaced" role="paragraph">
                         <dt>
                             {{{languageHandler 'postePayingInSlip.type'
                             classSecondaryLang='muted'
@@ -97,7 +104,7 @@
                 </div>
 
                 <div class="grid-cell-span-3 align-right">
-                    <dl class="data-key-value-monospaced">
+                    <dl class="data-key-value-monospaced" role="paragraph">
                         <dt>{{{languageHandler 'postePayingInSlip.payeeTaxCode'
                             classSecondaryLang='muted'
                             classContainer='dense'
@@ -110,7 +117,8 @@
             </div>
 
             <div class="payment-data-matrix">
-                <img src={{genDataMatrix this.posteDataMatrix this.tempPath}} alt="Poste DataMatrix" />
+                <img src="{{genDataMatrix this.posteDataMatrix this.tempPath}}"
+                    alt="{{__ 'paymentData.dataMatrix' lng=@root.metadata.language}}, {{__ codeLabel number=instalmentNumber lng=@root.metadata.language}}" />
 
                 {{!-- We can't use a more elegant solution because we have
                 to deal with printing issues by using a mask. --}}

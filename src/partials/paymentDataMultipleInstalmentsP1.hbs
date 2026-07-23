@@ -15,6 +15,7 @@
       </div>
       {{#with this}}
       {{> paymentQRColCompact
+      instalmentNumber=(add @index 1)
       debtor=../debtor
       notice=../notice
       payee=../payee

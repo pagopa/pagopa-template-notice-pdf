@@ -21,6 +21,8 @@ compact: true if you have 3 bollettini postale in the same page
         </div>
 
         {{> paymentBollettino
+                codeLabel="paymentData.instalmentNumber"
+                instalmentNumber=(add (add @index 1) ../start)
                 debtor=../debtor
                 notice=../notice
                 payee=../payee

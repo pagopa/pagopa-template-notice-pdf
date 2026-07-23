@@ -1,16 +1,22 @@
-<header class="notice-header">
+<div class="notice-header">
     <section class="main">
         <div class="pagopa-header">
-            <img class="logo" src="assets/icons/pagoPa-logo.svg" />
+            <img class="logo" alt="pagoPA" src="assets/icons/pagoPa-logo.svg" />
             {{{languageHandler 'heading.title' classPrimaryLang='h4 notice-title'
             classSecondaryLang='small-caps-title-bilingual'
             classBilingual='h4 notice-title'}}}
         </div>
         <div class="notice-subject">
+            {{#if isRunningHeader}}
+            {{!-- Continuation pages repeat the subject visually, but the document
+            must expose a single <h1> or the heading outline skips a level --}}
+            <p class="h1">{{notice.subject}}</p>
+            {{else}}
             <h1 class="h1">{{notice.subject}}</h1>
+            {{/if}}
         </div>
     </section>
     {{#if payee.logo}}
     <img class="notice-header-logo" alt="{{payee.name}}" src="{{payee.logo}}" />
     {{/if}}
-</header>
+</div>

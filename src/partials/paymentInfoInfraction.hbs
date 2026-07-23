@@ -1,12 +1,12 @@
 <section class="notice-payment-info">
     <div class="payment-amount-title-block start-separator">
-        {{{languageHandler 'paymentInfo.title.withExpiryDate' classPrimaryLang='small-caps-title'
+        {{{languageHandler 'paymentInfo.title.withExpiryDate' tag='h2' classPrimaryLang='small-caps-title'
         classSecondaryLang='small-caps-title-bilingual'}}}
     </div>
 
     <div class="payment-amount-block-infraction start-grid-cell">
         <div class="amount-1">
-            <dl>
+            <dl role="paragraph">
                 <dt>
                     {{{languageHandler 'infraction.amount.discounted' classPrimaryLang='body strong'
                     classSecondaryLang='body muted' classContainer="dense" align="vertical"}}}
@@ -17,7 +17,7 @@
             classSecondaryLang='body muted' classContainer="amount-details" align="vertical"}}}
         </div>
         <div class="amount-2">
-            <dl>
+            <dl role="paragraph">
                 <dt>
                     {{{languageHandler 'infraction.amount.reduced' classPrimaryLang='body strong'
                     classSecondaryLang='body muted' classContainer="dense" align="vertical"}}}

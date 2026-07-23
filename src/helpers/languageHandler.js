@@ -14,6 +14,7 @@ function languageHandler(i18n_key, options) {
     classBilingual,
     classContainer,
     forceSecondaryLang,
+    tag = "p",
     align: textBoxAlignment = "horizontal",
     ...variables
   } = options.hash;
@@ -28,14 +29,14 @@ function languageHandler(i18n_key, options) {
   /* If there are no hash parameters, only the main localised text
   will be returned. This could be used to render
   the document title, for example */
-  if (!options.hash) {
+  if (Object.keys(options.hash).length === 0) {
     return mainLocalizedText;
   }
 
   /* Create the mainHTML element with default language text */
   const mainHTMLElem = classPrimaryLang
-    ? `<p class="${classPrimaryLang}">${mainLocalizedText}</p>`
-    : `<p>${mainLocalizedText}</p>`;
+    ? `<${tag} class="${classPrimaryLang}">${mainLocalizedText}</${tag}>`
+    : `<${tag}>${mainLocalizedText}</${tag}>`;
 
   /* Create the secondaryHTML element, using the secondary language */
   if (mainLanguage && secondaryLanguage) {
@@ -47,12 +48,14 @@ function languageHandler(i18n_key, options) {
 
     if (forceSecondaryLang) {
       return classPrimaryLang
-        ? `<p class="${classPrimaryLang}">${secondaryLocalizedText}</p>`
-        : `<p>${secondaryLocalizedText}</p>`;
+        ? `<${tag} class="${classPrimaryLang}">${secondaryLocalizedText}</${tag}>`
+        : `<${tag}>${secondaryLocalizedText}</${tag}>`;
     }
 
     const trueBilingualClassname = classBilingual ?? classPrimaryLang; // Use `classPrimaryLang` as default fallback
     const secondaryElementClassname = isTrueBilingual ? trueBilingualClassname : classSecondaryLang;
+    /* The translation stays a <p> even when `tag` is a heading, so a bilingual
+    title contributes a single heading to the document outline, not two */
     const secondaryHTMLElem = textBoxAlignment === "horizontal"
       ? `<p class="${secondaryElementClassname}">· ${secondaryLocalizedText}</p>` // Add a dot separator between the languages
       : `<p class="${secondaryElementClassname}">${secondaryLocalizedText}</p>`;

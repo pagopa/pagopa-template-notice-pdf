@@ -11,13 +11,14 @@ compact: true for dense (use it with bollettinoPostale in the same page)
     {{#each instalments}}
     <div>
         <div class="inner-separator">
-            {{{languageHandler "paymentData.instalmentNumber" classPrimaryLang="h4"
+            {{{languageHandler "paymentData.instalmentNumber" tag="h3" classPrimaryLang="h4"
             classSecondaryLang="small-caps-title-bilingual" number=(add (add @index 1) ../start)}}}
         </div>
         {{#with this}}
         {{#if ../compact}}
         {{! compact if there is the bollettino postale in the same page }}
         {{> paymentQRColDense
+        instalmentNumber=(add (add @index 1) ../start)
         debtor=../debtor
         notice=../notice
         payee=../payee
@@ -32,6 +33,7 @@ compact: true for dense (use it with bollettinoPostale in the same page)
 
         {{#unless (equals ../columns 3)}}
         {{> paymentQRCol
+        instalmentNumber=(add (add @index 1) ../start)
         debtor=../debtor
         notice=../notice
         payee=../payee
@@ -40,6 +42,7 @@ compact: true for dense (use it with bollettinoPostale in the same page)
         {{/unless}}
         {{#if (equals ../columns 3)}}
         {{> paymentQRColCompact
+        instalmentNumber=(add (add @index 1) ../start)
         debtor=../debtor
         notice=../notice
         payee=../payee

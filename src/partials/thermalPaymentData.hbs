@@ -13,31 +13,31 @@
     <div class="thermal-payment-qrcode-block">
       <p class="body">Inquadra il <strong>codice QR</strong> con la tua app di pagamento o usa i dati
         sotto.</p>
-      <img class="payment-qrcode thermal-payment-qrcode" src={{genQrCode this.qrCode this.tempPath}}
-        alt="QR PaymentCode" />
+      <img class="payment-qrcode thermal-payment-qrcode" src="{{genQrCode this.qrCode this.tempPath}}"
+        alt="{{__ 'paymentData.qrCode' lng=@root.metadata.language}}, {{__ 'paymentData.type.withoutExpiryDate' lng=@root.metadata.language}}" />
       <div class="thermal-payment-details-data">
 
-        <dl class="thermal-data-key-value-monospaced">
+        <dl class="thermal-data-key-value-monospaced" role="paragraph">
           <dt>Importo (Euro)</dt>
           <dd>{{this.amount}}</dd>
         </dl>
 
-        <dl class="thermal-data-key-value-monospaced">
+        <dl class="thermal-data-key-value-monospaced" role="paragraph">
           <dt>Cod. CBILL</dt>
           <dd>{{this.cbillCode}}</dd>
         </dl>
 
-        <dl class="thermal-data-key-value-monospaced">
+        <dl class="thermal-data-key-value-monospaced" role="paragraph">
           <dt>Cod. Avviso</dt>
           <dd>{{splitAndSpace this.refNumber}}</dd>
         </dl>
 
-        <dl class="thermal-data-key-value-monospaced">
+        <dl class="thermal-data-key-value-monospaced" role="paragraph">
           <dt>Cod. Fiscale Ente Creditore</dt>
           <dd>{{payee.taxCode}}</dd>
         </dl>
 
-        <dl class="thermal-data-key-value">
+        <dl class="thermal-data-key-value" role="paragraph">
           <dt>Ente creditore</dt>
           <dd>{{payee.name}}</dd>
         </dl>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{#if metadata.language}}{{metadata.language}} {{metadata.secondaryLanguage}}{{else}}'it'{{/if}}" {{#if
-    metadata.trueBilingualism}}class="dense" {{/if}} xmlns="http://www.w3.org/1999/xhtml" version="0.0.20">
+<html lang="{{#if metadata.language}}{{metadata.language}}{{else}}it{{/if}}" {{#if
+    metadata.trueBilingualism}}class="dense" {{/if}} xmlns="http://www.w3.org/1999/xhtml" data-version="0.0.20">
 
 <head>
-    <title>Avviso di pagamento</title>
+    <title>{{languageHandler 'heading.title'}}</title>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css" />
 </head>
 
 <body>
@@ -33,12 +33,12 @@
         <div class="page-wrapper">
 
             {{!-- Notice HEADER --}}
-            {{> header }}
+            {{> header isRunningHeader=true }}
 
-            <main class="main-wrapper">
+            <div class="main-wrapper">
                 {{!-- Row 3 - Many instalments --}}
                 {{> paymentDataMultipleInstalmentsP2 }}
-            </main>
+            </div>
         </div>
     </div>
 

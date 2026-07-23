@@ -1,32 +1,32 @@
 <div class="instalment-details">
     <div class="instalment-details-data-1st-block">
         <div class="qrcode-area">
-            <img class="payment-qrcode" src={{genQrCode this.qrCode this.tempPath}} alt="QR PaymentCode" />
+            <img class="payment-qrcode" src="{{genQrCode this.qrCode this.tempPath}}" alt="{{__ 'paymentData.qrCode' lng=@root.metadata.language}}, {{__ 'paymentData.instalmentNumber' number=instalmentNumber lng=@root.metadata.language}}" />
         </div>
 
-        <dl class="data-key-value-monospaced tight">
+        <dl class="data-key-value-monospaced tight" role="paragraph">
             <dt>Euro</dt>
             <dd>{{this.amount}}</dd>
         </dl>
 
-        <dl class="data-key-value-monospaced tight">
+        <dl class="data-key-value-monospaced tight" role="paragraph">
             <dt>
                 {{{languageHandler "paymentInfo.expiryDate.default" classSecondaryLang="muted"}}}
             </dt>
             <dd>{{this.expiryDate}}</dd>
         </dl>
 
-        <dl class="data-key-value-monospaced tight">
+        <dl class="data-key-value-monospaced tight" role="paragraph">
             <dt>{{{languageHandler "paymentData.refNumber" forceSecondaryLang="true"}}}</dt>
             <dd>{{splitAndSpace this.refNumber}}</dd>
         </dl>
 
         <div class="grid-cell-span-2 instalment-row-data">
-            <dl class="data-key-value-monospaced tight">
+            <dl class="data-key-value-monospaced tight" role="paragraph">
                 <dt>{{{languageHandler "paymentData.payeeTaxCode" forceSecondaryLang="true"}}}</dt>
                 <dd>{{payee.taxCode}}</dd>
             </dl>
-            <dl class="data-key-value-monospaced tight">
+            <dl class="data-key-value-monospaced tight" role="paragraph">
                 <dt>{{{languageHandler "paymentData.cbillCode" forceSecondaryLang="true"}}}</dt>
                 <dd>{{notice.cbillCode}}</dd>
             </dl>
@@ -35,11 +35,11 @@
     </div>
 
     <div class="instalment-details-data-2nd-block">
-        <dl class="data-key-value">
+        <dl class="data-key-value" role="paragraph">
             <dt>{{{languageHandler "paymentData.description" classSecondaryLang="muted"}}}</dt>
             <dd>{{notice.subject}}</dd>
         </dl>
-        <dl class="data-key-value">
+        <dl class="data-key-value" role="paragraph">
             <dt>{{{languageHandler "paymentData.payee" classSecondaryLang="muted"}}}</dt>
             <dd>{{payee.name}}</dd>
         </dl>
