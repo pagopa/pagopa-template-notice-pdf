@@ -3,7 +3,7 @@ function formatCurrency(amountInCents, options) {
         throw new Error(`formatCurrency: expected integer eurocents, received ${JSON.stringify(amountInCents)}`);
     }
     const amount = amountInCents / 100;
-    const metadata = options.data.root.metadata;
+    const metadata = options?.data?.root?.metadata;
     const isTrueBilingual = metadata?.trueBilingualism;
     const language = metadata?.language ?? "it";
 
