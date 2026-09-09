@@ -818,6 +818,10 @@ dl {
         grid-template-rows: repeat(3, 1fr);
         row-gap: var(--data-grid-gap-xsmall);
 
+        & .data-key-value-inline dd {
+            width: 75%;
+        }
+
         & .amount {
             margin: 0;
             font-size: var(--h4-fsize);

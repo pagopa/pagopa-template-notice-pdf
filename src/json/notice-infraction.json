@@ -31,6 +31,7 @@
     "cbillCode": "78Q45",
     "posteAccountNumber": "30372502",
     "posteAuth": "AUT. 08/5 S3/81 53079 08129.07.20211",
+    "postePayeeName": "MEF DIP.TO RAG. GEN. STATO VERS. DOVUTO EMISS. CARTA IDENT. ELETT. DIR. II UFF. VII",
     "instalments": {
       "discounted": {
         "refNumber": "123456789012345678",
