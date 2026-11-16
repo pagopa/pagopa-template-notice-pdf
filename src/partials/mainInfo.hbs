@@ -29,8 +29,8 @@
 
   <div class="debtor-address-block end-grid-cell">
     <p class="h3">
-      {{debtor.address}} {{debtor.buildingNumber}}<br />
-      {{debtor.postalCode}} {{debtor.city}} ({{debtor.province}})
+      {{#if debtor.address}}{{debtor.address}} {{debtor.buildingNumber}}<br />{{/if}}
+      {{debtor.postalCode}} {{debtor.city}} {{#if debtor.province}}({{debtor.province}}){{/if}}
     </p>
   </div>
 </section>
