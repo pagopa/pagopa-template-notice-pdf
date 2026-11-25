@@ -9,10 +9,12 @@
             <dd>{{formatCurrency amount numberOnly=true}}</dd>
         </dl>
 
+        {{#unless @root.metadata.send}}
         <dl class="data-key-value-monospaced tight">
             <dt>{{{languageHandler "paymentInfo.expiryDate.default" classSecondaryLang="muted"}}}</dt>
             <dd>{{expiryDate}}</dd>
         </dl>
+        {{/unless}}
 
         <div class="grid-cell-span-2">
             <dl class="data-key-value-monospaced tight">

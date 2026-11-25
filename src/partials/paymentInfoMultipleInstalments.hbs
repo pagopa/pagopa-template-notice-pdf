@@ -5,6 +5,9 @@
     </div>
 
     <div class="start-grid-cell">
+        {{#if metadata.send}}
+        {{> paymentInfoSendDisclaimers }}
+        {{else}}
         <div class="info-block">
             <div class="info-paragraph">
                 <img src="./assets/icons/icon-info.svg" class="info-icon" aria-hidden="true" />
@@ -21,6 +24,7 @@
                 align="vertical"}}}
             </div>
         </div>
+        {{/if}}
     </div>
 
     {{> paymentMethods }}
