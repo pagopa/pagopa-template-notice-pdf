@@ -1,0 +1,51 @@
+<section class="notice-payment-info">
+    <div class="payment-amount-title-block start-separator">
+        {{{languageHandler 'paymentInfo.title.withExpiryDate' tag='h2' classPrimaryLang='small-caps-title'
+        classSecondaryLang='small-caps-title-bilingual'}}}
+    </div>
+
+    <div class="payment-amount-block start-grid-cell">
+        <dl class="amount" role="paragraph">
+            <dt>
+                {{{languageHandler 'paymentInfo.amount.default'
+                classPrimaryLang='body strong'
+                classSecondaryLang='body muted'}}}
+            </dt>
+            <dd class="h1">{{formatCurrency notice.amount}}</dd>
+        </dl>
+
+        <div class="info-block">
+            <div class="info-paragraph">
+                <img src="./assets/icons/icon-calendar.svg" class="info-icon" aria-hidden="true" />
+                <div>
+                    {{{languageHandler 'send.disclaimer.dueDate.question' classPrimaryLang='h5'
+                    classSecondaryLang='h5 muted' classContainer="mb-3x-small" align="vertical"}}}
+                    {{{languageHandler 'send.disclaimer.dueDate.answer' classPrimaryLang='body'
+                    classSecondaryLang='body muted' align="vertical"}}}
+                </div>
+            </div>
+
+            <div class="info-paragraph">
+                <img src="./assets/icons/icon-gavel.svg" class="info-icon" aria-hidden="true" />
+                <div>
+                    {{{languageHandler 'send.disclaimer.legalValue.question' classPrimaryLang='h5'
+                    classSecondaryLang='h5 muted' classContainer="mb-3x-small" align="vertical"}}}
+                    {{{languageHandler 'send.disclaimer.legalValue.answer' classPrimaryLang='body'
+                    classSecondaryLang='body muted' align="vertical"
+                    link='<a class="info-link" href="https://notifichedigitali.it/perfezionamento">notifichedigitali.it/perfezionamento</a>'}}}
+                </div>
+            </div>
+
+            <div class="info-paragraph">
+                <img src="./assets/icons/icon-info.svg" class="info-icon" aria-hidden="true" />
+                {{{languageHandler 'send.legal'
+                classPrimaryLang='body'
+                classSecondaryLang='body muted'
+                align="vertical"}}}
+            </div>
+        </div>
+    </div>
+
+    {{> paymentMethods }}
+
+</section>

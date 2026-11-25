@@ -52,6 +52,19 @@
           "chooseAmount": "Scegli l’importo corretto per i termini previsti, altrimenti riceverai altre richieste di pagamento per le somme residue ed eventuali somme aggiuntive."
         }
       },
+      "send": {
+        "disclaimer": {
+          "dueDate": {
+            "question": "Entro quando pagare?",
+            "answer": "Consulta i documenti allegati alla notifica SEND per conoscere i dettagli e i termini per il pagamento."
+          },
+          "legalValue": {
+            "question": "Quando assume valore di legge una notifica SEND?",
+            "answer": "Per conoscere i termini e ottenere maggiori informazioni vai su {{link}}"
+          }
+        },
+        "legal": "In fase di pagamento l’importo potrebbe subire variazioni (per sanzioni, interessi, costi di notifica; oppure per sgravi o note di credito)."
+      },
       "whereToPay": {
         "title": "Dove pagare?",
         "italy": {
