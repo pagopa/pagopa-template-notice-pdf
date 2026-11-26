@@ -13,6 +13,8 @@
     {{!-- Custom text for infraction notice --}}
     {{{languageHandler subtitle classPrimaryLang='h4 light'
     classSecondaryLang='h4 light muted'}}}
+    {{else if @root.metadata.send}}
+    {{!-- SEND notice: no expiry date, no subtitle --}}
     {{else}}
     {{#if notice.expiryDate}}
     <div class="composedHorizontalLocalizedText">

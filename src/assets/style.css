@@ -407,6 +407,11 @@ dl {
     gap: var(--data-grid-gap-xsmall);
 }
 
+.info-link {
+    color: inherit;
+    text-decoration: underline;
+}
+
 .uppercase {
     text-transform: uppercase;
 }

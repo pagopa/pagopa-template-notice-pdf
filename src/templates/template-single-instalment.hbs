@@ -19,7 +19,11 @@
                 {{!-- Row 1 --}}
                 {{> mainInfo }}
                 {{!-- Row 2 --}}
+                {{#if metadata.send}}
+                {{> paymentInfoSend }}
+                {{else}}
                 {{> paymentInfo }}
+                {{/if}}
                 {{!-- Row 3 - pagoPA QR Code --}}
                 {{#with notice}}
                 {{> paymentData

@@ -1,0 +1,22 @@
+<section class="notice-payment-info">
+    <div class="payment-amount-title-block start-separator">
+        {{{languageHandler 'paymentInfo.title.withExpiryDate' tag='h2' classPrimaryLang='small-caps-title'
+        classSecondaryLang='small-caps-title-bilingual'}}}
+    </div>
+
+    <div class="payment-amount-block start-grid-cell">
+        <dl class="amount" role="paragraph">
+            <dt>
+                {{{languageHandler 'paymentInfo.amount.default'
+                classPrimaryLang='body strong'
+                classSecondaryLang='body muted'}}}
+            </dt>
+            <dd class="h1">{{formatCurrency notice.amount}}</dd>
+        </dl>
+
+        {{> paymentInfoSendDisclaimers }}
+    </div>
+
+    {{> paymentMethods }}
+
+</section>
