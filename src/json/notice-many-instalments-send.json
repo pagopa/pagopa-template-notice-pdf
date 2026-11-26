@@ -18,8 +18,7 @@
       "online": {
         "website": true,
         "app": true
-      },
-      "offline": "Ente.Canale.Fisico"
+      }
     }
   },
   "notice": {
